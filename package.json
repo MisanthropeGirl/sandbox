@@ -1,0 +1,30 @@
+{
+  "name": "sandbox",
+  "version": "1.0.0",
+  "description": "Personal sandbox",
+  "main": "index.html",
+  "scripts": {
+    "start": "NODE_ENV='development' gulp",
+    "build": "NODE_ENV='production' gulp build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/MisanthropeGirl/sandbox.git"
+  },
+  "author": "Clarissa Clement",
+  "license": "UNLICENSED",
+  "homepage": "https://sandbox.clarissaclement.me.uk",
+  "devDependencies": {
+    "browser-sync": "^3.0.4",
+    "del": "^8.0.0",
+    "gulp": "^5.0.1",
+    "gulp-autoprefixer": "^9.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-sass": "^6.0.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser": "^2.1.0",
+    "sass": "^1.89.2"
+  }
+}
