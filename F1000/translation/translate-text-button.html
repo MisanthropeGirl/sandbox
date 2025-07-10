@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../common/css/Roboto.css">
+    <link rel="stylesheet" href="../common/css/material-icons.css">
+    <link rel="stylesheet" href="../common/css/mdl.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <title>Translate Buttons</title>
+  </head>
+  <body>
+
+    <main class="_mdl-layout">
+      <div class="mdl-expandingsection">
+        <div class="mdl-expandingsection__item first is-open">
+          <div class="mdl-expandingsection__expander mdl-js-expandingsection is-open">
+            <div class="mdl-expandingsection__title mdl-typography--title">Article</div>
+            <i class="mdl-expandingsection__icon--expand material-icons">&#xE5CF;</i>
+            <i class="mdl-expandingsection__icon--collapse material-icons">&#xE5CE;</i>
+          </div>
+          <div class="mdl-expandingsection__content is-open">
+
+            <div class="mdl-typography--subhead">Title <span class="required"></span></div>
+            <textarea id="article-title">
+              Non-HDL cholesterol is better than LDL-c at predicting atherosclerotic cardiovascular disease risk factors clustering, even in subjects with near-to-normal triglycerides: A report from a Venezuelan population
+            </textarea>
+            <div class="u-right u-mt--1">
+              <!-- NB: this link is only here to allow navigation between mock-up screens -->
+              <a href="translate-text.html">
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" data-language="ja">Translate</button>
+              </a>
+            </div>
+
+            <div class="u-section-break"></div>
+
+            <div class="o-layout">
+              <div class="o-layout__item u-1/4 u-mt--5/2">
+                <div class="o-flex o-flex--space-between o-flex--cross-center">
+                  <span class="mdl-typography--subhead">Submitter <span class="required"></span></span>
+                  <!-- NB: this link is only here to allow navigation between mock-up screens -->
+                  <a href="translate-submitter.html">
+                    <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" title="Translate">
+                      <i class="material-icons">translate</i>
+                    </button>
+                  </a>
+                </div>
+              </div>
+              <div class="o-layout__item u-3/4">
+                <div class="o-layout o-layout--wrap js-article-submitter">
+                  <div class="o-layout__item u-1/2">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label">
+                      <input class="mdl-textfield__input" type="text" name="submitter.firstName" id="submitter-firstName-field" value="Fran">
+                      <label class="mdl-textfield__label" for="submitter-firstName-field">First Name</label>
+                    </div>
+                  </div>
+                  <div class="o-layout__item u-1/2">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label">
+                      <input class="mdl-textfield__input" type="text" name="submitter.lastName" id="submitter-lastName-field" value="Levy">
+                      <label class="mdl-textfield__label" for="submitter-lastName-field">Last Name</label>
+                    </div>
+                  </div>
+                  <div class="o-layout__item u-1/2">
+                    <div class="o-media o-media--center o-media--reverse o-media--sm">
+                      <a href="mailto:FRAN.LEVY@F1000.COM" class="o-media__img" title="Contact Fran Levy">
+                        <i class="material-icons material-icons--fab">email</i>
+                      </a>
+                      <div class="o-media__body mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="text" name="submitter.email" id="submitter-email-field" value="FRAN.LEVY@F1000.COM">
+                        <label class="mdl-textfield__label" for="submitter-email-field">Email</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="o-layout__item u-1/2">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label">
+                      <input class="mdl-textfield__input" type="text" name="submitter.nickName" id="submitter-nickName-field" value="">
+                      <label class="mdl-textfield__label" for="submitter-nickName-field">Nickname</label>
+                    </div>
+                  </div>
+                  <div class="o-layout__item u-1/1 js-user-id">
+                    <div class="o-layout o-layout--minor-center">
+                      <div class="o-layout__item u-1/2">
+                        <div class="o-media o-media--center o-media--reverse o-media--sm">
+                          <div class="o-media__img">
+                            <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon check-user-id" title="Validate ID">
+                              <i class="material-icons">check</i>
+                            </button>
+                            <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon delete-user-id" title="Unlink ID">
+                              <i class="material-icons">clear</i>
+                            </button>
+                          </div>
+                          <div class="o-media__body mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input user-id-field" type="number" name="submitter.userId" value="1001336">
+                            <label class="mdl-textfield__label" for="submitter-nickName-field">User ID</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="mdl-expandingsection">
+        <div class="mdl-expandingsection__item is-open">
+          <div class="mdl-expandingsection__expander mdl-js-expandingsection is-open">
+            <div class="mdl-expandingsection__title mdl-typography--title">Authors</div>
+            <i class="mdl-expandingsection__icon--expand material-icons">&#xE5CF;</i>
+            <i class="mdl-expandingsection__icon--collapse material-icons">&#xE5CE;</i>
+          </div>
+          <div class="mdl-expandingsection__content is-open">
+
+            <div class="u-mb--3">
+              <div class="mdl-typography--subhead u-mb--1">Author(s) <span class="required"></span></div>
+              <div class="u-mb--1">
+                <div class="o-media o-media--sm c-author u-mb--3/2 u-pb--3/2 js-author js-dnd" data-type="author" data-id="427614" data-author-id="406811" data-index="0" data-counter="1">
+                  <div class="o-media__img">
+                    <button type="button" class="mdl-button mdl-js-button mdl-button--icon mini-icon is-sortable js-dnd-button" title="Drag to reorder">
+                      <i class="material-icons">drag_handle</i>
+                    </button>
+                  </div>
+
+                  <div class="o-media__body">
+                    <div class="mdl-typography--body-1">
+                      <div class="u-fr">
+                        <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" data-action="author-edit" title="Edit">
+                          <i class="material-icons">edit</i>
+                        </button>
+                        <a href="translate-author.html">
+                          <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" title="Translate">
+                            <i class="material-icons">translate</i>
+                          </button>
+                        </a>
+                        <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" data-action="author-email" title="" disabled="disabled">
+                          <i class="material-icons">email</i>
+                        </button>
+                        <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon js-confirm-action" data-action="author-delete" data-type="author" title="Delete">
+                          <i class="material-icons">delete</i>
+                        </button>
+                      </div>
+
+                      <div class="u-mb--1">
+                        <span class="c-author__name mdl-typography--body-2 js-author-name">Fran Levy</span>
+                        <span class="js-author-position is-hidden"></span>
+                      </div>
+                      <div class="o-layout u-mb--1">
+                        <div class="o-layout__item u-1/2">
+                          <div class="o-media o-media--center o-media--sm js-author-email-valid">
+                            <a class="o-media__img" href="mailto:FRAN.LEVY@F1000.COM" title="Contact Fran Levy">
+                              <i class="material-icons material-icons--fab">email</i>
+                            </a>
+                            <span class="o-media__body mdl-typography--body-1 c-author__email js-author-email">FRAN.LEVY@F1000.COM</span>
+                          </div>
+                        </div>
+                        <div class="o-layout__item u-1/2">
+                          <div class="mdl-typography--body-1 js-author-info">Submitter, Corresponding author</div>
+                        </div>
+                      </div>
+
+                      <div class="u-mb--1">
+                        <em>Affiliation(s):</em>
+                        <ul class="c-editorial-list c-counter js-author-affiliation-container">
+                          <li class="o-crud c-editorial-list__item c-affiliation-list__item c-counter__item c-counter__item--override u-mb--1/2 js-author-affiliation" data-affiliation-id="123406" data-counter="1">
+                            <div class="o-crud__display">
+                              <span class="js-affiliation-details">University College London, London, UK</span>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <em>Author contribution(s):</em>
+                      <div class="js-author-contributions">Writing – Original Draft Preparation, Writing – Review &amp; Editing</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="o-flex">
+                <div class="o-flex__item">
+                  <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect js-author-btn-create" data-action="author-add" data-type="author">
+                    <i class="material-icons">add</i>
+                    <span>Add Author</span>
+                  </button>
+                  <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect js-collective-btn-create" data-action="author-add" data-type="collective">
+                    <i class="material-icons">add</i>
+                    <span>Add Collective</span>
+                  </button>
+                </div>
+                <div class="o-flex__item u-ml--auto">
+                  <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" data-action="assign-affiliations-open">
+                    <i class="material-icons">link</i>
+                    <span>Assign Affiliations</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="u-mb--3">
+              <div class="mdl-typography--subhead u-mb--1">Affiliations(s) <span class="required"></span></div>
+              <div class="c-counter c-editorial-list js-affiliations-list u-mb--1">
+                <div class="u-mb--1/2 js-affiliation " data-type="affiliations" data-id="123406" data-index="0" data-counter="1">
+                  <div class="mdl-typography--body-1 c-counter__item c-editorial-list__item c-affiliation-list__item">
+                    <div class="o-media o-media--sm o-media--reverse">
+                      <div class="o-media__img">
+                        <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" data-action="affiliation-edit" title="Edit">
+                          <i class="material-icons">edit</i>
+                        </button>
+                        <a href="translate-affiliation.html">
+                          <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" title="Translate">
+                            <i class="material-icons">translate</i>
+                          </button>
+                        </a>
+                        <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon js-confirm-action" data-action="affiliation-delete" title="Remove">
+                          <i class="material-icons">delete</i>
+                        </button>
+                      </div>
+                      <div class="o-media__body">
+                        <span class="js-affiliation-details">University College London, London, UK</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="o-flex">
+                <div class="o-flex__item">
+                  <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" data-action="affiliation-add">
+                    <i class="material-icons">add</i>
+                    <span>Add Affiliation</span>
+                  </button>
+                </div>
+                <div class="o-flex__item u-ml--auto">
+                  <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" data-action="assign-affiliations-open">
+                    <i class="material-icons">link</i>
+                    <span>Assign Affiliations</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <script src="../common/js/namespace.js"></script>
+    <script src="../common/js/constants.js"></script>
+    <script src="../common/js/utilities.js"></script>
+    <script src="../common/js/mdl.min.js"></script>
+    <script src="../common/js/mdl-helper.js"></script>
+    <script src="./js/vendor/ckeditor/ckeditor.js"></script>
+    <script>
+      CKEDITOR.replace(document.getElementById('article-title'), {
+        language: 'en-us',
+        enterMode: CKEDITOR.ENTER_BR,
+        toolbar: [
+          { name: 'basicstyles', items: [ 'Bold', 'Italic', 'Underline', 'Subscript', 'Superscript', 'RemoveFormat', 'Code' ] },
+          { name: 'texttransform', items: [ 'TransformTextToUppercase', 'TransformTextToLowercase', 'TransformTextCapitalize', 'TransformTextSwitcher' ] },
+          { name: 'paragraph', items: [ 'NumberedList', 'BulletedList' ] },
+          { name: 'clipboard', items: [ 'PasteText', 'PasteFromWord', 'SpecialChar', 'Undo', 'Redo' ] },
+          { name: 'links', items: [ 'Link', 'Unlink' ] },
+          { name: 'editing', items: [ 'Scayt' ] },
+          { name: 'document', items: [ 'Source' ] },
+          { name: 'tools', items: [ 'Maximize' ] }
+        ],
+        wordcount: {
+          showParagraphs: false,
+          showWordCount: true,
+          maxWordCount: 300,
+          showCharCount: false,
+          maxCharCount: -1
+        }
+      });
+    </script>
+  </body>
+</html>

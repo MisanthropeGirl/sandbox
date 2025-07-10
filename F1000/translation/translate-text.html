@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../common/css/Roboto.css">
+    <link rel="stylesheet" href="../common/css/material-icons.css">
+    <link rel="stylesheet" href="../common/css/mdl.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <title>Translate Modal</title>
+  </head>
+  <body>
+
+    <div class="o-overlay js-overlay"></div>
+    <div class="o-modal js-modal">
+      <div class="o-modal__body js-modal-body">
+        <section class="c-console js-console">
+          <header class="c-console__hdr js-console-header">
+            <h1 class="c-console__ttl u-font-size--title js-console-title">Translate Title</h1>
+          </header>
+          <div class="_mdl-layout c-console__fixed js-console-fixed">
+            <div class="mdl-typography--title u-mb--1/2">English</div>
+            Non-HDL cholesterol is better than LDL-c at predicting atherosclerotic cardiovascular disease risk factors clustering, even in subjects with near-to-normal triglycerides: A report from a Venezuelan population
+          </div>
+          <div class="_mdl-layout c-console__bdy js-console-body">
+            <form>
+
+              <div class="mdl-typography--title u-mb--1/2">Translation</div>
+              <textarea id="translated-title" rows="10" cols="80"></textarea>
+
+            </form>
+          </div>
+          <footer class="_mdl-layout c-console__ftr o-flex o-flex--reverse js-console-footer">
+            <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored c-console__btn js-console-close">Save &amp; Close</button>
+            <button type="button" class="mdl-button mdl-js-button c-console__btn js-console-reset">Cancel</button>
+          </footer>
+        </section>
+      </div>
+    </div>
+
+    <script src="../common/js/namespace.js"></script>
+    <script src="../common/js/constants.js"></script>
+    <script src="../common/js/utilities.js"></script>
+    <script src="../common/js/mdl.min.js"></script>
+    <script src="../common/js/mdl-helper.js"></script>
+    <script src="./js/vendor/ckeditor/ckeditor.js"></script>
+    <script>
+      CKEDITOR.replace(document.getElementById('translated-title'), {
+        language: 'ja',
+        enterMode: CKEDITOR.ENTER_BR,
+        toolbar: [
+          { name: 'basicstyles', items: [ 'Bold', 'Italic', 'Underline', 'Subscript', 'Superscript', 'RemoveFormat', 'Code' ] },
+          { name: 'texttransform', items: [ 'TransformTextToUppercase', 'TransformTextToLowercase', 'TransformTextCapitalize', 'TransformTextSwitcher' ] },
+          { name: 'paragraph', items: [ 'NumberedList', 'BulletedList' ] },
+          { name: 'clipboard', items: [ 'PasteText', 'PasteFromWord', 'SpecialChar', 'Undo', 'Redo' ] },
+          { name: 'links', items: [ 'Link', 'Unlink' ] },
+          { name: 'editing', items: [ 'Scayt' ] },
+          { name: 'document', items: [ 'Source' ] },
+          { name: 'tools', items: [ 'Maximize' ] }
+        ],
+        extraPlugins: 'wordcount',
+        wordcount: {
+          showParagraphs: false,
+          showWordCount: false,
+          maxWordCount: -1,
+          showCharCount: true,
+          maxCharCount: 300
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,244 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  line-height: 1.5;
+}
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+  font-family: Roboto, sans-serif;
+  font-size: 0.875rem;
+  color: rgba(0,0,0,0.54);
+}
+@media (min-width: 676px) {
+  body {
+    margin: 0;
+  }
+}
+
+form {
+  max-width: 660px;
+  margin: 1rem auto;
+}
+
+
+a {
+  color: #00b291;
+  text-decoration: none;
+}
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+[type="search"]:not(.selectr-input),
+select {
+  font-size: 100%;
+  width: 100%;
+}
+[type="search"]:not(.selectr-input) {
+  padding: 10px 28px 10px 14px;
+  border: 1px solid rgba(0,0,0,0.16);
+  border-width: 0 0 1px;
+  background-color: #fff;
+}
+[type="search"]:not(.selectr-input):focus {
+  outline: 0;
+  border-bottom: 2px solid #F2673C;
+}
+
+
+button.icon {
+  width: 24px;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  font-size: 20px;
+}
+  button.icon:hover {
+/*    border: 1px solid rgba(0,0,0,0.16);
+    border-radius: 50%;
+*/    cursor: pointer;
+  }
+  button[disabled] {
+    color: rgba(0,0,0,0.16);
+  }
+
+.o-layout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.o-layout--start {
+  align-items: flex-start;
+}
+
+@media (min-width: 480px) {
+  .o-layout__itm {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .o-layout__itm:first-child {
+    padding-left: 0;
+  }
+  .o-layout__itm:last-child {
+    padding-right: 0;
+  }
+}
+
+.u-1\/1 {
+  width: 100%;
+}
+.u-1\/2 {
+  width: calc(100% * 6/12);
+}
+@media (min-width: 480px) {
+  .u-1\/2\@md {
+    width: calc(100% * 6/12);
+  }
+}
+.u-auto {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.u-shrink {
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.c-form-field {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.secondary {
+  height: 32px;
+  border: 0;
+  border-radius: 2px;
+  padding: 10px 15px;
+
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 12px;
+  letter-spacing: 0.01em;
+  color: white;
+  text-decoration: none;
+}
+.orange {
+  background-color: #f2673c;
+}
+.no-fill {
+  background-color: transparent;
+}
+.no-fill.orange-text-and-border {
+  color: #f2673c;
+  border: 1px solid #f2673c;
+}
+
+.selectr-selected {
+  border: 1px solid rgba(0,0,0,0.16);
+  border-width: 0 0 1px;
+  border-radius: 0;
+}
+.selectr-selected:focus {
+  outline: 0;
+  border-bottom: 2px solid #F2673C;
+ }
+.selectr-container.open .selectr-selected {
+  border-bottom: 2px solid #F2673C;
+}
+.selectr-options-container {
+  top: 100%;
+  border: 0;
+  border-radius: 2px;
+  background-color: #FAFAFA;
+  box-shadow: 0 0 8px 0 rgba(0,0,0,0.12), 0 8px 8px 0 rgba(0,0,0,0.24);
+}
+.selectr-options {
+  overflow-y: auto;
+}
+/*.selectr-placeholder {
+  color: rgba(0,0,0,0.54);
+}*/
+
+.c-thesaurus-container {
+  position: relative;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+}
+
+  /*.c-thesaurus-container__btn {
+    height: 32px;
+    width: 32px;
+    margin-left: 32px;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  .c-thesaurus-container__btn:hover {
+    color: red;
+  }*/
+
+@media (min-width: 41rem) {
+  .c-thesaurus-container + .c-thesaurus-container::before {
+    content:'\21B3';
+    display: block;
+    margin-left: -1rem;
+    width: 1rem;
+  }
+  .c-thesaurus-container:nth-child(2) {
+    margin-left: 1rem;
+  }
+  .c-thesaurus-container:nth-child(3) {
+    margin-left: 2rem;
+  }
+  .c-thesaurus-container:nth-child(4) {
+    margin-left: 3rem;
+  }
+  .c-thesaurus-container:nth-child(5) {
+    margin-left: 4rem;
+  }
+  .c-thesaurus-container:nth-child(6) {
+    margin-left: 5rem;
+  }
+  .c-thesaurus-container:nth-child(7) {
+    margin-left: 6rem;
+  }
+  .c-thesaurus-container:nth-child(8) {
+    margin-left: 7rem;
+  }
+  .c-thesaurus-container:nth-child(9) {
+    margin-left: 8rem;
+  }
+  .c-thesaurus-container:nth-child(10) {
+    margin-left: 9rem;
+  }
+  .c-thesaurus-container:nth-child(11) {
+    margin-left: 10rem;
+  }
+  .c-thesaurus-container:nth-child(12) {
+    margin-left: 11rem;
+  }
+  .c-thesaurus-container:nth-child(13) {
+    margin-left: 12rem;
+  }
+  .c-thesaurus-container:nth-child(14) {
+    margin-left: 13rem;
+  }
+}

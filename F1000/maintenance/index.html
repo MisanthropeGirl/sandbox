@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>External Maintenance Alerts</title>
+        <link rel="stylesheet" href="../common/css/Roboto.css">
+        <link rel="stylesheet" href="../common/css/material-icons.css">
+        <link rel="stylesheet" href="../common/css/mdl.min.css">
+          <link rel="stylesheet" href="./css/styles.css">
+    </head>
+    <body>
+        <p>This page has intentionally been left blank</p>
+
+        <template id="templateOverlay">
+          <div class="o-overlay js-overlay is-hidden" hidden="hidden"></div>
+        </template>
+
+        <template id="templateModal">
+          <div class="o-modal js-modal is-hidden" hidden="hidden"><div class="o-modal__close js-modal-close"></div><div class="o-modal__body js-modal-body"></div></div>
+        </template>
+
+        <template id="templateConsole">
+          <section class="c-console js-console"><header class="c-console__hdr"><h1 class="c-console__ttl u-font-size--title js-console-title"></h1></header><div class="_mdl-layout c-console__bdy js-console-body"></div><footer class="_mdl-layout c-console__ftr o-flex o-flex--reverse"><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored c-console__btn js-console-close">Done</button><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored c-console__btn js-console-add">Add</button><button class="mdl-button mdl-js-button c-console__btn js-console-reset">Reset</button></footer></section>
+        </template>
+
+        <template id="templateExternalMessages" class="is-hidden" hidden="hidden">
+          <div class="o-modal o-modal--auto js-external-messages is-hidden" hidden="hidden">
+            <section class="c-console">
+              <div class="_mdl-layout c-console__bdy js-external-messages-body"></div>
+              <footer class="_mdl-layout c-console__ftr o-flex o-flex--reverse js-external-messages-footer">
+                <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored c-console__btn js-external-messages-close" data-action="maintenance-close">I Understand</button>
+              </footer>  
+            </section>  
+          </div>  
+        </template>  
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
+
+        <script src="../common/js/namespace.js"></script>
+        <script src="../common/js/constants.js"></script>
+        <script src="../common/js/utilities.js"></script>
+        <script src="../common/js/mdl-helper.js"></script>
+
+        <script>
+          F1000.ExtenalMaintenanceItems = [
+            {
+              start: '2025-07-01 09:30',
+              end: '2025-12-15 11Z',
+              msg: 'Please note that between &lt;time&gt; and &lt;time&gt; on &lt;date&gt; this site will be down for maintenance.',
+              cookieName: 'testMsg1',
+              editor: false
+            }
+          ];
+        </script>
+
+        <script src="./js/cookie-helper.js"></script>
+        <script src="./js/extend.js"></script>
+        <script src="./js/overlay.js"></script>
+        <script src="./js/modal.js"></script>
+        <script src="./js/console.js"></script>
+
+        <script src="./js/scripts.js"></script>
+    </body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../common/css/Roboto.css">
+    <link rel="stylesheet" href="../common/css/material-icons.css">
+    <link rel="stylesheet" href="../common/css/mdl.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <title>Data</title>
+  </head>
+  <body>
+
+    <main class="_mdl-layout">
+      <div class="mdl-expandingsection">
+        <div class="mdl-expandingsection__item first is-open">
+          <div class="mdl-expandingsection__expander mdl-js-expandingsection is-open">
+            <div class="mdl-expandingsection__title mdl-typography--title">Data</div>
+            <i class="mdl-expandingsection__icon--expand material-icons">&#xE5CF;</i>
+            <i class="mdl-expandingsection__icon--collapse material-icons">&#xE5CE;</i>
+          </div>
+          <div class="mdl-expandingsection__content is-open">
+
+            <table class="o-table o-table--border o-table--row-border">
+              <col />
+              <col style="width: 96px" />
+              <col style="width: 118px" />
+              <col style="width: 100px" />
+              <col style="width: 74px;" />
+              <thead class="is-hidden">
+                <tr>
+                  <th scope="col">File</th>
+                  <th scope="col">Type</th>
+                  <th class="u-right" scope="col">Date</th>
+                  <th class="u-right" scope="col">Size</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="u-middle">
+                    <span class="mdl-typography--body-2">Filename 1</span> (10.12688/f1000research.22400.1)<br />
+                    <a href=""><i>https://www.repository.com/path/to/file</i></a>
+                  </td>
+                  <td class="u-middle">Underlying</td>
+                  <td class="u-middle u-right"><time class="js-file-date" datetime="2020-03-10">10 Mar 2020</time></td>
+                  <td class="u-middle u-right">100 KB</td>
+                  <td class="u-middle">
+                    <button class="mdl-button mdl-js-button mdl-button--icon" id="data-file-1">
+                      <i class="material-icons">more_vert</i>
+                    </button>
+                    <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect" data-mdl-for="data-file-1">
+                      <li class="mdl-menu__item">
+                        <a href="modal.html" class="o-btn o-btn--link o-btn--expand u-left">Edit</a>
+                      </li>
+                      <li class="mdl-menu__item">
+                        <button type="button" class="o-btn o-btn--link o-btn--expand u-left js-confirm-action">Delete</button>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="u-middle">
+                    <span class="mdl-typography--body-2">Filename 2</span> (10.12688/f1000research.22400.1)<br />
+                    <a href=""><i>https://www.repository.com/path/to/file</i></a>
+                  </td>
+                  <td class="u-middle">Extended</td>
+                  <td class="u-middle u-right"><time class="js-file-date" datetime="2020-03-10">10 Mar 2020</time></td>
+                  <td class="u-middle u-right">100 KB</td>
+                  <td class="u-middle">
+                    <button class="mdl-button mdl-js-button mdl-button--icon" id="data-file-2">
+                      <i class="material-icons">more_vert</i>
+                    </button>
+                    <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect" data-mdl-for="data-file-2">
+                      <li class="mdl-menu__item">
+                        <a href="modal.html" class="o-btn o-btn--link o-btn--expand u-left">Edit</a>
+                      </li>
+                      <li class="mdl-menu__item">
+                        <button type="button" class="o-btn o-btn--link o-btn--expand u-left js-confirm-action">Delete</button>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="u-middle">
+                    <span class="mdl-typography--body-2">Filename 3</span> (10.12688/f1000research.22400.1)<br />
+                    <a href=""><i>https://www.repository.com/path/to/file</i></a>
+                  </td>
+                  <td class="u-middle">Checklist</td>
+                  <td class="u-middle u-right"><time class="js-file-date" datetime="2020-03-10">10 Mar 2020</time></td>
+                  <td class="u-middle u-right">100 KB</td>
+                  <td class="u-middle">
+                    <button class="mdl-button mdl-js-button mdl-button--icon" id="data-file-3">
+                      <i class="material-icons">more_vert</i>
+                    </button>
+                    <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect" data-mdl-for="data-file-3">
+                      <li class="mdl-menu__item">
+                        <a href="modal.html" class="o-btn o-btn--link o-btn--expand u-left">Edit</a>
+                      </li>
+                      <li class="mdl-menu__item">
+                        <button type="button" class="o-btn o-btn--link o-btn--expand u-left js-confirm-action">Delete</button>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+          <!--
+            <div class="mdl-expandingsection mdl-expandingsection--nested">
+              <div class="mdl-expandingsection__item is-open">
+                <div class="mdl-expandingsection__expander is-open">
+                  <div class="mdl-expandingsection__title mdl-typography--subhead">Underlying Data</div>
+                </div>
+                <div class="mdl-expandingsection__content is-open">
+                  <table class="o-table o-table--border o-table--row-border" data-file-category='underlying'>
+                    <col />
+                    <col style="width: 118px" />
+                    <col style="width: 100px" />
+                    <col style="width: 74px;" />
+                    <thead class="is-hidden">
+                      <tr>
+                        <th scope="col">File</th>
+                        <th class="u-right" scope="col">Date</th>
+                        <th class="u-right" scope="col">Size</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="u-middle">
+                          <span class="mdl-typography--body-2">Filename 1</span> (10.12688/f1000research.22400.1)<br />
+                          <a href=""><i>https://www.repository.com/path/to/file</i></a>
+                        </td>
+                        <td class="u-middle u-right"><time class="js-file-date" datetime="2020-03-10">10 Mar 2020</time></td>
+                        <td class="u-middle u-right">100 KB</td>
+                        <td class="u-middle">
+                          <button class="mdl-button mdl-js-button mdl-button--icon" id="underlying-1">
+                            <i class="material-icons">more_vert</i>
+                          </button>
+                          <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect" data-mdl-for="underlying-1">
+                            <li class="mdl-menu__item">
+                              <a href="modal.html" class="o-btn o-btn--link o-btn--expand u-left">Edit</a>
+                            </li>
+                            <li class="mdl-menu__item">
+                              <button type="button" class="o-btn o-btn--link o-btn--expand u-left js-confirm-action">Delete</button>
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="u-middle">
+                          <span class="mdl-typography--body-2">Filename 2</span> (10.12688/f1000research.22400.1)<br />
+                          <a href=""><i>https://www.repository.com/path/to/file</i></a>
+                        </td>
+                        <td class="u-middle u-right"><time class="js-file-date" datetime="2020-03-10">10 Mar 2020</time></td>
+                        <td class="u-middle u-right">100 KB</td>
+                        <td class="u-middle">
+                          <button class="mdl-button mdl-js-button mdl-button--icon" id="underlying-2">
+                            <i class="material-icons">more_vert</i>
+                          </button>
+                          <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect" data-mdl-for="underlying-2">
+                            <li class="mdl-menu__item">
+                              <a href="modal.html" class="o-btn o-btn--link o-btn--expand u-left">Edit</a>
+                            </li>
+                            <li class="mdl-menu__item">
+                              <button type="button" class="o-btn o-btn--link o-btn--expand u-left js-confirm-action">Delete</button>
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="mdl-expandingsection mdl-expandingsection--nested">
+              <div class="mdl-expandingsection__item is-open">
+                <div class="mdl-expandingsection__expander is-open">
+                  <div class="mdl-expandingsection__title mdl-typography--subhead">Extended Data</div>
+                </div>
+                <div class="mdl-expandingsection__content is-open">
+                  <table class="o-table o-table--border o-table--row-border" data-file-category='extended'>
+                    <col />
+                    <col style="width: 118px" />
+                    <col style="width: 100px" />
+                    <col style="width: 74px;" />
+                    <thead class="is-hidden">
+                      <tr>
+                        <th scope="col">File</th>
+                        <th class="u-right" scope="col">Date</th>
+                        <th class="u-right" scope="col">Size</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="u-middle">
+                          <span class="mdl-typography--body-2">Filename</span> (10.12688/f1000research.22400.1)<br />
+                          <a href=""><i>https://www.repository.com/path/to/file</i></a>
+                        </td>
+                        <td class="u-middle u-right"><time class="js-file-date" datetime="2020-03-10">10 Mar 2020</time></td>
+                        <td class="u-middle u-right">100 KB</td>
+                        <td class="u-middle">
+                          <button class="mdl-button mdl-js-button mdl-button--icon" id="extended-1">
+                            <i class="material-icons">more_vert</i>
+                          </button>
+                          <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect" data-mdl-for="extended-1">
+                            <li class="mdl-menu__item">
+                              <a href="modal.html" class="o-btn o-btn--link o-btn--expand u-left">Edit</a>
+                            </li>
+                            <li class="mdl-menu__item">
+                              <button type="button" class="o-btn o-btn--link o-btn--expand u-left js-confirm-action">Delete</button>
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="mdl-expandingsection mdl-expandingsection--nested">
+              <div class="mdl-expandingsection__item is-open">
+                <div class="mdl-expandingsection__expander is-open">
+                  <div class="mdl-expandingsection__title mdl-typography--subhead">Reporting Checklist</div>
+                </div>
+                <div class="mdl-expandingsection__content is-open">
+                  <table class="o-table o-table--border o-table--row-border" data-file-category='reporting'>
+                    <col />
+                    <col style="width: 118px" />
+                    <col style="width: 100px" />
+                    <col style="width: 74px;" />
+                    <thead class="is-hidden">
+                      <tr>
+                        <th scope="col">File</th>
+                        <th class="u-right" scope="col">Date</th>
+                        <th class="u-right" scope="col">Size</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="u-middle">
+                          <span class="mdl-typography--body-2">Filename</span> (10.12688/f1000research.22400.1)<br />
+                          <a href=""><i>https://www.repository.com/path/to/file</i></a>
+                        </td>
+                        <td class="u-middle u-right"><time class="js-file-date" datetime="2020-03-10">10 Mar 2020</time></td>
+                        <td class="u-middle u-right">100 KB</td>
+                        <td class="u-middle">
+                          <button class="mdl-button mdl-js-button mdl-button--icon" id="checklist-1">
+                            <i class="material-icons">more_vert</i>
+                          </button>
+                          <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect" data-mdl-for="checklist-1">
+                            <li class="mdl-menu__item">
+                              <a href="modal.html" class="o-btn o-btn--link o-btn--expand u-left">Edit</a>
+                            </li>
+                            <li class="mdl-menu__item">
+                              <button type="button" class="o-btn o-btn--link o-btn--expand u-left js-confirm-action">Delete</button>
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          -->
+
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <script src="../common/js/mdl.min.js"></script>
+  </body>
+</html>

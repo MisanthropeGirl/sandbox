@@ -1,0 +1,238 @@
+html {
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  font-size: 0.8125rem;
+  color: #333;
+}
+
+
+main {
+  max-width: 990px;
+  margin: 1rem auto;
+}
+
+a {
+  color: #00b291;
+  text-decoration: none;
+}
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+table {
+  margin-top: 16px;
+  width: 100%;
+}
+  caption {
+    padding: 12px 0 12px 20px;
+    font-weight: bold;
+    line-height: 36px;
+    text-align: left
+  }
+
+  col:nth-child(2) {
+    width: 118px;
+  }
+
+  col:nth-child(3) {
+    width: 100px;
+  }
+
+  col:last-child {
+    width: 74px;
+  }
+
+
+.mdl-expandingsection--nested.mdl-expandingsection--nested {
+  margin-bottom: 24px;
+}
+
+  .mdl-expandingsection--nested .mdl-expandingsection__item {
+    border: none;
+  }
+
+    .mdl-expandingsection--nested .mdl-expandingsection__item.is-open {
+      box-shadow: none;
+    }
+
+  .mdl-expandingsection--nested .mdl-expandingsection__expander {
+    display: flex;
+    align-items: center;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+    .mdl-expandingsection--nested .mdl-expandingsection--nested .mdl-expandingsection__expander {
+      padding-top: 6px;
+      padding-bottom: 6px;
+    }
+
+    .mdl-expandingsection--nested .mdl-expandingsection__expander.is-open {
+      background-color: transparent;
+    }
+
+    .mdl-expandingsection--nested .mdl-expandingsection__icon--collapse,
+    .mdl-expandingsection--nested .mdl-expandingsection__icon--expand {
+      float: none;
+      margin-right: 0;
+    }
+
+    .mdl-expandingsection--nested .mdl-expandingsection__title {
+      margin-right: auto;
+    }
+
+    .mdl-expandingsection--nested .mdl-expandingsection__content {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+
+.o-flex {
+  display: flex;
+}
+
+  .o-flex--between {
+    justify-content: space-between;
+  }
+
+  .o-flex--cross-center {
+    align-items: center;
+  }
+
+
+.o-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+
+    background-color: #000;
+}
+
+  .o-overlay--upload {
+    background-color: #00b291;
+    opacity: 0.7;
+  }
+
+  .o-overlay--sort {
+    background-color: #f4f2ea;
+  }
+
+  .o-overlay__content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+
+    width: calc(100% - 6rem);
+    max-width: 60rem;
+    height: calc(100% - 6rem);
+    max-height: 42rem;
+  }
+
+    .o-overlay__content header {
+      margin-bottom: 28px;
+    }
+    
+    .o-overlay__content header h1 {
+      margin: 8px 0;
+      font-size: 24px;
+      line-height: 28px;
+      font-weight: bold;
+    }
+
+    .o-overlay__content header div {
+      color: rgba(0, 0, 0, .16);
+    }
+
+    .o-overlay__content aside {
+      line-height: 2;
+    }
+
+    .o-overlay__content footer {
+      margin-top: auto;
+      border-top: 1px solid rgba(0, 0, 0, .16);
+      padding-top: 8px;
+      text-align: right;
+    }
+
+      .o-overlay__content footer button:nth-child(n+2) {
+        margin-left: 8px;
+      }
+
+    .o-overlay__content--upload {
+      justify-content: center;
+      align-items: center;
+
+      color: #fff;
+      font-size: 36px;
+      line-height: 64px;
+      text-align: center;
+    }
+
+    .o-overlay__content--upload .material-icons {
+      font-size: 72px;
+    }
+
+    .o-overlay__content--upload button {
+      height: 36px;
+      width: 92px;
+      margin: 0 18px;
+      border-radius: 2px;
+
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 20px;
+      text-transform: uppercase;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .o-overlay__content--upload button.primary {
+      border: 0;
+      background-color: #fff;
+      color: #00b291;
+    }
+
+    .o-overlay__content--upload button.secondary {
+      border: 2px solid #fff;
+      background-color: transparent;
+      color: #fff;
+    }
+
+
+.o-grid {
+  display: grid;
+  align-items: center;
+}
+
+
+.c-file-options {
+  grid-template-columns: 50% 50%;
+  grid-gap: 1rem 2rem;
+  width: calc(100% - 2rem);
+}
+
+.c-download-links {
+  float: right;
+}
+
+.is-hidden {
+  display: none;
+}

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../common/css/Roboto.css">
+    <link rel="stylesheet" href="../common/css/material-icons.css">
+    <link rel="stylesheet" href="../common/css/mdl.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Edit Suggested Referee Modal</title>
+  </head>
+  <body>
+
+    <div class="o-overlay js-overlay"></div>
+    <div class="o-modal js-modal">
+      <div class="o-modal__body js-modal-body">
+        <section class="c-console js-console">
+          <header class="c-console__hdr js-console-header">
+            <h1 class="c-console__ttl u-font-size--title js-console-title">Ros Dignon</h1>
+          </header>
+          <div class="_mdl-layout c-console__bdy js-console-body">
+            <form>
+
+              <div class="u-mb--2">
+                <div class="mdl-select mdl-js-select mdl-select--floating-label">
+                  <select class="mdl-select__input" id="proposer" name="refereeType">
+                    <option value=""></option>
+                    <option value="SUGGEST_BY_REFEREE">Referee</option>
+                    <option value="SUGGEST_BY_AUTHOR">Author</option>
+                    <option value="SUGGEST_BY_EDITOR" selected="selected">Editor</option>
+                  </select>
+                  <label class="mdl-select__label" for="proposer">Suggested by</label>
+                </div>
+              </div>
+
+              <div class="o-layout u-mb--1">
+                <div class="mdl-typography--body-2 o-layout__item u-1/6">Editorial Decision</div>
+                <div class="o-layout__item u-5/6">Not Appropriate</div>
+              </div>
+
+              <div class="o-layout u-mb--1">
+                <div class="mdl-typography--body-2 o-layout__item u-1/6">Reason</div>
+                <div class="o-layout__item u-5/6">
+
+                  <div class="o-layout o-layout--wrap">
+                    <div class="o-layout__item u-1/4">
+                      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="reason-0">
+                        <input type="radio" id="reason-0" class="mdl-radio__button" name="reason" checked="checked" value="NOT_APPRO_WRONG_SUB" />
+                        <span class="mdl-radio__label mdl-radio__label--body1">NA Subject</span>
+                      </label>
+                    </div>
+
+                    <div class="o-layout__item u-1/4">
+                      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="reason-1">
+                        <input type="radio" id="reason-1" class="mdl-radio__button" name="reason" value="NOT_APPRO_COLLAB" />
+                        <span class="mdl-radio__label mdl-radio__label--body1">NA Collaboration</span>
+                      </label>
+                    </div>
+
+                    <div class="o-layout__item u-1/4">
+                      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="reason-2">
+                        <input type="radio" id="reason-2" class="mdl-radio__button" name="reason" value="NOT_APPRO_EXPERIENCED" />
+                        <span class="mdl-radio__label mdl-radio__label--body1">NA experienced</span>
+                      </label>
+                    </div>
+
+                    <div class="o-layout__item u-1/4">
+                      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="reason-3">
+                        <input type="radio" id="reason-3" class="mdl-radio__button" name="reason" value="CANNOT_LOCATE" />
+                        <span class="mdl-radio__label mdl-radio__label--body1">Cannot locate</span>
+                      </label>
+                    </div>
+
+                    <div class="o-layout__item u-1/4">
+                      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="reason-4">
+                        <input type="radio" id="reason-4" class="mdl-radio__button" name="reason" value="NOT_APPRO_RECENT_REFEREE" />
+                        <span class="mdl-radio__label mdl-radio__label--body1">NA recent referee</span>
+                      </label>
+                    </div>
+
+                    <div class="o-layout__item u-1/4">
+                      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="reason-5">
+                        <input type="radio" id="reason-5" class="mdl-radio__button" name="reason" value="AUTHOR_NOT_APPROVED" />
+                        <span class="mdl-radio__label mdl-radio__label--body1">Author not approved</span>
+                      </label>
+                    </div>
+
+                    <div class="o-layout__item u-1/4">
+                      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="reason-6">
+                        <input type="radio" id="reason-6" class="mdl-radio__button" name="reason" value="AUTHOR_EXCLUDE" />
+                        <span class="mdl-radio__label mdl-radio__label--body1">Author Exclude</span>
+                      </label>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              
+              <div class="o-layout u-mb--3">
+                <div class="mdl-typography--body-2 o-layout__item u-1/6">Contact author?</div>
+                <div class="o-layout__item">
+                  <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="contact-yes">
+                    <input type="radio" id="contact-yes" class="mdl-radio__button" name="contact" value="true" checked="checked" />
+                    <span class="mdl-radio__label mdl-radio__label--body1">Yes</span>
+                  </label>
+                </div>
+                <div class="o-layout__item">
+                  <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="contact-no">
+                    <input type="radio" id="contact-no" class="mdl-radio__button" name="contact" value="false" />
+                    <span class="mdl-radio__label mdl-radio__label--body1">No</span>
+                  </label>
+                </div>
+
+                <!-- Author informed <time datetime="2019-11-13T13:03:00">13 Nov 2019</time> -->
+              </div>
+
+              <div class="u-mb--3">
+                <div class="mdl-typography--subhead">Affiliations</div>
+                <ul class="c-editorial-list c-counter">
+                  <li class="c-editorial-list__item c-counter__item c-counter__item--override u-mb--1/2" data-counter="1">Cambridge Vascular Unit, Cambridge, UK</li>
+                </ul>
+              </div>
+
+              <div>
+                <div class="mdl-typography--subhead">Articles Authored</div>
+                <ul class="c-editorial-list c-counter">
+                  <li class="c-editorial-list__item c-counter__item c-counter__item--override u-mb--1/2" data-counter="1">
+                    <div class="o-media o-media--sm o-media--reverse">
+                      <div class="o-media__img">
+                        <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon js-confirm-action" title="Remove">
+                          <i class="material-icons">delete</i>
+                        </button>
+                      </div>
+                      <div class="o-media__body">Arefalk G, Hergens MP, Ingelsson E, Arnlöv J, Michaëlsson K, Lind L, Ye W, Nyrén O, Lambe M, Sundström J: Smokeless tobacco (snus) and risk of heart failure: results from two Swedish cohorts.<i>Eur J Prev Cardiol</i>. 2012; <b>19</b> (5): 1120-7 <a href="">PubMed Abstract</a> | <a href="">Publisher Full Text</a></div>
+                    </div>
+                  </li>
+                </ul>
+                <div class="o-layout o-layout--minor-center">
+                  <div class="o-layout__item u-auto" style="margin-left: auto;">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      <label class="mdl-textfield__label" for="pmid-doi">Enter article PMID or DOI</label>
+                      <input type="text" id="pmid-doi" class="mdl-textfield__input">
+                    </div>
+                  </div>
+                  <div class="o-layout__item">
+                    <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" title="Lookup" data-action="">
+                      <i class="material-icons">search</i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+            </form>
+          </div>
+          <footer class="_mdl-layout c-console__ftr o-flex o-flex--reverse js-console-footer">
+            <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored c-console__btn js-console-close">Save &amp; Close</button>
+            <button type="button" class="mdl-button mdl-js-button c-console__btn js-console-reset">Cancel</button>
+          </footer>
+        </section>
+      </div>
+    </div>
+
+    <script src="../common/js/namespace.js"></script>
+    <script src="../common/js/constants.js"></script>
+    <script src="../common/js/utilities.js"></script>
+    <script src="../common/js/mdl.min.js"></script>
+    <script src="../common/js/mdl-helper.js"></script>
+  </body>
+</html>

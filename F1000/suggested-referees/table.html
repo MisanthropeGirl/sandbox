@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../common/css/Roboto.css">
+    <link rel="stylesheet" href="../common/css/material-icons.css">
+    <link rel="stylesheet" href="../common/css/mdl.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Suggested Referees</title>
+  </head>
+  <body>
+    <main>
+      <div class="_mdl-layout">
+        <div class="mdl-expandingsection">
+          <div class="mdl-expandingsection__item is-open">
+            <div class="mdl-expandingsection__expander mdl-js-expandingsection is-open">
+              <div class="mdl-expandingsection__title mdl-typography--title">Suggested Referees (pending decision/unsuitable)</div>
+              <i class="mdl-expandingsection__icon--expand material-icons">&#xE5CF;</i>
+              <i class="mdl-expandingsection__icon--collapse material-icons">&#xE5CE;</i>
+            </div>
+            <div class="mdl-expandingsection__content is-open js-referees-suggested">
+
+              <div class="o-flex o-flex--space-between o-flex--cross-center u-mb--1">
+                <div class="mdl-select mdl-js-select mdl-select--floating-label">
+                  <select class="mdl-select__input" id="filterBySuggester" name="filterBySuggester">
+                    <option value=""></option>
+                    <option value="SUGGEST_BY_REFEREE">Referee</option>
+                    <option value="SUGGEST_BY_AUTHOR">Author</option>
+                    <option value="SUGGEST_BY_EDITOR">Editor</option>
+                  </select>
+                  <label class="mdl-select__label" for="filterBySuggester">Filter by Suggester</label>
+                </div>
+
+                <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" data-action="referee-rejection-notification">
+                  <i class="material-icons">email</i>
+                  <span class="">Rejection Notification</span>
+                </button>
+              </div>
+
+              <table class="o-table o-table--border o-table--cell-border u-mb--1 js-referees-suggested-table">
+                <thead>
+                  <tr>
+                    <th style="width: 107px;">Suggested by</th>
+                    <th>Referee</th>
+                    <th>Decision</th>
+                    <th style="width: 135px;">Actions</th>
+                    <th style="width: 147px;">More Information</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr data-id="21363">
+                    <td>Editor</td>
+                    <td>
+                      bob bob<br />
+                      <a href="mailto:bob@bob.com">bob@bob.com</a><br />
+                      Active
+                    </td>
+                    <td>None</td>
+                    <td class="u-center">
+                      <!-- <div class="o-layout o-layout--flush o-layout--wrap">
+                        <div class="o-layout__item u-1/1 u-mb--1"> -->
+                        <div class="u-ib u-mb--1 u-mr--1/2">
+                          <a href="edit.html">
+                            <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" data-action="referee-edit" title="Edit">
+                              <i class="material-icons">edit</i>
+                            </button>
+                          </a>
+                        </div>
+                        <div class="u-ib u-mb--1">
+                          <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" data-action="referee-notes" title="Remove">
+                            <i class="material-icons">delete</i>
+                          </button>
+                        </div>
+                        <br />
+                        <!-- < class="o-layout__item u-1/1"> -->
+                        <div class="u-ib u-mr--1/2">
+                          <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" data-action="referee-accept" title="Appropriate">
+                            <i class="material-icons">done</i>
+                          </button>
+                        </div class="u-ib u-mr--1/2">
+                          <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" data-action="referee-awaiting" title="Awaiting Author">
+                            <i class="material-icons">help</i>
+                          </button>
+                        </div>
+                        <div class="u-ib u-mr--1/2">
+                          <a href="not-appropriate.html">
+                            <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" data-action="referee-decline" title="Not Appropriate">
+                              <i class="material-icons">block</i>
+                            </button>
+                          </a>
+                        </div>
+                        <div class="u-ib">
+                          <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" disabled="disabled" data-action="referee-notes" title="Return to Quarantine">
+                            <i class="material-icons">undo</i>
+                          </button>
+                        </div>
+                        <!-- </div>
+                      </div> -->
+                    </td>
+                    <td>
+                      <ul class="o-list-bare">
+                        <li>
+                          <btn class="o-btn o-btn--link" data-id="21363">Notes</btn>
+                        </li>
+                        <li>
+                          <a href="/editor/referee/summary/21363">Reviewer Summary</a>
+                        </li>
+                        <li>
+                          <a href="/editor/referee/21363?articleId=487243">Reviewer Details</a>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr data-id="8214">
+                    <td>Editor</td>
+                    <td>
+                      <div class="o-media o-media--reverse o-media--sm">
+                        <i class="o-media__img material-icons orange">warning</i>
+                        <div class="o-media__body">
+                          Ros Dignon<br />
+                          <a href="mailto:ros.dignon@f1000.com">ros.dignon@f1000.com</a><br />
+                          Active
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="u-mb--1">
+                        <strong>Not Appropriate</strong><br />
+                        NA Subject
+                      </div>
+                      <fieldset>
+                        <legend>Contact author?</legend>
+                        <div class="o-layout">
+                          <div class="o-layout__item">
+                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="contact-8214-yes">
+                              <input type="radio" id="contact-8214-yes" class="mdl-radio__button" name="contact-8214" value="true" checked="checked"/>
+                              <span class="mdl-radio__label mdl-radio__label--body1">Yes</span>
+                            </label>
+                          </div>
+                          <div class="o-layout__item">
+                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="contact-8214-no">
+                              <input type="radio" id="contact-8214-no" class="mdl-radio__button" name="contact-8214" value="false" />
+                              <span class="mdl-radio__label mdl-radio__label--body1">No</span>
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </td>
+                    <td class="u-center">
+                      <!-- <div class="o-layout o-layout--flush o-layout--wrap">
+                        <div class="o-layout__item u-1/1 u-mb--1"> -->
+                        <div class="u-ib u-mb--1 u-mr--1/2">
+                          <a href="edit.html">
+                            <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" data-action="referee-edit" title="Edit">
+                              <i class="material-icons">edit</i>
+                            </button>
+                          </a>
+                        </div>
+                        <div class="u-ib u-mb--1">
+                          <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" data-action="referee-notes" title="Remove">
+                            <i class="material-icons">delete</i>
+                          </button>
+                        </div>
+                        <br />
+                        <!-- </div>
+                        <div class="o-layout__item u-1/1"> -->
+                        <div class="u-ib u-mr--1/2">
+                          <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" data-action="referee-accept" disabled="disabled" title="Appropriate">
+                            <i class="material-icons">done</i>
+                          </button>
+                        </div>
+                        <div class="u-ib u-mr--1/2">
+                          <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" data-action="referee-awaiting" disabled="disabled" title="Awaiting Author">
+                            <i class="material-icons">help</i>
+                          </button>
+                        </div>
+                        <div class="u-ib u-mr--1/2">
+                          <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" data-action="referee-decline" disabled="disabled" title="Not Appropriate">
+                            <i class="material-icons">block</i>
+                          </button>
+                        </div>
+                        <div class="u-ib">
+                          <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" data-action="referee-appropriate" title="Return to Quarantine">
+                            <i class="material-icons">undo</i>
+                          </button>
+                        </div>
+                        <!-- </div>
+                      </div> -->
+                    </td>
+                    <td>
+                      <ul class="o-list-bare">
+                        <li>
+                          <btn class="o-btn o-btn--link" data-id="8214">Notes</btn>
+                        </li>
+                        <li>
+                          <a href="/editor/referee/summary/8214">Reviewer Summary</a>
+                        </li>
+                        <li>
+                          <a href="/editor/referee/8214?articleId=487243">Reviewer Details</a>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr data-id="24983">
+                    <td>Editor</td>
+                    <td>
+                      Olya Test<br />
+                      <a href="mailto:olya.res.ref1@email.com">olya.res.ref1@email.com</a><br />
+                      Active
+                    </td>
+                    <td>
+                      <div class="u-mb--1">
+                        <strong>Not Appropriate</strong><br />
+                        NA recent referee<br />
+                      </div>
+                      Author informed <time datetime="2019-11-13T13:03:00">13 Nov 2019</time>
+                    </td>
+                    <td class="u-center">
+                      <!-- <div class="o-layout o-layout--flush o-layout--wrap">
+                        <div class="o-layout__item u-1/1 u-mb--1"> -->
+                        <div class="u-ib u-mb--1 u-mr--1/2">
+                          <a href="edit.html">
+                            <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" data-action="referee-edit" title="Edit">
+                              <i class="material-icons">edit</i>
+                            </button>
+                          </a>
+                        </div>
+                        <div class="u-ib u-mb--1">
+                          <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" disabled data-action="referee-notes" title="Remove">
+                            <i class="material-icons">delete</i>
+                          </button>
+                        </div>
+                        <br />
+                        <!-- </div>
+                        <div class="o-layout__item u-1/1"> -->
+                        <div class="u-ib u-mr--1/2">
+                          <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" data-action="referee-accept" disabled="disabled" title="Appropriate">
+                            <i class="material-icons">done</i>
+                          </button>
+                        </div>
+                        <div class="u-ib u-mr--1/2">
+                          <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" data-action="referee-awaiting" disabled="disabled" title="Awaiting Author">
+                            <i class="material-icons">help</i>
+                          </button>
+                        </div>
+                        <div class="u-ib u-mr--1/2">
+                          <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" data-action="referee-decline" disabled="disabled" title="Not Appropriate">
+                            <i class="material-icons">block</i>
+                          </button>
+                        </div>
+                        <div class="u-ib">
+                          <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" data-action="referee-appropriate" title="Return to Quarantine">
+                            <i class="material-icons">undo</i>
+                          </button>
+                        </div>
+                        <!-- </div>
+                      </div> -->
+                    </td>
+                    <td>
+                      <ul class="o-list-bare">
+                        <li>
+                          <btn class="o-btn o-btn--link" data-id="24983">Notes</btn>
+                        </li>
+                        <li>
+                          <a href="/editor/referee/summary/24983">Reviewer Summary</a>
+                        </li>
+                        <li>
+                          <a href="/editor/referee/24983?articleId=487243">Reviewer Details</a>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="u-mb--1 u-right">
+                <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" data-action="referee-rejection-notification">
+                  <i class="material-icons">email</i>
+                  <span class="">Rejection Notification</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="../common/js/namespace.js"></script>
+    <script src="../common/js/constants.js"></script>
+    <script src="../common/js/utilities.js"></script>
+    <script src="../common/js/mdl.min.js"></script>
+    <script src="../common/js/mdl-helper.js"></script>
+  </body>
+</html>

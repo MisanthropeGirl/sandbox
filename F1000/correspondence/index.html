@@ -1,0 +1,497 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Correspondence</title>
+
+    <link rel="stylesheet" href="../common/css/Roboto.css">
+    <link rel="stylesheet" href="../common/css/material-icons.css">
+    <link rel="stylesheet" href="../common/css/mdl.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+  </head>
+  <body>
+    <main class="_mdl-layout">
+      <header class="mdl-typography--headline">
+        <div class="o-media o-media--center o-media--reverse">
+          <button type="button" class="o-media__img mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect mdl-button--icon mini-icon js-file-upload" title="Add Email" aria-label="add email" data-action="file-upload-open">
+            <i class="material-icons">&#xE145;</i> <!-- Add -->
+          </button>
+          <span class="o-media__bdy">Correspondence</span>
+        </div>
+      </header>
+
+      <section class="u-mb--4 js-expandable-table-container" data-correspondence-type="author">
+        <header>
+          <h2 class="mdl-typography--title">Author</h2>
+        </header>
+
+        <table class="u-mb--2" data-author="faith-hill" data-author-firstname="faith" data-author-lastname="hill">
+          <caption class="mdl-typography--subhead u-pb--1">
+            <div class="o-media o-media--center o-media--reverse">
+              <i class="o-media__img material-icons js-expandable-table-icon">keyboard_arrow_up</i>
+              <div class="o-media__bdy">
+                <div class="o-media o-media--center">
+                  <a href="mailto:faith.hill@f1000.com" class="o-media__img" title="Contact Faith Hill">
+                    <i class="material-icons material-icons--fab">email</i>
+                  </a>
+                  <span class="o-media__bdy">Faith Hill (Submitting Author)</span>
+                </div>
+              </div>
+            </div>
+          </caption>
+          <thead>
+            <tr>
+              <th scope="row">Sender</th>
+              <th scope="row">Recipient</th>
+              <th scope="row">Subject</th>
+              <th scope="row">Date</th>
+              <th scope="row">Attachments</th>
+              <th scope="row">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-timestamp="1520871420">
+              <td>faith.hill@soul2soul.com</td>
+              <td>C2C</td>
+              <td>Re: C2C 2023 [Gates-ARTID1234-A]</td>
+              <td>
+                <time datetime="2018-03-12T16:17:56">12 March 2018 @ 16:17</time>
+              </td>
+              <td>
+                <div class="o-media o-media--center">
+                  <img src="img/icons/pdf.png" alt="[PDF]" class="o-media__img" />
+                  <span class="o-media__bdy">Filename</span>
+                </div>
+              </td>
+              <td class="u-nowrap">
+                <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" title="View email">
+                  <i class="material-icons">markunread_mailbox</i>
+                </button>
+                <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" title="View or add notes">
+                  <i class="material-icons">note_add</i>
+                </button>
+              </td>
+            </tr>
+            <tr data-timestamp="1520845200">
+              <td>C2C</td>
+              <td>faith.hill@soul2soul.com</td>
+              <td>C2C 2023 [Gates-ARTID1234-A]</td>
+              <td>
+                <time datetime="2018-03-12T09:00:00">12 March 2018 @ 09:00</time>
+              </td>
+              <td></td>
+              <td class="u-nowrap">
+                <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" title="View email">
+                  <i class="material-icons">markunread_mailbox</i>
+                </button>
+                <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" title="View or add notes">
+                  <i class="material-icons">note_add</i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="u-mb--2" data-author="tim-mcgraw" data-author-firstname="tim" data-author-lastname="mcgraw">
+          <caption class="mdl-typography--subhead u-pb--1">
+            <div class="o-media o-media--center o-media--reverse">
+              <i class="o-media__img material-icons js-expandable-table-icon">keyboard_arrow_up</i>
+              <div class="o-media__bdy">
+                <div class="o-media o-media--center">
+                  <a href="mailto:tim.mcgraw@f1000.com" class="o-media__img" title="Contact Tim McGraw">
+                    <i class="material-icons material-icons--fab">email</i>
+                  </a>
+                  <span class="o-media__bdy">Tim McGraw (Corresponding Author)</span>
+                </div>
+              </div>
+            </div>
+          </caption>
+          <thead>
+            <tr>
+              <th scope="row">Sender</th>
+              <th scope="row">Recipient</th>
+              <th scope="row">Subject</th>
+              <th scope="row">Date</th>
+              <th scope="row">Attachments</th>
+              <th scope="row">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- <tr>
+              <td>tim.mcgraw@soul2soul.com</td>
+              <td>C2C</td>
+              <td>Re: C2C 2023</td>
+              <td>
+                <time datetime="2018-03-12T16:17:56">12 March 2018 @ 16:17</time>
+              </td>
+              <td></td>
+              <td class="u-nowrap">
+                <ul class="o-list-bare">
+                  <li>
+                    <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon">
+                      <i class="material-icons">markunread_mailbox</i>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon">
+                      <i class="material-icons">note_add</i>
+                    </button>
+                  </li>
+                </ul>
+              </td>
+            </tr> -->
+            <tr data-timestamp="1520845200">
+              <td>C2C</td>
+              <td>tim.mcgraw@soul2soul.com</td>
+              <td>C2C 2023 [Gates-ARTID1234-A]</td>
+              <td>
+                <time datetime="2018-03-12T09:00:00">12 March 2018 @ 09:00</time>
+              </td>
+              <td></td>
+              <td class="u-nowrap">
+                <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" title="View email">
+                  <i class="material-icons">markunread_mailbox</i>
+                </button>
+                <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" title="View or add notes">
+                  <i class="material-icons">note_add</i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="u-mb--4 js-expandable-table-container" data-correspondence-type="referee">
+        <header>
+          <h2 class="mdl-typography--title">Referee</h2>
+        </header>
+
+        <table class="u-mb--2" data-author="kip-moore" data-author-firstname="kip" data-author-lastname="moore">
+          <caption class="mdl-typography--subhead u-pb--1">
+            <div class="o-media o-media--center o-media--reverse">
+              <i class="o-media__img material-icons js-expandable-table-icon">keyboard_arrow_up</i>
+              <div class="o-media__bdy">
+                <div class="o-media o-media--center">
+                  <a href="mailto:kip.moore@f1000.com" class="o-media__img" title="Contact Kip Moore">
+                    <i class="material-icons material-icons--fab u-block">email</i>
+                  </a>
+                  <span class="o-media__bdy">Kip Moore (Status: Agreed)</span>
+                </div>
+              </div>
+            </div>
+          </caption>
+          <thead>
+            <tr>
+              <th scope="row">Sender</th>
+              <th scope="row">Recipient</th>
+              <th scope="row">Subject</th>
+              <th scope="row">Date</th>
+              <th scope="row">Attachments</th>
+              <th scope="row">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-timestamp="1520871420">
+              <td>kip@kipmoore.net</td>
+              <td>C2C</td>
+              <td>Re: C2C 2021 [Gates-ARTID1234-R]</td>
+              <td>
+                <time datetime="2018-03-12T16:17:56">12 March 2018 @ 16:17</time>
+              </td>
+              <td>
+                <div class="o-media o-media--center">
+                  <img src="img/icons/pdf.png" alt="[PDF]" class="o-media__img" />
+                  <span class="o-media__bdy">Filename</span>
+                </div>
+              </td>
+              <td class="u-nowrap">
+                <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" title="View email">
+                  <i class="material-icons">markunread_mailbox</i>
+                </button>
+                <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" title="View or add notes">
+                  <i class="material-icons">note_add</i>
+                </button>
+              </td>
+            </tr>
+            <tr data-timestamp="1520845200">
+              <td>C2C</td>
+              <td>kip@kipmoore.net</td>
+              <td>C2C 2021 [Gates-ARTID1234-R]</td>
+              <td>
+                <time datetime="2018-03-12T09:00:00">12 March 2018 @ 09:00</time>
+              </td>
+              <td></td>
+              <td>
+                <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" title="View email">
+                  <i class="material-icons">markunread_mailbox</i>
+                </button>
+                <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" title="View or add notes">
+                  <i class="material-icons">note_add</i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="u-mb--2" data-author="margo-price" data-author-firstname="margo" data-author-lastname="price">
+          <caption class="mdl-typography--subhead u-pb--1">
+            <div class="o-media o-media--center o-media--reverse">
+              <i class="o-media__img material-icons js-expandable-table-icon">keyboard_arrow_up</i>
+              <div class="o-media__bdy">
+                <div class="o-media o-media--center">
+                  <a href="mailto:margo.price@f1000.com" class="o-media__img" title="Contact Margo Price">
+                    <i class="material-icons material-icons--fab u-block">email</i>
+                  </a>
+                  <span class="o-media__bdy">Margo Price (Status: No Response)</span>
+                </div>
+              </div>
+            </div>
+          </caption>
+          <thead>
+            <tr>
+              <th scope="row">Sender</th>
+              <th scope="row">Recipient</th>
+              <th scope="row">Subject</th>
+              <th scope="row">Date</th>
+              <th scope="row">Attachments</th>
+              <th scope="row">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-timestamp="1520871420">
+              <td>margo@margoprice.net</td>
+              <td>C2C</td>
+              <td>Re: C2C 2021 [Gates-ARTID1234-R]</td>
+              <td>
+                <time datetime="2018-03-12T16:17:56">12 March 2018 @ 16:17</time>
+              </td>
+              <td>
+                <div class="o-media o-media--center">
+                  <img src="img/icons/pdf.png" alt="[PDF]" class="o-media__img" />
+                  <span class="o-media__bdy">Filename</span>
+                </div>
+              </td>
+              <td class="u-nowrap">
+                <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" title="View email">
+                  <i class="material-icons">markunread_mailbox</i>
+                </button>
+                <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" title="View or add notes">
+                  <i class="material-icons">note_add</i>
+                </button>
+              </td>
+            </tr>
+            <tr data-timestamp="1520845200">
+              <td>C2C</td>
+              <td>margo@margoprice.net</td>
+              <td>C2C 2021 [Gates-ARTID1234-R]</td>
+              <td>
+                <time datetime="2018-03-12T09:00:00">12 March 2018 @ 09:00</time>
+              </td>
+              <td></td>
+              <td class="u-nowrap">
+                <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" title="View email">
+                  <i class="material-icons">markunread_mailbox</i>
+                </button>
+                <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" title="View or add notes">
+                  <i class="material-icons">note_add</i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="u-mb--4" data-correspondence-type="miscellaneous">
+        <header>
+          <h2 class="mdl-typography--title">Miscellaneous</h2>
+        </header>
+
+        <table class="u-mb--2">
+          <thead>
+            <tr>
+              <th scope="row">Sender</th>
+              <th scope="row">Recipient</th>
+              <th scope="row">Subject</th>
+              <th scope="row">Date</th>
+              <th scope="row">Attachments</th>
+              <th scope="row">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-timestamp="1426496400">
+              <td>C2C</td>
+              <td>fgl@fgl.net</td>
+              <td>Never again</td>
+              <td>
+                <time datetime="2015-03-16T09:00:00">16 March 2015 @ 09:00</time>
+              </td>
+              <td></td>
+              <td class="u-nowrap">
+                <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" title="View email">
+                  <i class="material-icons">markunread_mailbox</i>
+                </button>
+                <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" title="View or add notes">
+                  <i class="material-icons">note_add</i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      </div>
+    </main>
+    
+    <div class="o-overlay o-overlay--upload js-overlay-upload is-hidden" hidden="hidden">
+      <div class="o-overlay__content o-overlay__content--upload">
+        <div>
+          <i class="material-icons">file_upload</i>
+        </div>
+
+        <div>Drop your files anywhere to upload</div>
+
+        <div>
+          <input type="file" class="js-upload-input is-hidden" hidden="hidden" />
+          <button class="primary" data-action="file-upload-browse">Browse</button>
+          <button class="secondary" data-action="file-upload-cancel">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="o-overlay o-overlay--process js-overlay-process is-hidden" hidden="hidden">
+      <form class="js-file-form">
+        <section class="_mdl-layout o-overlay__content o-overlay__content--process">
+          <header>
+            <aside class="js-file-number is-hidden" hidden="hidden">Email X of Y</aside>
+            <h1 class="js-file-name">File name</h1>
+          </header>
+          <div class="o-grid c-file-options">
+            <div style="grid-row: 1; grid-column: 1;">
+              <div class="mdl-select mdl-js-select mdl-select--floating-label full-width">
+                <label class="mdl-select__label" for="correspondentType">Add to</label>
+                <select class="mdl-select__input js-correspondence-type" name="type" id="correspondentType" required="required">
+                  <option value=""></option>
+                  <option value="author">Author</option>
+                  <option value="referee">Referee</option>
+                  <option value="miscellaneous">Miscellaneous</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="grid-row: 1; grid-column: 2;">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" name="author" id="correspondentName" list="correspondents" required="required" value="" />
+                <label class="mdl-textfield__label" for="correspondentName">Correspondent</label>
+                <datalist id="correspondents">
+                  <option>Faith Hill</option>
+                  <option>Tim McGraw</option>
+                  <option>Kip Moore</option>
+                  <option>Margo Price</option>
+                </datalist>
+              </div>
+            </div>
+
+            <div style="grid-row: 2; grid-column: 1;">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="email" name="sender" id="correspondentSender" required="required" value="" />
+                <label class="mdl-textfield__label" for="correspondentSender">Sender</label>
+              </div>
+            </div>
+
+            <div style="grid-row: 2; grid-column: 2;">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="email" name="recipient" id="correspondentRecipient" required="required" value="" />
+                <label class="mdl-textfield__label" for="correspondentRecipient">Recipient</label>
+              </div>
+            </div>
+
+            <div style="grid-row: 3; grid-column: 1;">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" name="subject" id="correspondentSubject" required="required" value="" />
+                <label class="mdl-textfield__label" for="correspondentSubject">Subject</label>
+              </div>
+            </div>
+
+            <div style="grid-row: 3; grid-column: 2;">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label has-placeholder">
+                <input class="mdl-textfield__input" type="datetime-local" name="datetime" id="correspondentDate" required="required" value="" />
+                <label class="mdl-textfield__label" for="correspondentDate">Date</label>
+              </div>
+            </div>
+          </div>
+          <footer>
+            <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" data-action="file-process-cancel">Cancel</button>
+            <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" data-action="file-process-done">Next</button>
+          </footer>
+        </section>
+      </form>
+    </div>
+
+    <!-- <template id="templateSection">
+      <section class="u-mb--4 js-expandable-table-container">
+        <header>
+          <h2 class="mdl-typography--title">Miscellaneous</h2>
+        </header>
+      </section>
+    </template> -->
+
+    <template id="templateTable">
+      <table class="u-mb--2">
+        <caption class="mdl-typography--subhead u-pb--1" title="Collapse conversation">
+          <div class="o-media o-media--center o-media--reverse">
+            <i class="o-media__img material-icons js-expandable-table-icon">keyboard_arrow_up</i>
+            <div class="o-media__bdy">
+              <div class="o-media o-media--center">
+                <a href="mailto:" class="o-media__img" title="Contact ">
+                  <i class="material-icons material-icons--fab u-block">email</i>
+                </a>
+                <span class="o-media__bdy"></span>
+              </div>
+            </div>
+          </div>
+        </caption>
+        <thead>
+          <tr>
+            <th scope="row">Sender</th>
+            <th scope="row">Recipient</th>
+            <th scope="row">Subject</th>
+            <th scope="row">Date</th>
+            <th scope="row">Attachments</th>
+            <th scope="row">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </template>
+
+    <template id="templateTableRow">
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="u-nowrap">
+          <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" title="View email">
+            <i class="material-icons">markunread_mailbox</i>
+          </button>
+          <button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon mini-icon" title="View or add notes">
+            <i class="material-icons">note_add</i>
+          </button>
+        </td>
+      </tr>
+    </template>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+    <script src="../common/js/namespace.js"></script>
+    <script src="../common/js/constants.js"></script>
+    <script src="../common/js/utilities.js"></script>
+    <script src="../common/js/mdl.min.js"></script>
+    <script src="../common/js/mdl-helper.js"></script>
+    <script src="../common/js/expanding-table.js"></script>
+    <script src="./js/files.js"></script>
+    <script src="./js/files.correspondence.js"></script>
+  </body>
+</html>

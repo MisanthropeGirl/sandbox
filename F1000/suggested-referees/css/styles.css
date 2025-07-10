@@ -1,0 +1,428 @@
+html {
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  font-size: 0.8125rem;
+  color: #333;
+}
+
+main {
+  max-width: 990px;
+  margin: 1rem auto;
+}
+
+a {
+  color: #00b291;
+  text-decoration: none;
+}
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+
+.o-flex {
+  display: flex;
+}
+
+  .o-flex--inline {
+    display: inline-flex;
+  }
+
+  .o-flex--column {
+    flex-direction: column;
+  }
+
+  .o-flex--reverse {
+    flex-direction: row-reverse;
+  }
+
+  .o-flex--wrap {
+    flex-wrap: wrap;
+  }
+
+  .o-flex--space-between {
+    justify-content: space-between;
+  }
+
+  .o-flex--cross-center {
+    align-items: center;
+  }
+
+
+/* see:*/
+/* http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/*/
+/* https://philipwalton.github.io/solved-by-flexbox/demos/media-object/*/
+
+
+.o-media {
+  display: flex;
+}
+
+  .o-media__img {
+    margin-right: $gutter--sm;
+  }
+
+  .o-media--sm .o-media__img {
+    margin-right: 8px;
+  }
+
+  .o-media--md .o-media__img {
+    margin-right: 16px;
+  }
+
+  .o-media__body {
+    flex: 1;
+  }
+
+  .o-media--center {
+    align-items: center;
+  }
+
+  .o-media--bottom {
+    align-items: flex-end;
+  }
+
+  .o-media--reverse {
+    flex-direction: row-reverse;
+  }
+
+  .o-media--reverse > .o-media__img {
+    margin-right: 0;
+    margin-left: $gutter--sm;
+  }
+
+  .o-media--reverse.o-media--sm > .o-media__img {
+    margin-left: 8px;
+  }
+
+  .o-media--reverse.o-media--md > .o-media__img {
+    margin-left: 16px;
+  }
+
+
+.o-layout {
+  box-sizing: border-box;
+  display: flex;
+  margin-left: -24px;
+}
+
+  .o-layout__item {
+    box-sizing: border-box;
+    padding-left: 24px;
+  }
+
+  .o-layout--flush {
+    margin-left: 0;
+  }
+
+    .o-layout--flush > .o-layout__item {
+      padding-left: 0;
+    }
+
+  .o-layout--wrap {
+    flex-wrap: wrap;
+  }
+
+  .o-layout--minor-center {
+    align-content: center;
+    align-items: center;
+  }
+
+
+.o-list-bare {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+
+.o-btn {
+  box-sizing: border-box;
+  border: 1px solid #cccccc;
+  border-radius: 2px;
+  padding: 4px 8px;
+}
+
+  .o-btn--link {
+    margin: 0;
+    border-color: transparent;
+    padding: 0;
+    background-color: transparent;
+    font-weight: normal;
+    color: #00b291;
+  }
+
+  .o-btn--link:hover,
+  .o-btn--link:active {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .o-btn--link.is-disabled {
+    pointer-events: none;
+  }
+
+.o-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+  
+  .o-table caption {
+    padding: 8px;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .o-table th {
+    text-align: left;
+  }
+
+  .o-table thead th {
+    background-color: #f0f0f0;
+    color: rgba(0,0,0,.54);
+  }
+
+  .o-table td,
+  .o-table th {
+    padding: 8px;
+    vertical-align: top;
+  }
+
+  .o-table a {
+    color: #00b291;
+    font-weight: normal;
+  }
+
+  .o-table time {
+    white-space: nowrap;
+  }
+
+  .o-table--fixed {
+    table-layout: fixed;
+  }
+
+  .o-table--border {
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    border-width: 1px 0 0 1px;
+  }
+
+  .o-table--row-border tr {
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    border-width: 0 1px 1px 0;
+  }
+
+  .o-table--cell-border td,
+  .o-table--cell-border th {
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    border-width: 0 1px 1px 0;
+  }
+
+
+.o-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+
+  background-color: #000;
+  opacity: 0.7;
+}
+
+
+.o-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  
+  width: calc(100% - 24px);
+  max-width: 960px;
+  height: calc(100% - 24px);
+  max-height: 672px;
+  overflow-y: hidden;
+
+  border-radius: 5px;
+
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+  .o-modal--auto {
+    height: auto;
+    width: auto;
+  }
+
+  .o-modal--small {
+    max-width: 40rem;
+    max-height: 30rem;
+  }
+
+  .o-modal__body {
+    height: 100%;
+    overflow-y: auto;
+  }
+
+
+.c-console {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+  .c-console__hdr {
+    background-color: rgba(0, 178, 145, 0.1);
+  }
+
+    .c-console__ttl {
+      margin: 0;
+      padding: 0 16px;
+      font-weight: 400;
+      line-height: 4.5rem;
+    }
+
+    .c-console__fixed {
+      padding: 16px 24px;
+    }
+
+    .c-console__bdy {
+      flex: 1;
+      padding: 16px 24px;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+
+    .c-console__message {
+      padding: 16px 24px;
+    }
+
+    .c-console__ftr {
+      border-top: 1px solid rgba(0, 0, 0, 0.16);
+      padding: 12px 16px;
+    }
+
+    .c-console__btn:nth-child(n+2) {
+      margin-right: 16px;
+    }
+
+
+.c-editorial-list {
+  margin: 0;
+  padding: 0;
+}
+
+  .c-editorial-list__item {
+    padding: 8px;
+    background-color: rgba(0, 178, 145, 0.1);
+  }
+
+
+.c-counter {
+  list-style-type: none;
+  counter-reset: step;
+}
+
+  .c-counter__item {
+    counter-increment: step;
+    position: relative;
+    margin-left: 40px;
+  }
+
+  .c-counter__item::before {
+    content: counter(step) '.';
+
+    position: absolute;
+    left: -40px;
+
+    display: block;
+    width: 32px;
+    text-align: right;
+
+  }
+
+  .c-counter__item--override::before {
+    content: attr(data-counter) '.';
+  }
+
+
+.u-1\/1 {
+  width: 100%;
+}
+
+.u-1\/2 {
+  width: 50%;
+}
+
+.u-1\/3 {
+  width: calc(100% / 3);
+}
+
+.u-1\/4 {
+  width: 25%;
+}
+
+.u-1\/5 {
+  width: 20%;
+}
+
+.u-1\/6 {
+  width: calc(100% / 6);
+}
+
+.u-5\/6 {
+  width: calc(100% * 5/6);
+}
+
+.u-mb--1\/2 {
+  margin-bottom: 4px;
+}
+
+.u-mb--1 {
+  margin-bottom: 8px;
+}
+
+.u-mb--2 {
+  margin-bottom: 16px;
+}
+
+.u-mb--3 {
+  margin-bottom: 24px;
+}
+
+.u-mr--1\/2 {
+  margin-right: 4px;
+}
+
+.u-mr--1 {
+  margin-right: 8px;
+}
+
+.u-ib {
+  display: inline-block;
+}
+
+.u-center {
+  text-align: center;
+}
+
+.u-right {
+  text-align: right;
+}
+
+.u-font-size--title {
+  font-size: 1.25rem;
+}
+
+.orange {
+  color: #f2673c;
+}

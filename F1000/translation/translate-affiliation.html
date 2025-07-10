@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../common/css/Roboto.css">
+    <link rel="stylesheet" href="../common/css/material-icons.css">
+    <link rel="stylesheet" href="../common/css/mdl.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <title>Translate Modal</title>
+  </head>
+  <body>
+
+    <div class="o-overlay js-overlay"></div>
+    <div class="o-modal js-modal" style="width: 45rem;">
+      <div class="o-modal__body js-modal-body">
+        <section class="c-console js-console">
+          <header class="c-console__hdr js-console-header">
+            <h1 class="c-console__ttl u-font-size--title js-console-title">Translate Affiliation</h1>
+          </header>
+          <div class="_mdl-layout c-console__bdy js-console-body">
+            <form>
+
+              <div class="mdl-typography--subhead u-mb--1/2">Department</div>
+              <div class="o-layout">
+                <div class="o-layout__item u-1/2">
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="affiliation-department-field-original" readonly="readonly" value="">
+                    <label class="mdl-textfield__label" for="affiliation-department-field-original">English</label>
+                  </div>
+                </div>
+                <div class="o-layout__item u-1/2">
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" name="" id="affiliation-department-field-translation" lang="ja" value="">
+                    <label class="mdl-textfield__label" for="affiliation-department-field-translation">Translation</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mdl-typography--subhead u-mb--1/2">Institution</div>
+              <div class="o-layout">
+                <div class="o-layout__item u-1/2">
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="affiliation-institution-field-original" readonly="readonly" value="University College London">
+                    <label class="mdl-textfield__label" for="affiliation-institution-field-original">English</label>
+                  </div>
+                </div>
+                <div class="o-layout__item u-1/2">
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" name="" id="affiliation-institution-field-translation" lang="ja" value="">
+                    <label class="mdl-textfield__label" for="affiliation-institution-field-translation">Translation</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mdl-typography--subhead u-mb--1/2">Place</div>
+              <div class="o-layout">
+                <div class="o-layout__item u-1/2">
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="affiliation-place-field-original" readonly="readonly" value="London">
+                    <label class="mdl-textfield__label" for="affiliation-place-field-original">English</label>
+                  </div>
+                </div>
+                <div class="o-layout__item u-1/2">
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" name="" id="affiliation-place-field-translation" lang="ja" value="">
+                    <label class="mdl-textfield__label" for="affiliation-place-field-translation">Translation</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mdl-typography--subhead u-mb--1/2">State</div>
+              <div class="o-layout">
+                <div class="o-layout__item u-1/2">
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="affiliation-state-field-original" readonly="readonly" value="">
+                    <label class="mdl-textfield__label" for="affiliation-state-field-original">English</label>
+                  </div>
+                </div>
+                <div class="o-layout__item u-1/2">
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" name="" id="affiliation-state-field-translation" lang="ja" value="">
+                    <label class="mdl-textfield__label" for="affiliation-state-field-translation">Translation</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mdl-typography--subhead u-mb--1/2">Postal/Zip Code</div>
+              <div class="o-layout">
+                <div class="o-layout__item u-1/2">
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="affiliation-zip-field-original" readonly="readonly" value="">
+                    <label class="mdl-textfield__label" for="affiliation-zip-field-original">English</label>
+                  </div>
+                </div>
+                <div class="o-layout__item u-1/2">
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" name="" id="affiliation-zip-field-translation" lang="ja" value="">
+                    <label class="mdl-textfield__label" for="affiliation-zip-field-translation">Translation</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mdl-typography--subhead u-mb--1/2">Country</div>
+              <div class="o-layout">
+                <div class="o-layout__item u-1/2">
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="affiliation-country-field-original" readonly="readonly" value="UK">
+                    <label class="mdl-textfield__label" for="affiliation-country-field-original">English</label>
+                  </div>
+                </div>
+                <div class="o-layout__item u-1/2">
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="affiliation-country-field-translation" lang="ja" readonly="readonly" value="イギリス">
+                    <label class="mdl-textfield__label" for="affiliation-country-field-translation">Translation</label>
+                  </div>
+                </div>
+              </div>
+
+            </form>
+          </div>
+          <footer class="_mdl-layout c-console__ftr o-flex o-flex--reverse js-console-footer">
+            <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored c-console__btn js-console-close">Save &amp; Close</button>
+            <button type="button" class="mdl-button mdl-js-button c-console__btn js-console-reset">Cancel</button>
+          </footer>
+        </section>
+      </div>
+    </div>
+
+    <script src="../common/js/namespace.js"></script>
+    <script src="../common/js/constants.js"></script>
+    <script src="../common/js/utilities.js"></script>
+    <script src="../common/js/mdl.min.js"></script>
+    <script src="../common/js/mdl-helper.js"></script>
+
+  </body>
+</html>

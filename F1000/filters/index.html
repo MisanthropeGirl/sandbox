@@ -1,0 +1,632 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Filters</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link href="https://cdn.jsdelivr.net/gh/mobius1/selectr@latest/dist/selectr.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <form method="GET" action="?">
+      <div class="c-form-field">
+        <select name="websiteId" class="js-article-search-select">
+          <option value="">All platforms</option>
+          <option value="1">F1000Research</option>
+          <option value="2">Wellcome Open Research</option>
+        </select>
+      </div>
+
+      <div class="c-form-field">
+        <div class="c-thesaurus-container js-article-search-thesaurus-container">
+          <select class="js-article-search-select js-article-search-thesaurus" data-placeholder="Subject area">
+            <option value="984" data-children="true">Biology and life sciences</option>
+            <option value="1996" data-children="true">Computer and information sciences</option>
+            <option value="2740" data-children="true">Earth sciences</option>
+            <option value="2774" data-children="true">Ecology and environmental sciences</option>
+            <option value="2997" data-children="true">Engineering and technology</option>
+            <option value="5645" data-children="true">Medicine and health sciences</option>
+            <option value="7138" data-children="true">People and places</option>
+            <option value="7367" data-children="true">Physical sciences</option>
+            <option value="8344" data-children="true">Research and analysis methods</option>
+            <option value="8664" data-children="true">Science policy</option>
+            <option value="9023" data-children="true">Social sciences</option>
+          </select>
+          <!-- <button type="button" class="c-thesaurus-container__btn js-article-search-thesaurus-remove">&#x1F5D9;</button> -->
+        </div>
+      </div>
+
+      <div class="o-layout o-layout--start">
+        <div class="o-layout__itm u-1/1 u-1/2@md c-form-field">
+          <select name="articleTypes" multiple="multiple" class="js-article-search-select" data-placeholder="Article type(s)">
+            <option value="ANTIBODY_VALIDATION_ARTICLE">Antibody Validation Article</option>
+            <option value="CASE_REPORT">Case Report</option>
+            <option value="CLINICAL_PRACTICE_ARTICLE">Clinical Practice Article</option>
+            <option value="CORRESPONDENCE">Correspondence</option>
+            <option value="DATA_NOTE">Data Note</option>
+            <option value="EDITORIAL">Editorial</option>
+            <option value="F1000_FACULTY_CRITIQUE">F1000 Faculty Critique</option>
+            <option value="METHOD_ARTICLE">Method Article</option>
+            <option value="OPINION_ARTICLE">Opinion Article</option>
+            <option value="RESEARCH_ARTICLE">Research Article</option>
+            <option value="RESEARCH_NOTE">Research Note</option>
+            <option value="REVIEW">Review</option>
+            <option value="SOFTWARE_TOOLS">Software Tool Article</option>
+            <option value="STUDY_PROTOCOL">Study Protocol</option>
+            <option value="SYSTEMATIC_REVIEW">Systematic Review</option>
+          </select>
+        </div>
+        <div class="o-layout__itm u-1/1 u-1/2@md c-form-field">
+          <select name="articleClassifications" multiple="multiple" class="js-article-search-select" data-placeholder="Study type(s)">
+            <option value="CLINICAL_TRIAL">Clinical trial</option>
+            <option value="NEGATIVE">Negative/null result</option>
+            <option value="REANALYSIS">Reanalysis</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="js-article-search-rows">
+        <div>
+          <div class="o-layout js-article-search-row">
+            <div class="o-layout__itm c-form-field u-auto">
+              <input type="search" name="fieldSearches[0].fieldValue" class="js-article-search-row-input" placeholder="Search" value="" />
+            </div>
+            <span class="o-layout__itm"> in </span>
+            <div class="o-layout__itm c-form-field u-auto">
+              <select name="fieldSearches[0].fieldName" class="js-article-search-select">
+                <option value="text">All</option>
+                <option value="title">Title</option>
+                <option value="authors">Author</option>
+                <option value="thesaurusTermsNames">Subject</option>
+                <option value="institutions">Institution</option>
+                <option value="authorAffiliations">Author affiliation</option>
+                <option value="competingInterestsText">Competing interests</option>
+                <option value="abstractText">Abstract</option>
+                <option value="fullText">Full text</option>
+                <option value="referees">Referee Name</option>
+                <option value="refereesAffiliations">Referee affiliation</option>
+                <option value="reports">Referee Report</option>
+                <option value="grantInformationText">Grant Funder</option>
+                <option value="commenters">Commenter</option>
+                <option value="commentersAffiliations">Commenter affiliation</option>
+                <option value="comments">Comment text</option>
+              </select>
+            </div>
+            <div class="o-layout__itm">
+              <button type="button" disabled="disabled" class="icon js-article-search-row-remove">-</button>
+              <button type="button" disabled="disabled" class="icon js-article-search-row-add">+</button>
+            </div>
+          </div>
+          <div class="o-layout js-article-search-row-operator is-hidden">
+            <div class="o-layout__itm u-shrink">
+              <select name="fieldSearches[0].logicalOperator" class="js-article-search-select">
+                <option value="AND">and</option>
+                <option value="OR">or</option>
+                <option value="AND NOT">not</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-form-field">
+        <select name="funders" multiple="multiple" class="js-article-search-select" data-placeholder="Funding Bodies">
+          <option value="911 Programme PhD scholarship from Vietnam National International Development">911 Programme PhD scholarship from Vietnam National International Development</option>
+          <option value="A*MIDEX">A*MIDEX</option>
+          <option value="Abbeyfield Society">Abbeyfield Society</option>
+          <option value="Action Medical Research">Action Medical Research</option>
+          <option value="AFRICA-ai-JAPAN project and African Union">AFRICA-ai-JAPAN project and African Union</option>
+          <option value="Agence Nationale de la Recherche">Agence Nationale de la Recherche</option>
+          <option value="Alexander von Humboldt-Stiftung">Alexander von Humboldt-Stiftung</option>
+          <option value="Alzheimer's Society">Alzheimer's Society</option>
+          <option value="Alzheimer’s Research UK">Alzheimer’s Research UK</option>
+          <option value="American Heart Association">American Heart Association</option>
+          <option value="American Lebanese Syrian Associated Charities">American Lebanese Syrian Associated Charities</option>
+          <option value="Androfert Center">Androfert Center</option>
+          <option value="Antimicrobial Resistance Cross Council Initiative, UK">Antimicrobial Resistance Cross Council Initiative, UK</option>
+          <option value="Arctic University of Norway">Arctic University of Norway</option>
+          <option value="Arizona Department of Health Services">Arizona Department of Health Services</option>
+          <option value="Armauer Hansen Research Institute">Armauer Hansen Research Institute</option>
+          <option value="Armenian National Science &amp; Education Fund (ANSEF)">Armenian National Science &amp; Education Fund (ANSEF)</option>
+          <option value="Arthritis Research UK">Arthritis Research UK</option>
+          <option value="Arts and Humanities Research Council">Arts and Humanities Research Council</option>
+          <option value="Asociación Argentina de Bioinformática y Biología Computacional">Asociación Argentina de Bioinformática y Biología Computacional</option>
+          <option value="Australian Government Research Training Program">Australian Government Research Training Program</option>
+          <option value="Australian NHMRC Program">Australian NHMRC Program</option>
+          <option value="Australian Postgraduate Award">Australian Postgraduate Award</option>
+          <option value="Australian Research Council">Australian Research Council</option>
+          <option value="Australian Research Council Centre of Excellence for Coral Reef Studies">Australian Research Council Centre of Excellence for Coral Reef Studies</option>
+          <option value="Babraham Institute">Babraham Institute</option>
+          <option value="Babraham Institute and the UK Biotechnology and Biological Sciences Research Council (BBSRC)">Babraham Institute and the UK Biotechnology and Biological Sciences Research Council (BBSRC)</option>
+          <option value="Baily Thomas Charitable Fund">Baily Thomas Charitable Fund</option>
+          <option value="Basque Government">Basque Government</option>
+          <option value="Baylor University Research Council">Baylor University Research Council</option>
+          <option value="Beckman Research Institute, City of Hope">Beckman Research Institute, City of Hope</option>
+          <option value="Bill and Melinda Gates Foundation">Bill and Melinda Gates Foundation</option>
+          <option value="BioFrontiers Institute, University of Colorado Boulder">BioFrontiers Institute, University of Colorado Boulder</option>
+          <option value="Bioplatforms Australia">Bioplatforms Australia</option>
+          <option value="Biotechnology and Biological Sciences Research Council">Biotechnology and Biological Sciences Research Council</option>
+          <option value="Biotechnology and Biosciences Research Council UK">Biotechnology and Biosciences Research Council UK</option>
+          <option value="BLOODWISE">BLOODWISE</option>
+          <option value="Brain Canada">Brain Canada</option>
+          <option value="Brian and Caris Chan Family Foundation">Brian and Caris Chan Family Foundation</option>
+          <option value="Build in Canada Innovation Program">Build in Canada Innovation Program</option>
+          <option value="Bundesministerium für Bildung und Forschung">Bundesministerium für Bildung und Forschung</option>
+          <option value="California Department of Fish and Wildlife, Big Game Management Program">California Department of Fish and Wildlife, Big Game Management Program</option>
+          <option value="Cambridge Biomedical Research Centre">Cambridge Biomedical Research Centre</option>
+          <option value="Canadian Cancer Society Research Institute">Canadian Cancer Society Research Institute</option>
+          <option value="Canadian Institutes of Health Research">Canadian Institutes of Health Research</option>
+          <option value="Cancer Center Support">Cancer Center Support</option>
+          <option value="Cancer Research Society">Cancer Research Society</option>
+          <option value="Cancer Research UK">Cancer Research UK</option>
+          <option value="CAPES">CAPES</option>
+          <option value="Capio Lundby Hospital">Capio Lundby Hospital</option>
+          <option value="Cariplo Foundation">Cariplo Foundation</option>
+          <option value="Carnegie Corporation of New York">Carnegie Corporation of New York</option>
+          <option value="CEFIC and the Innovative Medicine Initiative Joint Undertaking">CEFIC and the Innovative Medicine Initiative Joint Undertaking</option>
+          <option value="CENAPAD-SP (Centro Nacional de Processamento de Alto Desempenho em São Paulo)">CENAPAD-SP (Centro Nacional de Processamento de Alto Desempenho em São Paulo)</option>
+          <option value="Centre National de la Recherche Scientifique">Centre National de la Recherche Scientifique</option>
+          <option value="Centre Scientifique de Monaco">Centre Scientifique de Monaco</option>
+          <option value="CGIAR Fund">CGIAR Fund</option>
+          <option value="Chancellors Fellowship Program">Chancellors Fellowship Program</option>
+          <option value="China Scholarship Council">China Scholarship Council</option>
+          <option value="Clinical and Translational Science Award program">Clinical and Translational Science Award program</option>
+          <option value="Clinical and Translational Science Institutes of the University of Minnesota and Indiana University">Clinical and Translational Science Institutes of the University of Minnesota and Indiana University</option>
+          <option value="CNMPB">CNMPB</option>
+          <option value="Cochrane Collaboration; BioMed Central; Elsevier">Cochrane Collaboration; BioMed Central; Elsevier</option>
+          <option value="Colorado Office of Economic Development and International Trade">Colorado Office of Economic Development and International Trade</option>
+          <option value="Conseil Régional de Bourgogne Franche-Comté">Conseil Régional de Bourgogne Franche-Comté</option>
+          <option value="Consejería de Economía, Innovación, Ciencia y Empleo, Junta de Andalucía">Consejería de Economía, Innovación, Ciencia y Empleo, Junta de Andalucía</option>
+          <option value="Consejo de Desarrollo Científico, Humanístico y Tecnológico, Universidad del Zulia">Consejo de Desarrollo Científico, Humanístico y Tecnológico, Universidad del Zulia</option>
+          <option value="Consejo Nacional de Ciencia y Tecnología">Consejo Nacional de Ciencia y Tecnología</option>
+          <option value="Consejo Nacional de Investigaciones Científicas y Técnicas">Consejo Nacional de Investigaciones Científicas y Técnicas</option>
+          <option value="CORBEL">CORBEL</option>
+          <option value="Council for Scientific and Industrial Research">Council for Scientific and Industrial Research</option>
+          <option value="Croatian Ministry of Science, Education and Sport">Croatian Ministry of Science, Education and Sport</option>
+          <option value="Crowdfunding">Crowdfunding</option>
+          <option value="CTBE/CNPEM">CTBE/CNPEM</option>
+          <option value="CTMM-TraIT">CTMM-TraIT</option>
+          <option value="Daito Bunka University Research Foundation">Daito Bunka University Research Foundation</option>
+          <option value="DBT India Alliance">DBT India Alliance</option>
+          <option value="DeepMind">DeepMind</option>
+          <option value="Defense Threat Reduction Agency">Defense Threat Reduction Agency</option>
+          <option value="DELTAS Africa Initiative">DELTAS Africa Initiative</option>
+          <option value="Department for Environment, Food and Rural Affairs">Department for Environment, Food and Rural Affairs</option>
+          <option value="Department for International Development">Department for International Development</option>
+          <option value="Department for International Development, UK Government">Department for International Development, UK Government</option>
+          <option value="Department of Anaesthesia, Danderyd Hospital">Department of Anaesthesia, Danderyd Hospital</option>
+          <option value="Department of Biotechnology , Ministry of Science and Technology">Department of Biotechnology , Ministry of Science and Technology</option>
+          <option value="Department of Biotechnology, Government of India">Department of Biotechnology, Government of India</option>
+          <option value="Department of Electronics and Information Technology, Ministry of Communications and Information Technology, Government of India">Department of Electronics and Information Technology, Ministry of Communications and Information Technology, Government of India</option>
+          <option value="Department of Health">Department of Health</option>
+          <option value="Department of Health (UK)">Department of Health (UK)</option>
+          <option value="Department of Industrial Engineering, University of Trento">Department of Industrial Engineering, University of Trento</option>
+          <option value="Department of IT, BT and S&amp;T, Government of Karnataka, India">Department of IT, BT and S&amp;T, Government of Karnataka, India</option>
+          <option value="Deutsche Forschungsgemeinschaft">Deutsche Forschungsgemeinschaft</option>
+          <option value="Deutscher Akademischer Austausch Dienst">Deutscher Akademischer Austausch Dienst</option>
+          <option value="Diputación Foral de Guipuzcoa">Diputación Foral de Guipuzcoa</option>
+          <option value="Dirección General de Asuntos del Personal Académico, Universidad Nacional Autónoma de México">Dirección General de Asuntos del Personal Académico, Universidad Nacional Autónoma de México</option>
+          <option value="Directorate of Research and Community Service (DRPM), Universitas Indonesia">Directorate of Research and Community Service (DRPM), Universitas Indonesia</option>
+          <option value="Direktion für Entwicklung und Zusammenarbeit">Direktion für Entwicklung und Zusammenarbeit</option>
+          <option value="Division of Epidemiology and Public Health, University of Nottingham, UK">Division of Epidemiology and Public Health, University of Nottingham, UK</option>
+          <option value="Dong-A University Research Fund">Dong-A University Research Fund</option>
+          <option value="Dormeur Investment Service Ltd">Dormeur Investment Service Ltd</option>
+          <option value="Dr. Mortimer and Theresa Sackler Foundation">Dr. Mortimer and Theresa Sackler Foundation</option>
+          <option value="DST/NRF South African Research Chairs Initiative">DST/NRF South African Research Chairs Initiative</option>
+          <option value="Durga Devi Charitable Trust, India">Durga Devi Charitable Trust, India</option>
+          <option value="E o R Börjessons Foundation">E o R Börjessons Foundation</option>
+          <option value="Economic and Social Research Council">Economic and Social Research Council</option>
+          <option value="Ecosystem Services for Poverty Alleviation">Ecosystem Services for Poverty Alleviation</option>
+          <option value="Eesti Teadusagentuur">Eesti Teadusagentuur</option>
+          <option value="EKAS">EKAS</option>
+          <option value="ELIXIR">ELIXIR</option>
+          <option value="ELIXIR (the implementation study)">ELIXIR (the implementation study)</option>
+          <option value="ELIXIR-EXCELERATE">ELIXIR-EXCELERATE</option>
+          <option value="ELIXIR-EXCELERATE, ELIXIR and European Molecular Biology Laboratory">ELIXIR-EXCELERATE, ELIXIR and European Molecular Biology Laboratory</option>
+          <option value="EMBL-ABR">EMBL-ABR</option>
+          <option value="EMBL-EBI">EMBL-EBI</option>
+          <option value="EMBO">EMBO</option>
+          <option value="Engineering and Physical Sciences Research Council">Engineering and Physical Sciences Research Council</option>
+          <option value="Enterprise Ireland DPTC">Enterprise Ireland DPTC</option>
+          <option value="Eosera, Inc.">Eosera, Inc.</option>
+          <option value="Epilepsy Foundation Award Research and Training Fellowship for Clinicians">Epilepsy Foundation Award Research and Training Fellowship for Clinicians</option>
+          <option value="Erasmus Mundus program ERAWEB">Erasmus Mundus program ERAWEB</option>
+          <option value="Erik Rönnberg Foundation">Erik Rönnberg Foundation</option>
+          <option value="EU/EFPIA Innovative Medicines Initiative Joint Undertaking">EU/EFPIA Innovative Medicines Initiative Joint Undertaking</option>
+          <option value="EU/EFPIA/ Innovative Medicines Initiative Joint Undertaking PRECISESADS">EU/EFPIA/ Innovative Medicines Initiative Joint Undertaking PRECISESADS</option>
+          <option value="European Commission">European Commission</option>
+          <option value="European Commission H2020 project OpenAIRE2020">European Commission H2020 project OpenAIRE2020</option>
+          <option value="European Cooperation in Science and Technology">European Cooperation in Science and Technology</option>
+          <option value="European Regional Development Fund">European Regional Development Fund</option>
+          <option value="European Research Council">European Research Council</option>
+          <option value="European Social Fund">European Social Fund</option>
+          <option value="European Union Seventh Framework Programme">European Union Seventh Framework Programme</option>
+          <option value="European Union’s Horizon 2020 Research and Innovation programme 2014-2020">European Union’s Horizon 2020 Research and Innovation programme 2014-2020</option>
+          <option value="EVIMalaR">EVIMalaR</option>
+          <option value="Faculty of Medicine, Prince of Songkla University">Faculty of Medicine, Prince of Songkla University</option>
+          <option value="Fay Fuller Foundation">Fay Fuller Foundation</option>
+          <option value="Federal University of Paraiba">Federal University of Paraiba</option>
+          <option value="Federation of European Biochemical Societies">Federation of European Biochemical Societies</option>
+          <option value="FERO VIII">FERO VIII</option>
+          <option value="Fifth Framework Programme">Fifth Framework Programme</option>
+          <option value="Finnish Paediatric association">Finnish Paediatric association</option>
+          <option value="Fondation pour la Recherche Médicale">Fondation pour la Recherche Médicale</option>
+          <option value="Fondation recherche medicale">Fondation recherche medicale</option>
+          <option value="Foundation for Scientific Research, University of Zürich, Switzerland.">Foundation for Scientific Research, University of Zürich, Switzerland.</option>
+          <option value="Foundation for the National Institutes of Health">Foundation for the National Institutes of Health</option>
+          <option value="FP7 Health">FP7 Health</option>
+          <option value="Frances Berger Foundation Fellowship">Frances Berger Foundation Fellowship</option>
+          <option value="Francis Crick Institute">Francis Crick Institute</option>
+          <option value="Free State of Saxony">Free State of Saxony</option>
+          <option value="Freeport-McMoRan Copper and Gold Foundation">Freeport-McMoRan Copper and Gold Foundation</option>
+          <option value="Fulbright NEXUS Program (2014-2016)">Fulbright NEXUS Program (2014-2016)</option>
+          <option value="Fundación Caja Navarra">Fundación Caja Navarra</option>
+          <option value="Fundación Científica Asociación Española Contra el Cáncer">Fundación Científica Asociación Española Contra el Cáncer</option>
+          <option value="Fundação Bial">Fundação Bial</option>
+          <option value="Fundação de Amparo à Pesquisa do Estado de Minas Gerais">Fundação de Amparo à Pesquisa do Estado de Minas Gerais</option>
+          <option value="Fundação de Amparo à Pesquisa do Estado de São Paulo">Fundação de Amparo à Pesquisa do Estado de São Paulo</option>
+          <option value="G. Harold and Leila Y. Mathers Charitable Foundation">G. Harold and Leila Y. Mathers Charitable Foundation</option>
+          <option value="Gates Foundation Project">Gates Foundation Project</option>
+          <option value="Generalitat Valenciana">Generalitat Valenciana</option>
+          <option value="Genervon Biopharmaceuticals, LLC">Genervon Biopharmaceuticals, LLC</option>
+          <option value="Genome British Columbia">Genome British Columbia</option>
+          <option value="Georgianne and Doctor Reza Khatib Foundation">Georgianne and Doctor Reza Khatib Foundation</option>
+          <option value="German Academic Exchange Service">German Academic Exchange Service</option>
+          <option value="Glenpark Foundation">Glenpark Foundation</option>
+          <option value="Global Fund to Fight AIDS, Tuberculosis and Malaria">Global Fund to Fight AIDS, Tuberculosis and Malaria</option>
+          <option value="Gordon Betty Moore Foundation">Gordon Betty Moore Foundation</option>
+          <option value="Gottfied und Julia Bangerter-Rhyner Stiftung">Gottfied und Julia Bangerter-Rhyner Stiftung</option>
+          <option value="Gottfied und Julia Bangerter-Rhyner Stiftung and the Novartis Foundation for Medical Biological Research project">Gottfied und Julia Bangerter-Rhyner Stiftung and the Novartis Foundation for Medical Biological Research project</option>
+          <option value="Grand Challenges Canada">Grand Challenges Canada</option>
+          <option value="Groupement des Entreprises Françaises contre le Cancer">Groupement des Entreprises Françaises contre le Cancer</option>
+          <option value="H2020 Research Infrastructures">H2020 Research Infrastructures</option>
+          <option value="Halo Medical Foundation India">Halo Medical Foundation India</option>
+          <option value="Harald and Greta Jeanssons Foundation">Harald and Greta Jeanssons Foundation</option>
+          <option value="Health Research Council of New Zealand">Health Research Council of New Zealand</option>
+          <option value="Helios Foundation">Helios Foundation</option>
+          <option value="Helsingin Yliopisto">Helsingin Yliopisto</option>
+          <option value="Higher Committee for Education Development, Iraq">Higher Committee for Education Development, Iraq</option>
+          <option value="Hjärnfonden">Hjärnfonden</option>
+          <option value="Horizon 2020">Horizon 2020</option>
+          <option value="Horizon 2020 Framework Programme">Horizon 2020 Framework Programme</option>
+          <option value="Ikerbasque, Basque Foundation for Science">Ikerbasque, Basque Foundation for Science</option>
+          <option value="Illumina">Illumina</option>
+          <option value="INDEPTH Network">INDEPTH Network</option>
+          <option value="Initiative to Cure Glaucoma, Eye and Ear Foundation of Pittsburgh">Initiative to Cure Glaucoma, Eye and Ear Foundation of Pittsburgh</option>
+          <option value="Innovative Vector Control Consortiums">Innovative Vector Control Consortiums</option>
+          <option value="Inova Health System">Inova Health System</option>
+          <option value="Institut National de la Santé et de la Recherche Médicale">Institut National de la Santé et de la Recherche Médicale</option>
+          <option value="Institute for Regenerative Medicine Research Support Funds, Texas A&amp;M Health Science Center">Institute for Regenerative Medicine Research Support Funds, Texas A&amp;M Health Science Center</option>
+          <option value="International Science and Technology Center">International Science and Technology Center</option>
+          <option value="International Society for Computational Biology">International Society for Computational Biology</option>
+          <option value="Intramural Research Program of NLM">Intramural Research Program of NLM</option>
+          <option value="Irish Cancer Society">Irish Cancer Society</option>
+          <option value="Isaac Newton Trust">Isaac Newton Trust</option>
+          <option value="JAE CSIC/Fondo Social Europeo">JAE CSIC/Fondo Social Europeo</option>
+          <option value="James Hutton Institute/Edinburgh University School of Biological Sciences">James Hutton Institute/Edinburgh University School of Biological Sciences</option>
+          <option value="James S. McDonnell Foundation">James S. McDonnell Foundation</option>
+          <option value="Japan Society for the Promotion of Science">Japan Society for the Promotion of Science</option>
+          <option value="Japanese Society for the Promotion of Science">Japanese Society for the Promotion of Science</option>
+          <option value="JDRF">JDRF</option>
+          <option value="John Fell Oxford University Press Research Fund">John Fell Oxford University Press Research Fund</option>
+          <option value="Juvenile Diabetes Research Foundation">Juvenile Diabetes Research Foundation</option>
+          <option value="Kavli Foundation">Kavli Foundation</option>
+          <option value="Kentucky Science and Engineering Foundation">Kentucky Science and Engineering Foundation</option>
+          <option value="Kenyan Government">Kenyan Government</option>
+          <option value="Khon Kaen University">Khon Kaen University</option>
+          <option value="Kidney Research UK">Kidney Research UK</option>
+          <option value="Kids Kidney Research">Kids Kidney Research</option>
+          <option value="King Saud bin Abdulaziz University for Health Sciences">King Saud bin Abdulaziz University for Health Sciences</option>
+          <option value="Koerner Foundation">Koerner Foundation</option>
+          <option value="Laura and John Arnold Foundation">Laura and John Arnold Foundation</option>
+          <option value="Leukemia and Lymphoma Society">Leukemia and Lymphoma Society</option>
+          <option value="Leverhulme Trust">Leverhulme Trust</option>
+          <option value="Li Ka Shing Foundation">Li Ka Shing Foundation</option>
+          <option value="Life Science Research Foundation fellowship">Life Science Research Foundation fellowship</option>
+          <option value="Ligue Nationale Contre le Cancer">Ligue Nationale Contre le Cancer</option>
+          <option value="London School of Hygiene &amp; Tropical Medicine">London School of Hygiene &amp; Tropical Medicine</option>
+          <option value="Louis B. Mayer Foundation">Louis B. Mayer Foundation</option>
+          <option value="Luxcel Biosciences">Luxcel Biosciences</option>
+          <option value="Magnus Bergvalls Stiftelse">Magnus Bergvalls Stiftelse</option>
+          <option value="Magyar Tudományos Akadémia">Magyar Tudományos Akadémia</option>
+          <option value="Maharashtra Foundation, USA">Maharashtra Foundation, USA</option>
+          <option value="Marianne and Marcus Wallenberg foundation">Marianne and Marcus Wallenberg foundation</option>
+          <option value="Marianne and Marcus Wallenberg Foundation">Marianne and Marcus Wallenberg Foundation</option>
+          <option value="Marjorie Barclay Trust">Marjorie Barclay Trust</option>
+          <option value="Masonic Cancer Center, University of Minnesota">Masonic Cancer Center, University of Minnesota</option>
+          <option value="Medical Research Coucnil UK">Medical Research Coucnil UK</option>
+          <option value="Medical Research Council">Medical Research Council</option>
+          <option value="Medical Research Council and Department for International Development">Medical Research Council and Department for International Development</option>
+          <option value="Medical Research Council Canada">Medical Research Council Canada</option>
+          <option value="Medical Research Council Confidence in Concept">Medical Research Council Confidence in Concept</option>
+          <option value="Medical Research Council-Biotechnology and Biological Sciences Research Council">Medical Research Council-Biotechnology and Biological Sciences Research Council</option>
+          <option value="Medical Research Council/Department for International Development">Medical Research Council/Department for International Development</option>
+          <option value="Medical University of Lodz &amp; Polish Research Committee">Medical University of Lodz &amp; Polish Research Committee</option>
+          <option value="Miami Center for AIDS Research">Miami Center for AIDS Research</option>
+          <option value="Michael Smith Foundation for Health Research">Michael Smith Foundation for Health Research</option>
+          <option value="Ministerio de Ciencia e Innovación">Ministerio de Ciencia e Innovación</option>
+          <option value="Ministerio de Economía y Competitividad">Ministerio de Economía y Competitividad</option>
+          <option value="Ministry of Education and Science of the Russian Federation">Ministry of Education and Science of the Russian Federation</option>
+          <option value="Ministry of Higher Education, Sudan">Ministry of Higher Education, Sudan</option>
+          <option value="Ministry of Research, Technology and Higher Education (Ristekdikti) of the Republic of Indonesia">Ministry of Research, Technology and Higher Education (Ristekdikti) of the Republic of Indonesia</option>
+          <option value="Ministry of Research, Technology and Higher Education of the Republic of Indonesia">Ministry of Research, Technology and Higher Education of the Republic of Indonesia</option>
+          <option value="Ministère de l’Enseignement Supérieur et de la Recherche">Ministère de l’Enseignement Supérieur et de la Recherche</option>
+          <option value="Morris Animal Foundation">Morris Animal Foundation</option>
+          <option value="MRC Centre">MRC Centre</option>
+          <option value="MRC London Institute of Medical Sciences">MRC London Institute of Medical Sciences</option>
+          <option value="MRC-ARUK">MRC-ARUK</option>
+          <option value="Multidisciplinary Lung Research Career Development Program">Multidisciplinary Lung Research Career Development Program</option>
+          <option value="Muscular Dystrophy Association">Muscular Dystrophy Association</option>
+          <option value="National Basic Research Program of China">National Basic Research Program of China</option>
+          <option value="National Cancer Institute">National Cancer Institute</option>
+          <option value="National Counsel of Technological and Scientific Development (CNPq), Brazil">National Counsel of Technological and Scientific Development (CNPq), Brazil</option>
+          <option value="National Evolutionary Synthesis Center">National Evolutionary Synthesis Center</option>
+          <option value="National Genomics Infrastructure">National Genomics Infrastructure</option>
+          <option value="National Health and Medical Research Centre">National Health and Medical Research Centre</option>
+          <option value="National Health and Medical Research Council">National Health and Medical Research Council</option>
+          <option value="National Health Security Office, Thailand">National Health Security Office, Thailand</option>
+          <option value="National Heart, Lung, and Blood Institute">National Heart, Lung, and Blood Institute</option>
+          <option value="National High Technology Research and Development Program of China">National High Technology Research and Development Program of China</option>
+          <option value="National Human Genome Research Institute">National Human Genome Research Institute</option>
+          <option value="National Institute for Health Research">National Institute for Health Research</option>
+          <option value="National Institute for Health Research Cambridge Biomedical Research Centre">National Institute for Health Research Cambridge Biomedical Research Centre</option>
+          <option value="National Institute of Allergy and Infectious Diseases">National Institute of Allergy and Infectious Diseases</option>
+          <option value="National Institute of Diabetes and Digestive and Kidney Diseases">National Institute of Diabetes and Digestive and Kidney Diseases</option>
+          <option value="National Institute of General Medical Sciences">National Institute of General Medical Sciences</option>
+          <option value="National Institute of Health Research">National Institute of Health Research</option>
+          <option value="National Institute of Minority Health and Health Disparities">National Institute of Minority Health and Health Disparities</option>
+          <option value="National Institute on Aging">National Institute on Aging</option>
+          <option value="National Institute on Aging of the National Institutes of Health (NIA/NIH)">National Institute on Aging of the National Institutes of Health (NIA/NIH)</option>
+          <option value="National Institute on Alcohol Abuse and Alcoholism">National Institute on Alcohol Abuse and Alcoholism</option>
+          <option value="National Institute on Drug Abuse">National Institute on Drug Abuse</option>
+          <option value="National Institutes of Health">National Institutes of Health</option>
+          <option value="National Malaria Program Administration, Ministry of Health">National Malaria Program Administration, Ministry of Health</option>
+          <option value="National Natural Science Foundation of China">National Natural Science Foundation of China</option>
+          <option value="National Research Council of Thailand">National Research Council of Thailand</option>
+          <option value="National Research Foundation of Korea">National Research Foundation of Korea</option>
+          <option value="National Science Foundation">National Science Foundation</option>
+          <option value="National Science Foundation USA">National Science Foundation USA</option>
+          <option value="National University of Piura">National University of Piura</option>
+          <option value="Natural Environment Research Council">Natural Environment Research Council</option>
+          <option value="Natural Science Foundation China">Natural Science Foundation China</option>
+          <option value="NCI GAME-ON Cancer Post-GWAS">NCI GAME-ON Cancer Post-GWAS</option>
+          <option value="Netafim Irrigation Ltd., Israel">Netafim Irrigation Ltd., Israel</option>
+          <option value="Netafim Irrigation Ltd., Israel.">Netafim Irrigation Ltd., Israel.</option>
+          <option value="Netherlands eScience Center">Netherlands eScience Center</option>
+          <option value="New Alliance Trust">New Alliance Trust</option>
+          <option value="New York State Office for People with Developmental Disabilities">New York State Office for People with Developmental Disabilities</option>
+          <option value="Newcastle upon Tyne Hospitals NHS Charity">Newcastle upon Tyne Hospitals NHS Charity</option>
+          <option value="Niemann-Pick Research Foundation">Niemann-Pick Research Foundation</option>
+          <option value="NIHNIAID U19 Bio-defense Programme">NIHNIAID U19 Bio-defense Programme</option>
+          <option value="Nilsson Ehle Donations">Nilsson Ehle Donations</option>
+          <option value="Nilsson Ehle donations">Nilsson Ehle donations</option>
+          <option value="None">None</option>
+          <option value="Northern Counties Kidney Research Fund">Northern Counties Kidney Research Fund</option>
+          <option value="Norwegian Institute of Public Health">Norwegian Institute of Public Health</option>
+          <option value="Norwegian Ministry of Health">Norwegian Ministry of Health</option>
+          <option value="Novartis Foundation">Novartis Foundation</option>
+          <option value="Novartis Institutes for BioMedical Research">Novartis Institutes for BioMedical Research</option>
+          <option value="Ontario Institute for Cancer Research">Ontario Institute for Cancer Research</option>
+          <option value="Partnership for Clean Competition">Partnership for Clean Competition</option>
+          <option value="Pfizer">Pfizer</option>
+          <option value="Philip Morris International">Philip Morris International</option>
+          <option value="Plant Biosecurity Cooperative Re-search Centre">Plant Biosecurity Cooperative Re-search Centre</option>
+          <option value="Plant Biosecurity Cooperative Research Centre">Plant Biosecurity Cooperative Research Centre</option>
+          <option value="Polish National Health Fund">Polish National Health Fund</option>
+          <option value="Princess Margaret Cancer Centre">Princess Margaret Cancer Centre</option>
+          <option value="Purdue Center for Cancer Research">Purdue Center for Cancer Research</option>
+          <option value="Qatar Foundation">Qatar Foundation</option>
+          <option value="Qatar National Research Fund">Qatar National Research Fund</option>
+          <option value="R. Geigy Foundation">R. Geigy Foundation</option>
+          <option value="Ramesh Kesanupalli Family">Ramesh Kesanupalli Family</option>
+          <option value="Research and Training Center for Enhancing Quality of Life for Working Age People">Research and Training Center for Enhancing Quality of Life for Working Age People</option>
+          <option value="Research Centers in Minority Institutions">Research Centers in Minority Institutions</option>
+          <option value="Research Office, University of the Western Cape">Research Office, University of the Western Cape</option>
+          <option value="Rett Syndrome Research Trust">Rett Syndrome Research Trust</option>
+          <option value="RFBR">RFBR</option>
+          <option value="RIKEN">RIKEN</option>
+          <option value="Rockefeller Foundation">Rockefeller Foundation</option>
+          <option value="Rosetrees Trust">Rosetrees Trust</option>
+          <option value="Royal Adelaide Hospital Dawes Scholarship">Royal Adelaide Hospital Dawes Scholarship</option>
+          <option value="Royal College of Psychiatrists">Royal College of Psychiatrists</option>
+          <option value="Royal Society">Royal Society</option>
+          <option value="Royal Society-Wolfson">Royal Society-Wolfson</option>
+          <option value="Rudolf Marx Foundation">Rudolf Marx Foundation</option>
+          <option value="Russian Academy of Sciences">Russian Academy of Sciences</option>
+          <option value="Russian Foundation for Basic Research">Russian Foundation for Basic Research</option>
+          <option value="Russian Scientific Foundation">Russian Scientific Foundation</option>
+          <option value="Sahlgrenska Akademin">Sahlgrenska Akademin</option>
+          <option value="Schweizerischer Nationalfonds zur Förderung der Wissenschaftlichen Forschung">Schweizerischer Nationalfonds zur Förderung der Wissenschaftlichen Forschung</option>
+          <option value="Science for Life Laboratory">Science for Life Laboratory</option>
+          <option value="Science for Life Laboratory and the National Genomics Infrastructure (NGI)">Science for Life Laboratory and the National Genomics Infrastructure (NGI)</option>
+          <option value="Science Foundation Ireland">Science Foundation Ireland</option>
+          <option value="Scottish Executive Health Department">Scottish Executive Health Department</option>
+          <option value="Scottish Funding Council">Scottish Funding Council</option>
+          <option value="Scottish Government Health Directorate">Scottish Government Health Directorate</option>
+          <option value="Scottish Senior Clinical Fellowship">Scottish Senior Clinical Fellowship</option>
+          <option value="Seventh Framework Programme">Seventh Framework Programme</option>
+          <option value="Shahid Beheshti University of Medical Sciences">Shahid Beheshti University of Medical Sciences</option>
+          <option value="Sharon Stewart Aniridia Research Trust">Sharon Stewart Aniridia Research Trust</option>
+          <option value="Shiraz University of Medical Sciences">Shiraz University of Medical Sciences</option>
+          <option value="Sidra Medical and Research Center">Sidra Medical and Research Center</option>
+          <option value="Simons Foundation">Simons Foundation</option>
+          <option value="Sir Jules Thorn Charitable Trust">Sir Jules Thorn Charitable Trust</option>
+          <option value="South African Medical Research Council">South African Medical Research Council</option>
+          <option value="Spanish Government and ERDF">Spanish Government and ERDF</option>
+          <option value="Sparks">Sparks</option>
+          <option value="St Vincent Health Care Group of Dublin">St Vincent Health Care Group of Dublin</option>
+          <option value="Starmer-Smith Memorial Fund">Starmer-Smith Memorial Fund</option>
+          <option value="Stiftelserna Wilhelm och Martina Lundgren">Stiftelserna Wilhelm och Martina Lundgren</option>
+          <option value="Stockholm County Council">Stockholm County Council</option>
+          <option value="Stockholms Läns Landsting">Stockholms Läns Landsting</option>
+          <option value="Stop Cancer">Stop Cancer</option>
+          <option value="Styrelsen för Internationellt Utvecklingssamarbete">Styrelsen för Internationellt Utvecklingssamarbete</option>
+          <option value="Svenska Sällskapet för Medicinsk Forskning">Svenska Sällskapet för Medicinsk Forskning</option>
+          <option value="Swedish Federal Government">Swedish Federal Government</option>
+          <option value="Swedish Ministry of Education and Research/Centrala Studiestödsnämnden">Swedish Ministry of Education and Research/Centrala Studiestödsnämnden</option>
+          <option value="Swedish Research Council">Swedish Research Council</option>
+          <option value="Swedish Society for Medical Research">Swedish Society for Medical Research</option>
+          <option value="Swiss Institute of Bioinformatics">Swiss Institute of Bioinformatics</option>
+          <option value="Swiss State Secretariat for Education, Research and Innovation">Swiss State Secretariat for Education, Research and Innovation</option>
+          <option value="Sydney School of Public Health, University of Sydney">Sydney School of Public Health, University of Sydney</option>
+          <option value="Syiah Kuala University">Syiah Kuala University</option>
+          <option value="Technische Universität München">Technische Universität München</option>
+          <option value="Tem Innovations GmbH">Tem Innovations GmbH</option>
+          <option value="Terry Fox Research Institute">Terry Fox Research Institute</option>
+          <option value="Texas Tech University">Texas Tech University</option>
+          <option value="Thailand Research Fund">Thailand Research Fund</option>
+          <option value="The 5% Initiative of the French Government">The 5% Initiative of the French Government</option>
+          <option value="The institutional fund of Department of Internal Medicine, University of Iowa">The institutional fund of Department of Internal Medicine, University of Iowa</option>
+          <option value="The James Peter Read Foundation">The James Peter Read Foundation</option>
+          <option value="The John Templeton Foundation">The John Templeton Foundation</option>
+          <option value="The Multidisciplinary Lung Research Career Development Program">The Multidisciplinary Lung Research Career Development Program</option>
+          <option value="The Software Sustainability Institute">The Software Sustainability Institute</option>
+          <option value="The TGen Foundation">The TGen Foundation</option>
+          <option value="The Villum Kann Rasmussen Foundation">The Villum Kann Rasmussen Foundation</option>
+          <option value="The Waterloo Foundation">The Waterloo Foundation</option>
+          <option value="The Wilsey Family Foundation">The Wilsey Family Foundation</option>
+          <option value="The World Bank Group">The World Bank Group</option>
+          <option value="Third World Academy of Sciences">Third World Academy of Sciences</option>
+          <option value="This work is supported by the New York State Office for People with Developmental Disabilities">This work is supported by the New York State Office for People with Developmental Disabilities</option>
+          <option value="TioHundra Norrtälje">TioHundra Norrtälje</option>
+          <option value="Tourette Association of America">Tourette Association of America</option>
+          <option value="Tower Cancer Research Foundation">Tower Cancer Research Foundation</option>
+          <option value="Translational Genomics Research Institute Bridge Funding">Translational Genomics Research Institute Bridge Funding</option>
+          <option value="U.S. Department of Agriculture">U.S. Department of Agriculture</option>
+          <option value="U.S. Department of Education">U.S. Department of Education</option>
+          <option value="U.S. Department of Energy">U.S. Department of Energy</option>
+          <option value="U.S. Department of Homeland Security">U.S. Department of Homeland Security</option>
+          <option value="U.S. Department of Veterans Affairs">U.S. Department of Veterans Affairs</option>
+          <option value="U.S. National Library of Medicine">U.S. National Library of Medicine</option>
+          <option value="U.S. President’s Emergency Plan for AIDS Relief">U.S. President’s Emergency Plan for AIDS Relief</option>
+          <option value="U.S. Public Health Service">U.S. Public Health Service</option>
+          <option value="uBiome">uBiome</option>
+          <option value="UK Medical Research Council">UK Medical Research Council</option>
+          <option value="UK Medical Research Council (MRC) and the UK Department for International Development (DFID)">UK Medical Research Council (MRC) and the UK Department for International Development (DFID)</option>
+          <option value="Ulf Lundahl memory fund (Swedish Brain Foundation)">Ulf Lundahl memory fund (Swedish Brain Foundation)</option>
+          <option value="UNICEF">UNICEF</option>
+          <option value="UNICEF/UNDP/World Bank/WHO Special Programme">UNICEF/UNDP/World Bank/WHO Special Programme</option>
+          <option value="United States Agency for International Development">United States Agency for International Development</option>
+          <option value="Universidad Nacional Autónoma de México">Universidad Nacional Autónoma de México</option>
+          <option value="Universidad Nacional de San Martin">Universidad Nacional de San Martin</option>
+          <option value="Universidad Tecnológica de Pereira">Universidad Tecnológica de Pereira</option>
+          <option value="Universitetet i Tromsø">Universitetet i Tromsø</option>
+          <option value="University College London Hospitals/UCL Biomedical Research Centre">University College London Hospitals/UCL Biomedical Research Centre</option>
+          <option value="University Grants Commission">University Grants Commission</option>
+          <option value="University Grants Commission of India">University Grants Commission of India</option>
+          <option value="University of Colorado">University of Colorado</option>
+          <option value="University of Glasgow">University of Glasgow</option>
+          <option value="University of Iowa">University of Iowa</option>
+          <option value="University of Liverpool">University of Liverpool</option>
+          <option value="University of Melbourne">University of Melbourne</option>
+          <option value="University of Minnesota">University of Minnesota</option>
+          <option value="University of Nottingham, UK">University of Nottingham, UK</option>
+          <option value="University of Otago">University of Otago</option>
+          <option value="University of Oxford/Public Health England Clinical Lectureship">University of Oxford/Public Health England Clinical Lectureship</option>
+          <option value="University of River Valley">University of River Valley</option>
+          <option value="University of South Australia">University of South Australia</option>
+          <option value="University of Sussex">University of Sussex</option>
+          <option value="University of the Western Cape">University of the Western Cape</option>
+          <option value="Universität Basel">Universität Basel</option>
+          <option value="Université Pierre et Marie Curie">Université Pierre et Marie Curie</option>
+          <option value="Uniwersytet Medyczny w Lodzi">Uniwersytet Medyczny w Lodzi</option>
+          <option value="Vanier Canada">Vanier Canada</option>
+          <option value="Vetenskapsrådet">Vetenskapsrådet</option>
+          <option value="Vietnam National International Development">Vietnam National International Development</option>
+          <option value="VILLUM FONDEN">VILLUM FONDEN</option>
+          <option value="Virginia-Maryland College of Veterinary Medicine">Virginia-Maryland College of Veterinary Medicine</option>
+          <option value="Welch Foundation">Welch Foundation</option>
+          <option value="Wellcome Trust">Wellcome Trust</option>
+          <option value="Wellcome Trust Senior Fellowship">Wellcome Trust Senior Fellowship</option>
+          <option value="Wellcome Trust/DBT India Alliance">Wellcome Trust/DBT India Alliance</option>
+          <option value="William and Flora Hewlett Foundation">William and Flora Hewlett Foundation</option>
+          <option value="Williams Fund">Williams Fund</option>
+          <option value="Winship Cancer Institute of Emory University">Winship Cancer Institute of Emory University</option>
+          <option value="Winship Cancer Institute of Emory University and NIH/NCI">Winship Cancer Institute of Emory University and NIH/NCI</option>
+          <option value="World Health Organization">World Health Organization</option>
+          <option value="WT-MRC Stem Cell Institute">WT-MRC Stem Cell Institute</option>
+          <option value="Yale University">Yale University</option>
+        </select>
+      </div>
+
+      <div class="o-layout">
+        <div class="o-layout__itm c-form-field">
+          <label for="pubmed">
+            <input type="checkbox" name="pubMedIndexed" id="pubmed" value="true" /> PubMed Indexed
+          </label>
+        </div>
+        <div class="o-layout__itm c-form-field">
+          <label for="prime">
+            <input type="checkbox" name="primeRecommended" id="prime" value="true" /> Prime Recommended
+          </label>
+        </div>
+      </div>
+
+      <!-- <div style="text-align: right;">
+        <button type="button" id="reset-filter-button" name="reset-filter-button" class="secondary no-fill orange-text-and-border extra-padding extra-right-margin">CLEAR</button>
+        <button type="button" id="run-filter-button" name="run-filter-button" class="secondary smaller-text orange extra-padding">APPLY FILTERS</button>
+      </div> -->
+    </form>
+
+    <template id="searchRow">
+      <div>
+        <div class="o-layout js-article-search-row">
+          <div class="o-layout__itm c-form-field u-auto">
+            <input type="search" name="fieldSearches[{{index}}].fieldValue" class="js-article-search-row-input" placeholder="Search" value="" />
+          </div>
+          <span class="o-layout__itm"> in </span>
+          <div class="o-layout__itm c-form-field u-auto">
+            <select name="fieldSearches[{{index}}].fieldName" class="js-article-search-select">
+              <option value="text">All</option>
+              <option value="title">Title</option>
+              <option value="authors">Author</option>
+              <option value="thesaurusTermsNames">Subject</option>
+              <option value="institutions">Institution</option>
+              <option value="authorAffiliations">Author affiliation</option>
+              <option value="competingInterestsText">Competing interests</option>
+              <option value="abstractText">Abstract</option>
+              <option value="fullText">Full text</option>
+              <option value="referees">Referee Name</option>
+              <option value="refereesAffiliations">Referee affiliation</option>
+              <option value="reports">Referee Report</option>
+              <option value="grantInformationText">Grant Funder</option>
+              <option value="commenters">Commenter</option>
+              <option value="commentersAffiliations">Commenter affiliation</option>
+              <option value="comments">Comment text</option>
+            </select>
+          </div>
+          <div class="o-layout__itm">
+            <button type="button" disabled="disabled" class="icon js-article-search-row-remove">-</button>
+            <button type="button" disabled="disabled" class="icon js-article-search-row-add">+</button>
+          </div>
+        </div>
+        <div class="o-layout js-article-search-row-operator is-hidden">
+          <div class="o-layout__itm u-shrink">
+            <select name="fieldSearches[{{index}}].logicalOperator" class="js-article-search-select">
+              <option value="AND">and</option>
+              <option value="OR">or</option>
+              <option value="AND NOT">not</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <template id="thesaurusResults">
+      <option value=""></option>
+    </template>
+
+    <template id="thesaurusLevel">
+      <div class="c-thesaurus-container js-article-search-thesaurus-container">
+        <select class="js-article-search-select js-article-search-thesaurus" data-placeholder="Refine subject area"></select>
+        <!-- <button type="button" class="c-thesaurus-container__btn js-article-search-thesaurus-remove">&#x1F5D9;</button> -->
+      </div>
+    </template>
+
+    <!-- https://github.com/Mobius1/Selectr -->
+    <script src="https://cdn.jsdelivr.net/gh/mobius1/selectr@latest/dist/selectr.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

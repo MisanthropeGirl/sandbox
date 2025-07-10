@@ -1,0 +1,115 @@
+<!doctype html>
+<html dir="ltr" class="js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sidebar</title>
+
+    <link rel="stylesheet" href="../common/css/Roboto.css">
+    <link rel="stylesheet" href="../common/css/material-icons.css">
+    <link rel="stylesheet" href="../common/css/mdl.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+  </head>
+  <body>
+    <div>
+      <main>
+        <section>
+          <header>
+            <h1>Article</h1>
+          </header>
+        </section>
+        <section>
+          <header>
+            <h1>Authors</h1>
+          </header>
+        </section>
+        <section>
+          <header>
+            <h1>Associations</h1>
+          </header>
+        </section>
+        <section>
+          <header>
+            <h1>Declarations</h1>
+          </header>
+        </section>
+        <section>
+          <header>
+            <h1>Files</h1>
+          </header>
+        </section>
+        <section>
+          <header>
+            <h1>Payment</h1>
+          </header>
+        </section>
+      </main>
+      <aside class="_mdl-layout js-sidebar is-open is-pinned">
+        <button type="button" class="btn btn--pin js-sidebar-pin" title="Unpin Sidebar">
+          <i class="material-icons">&#xE5CD;</i>
+        </button>
+        <button type="button" class="btn btn--toggle js-sidebar-toggle" title="Close Sidebar">
+          <i class="material-icons">&#xE5CC;</i>
+        </button>
+        <section>
+          <header>
+            <h1 class="mdl-typography--title">Article Status</h1>
+          </header>
+          <ul>
+            <li>
+              <button type="button" class="mdl-button mdl-js-button mdl-button--full-width mdl-button--left is-checked" data-status="checked" readonly="readonly">
+                <i class="material-icons is-checked">&#xE837;</i> <!-- radio_button_checked -->
+                <span>Article Submitted</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="mdl-button mdl-js-button mdl-button--full-width mdl-button--left js-status" data-status="unchecked" data-status-id="AT_PREPUB_CHECK" data-status-name="Pre-Publication Checks">
+                <i class="material-icons is-checked">&#xE837;</i> <!-- radio_button_checked -->
+                <i class="material-icons is-indeterminate">&#xE002;</i> <!-- radio_button_unchecked -->
+                <i class="material-icons is-unchecked">&#xE836;</i> <!-- radio_button_unchecked -->
+                <span>Pre-Publication Checks</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="mdl-button mdl-js-button mdl-button--full-width mdl-button--left js-status js-status-tristate" data-status="unchecked" data-status-id="PREPUB_AUTHORS" data-status-name="Revisions with Author">
+                <i class="material-icons is-checked">&#xE837;</i> <!-- radio_button_checked -->
+                <i class="material-icons is-indeterminate">&#xE002;</i> <!-- radio_button_unchecked -->
+                <i class="material-icons is-unchecked">&#xE836;</i> <!-- radio_button_unchecked -->
+                <span>Revisions with Author</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="mdl-button mdl-js-button mdl-button--full-width mdl-button--left js-status" data-status="unchecked" data-status-id="IN_EDITING" data-status-name="Author Revisions Received" data-additional-action="true">
+                <i class="material-icons is-checked">&#xE837;</i> <!-- radio_button_checked -->
+                <i class="material-icons is-indeterminate">&#xE002;</i> <!-- radio_button_unchecked -->
+                <i class="material-icons is-unchecked">&#xE836;</i> <!-- radio_button_unchecked -->
+                <span>Author Revisions Received</span>
+              </button>
+              <div class="js-status-extra is-hidden" hidden>
+                <button type="button" class="mdl-button mdl-js-button js-status-cancel">Cancel</button>
+                <button type="button" class="mdl-button mdl-js-button mdl-button--primary js-status-confirm">Confirm</button>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <header>
+            <h1 class="mdl-typography--title">Additional Statuses</h1>
+          </header>
+        </section>
+        <section>
+          <header>
+            <h1 class="mdl-typography--title">Publisher Panel</h1>
+          </header>
+        </section>
+      </aside>
+    </div>
+
+    <script src="../common/js/namespace.js"></script>
+    <script src="../common/js/constants.js"></script>
+    <script src="../common/js/utilities.js"></script>
+    <script src="../common/js/mdl.min.js"></script>
+    <script src="../common/js/mdl-helper.js"></script>
+    <script src="./js/scripts.js"></script>
+  </body>
+</html>

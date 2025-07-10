@@ -1,0 +1,144 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  line-height: 1.5;
+}
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  font-size: 1rem;
+  color: #333;
+  overflow-x: hidden;
+}
+
+
+div {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+main {
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+  padding: 0 2rem;
+}
+main section {
+  max-width: 990px;
+  margin: 0 auto 1.5rem;
+}
+main section:nth-last-child(n+2) {
+  border-bottom: 1px solid rgba(0,0,0,.16);
+}
+
+aside {
+  position: absolute;
+  right: -268px;
+
+  width: 300px;
+  /*min-height: 100%;*/
+  border-left: 1px solid rgba(0,0,0,.16);
+  padding: 0 2rem;
+
+  background-color: #fff;
+
+  -webkit-transition: right 0.2s ease-out;
+
+  transition: right 0.2s ease-out;
+}
+
+aside .btn {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid rgba(0,0,0,.16);
+  border-radius: 50%;
+  padding: 0;
+  background-color: #fff;
+}
+aside .btn:hover,
+aside .btn:active {
+  cursor: pointer;
+  background-color: #ccc;
+}
+aside .btn--pin {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+aside .btn--toggle {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+aside .btn .material-icons {
+  vertical-align: middle;
+}
+
+aside.is-open {
+  right: 0;
+}
+aside.is-pinned {
+  position: static;
+}
+aside.is-pinned .btn--toggle {
+  display: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+}
+li {
+  padding: 0.5rem 0;
+}
+
+._mdl-layout .mdl-button {
+  text-align: left;
+}
+button.is-checked .is-checked {
+  color: #00b291;;
+}
+button.is-indeterminate .is-indeterminate {
+  color: rgb(242, 103, 60);
+}
+button:not(.is-checked) .is-checked {
+  display: none;
+}
+button:not(.is-indeterminate) .is-indeterminate {
+  display: none;
+}
+button.is-checked .is-unchecked,
+button.is-indeterminate .is-unchecked {
+  display: none;
+}
+
+._mdl-layout .mdl-icon-toggle--with-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+._mdl-layout label.mdl-icon-toggle--with-text {
+  cursor: pointer;
+}
+._mdl-layout .mdl-icon-toggle.is-readonly .mdl-icon-toggle__label {
+  cursor: auto;
+}
+._mdl-layout .mdl-icon-toggle.is-indeterminate .mdl-icon-toggle__label {
+    color: rgb(242,103,60);
+}

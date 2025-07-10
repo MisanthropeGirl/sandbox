@@ -1,0 +1,516 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Article Management</title>
+
+    <link rel="stylesheet" href="../common/css/Roboto.css">
+    <link rel="stylesheet" href="../common/css/material-icons.css">
+    <link rel="stylesheet" href="../common/css/mdl.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+  </head>
+  <body>
+    <div class="_mdl-layout c-article-search">
+      <h1 class="mdl-typography--title">Article Management</h1>
+      <div class="o-layout">
+        <div class="o-layout__itm u-1/6">
+          <div class="mdl-select mdl-js-select full-width mdl-select--floating-label">
+            <select class="mdl-select__input" name="column" id="search-column">
+              <option value="all">All</option>
+              <option value="author">Author</option>
+              <option value="id">Article ID</option>
+              <option value="title">Title</option>
+              <option value="notes">Notes</option>
+              <option value="gateways">Gateways &amp; Collections</option>
+            </select>
+            <label class="mdl-select__label" for="search-column">Column</label>
+          </div>
+        </div>
+        <div class="o-layout__itm u-auto">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="search" id="search-term">
+            <label class="mdl-textfield__label" for="search-term">Enter your search terms</label>
+          </div>
+        </div>
+        <div class="o-layout__itm u-shrink u-centre" style="align-self: center;">
+          <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Search</button>
+        </div>
+        <div class="o-layout__itm u-shrink u-centre" style="align-self: center; position: relative;">
+          <button type="button" class="mdl-button mdl-js-button c-advanced-search-btn js-toggle-btn">Advanced <i class="material-icons">&#xE5C5;</i></button>
+          <div class="c-advanced-search is-hidden js-toggle-panel">
+            <div class="o-grid">
+              <div style="grid-row: 1; grid-column: 1;">
+                <div class="mdl-select mdl-js-select full-width mdl-select--floating-label">
+                  <select class="mdl-select__input" name="editor" id="search-editor">
+                    <option value=""></option>
+                  </select>
+                  <label class="mdl-select__label" for="search-editor">Editor</label>
+                </div>
+              </div>
+              <div style="grid-row: 2; grid-column: 1;">
+                <div class="mdl-select mdl-js-select full-width mdl-select--floating-label">
+                  <select class="mdl-select__input" name="type" id="search-type">
+                    <option value=""></option>
+                  </select>
+                  <label class="mdl-select__label" for="search-type">Article Type</label>
+                </div>
+              </div>
+              <div style="grid-row: 3; grid-column: 1;">
+                <div class="mdl-select mdl-js-select full-width mdl-select--floating-label">
+                  <select class="mdl-select__input" name="gateways" id="search-gateways">
+                    <option value=""></option>
+                  </select>
+                  <label class="mdl-select__label" for="search-gateways">Gateways &amp; Collections</label>
+                </div>
+              </div>
+              <div style="grid-row: 1; grid-column: 2;">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events" for="search-draft">
+                  <input type="radio" id="search-draft" class="mdl-radio__button" name="date" value="draft">
+                  <span class="mdl-radio__label">Draft</span>
+                </label>
+              </div>
+              <div style="grid-row: 2; grid-column: 2;">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events" for="search-submitted">
+                  <input type="radio" id="search-submitted" class="mdl-radio__button" name="date" value="submitted">
+                  <span class="mdl-radio__label">Submitted</span>
+                </label>
+              </div>
+              <div style="grid-row: 3; grid-column: 2;">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events" for="search-published">
+                  <input type="radio" id="search-published" class="mdl-radio__button" name="date" value="published">
+                  <span class="mdl-radio__label">Published</span>
+                </label>
+              </div>
+              <div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label has-placeholder">
+                  <input class="mdl-textfield__input date-picker hasDatepicker" type="date" id="search-start-date" name="startDate" value="">
+                  <label class="mdl-textfield__label u-sr-only" for="search-start-date">From Date</label>
+                </div>
+              </div>
+              <div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label has-placeholder">
+                  <input class="mdl-textfield__input date-picker hasDatepicker" type="date" id="search-from-date" name="fromDate" value="">
+                  <label class="mdl-textfield__label u-sr-only" for="search-from-date">To Date</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="o-layout">
+              <div class="o-layout__itm u-1/4">
+                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events" for="search-priority">
+                  <input type="checkbox" class="mdl-checkbox__input" id="search-priority" name="priority">
+                  <span class="mdl-checkbox__label mdl-checkbox__label--body1">Priority</span>
+                </label>
+              </div>
+              <div class="o-layout__itm u-1/4">
+                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events" for="search-vip">
+                  <input type="checkbox" class="mdl-checkbox__input" id="search-vip" name="vip">
+                  <span class="mdl-checkbox__label mdl-checkbox__label--body1">VIP</span>
+                </label>
+              </div>
+              <div class="o-layout__itm u-1/4">
+                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events" for="search-embargo">
+                  <input type="checkbox" class="mdl-checkbox__input" id="search-embargo" name="embargo">
+                  <span class="mdl-checkbox__label mdl-checkbox__label--body1">Embargo</span>
+                </label>
+              </div>
+              <div class="o-layout__itm u-1/4">
+                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events" for="search-problem">
+                  <input type="checkbox" class="mdl-checkbox__input" id="search-problem" name="problem">
+                  <span class="mdl-checkbox__label mdl-checkbox__label--body1">Problem</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="o-layout">
+        <div class="o-layout__itm u-1/4">
+          <div class="mdl-select mdl-js-select full-width mdl-select--floating-label">
+            <select class="mdl-select__input js-filter" name="platform" id="search-platform">
+              <option value=""></option>
+              <option value="f1000research">F1000Research</option>
+              <option value="faculty">Faculty Reviews</option>
+              <option value="gates">Gates</option>
+              <option value="mni">MNI</option>
+              <option value="wellcome">Wellcome</option>
+            </select>
+            <label class="mdl-select__label" for="search-platform">Platform</label>
+          </div>
+        </div>
+        <div class="o-layout__itm u-1/4">
+          <div class="mdl-select mdl-js-select full-width mdl-select--floating-label">
+            <select class="mdl-select__input js-filter" name="version" id="search-version">
+              <option value=""></option>
+              <option value="1">V1</option>
+              <option value="2">V2</option>
+              <option value="3">V3</option>
+              <option value="4+">V4+</option>
+            </select>
+            <label class="mdl-select__label" for="search-version">Version</label>
+          </div>
+        </div>
+        <div class="o-layout__itm u-1/4">
+          <div class="mdl-select mdl-js-select full-width mdl-select--floating-label">
+            <select class="mdl-select__input js-filter" name="stage" id="search-stage">
+              <option value=""></option>
+              <option value="prepublication">Pre-publication</option>
+              <option value="production">Production</option>
+              <option value="peerreview">Peer Review</option>
+              <option value="archived">Archived (not published)</option>
+              <option value="archivedpub">Archived (published)</option>
+              <option value="draft">Draft</option>
+            </select>
+            <label class="mdl-select__label" for="search-stage">Stage</label>
+          </div>
+        </div>
+        <div class="o-layout__itm u-1/4">
+          <div class="mdl-select mdl-js-select full-width mdl-select--floating-label">
+            <select class="mdl-select__input js-filter" name="overdue" id="search-overdue">
+              <option value=""></option>
+              <option value="">All overdue</option>
+              <option value="">1 week</option>
+              <option value="">2 weeks</option>
+              <option value="">3 weeks</option>
+              <option value="">4 weeks</option>
+              <option value="">6 weeks</option>
+            </select>
+            <label class="mdl-select__label" for="search-overdue">Overdue</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-wrapper">
+      <div class="_mdl-layout" style="position: relative; margin-bottom: 1.5rem; float: right;">
+        <button type="button" class="mdl-button mdl-js-button c-customise-btn js-toggle-btn">Customise <i class="material-icons">&#xE5C5;</i></button>
+        <div class="c-customise is-hidden js-toggle-panel">
+          <div class="o-grid">
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events" for="customise-date">
+              <input type="checkbox" class="mdl-checkbox__input js-customise" id="customise-date" name="customise-date" checked="checked">
+              <span class="mdl-checkbox__label mdl-checkbox__label--body1">Date</span>
+            </label>
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events" for="customise-author">
+              <input type="checkbox" class="mdl-checkbox__input js-customise" id="customise-author" name="customise-author" checked="checked">
+              <span class="mdl-checkbox__label mdl-checkbox__label--body1">Author(s)</span>
+            </label>
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events" for="customise-id">
+              <input type="checkbox" class="mdl-checkbox__input js-customise" id="customise-id" name="customise-id" checked="checked">
+              <span class="mdl-checkbox__label mdl-checkbox__label--body1">ID</span>
+            </label>
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events" for="customise-version">
+              <input type="checkbox" class="mdl-checkbox__input js-customise" id="customise-version" name="customise-version" checked="checked">
+              <span class="mdl-checkbox__label mdl-checkbox__label--body1">Version</span>
+            </label>
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events" for="customise-title">
+              <input type="checkbox" class="mdl-checkbox__input js-customise" id="customise-title" name="customise-title" checked="checked">
+              <span class="mdl-checkbox__label mdl-checkbox__label--body1">Title</span>
+            </label>
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events" for="customise-editor">
+              <input type="checkbox" class="mdl-checkbox__input js-customise" id="customise-editor" name="customise-editor" checked="checked">
+              <span class="mdl-checkbox__label mdl-checkbox__label--body1">Editor(s)</span>
+            </label>
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events" for="customise-type">
+              <input type="checkbox" class="mdl-checkbox__input js-customise" id="customise-type" name="customise-type" checked="checked">
+              <span class="mdl-checkbox__label mdl-checkbox__label--body1">Article Type</span>
+            </label>
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events" for="customise-status">
+              <input type="checkbox" class="mdl-checkbox__input js-customise" id="customise-status" name="customise-status" checked="checked">
+              <span class="mdl-checkbox__label mdl-checkbox__label--body1">Status</span>
+            </label>
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events" for="customise-overdue">
+              <input type="checkbox" class="mdl-checkbox__input js-customise" id="customise-overdue" name="customise-overdue" checked="checked">
+              <span class="mdl-checkbox__label mdl-checkbox__label--body1">Overdue</span>
+            </label>
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events" for="customise-platform">
+              <input type="checkbox" class="mdl-checkbox__input js-customise" id="customise-platform" name="customise-platform" checked="checked">
+              <span class="mdl-checkbox__label mdl-checkbox__label--body1">Platform</span>
+            </label>
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events" for="customise-gateways">
+              <input type="checkbox" class="mdl-checkbox__input js-customise" id="customise-gateways" name="customise-gateways" checked="checked">
+              <span class="mdl-checkbox__label mdl-checkbox__label--body1">Gateways &amp; Collections</span>
+            </label>
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events" for="customise-flags">
+              <input type="checkbox" class="mdl-checkbox__input js-customise" id="customise-flags" name="customise-flags" checked="checked">
+              <span class="mdl-checkbox__label mdl-checkbox__label--body1">Flags</span>
+            </label>
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events" for="customise-peerreview">
+              <input type="checkbox" class="mdl-checkbox__input js-customise" id="customise-peerreview" name="customise-peerreview" checked="checked">
+              <span class="mdl-checkbox__label mdl-checkbox__label--body1">Peer Review Summary</span>
+            </label>
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events" for="customise-report">
+              <input type="checkbox" class="mdl-checkbox__input js-customise" id="customise-report" name="customise-report" checked="checked">
+              <span class="mdl-checkbox__label mdl-checkbox__label--body1">New Report</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <table class="js-results">
+        <thead>
+          <tr>
+            <th data-name="date">Date</th>
+            <th data-name="author">Author(s)</th>
+            <th class="u-numeric" data-name="id">ID</th>
+            <th class="u-numeric" title="Version" data-name="version">Ver.</th>
+            <th data-name="title">Title</th>
+            <th data-name="editor">Editor(s)</th>
+            <th data-name="type">Type</th>
+            <th data-name="status">Status</th>
+            <th data-name="overdue">Overdue</th>
+            <th data-name="platform">Platform</th>
+            <th data-name="gateways">Gateways &amp; Collections</th>
+            <th class="u-centre" data-name="flags">Flags</th>
+            <th data-name="peerreview">Peer Review Summary</th>
+            <th data-name="report">New Report</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="js-results-set">
+            <td data-name="date">
+              <div>
+                <strong>Submitted</strong>
+                <time>07 Sep 2017</time>
+              </div>
+            </td>
+            <td data-name="author">Olya Grytsevych</td>
+            <td class="u-numeric" data-name="id">22650</td>
+            <td class="u-numeric" data-name="version">2</td>
+            <td data-name="title">Clinical Practice Article test bed</td>
+            <td data-name="editor">Lina Patel</td>
+            <td data-name="type">Clinical Practice Article</td>
+            <td data-name="status">PDF with Author</td>
+            <td data-name="overdue"></td>
+            <td data-name="platform">Gates</td>
+            <td data-name="gateways"></td>
+            <td class="u-centre" data-name="flags">
+              <i class="material-icons">&#xE885;</i>
+              <i class="material-icons">&#xE192;</i>
+            </td>
+            <td data-name="peerreview"></td>
+            <td data-name="report"></td>
+            <td class="u-nowrap">
+              <a href="/editor/version/6474">Edit</a><br />
+              <a href="/editor/version/6474?tab=section3">Summary</a><br />
+              <a href="/editor/version/6474?tab=section2">Referee Status</a><br />
+              <a href="/editor/version/6474#notes">Notes</a><br />
+              <a href="/editor/version//delete">Delet<e/a>
+            </td>
+          </tr>
+          <tr class="js-results-set">
+            <td data-name="date">
+              <div>
+                <strong>Submitted</strong>
+                <time>04 Sep 2017</time>
+              </div>
+            </td>
+            <td data-name="author">Lina Patel</td>
+            <td class="u-numeric" data-name="id">22976</td>
+            <td class="u-numeric" data-name="version">1</td>
+            <td data-name="title">Test article - mni grant</td>
+            <td data-name="editor"></td>
+            <td data-name="type">Systematic Review</td>
+            <td data-name="status">Revisions with Author</td>
+            <td data-name="overdue"></td>
+            <td data-name="platform">MNI</td>
+            <td data-name="gateways"></td>
+            <td class="u-centre" data-name="flags"></td>
+            <td data-name="peerreview"></td>
+            <td data-name="report"></td>
+            <td class="u-nowrap">
+              <a href="/editor/version/24537">Edit</a><br />
+              <a href="/editor/version/24537?tab=section3">Summary</a><br />
+              <a href="/editor/version/24537?tab=section2">Referee Status</a><br />
+              <a href="/editor/version/24537#notes">Notes</a><br />
+              <a href="/editor/version//delete">Delete</a>
+            </td>
+          </tr>
+          <tr class="js-results-set">
+            <td data-name="date">
+              <div>
+                <strong>Submitted</strong>
+                <time>18 May 2017</time>
+              </div>
+              <div>
+                <strong>Published</strong>
+                <time>14 Aug 2017</time>
+              </div>
+            </td>
+            <td data-name="author">Eleanor-Rose Begg</td>
+            <td class="u-numeric" data-name="id">17831</td>
+            <td class="u-numeric" data-name="version">2</td>
+            <td data-name="title">Playing with CRediT so that I can troubleshoot it for authors on Research</td>
+            <td data-name="editor">Eleanor-Rose Begg</td>
+            <td data-name="type">Research Article</td>
+            <td data-name="status">Published</td>
+            <td data-name="overdue"></td>
+            <td data-name="platform">F1R</td>
+            <td data-name="gateways"></td>
+            <td class="u-centre" data-name="flags"></td>
+            <td data-name="peerreview"></td>
+            <td data-name="report"></td>
+            <td class="u-nowrap">
+              <a href="/editor/version/19969">Edit</a><br />
+              <a href="/editor/version/19969?tab=section3">Summary</a><br />
+              <a href="/editor/version/19969?tab=section2">Referee Status</a><br />
+              <a href="/editor/version/19969#notes">Notes</a><br />
+              <a href="/editor/version//delete">Delete</a>
+            </td>
+          </tr>
+          <tr class="js-results-set">
+            <td data-name="date">
+              <div>
+                <strong>Submitted</strong>
+                <time>08 Aug 2017</time>
+              </div>
+            </td>
+            <td data-name="author">Mad Scientist</td>
+            <td class="u-numeric" data-name="id">20860</td>
+            <td class="u-numeric" data-name="version">1</td>
+            <td data-name="title">Authors &amp; Affiliations test bed</td>
+            <td data-name="editor"></td>
+            <td data-name="type">Research Article</td>
+            <td data-name="status">Pre-publication Checks</td>
+            <td data-name="overdue"></td>
+            <td data-name="platform">F1R</td>
+            <td data-name="gateways"></td>
+            <td class="u-centre" data-name="flags"><i class="material-icons">&#xE7FD;</i></td>
+            <td data-name="peerreview"></td>
+            <td data-name="report"></td>
+            <td class="u-nowrap">
+              <a href="/editor/version/22276">Edit</a><br />
+              <a href="/editor/version/22276?tab=section3">Summary</a><br />
+              <a href="/editor/version/22276?tab=section2">Referee Status</a><br />
+              <a href="/editor/version/22276#notes">Notes</a><br />
+              <a href="/editor/version//delete">Delete</a>
+            </td>
+          </tr>
+          <tr class="js-results-set">
+            <td data-name="date">
+              <div>
+                <strong>Submitted</strong>
+                <time>07 Apr 2017</time>
+              </div>
+            </td>
+            <td data-name="author">James Monroe</td>
+            <td class="u-numeric" data-name="id">14882</td>
+            <td class="u-numeric" data-name="version">6</td>
+            <td data-name="title">Case Report: Subdivisions of the adult zebrafish pallium based on molecular marker analysis</td>
+            <td data-name="editor"></td>
+            <td data-name="type">Case Report</td>
+            <td data-name="status">Published</td>
+            <td data-name="overdue"></td>
+            <td data-name="platform">F1R</td>
+            <td data-name="gateways"></td>
+            <td class="u-centre" data-name="flags"></td>
+            <td data-name="peerreview"></td>
+            <td data-name="report"></td>
+            <td class="u-nowrap">
+              <a href="/editor/version/16113">Edit</a><br />
+              <a href="/editor/version/16113?tab=section3">Summary</a><br />
+              <a href="/editor/version/16113?tab=section2">Referee Status</a><br />
+              <a href="/editor/version/16113#notes">Notes</a><br />
+              <a href="/editor/version//delete">Delete</a>
+            </td>
+          </tr>
+          <tr class="js-results-set">
+            <td data-name="date">
+              <div>
+                <strong>Submitted</strong>
+                <time>14 Mar 2017</time>
+              </div>
+              <div>
+                <strong>Published</strong>
+                <time>17 Mar 2017</time>
+              </div>
+            </td>
+            <td data-name="author">Miriam Wathuo, Graham F Meddley &amp; James Nokes</td>
+            <td class="u-numeric" data-name="id">13773</td>
+            <td class="u-numeric" data-name="version">4</td>
+            <td data-name="title">Quantification and determinants of the amount of respiratory syncytial virus (RSV) shed using real time PCR data from a longitudinal household study</td>
+            <td data-name="editor"></td>
+            <td data-name="type">Software Tool Article</td>
+            <td data-name="status">Published</td>
+            <td data-name="overdue"></td>
+            <td data-name="platform">Wellcome</td>
+            <td data-name="gateways"></td>
+            <td class="u-centre" data-name="flags"></td>
+            <td data-name="peerreview"></td>
+            <td data-name="report"></td>
+            <td class="u-nowrap">
+              <a href="/editor/version/24011">Edit</a><br />
+              <a href="/editor/version/24011?tab=section3">Summary</a><br />
+              <a href="/editor/version/24011?tab=section2">Referee Status</a><br />
+              <a href="/editor/version/24011#notes">Notes</a><br />
+              <a href="/editor/version//delete">Delete</a>
+            </td>
+          </tr>
+          <tr class="js-results-set">
+            <td data-name="date">
+              <div>
+                <strong>Submitted</strong>
+                <time>06 Nov 2016</time>
+              </div>
+            </td>
+            <td data-name="author">Ros Dignon</td>
+            <td class="u-numeric" data-name="id">9992</td>
+            <td class="u-numeric" data-name="version">3</td>
+            <td data-name="title">Case Report test</td>
+            <td data-name="editor">Eleanor-Rose Begg</td>
+            <td data-name="type">Case Report</td>
+            <td data-name="status">Submitted</td>
+            <td data-name="overdue"></td>
+            <td data-name="platform">Wellcome</td>
+            <td data-name="gateways"></td>
+            <td class="u-centre" data-name="flags"><i class="material-icons">&#xE645;</i></td>
+            <td data-name="peerreview"></td>
+            <td data-name="report"></td>
+            <td class="u-nowrap">
+              <a href="/editor/version/10936">Edit</a><br />
+              <a href="/editor/version/10936?tab=section3">Summary</a><br />
+              <a href="/editor/version/10936?tab=section2">Referee Status</a><br />
+              <a href="/editor/version/10936#notes">Notes</a><br />
+              <a href="/editor/version//delete">Delete</a>
+            </td>
+          </tr>
+          <tr class="js-results-set">
+            <td data-name="date">
+              <div>
+                <strong>Submitted</strong>
+                <time>13 Jan 2015</time>
+              </div>
+            </td>
+            <td data-name="author">Ravi D Kumarasinghe</td>
+            <td class="u-numeric" data-name="id">5936</td>
+            <td class="u-numeric" data-name="version">1</td>
+            <td data-name="title">Article co-authored by a F1000 Sectional Head</td>
+            <td data-name="editor"></td>
+            <td data-name="type">Research Article</td>
+            <td data-name="status">Submitted</td>
+            <td data-name="overdue"></td>
+            <td data-name="platform">F1R</td>
+            <td data-name="gateways"></td>
+            <td class="u-centre" data-name="flags"></td>
+            <td data-name="peerreview"></td>
+            <td data-name="report"></td>
+            <td class="u-nowrap">
+              <a href="/editor/version/6474">Edit</a><br />
+              <a href="/editor/version/6474?tab=section3">Summary</a><br />
+              <a href="/editor/version/6474?tab=section2">Referee Status</a><br />
+              <a href="/editor/version/6474#notes">Notes</a><br />
+              <a href="/editor/version//delete">Delete</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="../common/js/namespace.js"></script>
+    <script src="../common/js/constants.js"></script>
+    <script src="../common/js/utilities.js"></script>
+    <script src="../common/js/mdl.min.js"></script>
+    <script src="../common/js/mdl-helper.js"></script>
+    <script src="./js/scripts.js"></script>
+  </body>
+</html>

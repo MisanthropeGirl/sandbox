@@ -1,0 +1,571 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Files</title>
+
+    <link rel="stylesheet" href="../common/css/Roboto.css">
+    <link rel="stylesheet" href="../common/css/material-icons.css">
+    <link rel="stylesheet" href="../common/css/mdl.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+  </head>
+  <body>
+    <main class="_mdl-layout">
+      <div class="mdl-expandingsection js-details-section" data-section="files">
+        <div class="mdl-expandingsection__item first is-open">
+          <div class="mdl-expandingsection__expander mdl-js-expandingsection is-open">
+            <div class="mdl-expandingsection__title mdl-typography--title">Files</div>
+            <i class="mdl-expandingsection__icon--expand material-icons">&#xE5CF;</i>
+            <i class="mdl-expandingsection__icon--collapse material-icons">&#xE5CE;</i>
+          </div>
+          <div class="mdl-expandingsection__content is-open">
+
+              <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" title="Add Files" aria-label="add files" data-action="file-upload-open">
+                <i class="material-icons">add</i>
+                <span>Add File(s)</span>
+              </button>
+
+                  <div class="mdl-expandingsection mdl-expandingsection--nested">
+                    <div class="mdl-expandingsection__item is-open">
+                      <div class="mdl-expandingsection__expander is-open">
+                        <div class="mdl-expandingsection__title mdl-typography--body-2">Manuscript</div>
+                      </div>
+                      <div class="mdl-expandingsection__content is-open">
+                        <table class="mdl-data-table mdl-js-data-table" data-file-category='manuscript'>
+                          <col />
+                          <col style="width: 118px" />
+                          <col style="width: 100px" />
+                          <col style="width: 74px;" />
+                          <thead class="is-hidden">
+                            <tr>
+                              <th class="mdl-data-table__cell--non-numeric" scope="col">File</th>
+                              <th scope="col">Date</th>
+                              <th scope="col">Size</th>
+                              <th scope="col"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="mdl-data-table__cell--non-numeric">
+                                Blah blah blah<br />
+                                Crosscheck
+                              </td>
+                              <td>10 Oct 2017</td>
+                              <td>100 KB</td>
+                              <td>
+                                <button class="mdl-button mdl-js-button mdl-button--icon" id="manuscript-1">
+                                  <i class="material-icons">more_vert</i>
+                                </button>
+                                <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect" data-mdl-for="manuscript-1">
+                                  <li class="mdl-menu__item">Download File</li>
+                                  <li class="mdl-menu__item">View Report</li>
+                                  <li class="mdl-menu__item">Resubmit File</li>
+                                  <li class="mdl-menu__item">Approve</li>
+                                  <li class="mdl-menu__item">Skip</li>
+                                </ul>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mdl-expandingsection mdl-expandingsection--nested">
+                    <div class="mdl-expandingsection__item">
+                      <div class="mdl-expandingsection__expander mdl-js-expandingsection">
+                        <div class="mdl-expandingsection__title mdl-typography--body-2">Source Files</div>
+                        <div class="c-download-links">
+                          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent"><i class="material-icons">&#xE2C4;</i> Download all files</button>
+                        </div>
+                        <i class="mdl-expandingsection__icon--expand material-icons">&#xE5CF;</i>
+                        <i class="mdl-expandingsection__icon--collapse material-icons">&#xE5CE;</i>
+                      </div>
+                      <div class="mdl-expandingsection__content">
+                        <table class="mdl-data-table mdl-js-data-table" data-file-category='source'>
+                          <col />
+                          <col style="width: 118px" />
+                          <col style="width: 100px" />
+                          <col style="width: 74px;" />
+                          <thead class="is-hidden">
+                            <tr>
+                              <th class="mdl-data-table__cell--non-numeric" scope="col">File</th>
+                              <th scope="col">Date</th>
+                              <th scope="col">Size</th>
+                              <th scope="col"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="mdl-data-table__cell--non-numeric">Blah blah blah</td>
+                              <td>10 Oct 2017</td>
+                              <td>100 KB</td>
+                              <td>
+                                <button class="mdl-button mdl-js-button mdl-button--icon" id="source-1">
+                                  <i class="material-icons">more_vert</i>
+                                </button>
+                                <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect" data-mdl-for="source-1">
+                                  <li class="mdl-menu__item">Download</li>
+                                  <li class="mdl-menu__item">Remove</li>
+                                </ul>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mdl-expandingsection mdl-expandingsection--nested">
+                    <div class="mdl-expandingsection__item">
+                      <div class="mdl-expandingsection__expander mdl-js-expandingsection">
+                        <div class="mdl-expandingsection__title mdl-typography--body-2">Dataset Files</div>
+                        <div class="c-download-links">
+                          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent"><i class="material-icons">&#xE2C4;</i> Get data availability text</button>
+                          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent"><i class="material-icons">&#xE2C4;</i> Get data citation text</button>
+                        </div>
+                        <i class="mdl-expandingsection__icon--expand material-icons">&#xE5CF;</i>
+                        <i class="mdl-expandingsection__icon--collapse material-icons">&#xE5CE;</i>
+                      </div>
+                      <div class="mdl-expandingsection__content">
+                        <table class="mdl-data-table mdl-js-data-table" data-file-category='dataset'>
+                          <col />
+                          <col style="width: 118px" />
+                          <col style="width: 100px" />
+                          <col style="width: 74px;" />
+                          <thead class="is-hidden">
+                            <tr>
+                              <th class="mdl-data-table__cell--non-numeric" scope="col">File</th>
+                              <th scope="col">Date</th>
+                              <th scope="col">Size</th>
+                              <th scope="col"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="mdl-data-table__cell--non-numeric">Blah blah blah</td>
+                              <td>10 Oct 2017</td>
+                              <td>100 KB</td>
+                              <td>
+                                <button class="mdl-button mdl-js-button mdl-button--icon" id="data-1">
+                                  <i class="material-icons">more_vert</i>
+                                </button>
+                                <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect" data-mdl-for="data-1">
+                                  <li class="mdl-menu__item">Download</li>
+                                  <li class="mdl-menu__item">Edit</li>
+                                  <li class="mdl-menu__item">Delete</li>
+                                  <li class="mdl-menu__item">Get text</li>
+                                </ul>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mdl-expandingsection mdl-expandingsection--nested">
+                    <div class="mdl-expandingsection__item">
+                      <div class="mdl-expandingsection__expander mdl-js-expandingsection">
+                        <div class="mdl-expandingsection__title mdl-typography--body-2">Supplementary Files</div>
+                        <div class="c-download-links">
+                          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent"><i class="material-icons">&#xE2C4;</i> Get supplementary availability text</button>
+                        </div>
+                        <i class="mdl-expandingsection__icon--expand material-icons">&#xE5CF;</i>
+                        <i class="mdl-expandingsection__icon--collapse material-icons">&#xE5CE;</i>
+                      </div>
+                      <div class="mdl-expandingsection__content">
+                        <table class="mdl-data-table mdl-js-data-table" data-file-category='supplemental'>
+                          <col />
+                          <col style="width: 118px" />
+                          <col style="width: 100px" />
+                          <col style="width: 74px;" />
+                          <thead class="is-hidden">
+                            <tr>
+                              <th class="mdl-data-table__cell--non-numeric" scope="col">File</th>
+                              <th scope="col">Date</th>
+                              <th scope="col">Size</th>
+                              <th scope="col"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="mdl-data-table__cell--non-numeric">Blah blah blah</td>
+                              <td>10 Oct 2017</td>
+                              <td>100 KB</td>
+                              <td>
+                                <button class="mdl-button mdl-js-button mdl-button--icon" id="supplementary-1">
+                                  <i class="material-icons">more_vert</i>
+                                </button>
+                                <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect" data-mdl-for="supplementary-1">
+                                  <li class="mdl-menu__item">Download</li>
+                                  <li class="mdl-menu__item">Edit</li>
+                                  <li class="mdl-menu__item">Delete</li>
+                                  <li class="mdl-menu__item">Get text</li>
+                                </ul>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mdl-expandingsection mdl-expandingsection--nested">
+                    <div class="mdl-expandingsection__item">
+                      <div class="mdl-expandingsection__expander mdl-js-expandingsection">
+                        <div class="mdl-expandingsection__title mdl-typography--body-2">Article PDF/XML</div>
+                        <i class="mdl-expandingsection__icon--expand material-icons">&#xE5CF;</i>
+                        <i class="mdl-expandingsection__icon--collapse material-icons">&#xE5CE;</i>
+                      </div>
+                      <div class="mdl-expandingsection__content">
+                        <table class="mdl-data-table mdl-js-data-table" data-file-category='alternate'>
+                          <col />
+                          <col style="width: 118px" />
+                          <col style="width: 100px" />
+                          <col style="width: 74px;" />
+                          <thead class="is-hidden">
+                            <tr>
+                              <th class="mdl-data-table__cell--non-numeric" scope="col">File</th>
+                              <th scope="col">Date</th>
+                              <th scope="col">Size</th>
+                              <th scope="col"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="mdl-data-table__cell--non-numeric">PDF</td>
+                              <td>10 Oct 2017</td>
+                              <td>100 KB</td>
+                              <td>
+                                <button class="mdl-button mdl-js-button mdl-button--icon" id="alternate-1">
+                                  <i class="material-icons">more_vert</i>
+                                </button>
+                                <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect" data-mdl-for="alternate-1">
+                                  <li class="mdl-menu__item">Download</li>
+                                  <li class="mdl-menu__item">Refresh</li>
+                                  <li class="mdl-menu__item">Refresh and Download</li>
+                                </ul>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="mdl-data-table__cell--non-numeric">XML</td>
+                              <td>10 Oct 2017</td>
+                              <td>100 KB</td>
+                              <td>
+                                <button class="mdl-button mdl-js-button mdl-button--icon" id="alternate-2">
+                                  <i class="material-icons">more_vert</i>
+                                </button>
+                                <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect" data-mdl-for="alternate-2">
+                                  <li class="mdl-menu__item">Download</li>
+                                  <li class="mdl-menu__item">Preview</li>
+                                  <li class="mdl-menu__item">Final Preview</li>
+                                  <li class="mdl-menu__item">Get PMC XML</li>
+                                  <li class="mdl-menu__item">Get PMC XML (sans Figshares)</li>
+                                </ul>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mdl-expandingsection mdl-expandingsection--nested">
+                    <div class="mdl-expandingsection__item">
+                      <div class="mdl-expandingsection__expander mdl-js-expandingsection">
+                        <div class="mdl-expandingsection__title mdl-typography--body-2">Plagiarism Report</div>
+                        <i class="mdl-expandingsection__icon--expand material-icons">&#xE5CF;</i>
+                        <i class="mdl-expandingsection__icon--collapse material-icons">&#xE5CE;</i>
+                      </div>
+                      <div class="mdl-expandingsection__content">
+                        <table class="mdl-data-table mdl-js-data-table" data-file-category='plagiarism'>
+                          <col />
+                          <col style="width: 118px" />
+                          <col style="width: 100px" />
+                          <col style="width: 74px;" />
+                          <thead class="is-hidden">
+                            <tr>
+                              <th class="mdl-data-table__cell--non-numeric" scope="col">File</th>
+                              <th scope="col">Date</th>
+                              <th scope="col">Size</th>
+                              <th scope="col"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="mdl-data-table__cell--non-numeric">Blah blah blah</td>
+                              <td>10 Oct 2017</td>
+                              <td>100 KB</td>
+                              <td>
+                                <button class="mdl-button mdl-js-button mdl-button--icon" id="plagiarism-1">
+                                  <i class="material-icons">more_vert</i>
+                                </button>
+                                <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect" data-mdl-for="plagiarism-1">
+                                  <li class="mdl-menu__item">Download</li>
+                                  <li class="mdl-menu__item">Remove</li>
+                                </ul>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mdl-expandingsection mdl-expandingsection--nested">
+                    <div class="mdl-expandingsection__item">
+                      <div class="mdl-expandingsection__expander mdl-js-expandingsection">
+                        <div class="mdl-expandingsection__title mdl-typography--body-2">Original Author Files</div>
+                        <div class="c-download-links">
+                          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent"><i class="material-icons">&#xE2C4;</i> Download all files</button>
+                        </div>
+                        <i class="mdl-expandingsection__icon--expand material-icons">&#xE5CF;</i>
+                        <i class="mdl-expandingsection__icon--collapse material-icons">&#xE5CE;</i>
+                      </div>
+                      <div class="mdl-expandingsection__content">
+                        <table class="mdl-data-table mdl-js-data-table">
+                          <col />
+                          <col style="width: 118px" />
+                          <col style="width: 100px" />
+                          <col style="width: 74px;" />
+                          <thead class="is-hidden">
+                            <tr>
+                              <th class="mdl-data-table__cell--non-numeric" scope="col">File</th>
+                              <th scope="col">Date</th>
+                              <th scope="col">Size</th>
+                              <th scope="col"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="mdl-data-table__cell--non-numeric js-file-name">Blah blah blah</td>
+                              <td class="js-file-date">10 Oct 2017</td>
+                              <td class="js-file-size">100 KB</td>
+                              <td>
+                                <button class="mdl-button mdl-js-button mdl-button--icon" id="original-1">
+                                  <i class="material-icons">more_vert</i>
+                                </button>
+                                <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect" data-mdl-for="original-1">
+                                  <li class="mdl-menu__item">Download</li>
+                                  <li class="mdl-menu__item">Copy to Source Files</li>
+                                </ul>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+              <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" title="Add Files" aria-label="add files" data-action="file-upload-open">
+                <i class="material-icons">add</i>
+                <span>Add File(s)</span>
+              </button>
+
+
+            <!-- <div class="mdl-expandingsection mdl-expandingsection--nested">
+              <div class="mdl-expandingsection__item">
+                <div class="mdl-expandingsection__expander mdl-js-expandingsection">
+                  <div class="mdl-expandingsection__title mdl-typography--title">Version N - 1</div>
+                  <i class="mdl-expandingsection__icon--expand material-icons">&#xE5CF;</i>
+                  <i class="mdl-expandingsection__icon--collapse material-icons">&#xE5CE;</i>
+                </div>
+                <div class="mdl-expandingsection__content">
+                  Version N - 1 files
+                </div>
+              </div>
+            </div>
+
+            <div class="mdl-expandingsection mdl-expandingsection--nested">
+              <div class="mdl-expandingsection__item">
+                <div class="mdl-expandingsection__expander mdl-js-expandingsection">
+                  <div class="mdl-expandingsection__title mdl-typography--title">Version &hellip;</div>
+                  <i class="mdl-expandingsection__icon--expand material-icons">&#xE5CF;</i>
+                  <i class="mdl-expandingsection__icon--collapse material-icons">&#xE5CE;</i>
+                </div>
+                <div class="mdl-expandingsection__content">
+                  Version &hellip; files
+                </div>
+              </div>
+            </div>
+
+            <div class="mdl-expandingsection mdl-expandingsection--nested">
+              <div class="mdl-expandingsection__item">
+                <div class="mdl-expandingsection__expander mdl-js-expandingsection">
+                  <div class="mdl-expandingsection__title mdl-typography--title">Version 1</div>
+                  <i class="mdl-expandingsection__icon--expand material-icons">&#xE5CF;</i>
+                  <i class="mdl-expandingsection__icon--collapse material-icons">&#xE5CE;</i>
+                </div>
+                <div class="mdl-expandingsection__content">
+                  Version 1 files
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="o-overlay o-overlay--upload js-overlay-upload is-hidden" hidden="hidden">
+      <div class="o-overlay__content o-overlay__content--upload">
+        <div>
+          <i class="material-icons">&#xE2C6;</i>
+        </div>
+
+        <div>Drop your files anywhere to upload</div>
+
+        <div>
+          <input type="file" multiple="multiple" class="js-upload-input is-hidden" hidden="hidden" />
+          <button class="primary" data-action="file-upload-browse">Browse</button>
+          <button class="secondary" data-action="file-upload-cancel">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="o-overlay o-overlay--sort js-overlay-process is-hidden" hidden="hidden">
+      <form class="js-file-form">
+        <section class="_mdl-layout o-overlay__content o-overlay__content--sort">
+          <header>
+            <aside class="js-file-number is-hidden" hidden="hidden">File X of Y</aside>
+            <h1 class="js-file-name">File name</h1>
+            <div>Last modified: <span class="js-file-date"></span> / Size: <span class="js-file-size"></span></div>
+          </header>
+          <div class="o-grid c-file-options">
+            <div style="grid-row: 1; grid-column: 1;">
+              <div class="mdl-select mdl-js-select mdl-select--floating-label">
+                <select class="mdl-select__input js-file-category" name="category" id="add-to" required="required">
+                  <option value=""></option>
+                  <option value="manuscript" aria-controls="fileManuscript">Manuscript</option>
+                  <option value="source" aria-controls="fileSource">Source</option>
+                  <option value="dataset" aria-controls="fileDataset">Dataset</option>
+                  <option value="supplemental" aria-controls="fileSupplemental">Supplementary</option>
+                  <option value="alternate" aria-controls="fileAlternate">Article PDF/XML</option>
+                  <option value="plagiarism" aria-controls="filePlagiarism">Plagiarism Report</option>
+                </select>
+                <label class="mdl-select__label" for="add-to">Add to</label>
+              </div>
+            </div>
+
+            <div class="js-file-option is-hidden" style="grid-row: 1; grid-column: 2;" hidden="hidden" data-related="MANUSCRIPT">
+              <label class="mdl-checkbox mdl-checkbox--height-auto mdl-js-checkbox mdl-js-ripple-effect" for="for-typesetter">
+                <input type="checkbox" name="forTypesetter" id="for-typesetter" class="mdl-checkbox__input" value="true">
+                <span class="mdl-checkbox__label mdl-checkbox__label--body1">Final File for Typesetter</span>
+              </label>
+            </div>
+
+            <div class="js-file-option is-hidden" style="grid-row: 1; grid-column: 2;" hidden="hidden" data-related="DATASET">
+              <label class="mdl-checkbox mdl-checkbox--height-auto mdl-js-checkbox mdl-js-ripple-effect" for="plottable">
+                <input type="checkbox" name="plottable" id="plottable" class="mdl-checkbox__input" value="true">
+                <span class="mdl-checkbox__label mdl-checkbox__label--body1">Plottable</span>
+              </label>
+            </div>
+
+            <div class="js-file-option is-hidden" style="grid-row: 1; grid-column: 2;" hidden="hidden" data-related="SUPPLEMENTAL">
+              <label class="mdl-checkbox mdl-checkbox--height-auto mdl-js-checkbox mdl-js-ripple-effect" for="doi">
+                <input type="checkbox" name="doi" id="doi" class="mdl-checkbox__input" value="true">
+                <span class="mdl-checkbox__label mdl-checkbox__label--body1">Create DOI</span>
+              </label>
+            </div>
+
+            <div class="js-file-option is-hidden" style="grid-row: 2; grid-column: 1;" hidden="hidden" data-related="DATASET,SUPPLEMENTAL">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label">
+                <input class="mdl-textfield__input js-funder-name" type="text" name="title" id="title" value="" />
+                <label class="mdl-textfield__label" for="title">Title</label>
+              </div>
+            </div>
+
+            <div class="js-file-option is-hidden" style="grid-row: 2; grid-column: 2;" hidden="hidden" data-related="DATASET,SUPPLEMENTAL">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label">
+                <input class="mdl-textfield__input js-funder-name" type="text" name="legend" id="legend" value="" />
+                <label class="mdl-textfield__label" for="legend">Legend</label>
+              </div>
+            </div>
+
+            <div class="js-file-option is-hidden" style="grid-row: 3; grid-column: 1 / span 2;" hidden="hidden" data-related="SUPPLEMENTAL">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label">
+                <textarea class="mdl-textfield__input js-textarea-resize" id="notes" name="notes" rows="1"></textarea>
+                <label class="mdl-textfield__label" for="notes">Notes</label>
+              </div>
+            </div>
+          </div>
+          <footer>
+            <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" data-action="file-process-cancel">Cancel</button>
+            <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" data-action="file-process-done">Next</button>
+          </footer>
+        </section>
+      </form>
+    </div>
+
+    <template id="templateDocument">
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric js-file-name"></td>
+        <td class="js-file-date"></td>
+        <td class="js-file-size"></td>
+        <td>
+          <button class="mdl-button mdl-js-button mdl-button--icon">
+            <i class="material-icons">more_vert</i>
+          </button>
+          <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect"></ul>
+        </td>
+      </tr>
+    </template> 
+
+    <template id="templateMenuManuscript">
+      <li class="mdl-menu__item">Download File</li>
+      <li class="mdl-menu__item">View Report</li>
+      <li class="mdl-menu__item">Resubmit File</li>
+      <li class="mdl-menu__item">Approve</li>
+      <li class="mdl-menu__item">Skip</li>
+    </template>
+
+    <template id="templateMenuSource">
+      <li class="mdl-menu__item">Download</li>
+      <li class="mdl-menu__item">Remove</li>
+    </template>
+
+    <template id="templateMenuDataset">
+      <li class="mdl-menu__item">Download</li>
+      <li class="mdl-menu__item">Edit</li>
+      <li class="mdl-menu__item">Delete</li>
+      <li class="mdl-menu__item">Get text</li>
+    </template>
+
+    <template id="templateMenuSupplemental">
+      <li class="mdl-menu__item">Download</li>
+      <li class="mdl-menu__item">Edit</li>
+      <li class="mdl-menu__item">Delete</li>
+      <li class="mdl-menu__item">Get text</li>
+    </template>
+
+    <template id="templateMenuArticlePDF">
+      <li class="mdl-menu__item">Download</li>
+      <li class="mdl-menu__item">Refresh</li>
+      <li class="mdl-menu__item">Refresh and Download</li>
+    </template>
+
+    <template id="templateMenuArticleXML">
+      <li class="mdl-menu__item">Download</li>
+      <li class="mdl-menu__item">Preview</li>
+      <li class="mdl-menu__item">Final Preview</li>
+      <li class="mdl-menu__item">Get PMC XML</li>
+      <li class="mdl-menu__item">Get PMC XML (sans Figshares)</li>
+    </template>
+
+    <template id="templateMenuPlagiarism">
+      <li class="mdl-menu__item">Download</li>
+      <li class="mdl-menu__item">Remove</li>
+    </template>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+    <script src="../common/js/namespace.js"></script>
+    <script src="../common/js/constants.js"></script>
+    <script src="../common/js/utilities.js"></script>
+    <script src="../common/js/mdl.min.js"></script>
+    <script src="../common/js/mdl-helper.js"></script>
+    <script src="./js/files.js"></script>
+    <script src="./js/files.documents.js"></script>
+  </body>
+</html>
