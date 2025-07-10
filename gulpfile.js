@@ -2,15 +2,13 @@ import { src, dest, watch, series, parallel } from "gulp";
 import gulpSass from "gulp-sass";
 import * as dartSass from "sass";
 import sourcemaps from "gulp-sourcemaps";
-import autoprefixer from "gulp-autoprefixer";
-import cleanCSS from "gulp-clean-css";
+import postcss from 'gulp-postcss';
 import terser from "gulp-terser";
 import htmlmin from "gulp-htmlmin";
-import newer from "gulp-newer";
+import autoprefixer from 'autoprefixer';
 import browserSyncLib from "browser-sync";
+import cssnano from 'cssnano';
 import { deleteAsync } from "del";
-import { promises as fs } from "fs";
-import path from "path";
 
 const sass = gulpSass(dartSass);
 const browserSync = browserSyncLib.create();
@@ -41,8 +39,7 @@ export function styles() {
   return src(paths.styles.src)
     .pipe(sourcemaps.init())
     .pipe(sass().on("error", sass.logError))
-    .pipe(autoprefixer({ cascade: false }))
-    .pipe(cleanCSS({ level: 2 }))
+    .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(sourcemaps.write("."))
     .pipe(dest(paths.styles.dest))
     .pipe(browserSync.stream());
@@ -68,20 +65,21 @@ export function scripts() {
 export function serve() {
   browserSync.init({
     server: {
-      baseDir: "resources/",
+      baseDir: ".",
     },
   });
 
-  watch(paths.html.src, html);
+  // watch(paths.html.src, html);
   watch(paths.styles.src, styles);
-  watch(paths.scripts.src, scripts);
+  // watch(paths.scripts.src, scripts);
 }
 
 // Build task
 // Add this to your build task
 export const build = series(
   clean,
-  parallel(html, styles, scripts)
+  styles
+  // parallel(html, styles, scripts)
 );
 
 // Default task
