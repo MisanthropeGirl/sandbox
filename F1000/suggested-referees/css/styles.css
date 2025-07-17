@@ -67,7 +67,7 @@ a:active {
 }
 
   .o-media__img {
-    margin-right: $gutter--sm;
+    margin-right: 16px;
   }
 
   .o-media--sm .o-media__img {
@@ -96,7 +96,7 @@ a:active {
 
   .o-media--reverse > .o-media__img {
     margin-right: 0;
-    margin-left: $gutter--sm;
+    margin-left: 16px;
   }
 
   .o-media--reverse.o-media--sm > .o-media__img {
