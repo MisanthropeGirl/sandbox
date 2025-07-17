@@ -1,0 +1,23 @@
+main {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+main > div {
+  display:-ms-flexbox;
+  display:-webkit-flex;
+  display:flex;
+  gap: 32px;
+}
+
+main > div > section {
+  -ms-flex:0 0 50%;
+  -webkit-flex:0 0 50%;
+  flex:0 0 50%;
+  box-sizing:border-box;
+  max-width: 496px;
+}
+
+main div > section > header > h1 {
+  border-bottom:1px solid #000;
+}

@@ -1,0 +1,894 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+	<head>
+		<title>Report Layout</title>
+		<meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="../../../common/css/normalize_v3.0.1.css" rel="stylesheet" />
+		<style type="text/css">
+			body {
+				color:#333;
+				font-family:Helvetica, Verdana, sans-serif;
+				margin:10px;
+			}
+
+			table {
+				width:100%;
+			}
+			caption {
+				text-align:left;
+			}
+			tbody th {
+				font-weight:normal;
+			}
+			tbody tr > *:first-child,
+			thead tr > *:first-child {
+				text-align:left;
+			}
+			tbody tr > *:not(:first-child),
+			thead tr > *:not(:first-child) {
+				text-align:right;
+			}
+
+			.box {
+				margin-left:1vw;
+				margin-bottom:1.5em;
+			}
+			.tabs {
+				display:-ms-flexbox;
+				display:-webkit-flex;
+				display:flex;
+
+				border-left:1px solid #ccc;
+				border-bottom:1px solid #ccc;
+				list-style-type:none;
+				margin:0;
+				padding:0;
+			}
+			.tabs li a {
+				border-right:1px solid #ccc;
+				border-top:1px solid #ccc;
+				display:block;
+				height:1.5rem;
+				line-height:1.5rem;
+				padding:0 13px;
+			}
+			
+
+			@media (min-width:768px) {
+				body {
+					font-size:0.6875rem;
+					line-height:1.3125;
+				}
+
+				.flex-container {
+					display:-ms-flexbox;
+					display:-webkit-flex;
+					display:flex;
+				}
+				.flex-container .container {
+					flex:1;
+				}
+				.flex-container .container.doubleWidth {
+					flex:2;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="SnapshotBodyContent">
+			<!-- start of report header -->
+			<div id="SnapshotTitle">
+				<h1>
+					<span class="securityName">Vodafone Group PLC</span> <span class="securitySymbol">VOD</span>
+				</h1>
+			</div>
+			<!-- end of report header -->
+			<!-- start of IntradayPriceSummary -->
+			<div id="IntradayPriceSummary" class="flex-container">
+				<div class="container first">
+					<!-- start of IntradayPriceSummaryQuotationNarrow -->
+					<div class="box" id="IntradayPriceSummaryQuotationNarrow">
+						<p class="headlinePricing">
+							<strong>Last Price</strong>
+							<br />
+							<span id="Col0Price" class="price"><abbr title="British Pence" class="currencySymbol">GBX</abbr>194.35</span>
+						</p>
+						<p class="headlinePricing">
+							<strong>Day Change</strong>
+							<br />
+							<span class="price priceDownArrow" id="Col0PriceArrow"></span>
+							<span class="price priceDown" id="Col0PriceDetail">-0.05|-0.03<span class="percentage">%</span></span>
+						</p>
+						<p id="Col0PriceTime" class="priceInformation">As of 22/07/2014<br />11:12:14 <abbr title="British Summer Time">BST</abbr> | GBX<br />
+							<span id="Col0PriceTimeDisclaimer">Minimum 15 Minutes Delay.</span>
+						</p>
+					</div>
+					<!-- end of IntradayPriceSummaryQuotationNarrow -->
+				</div>
+				<div class="container">
+					<!-- start of IntradayPriceSummaryPriceNarrow -->
+					<div class="box" id="IntradayPriceSummaryPriceNarrow">
+						<table cellspacing="0" class="right">
+							<colgroup>
+								<col class="dataPoint" />
+								<col class="data" />
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">Last Close</th>
+									<td id="Col0LastClose">194.40p</td>
+								</tr>
+								<tr class="alternate">
+									<th scope="row">Day Range</th>
+									<td id="Col0LowHigh">
+										<span id="Col0Low">192.45</span> - <span id="Col0High">194.75</span>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<abbr title="Market Capitalisation">Mkt Cap</abbr>
+									</th>
+									<td id="Col0MCap">51.40Bil</td>
+								</tr>
+								<tr class="alternate">
+									<th scope="row">
+										<abbr title="52 Week Range">52-Wk Range</abbr>
+									</th>
+									<td id="Col0WeekRange">187.35 - 442.06</td>
+								</tr>
+								<tr>
+									<th scope="row">Yield %</th>
+									<td id="Col0Yield">5.38</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- end of IntradayPriceSummaryPriceNarrow -->
+				</div>
+				<div class="container">
+					<!-- start of IntradayPriceSummaryVolumeNarrow -->
+					<div class="box" id="IntradayPriceSummaryVolumeNarrow">
+						<table cellspacing="0" class="right">
+							<colgroup>
+								<col class="dataPoint" />
+								<col class="data" />
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">
+										<acronym title="International Securities Identification Number">ISIN</acronym>
+									</th>
+									<td id="Col0Isin">GB00BH4HKS39</td>
+								</tr>
+								<tr class="alternate">
+									<th scope="row">Volume</th>
+									<td id="Col0DayVolume">14,494,214</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<abbr title="Price Earning Ratio">P/E</abbr>
+									</th>
+									<td id="Col0PE">2.85</td>
+								</tr>
+								<tr class="alternate">
+									<th scope="row">
+										<abbr title="Price to Sales Ratio">P/S</abbr>
+									</th>
+									<td id="Col0PS">1.34</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<abbr title="Price to Cash Flow Ratio">P/CF</abbr>
+									</th>
+									<td id="Col0PCF">5.24</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- end of IntradayPriceSummaryVolumeNarrow -->
+				</div>
+			</div>
+			<!-- end of IntradayPriceSummary -->
+			<div class="flex-container">
+				<div class="container doubleWidth first">
+					<!-- start of SharePriceChart -->
+					<div class="box" id="SharePriceChartITGrowthChart">
+						<h2>Share Price</h2>
+						<div class="item">
+							<iframe width="403" height="520" frameborder="0" src="//lt.morningstar.com/3y3wd9echv/interactivechart/htmlv2/default.aspx?ModuleId=59&amp;embedded=true&amp;overview=true&amp;width=363&amp;chartType=ITGrowthChart&amp;plotType=growth&amp;showLastPriceTickLabel=false&amp;SecurityTokenList=0P00007WPO]3]0]E0WWE$$ALL" id="SharePriceChartFrameITGrowthChart" scrolling="no"></iframe>
+						</div>
+						<div>
+							<a href="#" class="more">More ...</a>
+						</div>
+					</div>
+					<!-- end of SharePriceChart -->
+					<!-- start of TotalReturns -->
+					<div class="box tabSwitching" id="TotalReturns">
+						<h2>Total Returns <span class="date">21/07/2014</span></h2>
+						<ul class="tabs clearfix" id="ulTotalReturns">
+							<li id="lstTotalReturnsD1">
+								<a href="#">
+									<abbr title="1 Day">1D</abbr>
+								</a>
+							</li>
+							<li class="selected" id="lstTotalReturnsM1">
+								<a href="#">
+									<abbr title="1 Month">1M</abbr>
+								</a>
+							</li>
+							<li id="lstTotalReturnsM3">
+								<a href="#">
+									<abbr title="3 Months">3M</abbr>
+								</a>
+							</li>
+							<li id="lstTotalReturnsM12">
+								<a href="#">
+									<abbr title="1 Year">1Y</abbr>
+								</a>
+							</li>
+							<li id="lstTotalReturnsM36">
+								<a href="#">
+									<abbr title="3 Years Annualised">3Y ann.</abbr>
+								</a>
+							</li>
+							<li id="lstTotalReturnsM60">
+								<a href="#">
+									<abbr title="5 Years Annualised">5Y ann.</abbr>
+								</a>
+							</li>
+							<li id="lstTotalReturnsM120">
+								<a href="#">
+									<abbr title="10 Years Annualised">10Y ann.</abbr>
+								</a>
+							</li>
+						</ul>
+						<div id="divTotalReturnsM1">
+							<table cellspacing="0">
+								<colgroup>
+									<col class="dataPoint" />
+									<col class="change" />
+									<col class="spacer" />
+									<col class="visual" />
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col" id="MsStockReportTorM1Dp">&nbsp;</th>
+										<th scope="col" id="MsStockReportTorM1C" class="right">
+											<abbr title="Change">Chg</abbr> (%)</th>
+										<th scope="col">&nbsp;</th>
+										<th scope="col">&nbsp;</th>
+									</tr>
+								</thead>
+								<tfoot>
+									<tr>
+										<td colspan="4">
+											<a href="#" class="more">More ...</a>
+										</td>
+									</tr>
+								</tfoot>
+								<tbody>
+									<tr>
+										<th scope="row" headers="MsStockReportTorM1Dp">Vodafone Group PLC</th>
+										<td class="right priceUp" headers="MsStockReportTorM1C">1.33</td>
+										<td rowspan="2" class="noBorder">&nbsp;</td>
+										<td rowspan="3" class="noBorder totalReturnsIndicator">
+											<img src="http://bpcharts.morningstar.com/chart?cht=bhs&amp;chof=p&amp;chs=197x60&amp;chf=bg,s,FFFFFF&amp;chcor=,0,FF0000|0,,008000&amp;chxs=0,333333,11&amp;chgx=y,1,0,CCCCCC&amp;chd=t:-1.36,1.33" alt="" />
+										</td>
+									</tr>
+									<tr class="alternate">
+										<th scope="row" headers="MsStockReportTorM1Dp">FTSE 100 TR GBP</th>
+										<td class="right priceDown" headers="MsStockReportTorM1C">-1.36</td>
+									</tr>
+									<tr>
+										<td colspan="3" class="noBorder">&nbsp;</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!-- end of TotalReturns -->
+					<!-- start of OverviewFinancialsHemscott-->
+					<div class="box overviewFinancialsHemscott" id="OverviewFinancialsHemscott">
+						<table cellspacing="0" class="right ">
+							<caption class="sectionHeader">Financials</caption>
+							<colgroup>
+								<col class="colDataPoint" />
+								<col class="data" />
+								<col class="data" />
+								<col class="data" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" id="MsStockReportOfihDp" class="colDataPoint"></th>
+									<th id="MsStockReportOfihY1" scope="col">2012</th>
+									<th id="MsStockReportOfihY2" scope="col">2013</th>
+									<th id="MsStockReportOfihY3" scope="col">2014</th>
+								</tr>
+							</thead>
+							<tfoot>
+								<tr>
+									<td colspan="4">
+										<a href="#" class="more">More ...</a>
+									</td>
+								</tr>
+							</tfoot>
+							<tbody>
+								<tr class="subHeader">
+									<th colspan="4">Income Statement</th>
+								</tr>
+								<tr>
+									<th scope="row" headers="MsStockReportOfihDp">Turnover</th>
+									<td headers="MsStockReportOfihY1">46,417.00</td>
+									<td headers="MsStockReportOfihY2">38,041.00</td>
+									<td headers="MsStockReportOfihY3">38,346.00</td>
+								</tr>
+								<tr class="alternate">
+									<th scope="row" headers="MsStockReportOfihDp">Operating Profit</th>
+									<td headers="MsStockReportOfihY1">7,472.00</td>
+									<td headers="MsStockReportOfihY2">-2,202.00</td>
+									<td headers="MsStockReportOfihY3">-3,913.00</td>
+								</tr>
+								<tr>
+									<th scope="row" headers="MsStockReportOfihDp">Net Profit</th>
+									<td headers="MsStockReportOfihY1">7,003.00</td>
+									<td headers="MsStockReportOfihY2">-3,959.00</td>
+									<td headers="MsStockReportOfihY3">11,312.00</td>
+								</tr>
+								<tr class="alternate">
+									<th scope="row" headers="MsStockReportOfihDp">
+										<abbr title="Reported Earnings per Share">Reported EPS</abbr>
+									</th>
+									<td headers="MsStockReportOfihY1">14.23</td>
+									<td headers="MsStockReportOfihY2">16.33</td>
+									<td headers="MsStockReportOfihY3">41.77</td>
+								</tr>
+							</tbody>
+							<tbody>
+								<tr class="subHeader">
+									<th colspan="4">Balance Sheet</th>
+								</tr>
+								<tr>
+									<th scope="row" headers="MsStockReportOfihDp">Current Assets</th>
+									<td headers="MsStockReportOfihY1">20,025.00</td>
+									<td headers="MsStockReportOfihY2">21,649.00</td>
+									<td headers="MsStockReportOfihY3">24,688.00</td>
+								</tr>
+								<tr class="alternate">
+									<th scope="row" headers="MsStockReportOfihDp">Non Current Assets</th>
+									<td headers="MsStockReportOfihY1">119,551.00</td>
+									<td headers="MsStockReportOfihY2">116,675.00</td>
+									<td headers="MsStockReportOfihY3">97,118.00</td>
+								</tr>
+								<tr>
+									<th scope="row" headers="MsStockReportOfihDp">Total Assets</th>
+									<td headers="MsStockReportOfihY1">139,576.00</td>
+									<td headers="MsStockReportOfihY2">138,324.00</td>
+									<td headers="MsStockReportOfihY3">121,840.00</td>
+								</tr>
+								<tr class="alternate">
+									<th scope="row" headers="MsStockReportOfihDp">Current Liabilities</th>
+									<td headers="MsStockReportOfihY1">24,025.00</td>
+									<td headers="MsStockReportOfihY2">28,369.00</td>
+									<td headers="MsStockReportOfihY3">25,039.00</td>
+								</tr>
+								<tr>
+									<th scope="row" headers="MsStockReportOfihDp">Total Liabilities</th>
+									<td headers="MsStockReportOfihY1">61,374.00</td>
+									<td headers="MsStockReportOfihY2">65,836.00</td>
+									<td headers="MsStockReportOfihY3">50,059.00</td>
+								</tr>
+								<tr class="alternate">
+									<th scope="row" headers="MsStockReportOfihDp">Total Equity</th>
+									<td headers="MsStockReportOfihY1">78,202.00</td>
+									<td headers="MsStockReportOfihY2">72,488.00</td>
+									<td headers="MsStockReportOfihY3">71,781.00</td>
+								</tr>
+							</tbody>
+							<tbody>
+								<tr class="subHeader">
+									<th colspan="4">Cash Flow</th>
+								</tr>
+								<tr>
+								<th scope="row" headers="MsStockReportOfihDp">Operating Cash Flow</th>
+									<td headers="MsStockReportOfihY1">14,824.00</td>
+									<td headers="MsStockReportOfihY2">11,494.00</td>
+									<td headers="MsStockReportOfihY3">12,147.00</td>
+								</tr>
+								<tr class="alternate">
+									<th scope="row" headers="MsStockReportOfihDp">Net Change in Cash</th>
+									<td headers="MsStockReportOfihY1">1,229.00</td>
+									<td headers="MsStockReportOfihY2">335.00</td>
+									<td headers="MsStockReportOfihY3">2,721.00</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- end of OverviewFinancialsHemscott-->
+					<!-- start of OverviewBrokerForecastsHemscott-->
+					<div class="box overviewBrokerForecastsHemscott" id="OverviewBrokerForecastsHemscott">
+						<table cellspacing="0">
+							<caption class="sectionHeader">Broker Forecasts</caption>
+							<colgroup>
+								<col class="colYear" />
+								<col class="colPreTax" />
+								<col class="colEps" />
+								<col class="colEpsg" />
+								<col class="colPer" />
+								<col class="colPeg" />
+								<col class="colDps" />
+								<col class="colDivYield" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th id="MsStockReportBfh1" class="colYear string">Year Ending</th>
+									<th id="MsStockReportBfh2" class="colPreTax number">Pre-tax</th>
+									<th id="MsStockReportBfh3" class="colEps number">
+										<abbr title="Earning per share">EPS</abbr>
+									</th>
+									<th id="MsStockReportBfh4" class="colEpsg number">
+										<abbr title="Earning per Share Growth">EPSg</abbr>
+									</th>
+									<th id="MsStockReportBfh5" class="colPer number">
+										<abbr title="Price Earning Ratio">P/E</abbr>
+									</th>
+									<th id="MsStockReportBfh6" class="colPeg number">
+										<abbr title="Price Earning Growth">PEG</abbr>
+									</th>
+									<th id="MsStockReportBfh7" class="colDps number">
+										<abbr title="Dividend per Share">DPS</abbr>
+									</th>
+									<th id="MsStockReportBfh8" class="colDivYield number">
+										<abbr title="Yield %">Yld %</abbr>
+									</th>
+								</tr>
+							</thead>
+							<tfoot>
+								<tr>
+									<td colspan="8">
+									<a href="#" class="more">More ...</a>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="8" class="disclaimer">'Broker Forecasts' provides consensus figures based on several brokers' views</td>
+								</tr>
+							</tfoot>
+							<tbody>
+								<tr>
+									<td headers="MsStockReportBfh1" class="colYear string">2015</td>
+									<td headers="MsStockReportBfh2" class="colPreTax number">2,966.47</td>
+									<td headers="MsStockReportBfh3" class="colEps number">6.82</td>
+									<td headers="MsStockReportBfh4" class="colEpsg number">-90.00</td>
+									<td headers="MsStockReportBfh5" class="colPer number">28.51</td>
+									<td headers="MsStockReportBfh6" class="colPeg number">-0.32</td>
+									<td headers="MsStockReportBfh7" class="colDps number">11.49</td>
+									<td headers="MsStockReportBfh8" class="colDivYield number">5.91</td>
+								</tr>
+								<tr>
+									<td headers="MsStockReportBfh1" class="colYear string">2016</td>
+									<td headers="MsStockReportBfh2" class="colPreTax number">3,364.50</td>
+									<td headers="MsStockReportBfh3" class="colEps number">8.71</td>
+									<td headers="MsStockReportBfh4" class="colEpsg number">27.67</td>
+									<td headers="MsStockReportBfh5" class="colPer number">22.33</td>
+									<td headers="MsStockReportBfh6" class="colPeg number">0.81</td>
+									<td headers="MsStockReportBfh7" class="colDps number">11.86</td>
+									<td headers="MsStockReportBfh8" class="colDivYield number">6.10</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- end of OverviewBrokerForecastsHemscott-->
+					<!-- start of OverviewRegulatoryNewsHemscott -->
+					<div class="box tabSwitching" id="OverviewRegulatoryNewsHemscott">
+						<h2>Regulatory News</h2>
+						<ul class="tabs clearfix">
+							<li class="selected" id="lstOrnhRNS">
+								<a href="#">Regulatory News</a>
+							</li>
+						</ul>
+						<div class="tabContent" id="divOrnhRNS">
+						<!-- start of OverviewRegulatoryNewsFromSource (RNS|HUG) -->
+						<div class="box" id="OverviewRegulatoryNewsRNSHUG">
+							<table cellspacing="0" class="news">
+								<colgroup>
+									<col class="date" />
+									<col class="source" />
+									<col class="headline" />
+								</colgroup>
+								<thead>
+									<tr>
+										<th id="MsStockReportOrnfsRNSHUGD">Date</th>
+										<th id="MsStockReportOrnfsRNSHUGT">Source</th>
+										<th id="MsStockReportOrnfsRNSHUGH">Headline</th>
+									</tr>
+								</thead>
+								<tfoot>
+									<tr>
+										<td colspan="3">
+											<a href="#" class="more">More ...</a>
+										</td>
+									</tr>
+								</tfoot>
+								<tbody>
+									<tr>
+										<td headers="MsStockReportOrnfsRNSHUGD">21/07/2014|07:39</td>
+										<td headers="MsStockReportOrnfsRNSHUGT">RNS</td>
+										<td headers="MsStockReportOrnfsRNSHUGH">
+											<a href="#">Vodafone Group Plc - FIBRE SHARING AGREEMENT WITH PORTUGAL TELECOM</a>
+										</td>
+									</tr>
+									<tr class="alternate">
+										<td headers="MsStockReportOrnfsRNSHUGD">14/07/2014|13:44</td>
+										<td headers="MsStockReportOrnfsRNSHUGT">RNS</td>
+										<td headers="MsStockReportOrnfsRNSHUGH">
+										<a href="#">Vodafone Group Plc - Director/PDMR Shareholding</a>
+										</td>
+									</tr>
+									<tr>
+										<td headers="MsStockReportOrnfsRNSHUGD">10/07/2014|07:00</td>
+										<td headers="MsStockReportOrnfsRNSHUGT">RNS</td>
+										<td headers="MsStockReportOrnfsRNSHUGH">
+											<a href="#">Vodafone Group Plc - PARTNER MARKET AGREEMENT WITH BMOBILE</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- end of OverviewRegulatoryNewsFromSource (RNS|HUG) -->
+						</div>
+					</div>
+					<!-- end of OverviewRegulatoryNewsHemscott -->
+					<!-- start of OverviewDirectorDealingsHemscott-->
+					<div class="box overviewDirectorDealingsHemscott" id="OverviewDirectorDealingsHemscott">
+						<table cellspacing="0">
+							<caption class="sectionHeader">Director Dealings</caption>
+							<colgroup>
+								<col class="colTraded" />
+								<col class="colAction" />
+								<col class="colWho" />
+								<col class="colPrice" />
+								<col class="colAmount" />
+								<col class="colValue" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th id="MsStockReportDdh1" class="colTraded date">Traded</th>
+									<th id="MsStockReportDdh2" class="colAction string">Action</th>
+									<th id="MsStockReportDdh3" class="colWho string">Notifier</th>
+									<th id="MsStockReportDdh4" class="colPrice number">Price</th>
+									<th id="MsStockReportDdh5" class="colAmount number">Amount</th>
+									<th id="MsStockReportDdh6" class="colValue number">Value</th>
+								</tr>
+							</thead>
+							<tfoot>
+							<tr>
+								<td colspan="6">
+									<a href="#" class="more">More ...</a>
+								</td>
+							</tr>
+							</tfoot>
+							<tbody>
+								<tr>
+									<td headers="MsStockReportDdh1" class="colTraded date">30/06/2014</td>
+									<td headers="MsStockReportDdh2" class="colAction string">Sale</td>
+									<td headers="MsStockReportDdh3" class="colWho string">Mr. Vittorio Colao</td>
+									<td headers="MsStockReportDdh4" class="colPrice number">196.19</td>
+									<td headers="MsStockReportDdh5" class="colAmount number">1,129,736</td>
+									<td headers="MsStockReportDdh6" class="colValue number">2,216,457.00</td>
+								</tr>
+								<tr>
+									<td headers="MsStockReportDdh1" class="colTraded date">30/06/2014</td>
+									<td headers="MsStockReportDdh2" class="colAction string">Transfer in</td>
+									<td headers="MsStockReportDdh3" class="colWho string">Mr. Vittorio Colao</td>
+									<td headers="MsStockReportDdh4" class="colPrice number">0.00</td>
+									<td headers="MsStockReportDdh5" class="colAmount number">2,403,638</td>
+									<td headers="MsStockReportDdh6" class="colValue number">0.00</td>
+								</tr>
+								<tr>
+									<td headers="MsStockReportDdh1" class="colTraded date">30/06/2014</td>
+									<td headers="MsStockReportDdh2" class="colAction string">Sale</td>
+									<td headers="MsStockReportDdh3" class="colWho string">Steve Pusey</td>
+									<td headers="MsStockReportDdh4" class="colPrice number">196.19</td>
+									<td headers="MsStockReportDdh5" class="colAmount number">804,362</td>
+									<td headers="MsStockReportDdh6" class="colValue number">1,578,098.00</td>
+								</tr>
+								<tr>
+									<td headers="MsStockReportDdh1" class="colTraded date">30/06/2014</td>
+									<td headers="MsStockReportDdh2" class="colAction string">Transfer in</td>
+									<td headers="MsStockReportDdh3" class="colWho string">Steve Pusey</td>
+									<td headers="MsStockReportDdh4" class="colPrice number">0.00</td>
+									<td headers="MsStockReportDdh5" class="colAmount number">804,632</td>
+									<td headers="MsStockReportDdh6" class="colValue number">0.00</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- end of OverviewDirectorDealingsHemscott-->
+				</div>
+				<div class="container">
+					<!-- start of CompanyProfileHemscott -->
+					<div class="box" id="CompanyProfileHemscott">
+						<h2>Company Profile</h2>
+						<div class="item">Vodafone Group PLC is engaged in providing voice and data communications services for all types of customers. The Company has presence in Europe, the Middle East, Africa, the Asia Pacific region and the United States.</div>
+						<div class="item">
+							<h3>Sector</h3>
+							Communication Services
+						</div>
+						<div class="item">
+							<h3>Industry</h3>
+							Telecom Services
+						</div>
+						<div class="item">
+							<h3>Market Position</h3>
+							10 of 2032 Companies
+						</div>
+						<div class="item">
+							<h3>Index</h3>
+							FTSE 100, FTSE 350, S&amp;P Europe 350, Eurotop 300, FTSE Eurotop 100, FTSE All Share, FTSE techMARK All Share
+						</div>
+					</div>
+					<!-- end of CompanyProfileHemscott -->
+					<!-- start of OutlookHemscott -->
+					<div class="box" id="OutlookHemscott">
+						<h2>Outlook</h2>
+						<div class="item">(06/06/2014) ce - "...I am confident about the future of the business given the growth prospects"</div>
+						<div class="item">
+							<h3 class="clearfix">
+								<span class="floatLeft">Next Event</span> <span class="pale-text paleText date">29/07/2014</span>
+							</h3>
+							Next AGM
+						</div>
+					</div>
+					<!-- end of OutlookHemscott -->
+					<!-- start of OverviewRatiosHemscott-->
+					<div class="box overviewRatiosHemscott" id="OverviewRatiosHemscott">
+						<table cellspacing="0" class="right ">
+							<caption class="sectionHeader">Ratios</caption>
+							<colgroup>
+								<col class="colDataPoint" />
+								<col class="data colCompany" />
+								<col class="data colSector" />
+								<col class="data colMarket" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" id="MsStockReportOrhDp" class="colDataPoint"></th>
+									<th id="MsStockReportOrhCA" class="Company" scope="col">
+										<abbr title="Company">Comp</abbr>
+									</th>
+									<th id="MsStockReportOrhSA" class="Sector" scope="col">
+										<abbr title="Sector">Sec</abbr>
+									</th>
+									<th id="MsStockReportOrhMA" class="Market" scope="col">
+										<abbr title="Market">Mkt</abbr>
+									</th>
+								</tr>
+							</thead>
+							<tfoot>
+								<tr>
+									<td colspan="4">
+										<a href="#" class="more">More ...</a>
+									</td>
+								</tr>
+							</tfoot>
+							<tbody>
+								<tr>
+									<th scope="row" headers="MsStockReportOrhDp">
+										<abbr title="Price Earning Ratio">PER (E)</abbr>
+									</th>
+									<td headers="MsStockReportOrhCA" class="Company">26.28</td>
+									<td headers="MsStockReportOrhSA" class="Sector">25.73</td>
+									<td headers="MsStockReportOrhMA" class="Market">15.32</td>
+								</tr>
+							</tbody>
+							<tbody>
+								<tr class="alternate">
+									<th scope="row" headers="MsStockReportOrhDp">
+										<abbr title="Dividend Yield (%)">Div Yld (E)</abbr>
+									</th>
+									<td headers="MsStockReportOrhCA" class="Company">5.97</td>
+									<td headers="MsStockReportOrhSA" class="Sector">5.84</td>
+									<td headers="MsStockReportOrhMA" class="Market">3.79</td>
+								</tr>
+							</tbody>
+							<tbody>
+								<tr>
+									<th scope="row" headers="MsStockReportOrhDp">
+										<abbr title="Price Earning Growth">PEG (E)</abbr>
+									</th>
+									<td headers="MsStockReportOrhCA" class="Company">-0.31</td>
+									<td headers="MsStockReportOrhSA" class="Sector">-0.37</td>
+									<td headers="MsStockReportOrhMA" class="Market">1.22</td>
+								</tr>
+							</tbody>
+							<tbody>
+								<tr class="alternate">
+									<th scope="row" headers="MsStockReportOrhDp">
+										<abbr title="Return on Capital Employed">ROCE</abbr>
+									</th>
+									<td headers="MsStockReportOrhCA" class="Company">7.65</td>
+									<td headers="MsStockReportOrhSA" class="Sector">7.35</td>
+									<td headers="MsStockReportOrhMA" class="Market">-63.93</td>
+								</tr>
+							</tbody>
+							<tbody>
+								<tr>
+									<th scope="row" headers="MsStockReportOrhDp">
+										<abbr title="Operating Margin">Op Mrgn</abbr>
+									</th>
+									<td headers="MsStockReportOrhCA" class="Company">6.41</td>
+									<td headers="MsStockReportOrhSA" class="Sector">6.65</td>
+									<td headers="MsStockReportOrhMA" class="Market">-32.06</td>
+								</tr>
+							</tbody>
+							<tbody>
+								<tr class="alternate">
+									<th scope="row" headers="MsStockReportOrhDp">
+										<abbr title="EarningsPerShareGrowth">EPS Grwth</abbr>
+									</th>
+									<td headers="MsStockReportOrhCA" class="Company">-85.01</td>
+									<td headers="MsStockReportOrhSA" class="Sector">-81.27</td>
+									<td headers="MsStockReportOrhMA" class="Market">13.27</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- end of OverviewRatiosHemscott-->
+					<!-- start of OverviewDividendsHemscott-->
+					<div class="box overviewDividendsHemscott" id="OverviewDividendsHemscott">
+						<table cellspacing="0" class="right ">
+							<caption class="sectionHeader">Dividends</caption>
+							<colgroup>
+								<col class="colDataPoint" />
+								<col class="data colPrevious" />
+								<col class="data colLatest" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" id="MsStockReportOdhDp" class="colDataPoint"></th>
+									<th class="Previous" scope="col">Previous</th>
+									<th class="Latest" scope="col">Latest</th>
+								</tr>
+							</thead>
+							<tfoot>
+								<tr>
+									<td colspan="3">
+										<a href="#" class="more">More ...</a>
+									</td>
+								</tr>
+							</tfoot>
+							<tbody>
+								<tr>
+									<th scope="row" headers="MsStockReportOdhDp">Declared Date</th>
+									<td class="Previous">22/11/13</td>
+									<td class="Latest">13/06/14</td>
+								</tr>
+								<tr class="alternate">
+									<th scope="row" headers="MsStockReportOdhDp">Ex-Div</th>
+									<td class="Previous">20/11/13</td>
+									<td class="Latest">11/06/14</td>
+								</tr>
+								<tr>
+									<th scope="row" headers="MsStockReportOdhDp">Paid</th>
+									<td class="Previous">05/02/14</td>
+									<td class="Latest">06/08/14</td>
+								</tr>
+								<tr class="alternate">
+									<th scope="row" headers="MsStockReportOdhDp">
+										<abbr title="Amount">Amnt</abbr>
+									</th>
+									<td class="Previous">3.53</td>
+									<td class="Latest">7.47</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- end of OverviewDividendsHemscott-->
+					<!-- start of OverviewBrokerSentimentHemscott -->
+					<div class="box" id="OverviewBrokerSentimentHemscott">
+						<h2>Broker Sentiment</h2>
+						<!-- start of BrokerCurrentRecommendationBreakdown-->
+						<div class="box brokerCurrentRecommendationBreakdown" id="BrokerCurrentRecommendationBreakdown">
+							<table cellspacing="0" class="right ">
+								<colgroup>
+									<col class="colDataPoint" />
+									<col class="data colCurrent" />
+								</colgroup>
+								<thead class="hidden">
+									<tr>
+										<th scope="col" id="MsStockReportBcrbDp" class="colDataPoint">Recommendation</th>
+										<th id="MsStockReportBcrbC" class="Current" scope="col">Current</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row" headers="MsStockReportBcrbDp">Strong Buy</th>
+										<td headers="MsStockReportBcrbC" class="Current">0</td>
+									</tr>
+									<tr class="alternate">
+										<th scope="row" headers="MsStockReportBcrbDp">Buy</th>
+										<td headers="MsStockReportBcrbC" class="Current">1</td>
+									</tr>
+									<tr>
+										<th scope="row" headers="MsStockReportBcrbDp">Hold</th>
+										<td headers="MsStockReportBcrbC" class="Current">1</td>
+									</tr>
+									<tr class="alternate">
+										<th scope="row" headers="MsStockReportBcrbDp">Sell</th>
+										<td headers="MsStockReportBcrbC" class="Current">1</td>
+									</tr>
+									<tr>
+										<th scope="row" headers="MsStockReportBcrbDp">Strong Sell</th>
+										<td headers="MsStockReportBcrbC" class="Current">0</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- end of BrokerCurrentRecommendationBreakdown-->
+						<!-- start of BrokerHeatmap -->
+						<div id="BrokerHeatmapAbridged">
+							<div id="BrokerHeatmap">
+								<ul class="heatmapLabels heatmapLabelsAbridged clearfix">
+									<li class="textLeft">Strong Sell</li>
+									<li class="textRight">Strong Buy</li>
+								</ul>
+								<div class="heatmapContainer heatmapContainerAbridged">
+									<div style="background-position:50.00% 0;" class="heatmapIndicator heatmapIndicatorAbridged">
+										<ul class="heatmap heatmapAbridged clearfix">
+											<li class="colour1 first">&nbsp;</li>
+											<li class="colour2">&nbsp;</li>
+											<li class="colour3">&nbsp;</li>
+											<li class="colour4">&nbsp;</li>
+											<li class="colour5">&nbsp;</li>
+											<li class="colour6">&nbsp;</li>
+											<li class="colour7">&nbsp;</li>
+											<li class="colour8">&nbsp;</li>
+											<li class="colour9">&nbsp;</li>
+											<li class="colour10">&nbsp;</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- end of BrokerHeatmap -->
+						<a href="#" class="more">More ...</a>
+					</div>
+					<!-- end of OverviewBrokerSentimentHemscott -->
+					<!-- start of OverviewDirectorsHemscott-->
+					<div class="box overviewDirectorsHemscott" id="OverviewDirectorsHemscott">
+						<table cellspacing="0">
+							<caption class="sectionHeader">Director Dealings</caption>
+							<colgroup>
+								<col class="colJob" />
+								<col class="colName" />
+							</colgroup>
+							<tfoot>
+								<tr>
+									<td colspan="2">
+										<a href="#" class="more">More ...</a>
+									</td>
+								</tr>
+							</tfoot>
+							<tbody>
+								<tr>
+									<td headers="MsStockReportDdh1" class="colJob string">Chairman</td>
+									<td headers="MsStockReportDdh2" class="colName string">Mr. Gerard Kleisterlee</td>
+								</tr>
+								<tr>
+									<td headers="MsStockReportDdh1" class="colJob string">Chief Executive Officer</td>
+									<td headers="MsStockReportDdh2" class="colName string">Mr. Vittorio Colao</td>
+								</tr>
+								<tr>
+									<td headers="MsStockReportDdh1" class="colJob string">Chief Financial Officer</td>
+									<td headers="MsStockReportDdh2" class="colName string">Mr. Nick Read</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- end of OverviewDirectorsHemscott-->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

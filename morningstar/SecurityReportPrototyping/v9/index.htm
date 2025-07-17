@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title>Security Report</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- <link href="http://yui.yahooapis.com/3.13.0/build/cssreset/cssreset-min.css" rel="stylesheet" /> -->
+		<link href="reset.css" rel="stylesheet" />
+		<link href="polyfill.object-fit.css" rel="stylesheet" />
+		<style>
+			body {
+				color:#333;
+				font:75%/1.3125 Verdana,Helvetica,Arial,sans-serif;
+			}
+			main {
+				margin:0 auto;
+				padding:0 1em;
+				max-width:1000px;
+			}
+			section {
+				border:1px solid #ccc;
+				margin:1em auto;
+				padding:1em;
+				max-width:800px;
+			}
+			img {
+				border:1px solid #ccc;
+			}
+			#imgResize1a img {
+				height:auto;
+				width:100%;
+			}
+			#imgResize1b img {
+				object-fit:contain;
+			}
+			#imgResize1c div {
+				display:-ms-flexbox;
+				display:-webkit-flex;
+				display:flex;
+			}
+			#imgResize1c img {
+				-ms-flex:auto;
+				-webkit-flex:auto;
+				flex:auto;
+			}
+		</style>
+		<script src="../../common/js/jquery.js"></script>
+	</head>
+
+	<body>
+		<main>
+			<section id="imgOriginal">
+				<p>This is the Growth Chart as it appears on the default implementation of the Fund Report. As we know it does not resize to fit its container.</p>
+				<img alt="Chart" src="http://bpcharts.morningstar.com/chart?&amp;cht=lc&amp;chs=403x132&amp;chof=p&amp;chfts=11&amp;chd=e:MzKwMUSbSFRkVkaiboZ5Y0ZPY3ZwdWfBa2ZmckajdfeIcvfvf-gmfqg0gtgAdwYSW6auX2YYasd1e1dsazc0dOfegdiEjfk0pRrJsOtgw9uezryxzT2M123F,MzLML3QURfQzTDWgYxYIYSZtZGZdcfdPaVY2bya7fRgZgAkIkQk6knmUl.lQkUeycoggeUe1hylWlNlFg9iFjfk6mLnEnzo0sRugv1wAyWv30h0V1V495L7P,MzKmLoO3QXPKSPVPXPWbXtZpX.Zgcob8Y6WyZzZscveAc2gZgHhZg9ioiOh-gxdFaleUeIejf9iOhshhd0gRg-iKiwjVkUk5okp-q2rOtFpzuDsktTwIvpw6,,&amp;chco=CE0000|FF9A63|99CF00&amp;chxt=x,y&amp;chxr=y,0,4095&amp;chmg=0,0,0,80&amp;chgx=y,1,2,AAAAAA,1|x,1,0,CCCCCC,1&amp;chft=Verdana&amp;chm=VLG,D0D3DE,0,0|H,000000,0,0,1&amp;chxl=0:||||||||||||%20||||||||||||%20||||||||||||%20||||||||||||%20||||||||||||1:62|100|138|176|214|252" />
+			</section>
+			<section id="imgResize1a">
+				<p>1(a) Here simple CSS1/2 is used to alter the width (with height rescaling proportionately).</p>
+				<pre>
+img {
+    height:auto;
+    width:100%;
+}
+				</pre>
+				<img alt="Chart" src="http://bpcharts.morningstar.com/chart?&amp;cht=lc&amp;chs=403x132&amp;chof=p&amp;chfts=11&amp;chd=e:MzKwMUSbSFRkVkaiboZ5Y0ZPY3ZwdWfBa2ZmckajdfeIcvfvf-gmfqg0gtgAdwYSW6auX2YYasd1e1dsazc0dOfegdiEjfk0pRrJsOtgw9uezryxzT2M123F,MzLML3QURfQzTDWgYxYIYSZtZGZdcfdPaVY2bya7fRgZgAkIkQk6knmUl.lQkUeycoggeUe1hylWlNlFg9iFjfk6mLnEnzo0sRugv1wAyWv30h0V1V495L7P,MzKmLoO3QXPKSPVPXPWbXtZpX.Zgcob8Y6WyZzZscveAc2gZgHhZg9ioiOh-gxdFaleUeIejf9iOhshhd0gRg-iKiwjVkUk5okp-q2rOtFpzuDsktTwIvpw6,,&amp;chco=CE0000|FF9A63|99CF00&amp;chxt=x,y&amp;chxr=y,0,4095&amp;chmg=0,0,0,80&amp;chgx=y,1,2,AAAAAA,1|x,1,0,CCCCCC,1&amp;chft=Verdana&amp;chm=VLG,D0D3DE,0,0|H,000000,0,0,1&amp;chxl=0:||||||||||||%20||||||||||||%20||||||||||||%20||||||||||||%20||||||||||||1:62|100|138|176|214|252" />
+			</section>
+			<section id="imgResize1b">
+				<p>1(b). CSS3 using the <a href="http://www.w3.org/TR/css3-images/#the-object-fit">CSS Image Values and Replaced Content Module</a> is used to try and alter the width. Sadly it is <a href="http://caniuse.com/#feat=object-fit">not yet widely supported</a>.</p>
+				<pre>
+img {
+    object-fit:contain;
+}
+				</pre>
+				<img alt="Chart" src="http://bpcharts.morningstar.com/chart?&amp;cht=lc&amp;chs=403x132&amp;chof=p&amp;chfts=11&amp;chd=e:MzKwMUSbSFRkVkaiboZ5Y0ZPY3ZwdWfBa2ZmckajdfeIcvfvf-gmfqg0gtgAdwYSW6auX2YYasd1e1dsazc0dOfegdiEjfk0pRrJsOtgw9uezryxzT2M123F,MzLML3QURfQzTDWgYxYIYSZtZGZdcfdPaVY2bya7fRgZgAkIkQk6knmUl.lQkUeycoggeUe1hylWlNlFg9iFjfk6mLnEnzo0sRugv1wAyWv30h0V1V495L7P,MzKmLoO3QXPKSPVPXPWbXtZpX.Zgcob8Y6WyZzZscveAc2gZgHhZg9ioiOh-gxdFaleUeIejf9iOhshhd0gRg-iKiwjVkUk5okp-q2rOtFpzuDsktTwIvpw6,,&amp;chco=CE0000|FF9A63|99CF00&amp;chxt=x,y&amp;chxr=y,0,4095&amp;chmg=0,0,0,80&amp;chgx=y,1,2,AAAAAA,1|x,1,0,CCCCCC,1&amp;chft=Verdana&amp;chm=VLG,D0D3DE,0,0|H,000000,0,0,1&amp;chxl=0:||||||||||||%20||||||||||||%20||||||||||||%20||||||||||||%20||||||||||||1:62|100|138|176|214|252" />
+			</section>
+			<section id="imgResize1c">
+				<p>1(c). CSS3 using the <a href="http://www.w3.org/TR/css3-flexbox/">Flexible Box Layout Module</a> which is <a href="http://caniuse.com/#feat=flexbox">widely supported</a>.</p>
+				<pre>
+container {
+    display:flex;
+}
+img {
+    flex:auto;
+}
+				</pre>
+				<div>
+					<img alt="Chart" src="http://bpcharts.morningstar.com/chart?&amp;cht=lc&amp;chs=403x132&amp;chof=p&amp;chfts=11&amp;chd=e:MzKwMUSbSFRkVkaiboZ5Y0ZPY3ZwdWfBa2ZmckajdfeIcvfvf-gmfqg0gtgAdwYSW6auX2YYasd1e1dsazc0dOfegdiEjfk0pRrJsOtgw9uezryxzT2M123F,MzLML3QURfQzTDWgYxYIYSZtZGZdcfdPaVY2bya7fRgZgAkIkQk6knmUl.lQkUeycoggeUe1hylWlNlFg9iFjfk6mLnEnzo0sRugv1wAyWv30h0V1V495L7P,MzKmLoO3QXPKSPVPXPWbXtZpX.Zgcob8Y6WyZzZscveAc2gZgHhZg9ioiOh-gxdFaleUeIejf9iOhshhd0gRg-iKiwjVkUk5okp-q2rOtFpzuDsktTwIvpw6,,&amp;chco=CE0000|FF9A63|99CF00&amp;chxt=x,y&amp;chxr=y,0,4095&amp;chmg=0,0,0,80&amp;chgx=y,1,2,AAAAAA,1|x,1,0,CCCCCC,1&amp;chft=Verdana&amp;chm=VLG,D0D3DE,0,0|H,000000,0,0,1&amp;chxl=0:||||||||||||%20||||||||||||%20||||||||||||%20||||||||||||%20||||||||||||1:62|100|138|176|214|252" />
+				</div>
+			</section>
+			<section id="imgResize2a">
+				<p>2(a). A jQuery attempt get around the problem of (1b) from <a href="http://helloanselm.com/2013/fix-image-resizing-with-object-fit/">Anselm Hannemann</a>. So far my testing has turned up a few issues, one of which is Firefox's blocking of CSS files from 3rd parties.</p>
+				<img alt="Chart" src="http://bpcharts.morningstar.com/chart?&amp;cht=lc&amp;chs=403x132&amp;chof=p&amp;chfts=11&amp;chd=e:MzKwMUSbSFRkVkaiboZ5Y0ZPY3ZwdWfBa2ZmckajdfeIcvfvf-gmfqg0gtgAdwYSW6auX2YYasd1e1dsazc0dOfegdiEjfk0pRrJsOtgw9uezryxzT2M123F,MzLML3QURfQzTDWgYxYIYSZtZGZdcfdPaVY2bya7fRgZgAkIkQk6knmUl.lQkUeycoggeUe1hylWlNlFg9iFjfk6mLnEnzo0sRugv1wAyWv30h0V1V495L7P,MzKmLoO3QXPKSPVPXPWbXtZpX.Zgcob8Y6WyZzZscveAc2gZgHhZg9ioiOh-gxdFaleUeIejf9iOhshhd0gRg-iKiwjVkUk5okp-q2rOtFpzuDsktTwIvpw6,,&amp;chco=CE0000|FF9A63|99CF00&amp;chxt=x,y&amp;chxr=y,0,4095&amp;chmg=0,0,0,80&amp;chgx=y,1,2,AAAAAA,1|x,1,0,CCCCCC,1&amp;chft=Verdana&amp;chm=VLG,D0D3DE,0,0|H,000000,0,0,1&amp;chxl=0:||||||||||||%20||||||||||||%20||||||||||||%20||||||||||||%20||||||||||||1:62|100|138|176|214|252" />
+				<script src="polyfill.object-fit.js"></script>
+				<script>
+					objectFit.polyfill({
+						selector: '#imgResize2a img', // this can be any CSS selector
+						fittype: 'contain' // either contain, cover, fill or none
+					});
+				</script>
+			</section>
+			<section id="imgResize2b">
+				<p>2(b). A further jQuery attempt get around the problem of (1b), this time from <a href="http://www.steveworkman.com/html5-2/javascript/2012/css3-object-fit-polyfill/">Steve Workman</a>. This does resize but only by assigning a fixed width calculated by the script so is similar to (1a) - and it is processor intensive if manually resizing a window.</p>
+				<img alt="Chart" src="http://bpcharts.morningstar.com/chart?&amp;cht=lc&amp;chs=403x132&amp;chof=p&amp;chfts=11&amp;chd=e:MzKwMUSbSFRkVkaiboZ5Y0ZPY3ZwdWfBa2ZmckajdfeIcvfvf-gmfqg0gtgAdwYSW6auX2YYasd1e1dsazc0dOfegdiEjfk0pRrJsOtgw9uezryxzT2M123F,MzLML3QURfQzTDWgYxYIYSZtZGZdcfdPaVY2bya7fRgZgAkIkQk6knmUl.lQkUeycoggeUe1hylWlNlFg9iFjfk6mLnEnzo0sRugv1wAyWv30h0V1V495L7P,MzKmLoO3QXPKSPVPXPWbXtZpX.Zgcob8Y6WyZzZscveAc2gZgHhZg9ioiOh-gxdFaleUeIejf9iOhshhd0gRg-iKiwjVkUk5okp-q2rOtFpzuDsktTwIvpw6,,&amp;chco=CE0000|FF9A63|99CF00&amp;chxt=x,y&amp;chxr=y,0,4095&amp;chmg=0,0,0,80&amp;chgx=y,1,2,AAAAAA,1|x,1,0,CCCCCC,1&amp;chft=Verdana&amp;chm=VLG,D0D3DE,0,0|H,000000,0,0,1&amp;chxl=0:||||||||||||%20||||||||||||%20||||||||||||%20||||||||||||%20||||||||||||1:62|100|138|176|214|252" />
+				<script src="jquery.object-fit.js"></script>
+				<script>
+					$('#imgResize2b img').objectFit('contain');
+					//$('#imgResize2b img').objectFit({type:'cover', hideOverflow: true}); // hiding overflow is only relevant to cover
+				</script>
+			</section>
+			<section id="imgResize2c">
+				<p>2(c). Custom JavaScript. The problem with all of the methods above that have worked is that they all simply stretch the existing image - and the result is rather unpleasant - so in this example I alter the 'chs' and 'chmg' parameters of the BP Chart URL as the container changes.</p>
+				<img alt="Chart" src="http://bpcharts.morningstar.com/chart?&amp;cht=lc&amp;chs=403x132&amp;chof=p&amp;chfts=11&amp;chd=e:MzKwMUSbSFRkVkaiboZ5Y0ZPY3ZwdWfBa2ZmckajdfeIcvfvf-gmfqg0gtgAdwYSW6auX2YYasd1e1dsazc0dOfegdiEjfk0pRrJsOtgw9uezryxzT2M123F,MzLML3QURfQzTDWgYxYIYSZtZGZdcfdPaVY2bya7fRgZgAkIkQk6knmUl.lQkUeycoggeUe1hylWlNlFg9iFjfk6mLnEnzo0sRugv1wAyWv30h0V1V495L7P,MzKmLoO3QXPKSPVPXPWbXtZpX.Zgcob8Y6WyZzZscveAc2gZgHhZg9ioiOh-gxdFaleUeIejf9iOhshhd0gRg-iKiwjVkUk5okp-q2rOtFpzuDsktTwIvpw6,,&amp;chco=CE0000|FF9A63|99CF00&amp;chxt=x,y&amp;chxr=y,0,4095&amp;chmg=0,0,0,80&amp;chgx=y,1,2,AAAAAA,1|x,1,0,CCCCCC,1&amp;chft=Verdana&amp;chm=VLG,D0D3DE,0,0|H,000000,0,0,1&amp;chxl=0:||||||||||||%20||||||||||||%20||||||||||||%20||||||||||||%20||||||||||||1:62|100|138|176|214|252" />
+				<script src="../../common/js/scripts.js"></script>
+				<script src="jquery.graphResizing.js"></script>
+			</section>
+		</main>
+	</body>
+</html>

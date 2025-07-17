@@ -1,0 +1,100 @@
+﻿@import url("styles-reset.css");
+
+@-ms-viewport{
+	width:device-width;
+}
+
+body {
+	color:#333;
+	font:75%/1.3125 Verdana,Helvetica,Arial,sans-serif;
+	margin:1rem 5rem;
+}
+
+main > header {
+	margin-bottom:50px;
+}
+main > header h1 {
+	margin-bottom:20px;
+}
+
+section {
+	margin-bottom:50px;
+}
+section header {
+	display:-ms-flexbox;
+	display:-webkit-flex;
+	display:flex;
+	-ms-flex-pack:space-between;
+	-webkit-justify-content:space-between;
+	justify-content:space-between;
+
+  border-bottom: 1px solid #CCCCCC;
+  border-top:2px solid #797979;
+  padding:2px 0 12px;
+}
+header h1 {
+  font-size:1.4em;
+  font-weight:bold;
+  line-height:1.43;
+}
+
+table {
+	width:100%;
+}
+caption {
+  border-bottom: 1px solid #CCCCCC;
+  border-top:2px solid #797979;
+  padding:2px 0 12px;
+}
+section:nth-of-type(2) caption {
+	display:-ms-flexbox;
+	display:-webkit-flex;
+	display:flex;
+	-ms-flex-pack:space-between;
+	-webkit-justify-content:space-between;
+	justify-content:space-between;
+}
+caption > :first-child {
+  font-size:1.4em;
+  font-weight:bold;
+  line-height:1.43;
+}
+section:nth-of-type(3) caption:after,
+section:last-of-type caption:after {
+	content:" ";
+}
+section:nth-of-type(3) caption > :first-child ,
+section:last-of-type caption > :first-child {
+	float:left;
+}
+section:nth-of-type(3) caption time,
+section:last-of-type caption time {
+  float:right;
+}
+col:not(:first-child) {
+	width:16%
+}
+thead th {
+	font-weight:bold;
+}
+tr {
+	border-bottom:1px solid #ccc;
+}
+tr > * {
+	line-height:1.55;
+	padding:2px 0 3px;
+	vertical-align:top;
+}
+tr > *:not(:first-child) {
+	text-align:right;
+}
+
+
+.sr-only {
+	position:absolute;
+	left:-10000px;
+	top:auto;
+	height:1px;
+	overflow:hidden;
+	width:1px;
+}

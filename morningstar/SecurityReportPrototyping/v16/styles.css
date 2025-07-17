@@ -1,0 +1,258 @@
+/* variables */
+/* repeatable sections */
+/* general styling */
+[aria-hidden='true'] {
+  display: none;
+}
+body {
+  color: #333333;
+  font-size: 0.75rem;
+  font-family: Verdana, Helvetica, Arial, sans-serif;
+  line-height: 1.3125;
+  margin: 0.25rem 0.5rem;
+}
+@media (min-width: 800px) {
+  body {
+    font-size: 0.6875rem;
+    margin: 0.25rem 5rem;
+  }
+}
+a {
+  text-decoration: none;
+}
+a:not(.selected) a:hover:not(.selected) {
+  text-decoration: underline;
+}
+/* report title */
+main > header h1 {
+  font-size: 2em;
+  line-height: 2;
+  margin-bottom: 24px;
+}
+main > header h1 .ms-security-name {
+  font-weight: bold;
+}
+/* comparator list */
+#msReportComparatorsList ul {
+  list-style-type: disc;
+  margin-bottom: 12px;
+  padding-left: 16px;
+}
+#msReportComparatorsList ul li span {
+  color: #333333;
+}
+/* tabs */
+[role='tablist'] {
+  background-color: #eee;
+}
+[role='tablist'] [aria-selected] {
+  display: block;
+}
+[role='tablist'] [aria-selected='true'] {
+  background-color: #fff;
+}
+[role='tablist'] [aria-selected='false']:hover {
+  text-decoration: underline;
+}
+@media (max-width: 800px) {
+  [role='tablist'] [aria-selected] {
+    border: 1px solid #999999;
+    border-bottom-width: 0;
+    padding: 10px 0.5rem;
+  }
+  [role='tablist'] [aria-selected]:first-child[aria-selected='true'] {
+    border-top-width: 0;
+  }
+  [role='tablist'] [aria-selected]:last-child[aria-selected='false'] {
+    border-bottom-width: 1px;
+  }
+  [role='tablist'] [aria-selected='true'] {
+    border-left-width: 0;
+    border-right-width: 0;
+  }
+  [role='tablist'] [aria-selected='false']:hover {
+    background-color: #fff;
+  }
+}
+@media (min-width: 800px) {
+  [role='tablist'] {
+    border-top: 1x solid #ccc;
+    border-bottom: 1px solid #999999;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    margin-bottom: 12px;
+    padding: 3px 5px 0;
+  }
+  [role='tablist'] [aria-selected] {
+    padding: 7px 8px 6px;
+  }
+  [role='tablist'] [aria-selected='true'] {
+    position: relative;
+    top: 1px;
+    border: 1px solid #999999;
+    border-bottom-width: 0;
+    padding-top: 6px;
+  }
+  .no-flexbox [role='tablist'] {
+    overflow: hidden;
+  }
+  .no-flexbox [role='tablist'] li {
+    float: left;
+  }
+}
+/* sections */
+.ms-section {
+  margin-bottom: 24px;
+}
+.ms-section header {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-pack: space-between;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  border-bottom: 1px solid #cccccc;
+  border-top: 2px solid #797979;
+  padding: 2px 0 12px;
+}
+.ms-section header h1 {
+  font-size: 1.0625rem;
+  font-weight: bold;
+  line-height: 1.43;
+}
+.ms-section section {
+  border-bottom: 1px solid #cccccc;
+  margin-top: 5px;
+  padding-bottom: 5px;
+}
+.ms-section section:last-child {
+  border-bottom: 0;
+}
+.ms-section .ms-section {
+  margin-bottom: 0;
+}
+.ms-section .ms-section header {
+  border: 0;
+  padding: 10px 0 4px;
+}
+.ms-section .ms-section header h1 {
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 1.3125;
+}
+/* tables */
+.ms-table {
+  width: 100%;
+}
+.ms-table caption {
+  border-bottom: 1px solid #cccccc;
+  border-top: 2px solid #797979;
+  padding: 2px 0 12px;
+}
+.ms-table caption h1 {
+  float: left;
+  font-size: 1.0625rem;
+  font-weight: bold;
+  line-height: 1.43;
+}
+.ms-table caption > :last-child:not(h1) {
+  float: right;
+}
+.ms-section .ms-section .ms-table caption {
+  border: 0;
+  padding: 10px 0 4px;
+}
+.ms-section .ms-section .ms-table caption h1 {
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 1.3125;
+}
+#msReportTabPanel1 .ms-section-returns-annual .ms-table col:not(:first-child) {
+  width: 16.2%;
+}
+#msReportTabPanel2 .ms-section-returns-annual .ms-table col:not(:first-child) {
+  width: 8.1%;
+}
+.ms-section-key-stats .ms-table col:not(:first-child) {
+  width: 45%;
+}
+.ms-section-asset-allocation-lsn .ms-table col:not(:first-child) {
+  width: 25%;
+}
+.ms-table col.ms-quarter {
+  width: 16%;
+}
+.ms-table col.ms-comparator {
+  width: 16%;
+}
+#msReportTabPanel1 .ms-section-sectors .ms-table col.ms-comparator,
+#msReportTabPanel1 .ms-section-world-regions .ms-table col.ms-comparator {
+  width: 25%;
+}
+.ms-table col.ms-report-col-sector {
+  width: 30%;
+}
+.ms-table col.ms-report-col-weight {
+  width: 12%;
+}
+.ms-table thead th {
+  font-weight: bold;
+}
+.ms-table tr {
+  border-bottom: 1px solid #cccccc;
+}
+.ms-table tr > * {
+  line-height: 1.55;
+  padding: 2px 0 3px;
+  vertical-align: top;
+}
+.ms-table th.ms-comparator,
+.ms-table td.ms-comparator,
+.ms-table th.ms-quarter,
+.ms-table td.ms-quarter,
+.ms-table th.ms-report-col-weight,
+.ms-table td.ms-report-col-weight,
+.ms-table th.ms-year,
+.ms-table td.ms-year {
+  text-align: right;
+}
+/* general styling when screen is at least 800px wide */
+@media (min-width: 800px) {
+  main {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+  }
+  main > header {
+    order: -2;
+  }
+  main > nav {
+    order: -1;
+  }
+  nav {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+  }
+  .ms-flex-container {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    margin-left: -24px;
+  }
+  .ms-flex-container .ms-flex-item {
+    flex: 1;
+  }
+  .ms-flex-container .ms-flex-defined-width {
+    flex: none;
+  }
+  .ms-flex-container .ms-defined-width-1-of-3 {
+    width: 33.33333333%;
+  }
+  .ms-flex-container .ms-section {
+    margin-left: 24px;
+  }
+}

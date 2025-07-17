@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+
+	<head>
+		<title>Languages</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="initial-scale=1.0" />
+		<style>
+			:lang(af) {
+				quotes:'\201E' '\201D' '\201A' '\2019';
+			}
+			:lang(ak) {
+				font-family:Lucida, "DejaVu Sans", inherit;
+			}
+			:lang(ar) {
+				font-family:"Tahoma 12", Nazli, KacstOne, "DejaVu Sans", inherit;
+			}
+			:lang(bg) {
+				quotes:'\201E' '\201C' '\201A' '\2018';
+			}
+			:lang(bn) {
+				font-family:FreeSans, MuktiNarrow, Vrinda, inherit;
+				font-size:1.1em;
+				line-height:1.4em;
+			}
+			:lang(cs) {
+				quotes:'\201E' '\201C' '\201A' '\2018';
+			}
+			:lang(da) {
+				quotes:'\00BB' '\00AB' '\203A' '\2039';
+			}
+			:lang(de) {
+				quotes:'\201E' '\201C' '\201A' '\2018';
+			}
+			:lang(el) {
+				font-family:"DejaVu Sans", inherit;
+				quotes:'\00AB' '\00BB' '\2039' '\203A';
+			}
+			:lang(en-GB) {
+				quotes:'\2018' '\2019' '\201C' '\201D';
+			}
+			:lang(es) {
+				quotes:'\00AB' '\00BB' '\2039' '\203A';
+			}
+			:lang(fa) {
+				font-family:Terafik, Traffic, Roya, Nazli, Nazanin, sans;
+				font-size:1.5em;
+			}
+			:lang(fi) {
+				quotes:'\201D' '\201D' '\2019' '\2019';
+			}
+			:lang(fr) {
+				quotes:'\ab\2005' '\2005\bb' '\2039\2005' '\2005\203a';
+			}
+			:lang(hr) {
+				quotes:'\00BB' '\00AB' '\203A' '\2039';
+			}
+			:lang(is) {
+				quotes:'\201E' '\201C' '\201A' '\2018';
+			}
+			:lang(ja) {
+				font-size:1.1em;
+			}
+			:lang(km) {
+				font-family:"Khmer OS System", "Khmer OS", "Khmer Kampongtrach", "CDT Khmer", inherit;
+				line-height:2em;
+			}
+			:lang(ko) {
+				font-size:1.1em;
+			}
+			:lang(lt) {
+				quotes:'\201E' '\201C' '\201A' '\2018';
+			}
+			:lang(nl) {
+				quotes:'\201E' '\201D' '\201A' '\2019';
+			}
+			:lang(pl) {
+				quotes:'\201E' '\201D' '\201A' '\2019';
+			}
+			:lang(ro) {
+				quotes:'\201E' '\201C' '\201A' '\2018';
+			}
+			:lang(ru) {
+				quotes:'0AB' '0BB' '\201E' '\201C';
+			}
+			:lang(sk) {
+				quotes:'\201E' '\201C' '\201A' '\2018';
+			}
+			:lang(sq) {
+				quotes:'\00AB' '\00BB' '\2039' '\203A';
+			}
+			:lang(sr) {
+				quotes:'\201E' '\201C' '\201A' '\2018';
+			}
+			:lang(sv) {
+				quotes:'\201D' '\201D' '\2019' '\2019';
+			}
+			:lang(tr) {
+				quotes:'\00AB' '\00BB' '\2039' '\203A';
+			}
+			:lang(vi) {
+				font-family:"Lucida Grande", "Vu Phu Tho", "DejaVu Sans", inherit;
+			}
+			:lang(vi) a:hover,
+			:lang(vi) a:active {
+				text-decoration:none;
+				color:#606047;
+			}
+			:lang(zh) {
+				font-size:1.5em;
+			}
+
+			p::before {
+				content: attr(data-name) " (" attr(lang) "): ";
+			}
+			p[dir="rtl"]::before {
+				content: "(" attr(data-name) " (" attr(lang) ": ";
+			}
+		</style>
+	</head>
+
+	<body>
+		<p lang="en" data-name="English"><q>I don't hate people. I just feel better when they aren't around.</q></p>
+		<p lang="af" data-name="Afrikaans"><q>Ek mense haat nie . Ek voel net beter wanneer hulle nie rond.</q></p>
+		<!-- <p lang="ak" data-name="Akan"><q>I don't hate people. I just feel better when they aren't around.</q></p> -->
+		<p lang="ar" data-name="Arabic" dir="rtl"><q>أنا لا أكره الناس. أنا فقط يشعر على نحو أفضل عندما لا تكون حولها.</q></p>
+		<p lang="bg" data-name="Bulgarian"><q>Аз не мразя хората. Просто не се чувствам по-добре, когато те не са наоколо.</q></p>
+		<p lang="bn" data-name="Bengali"><q>আমি মানুষ ঘৃণা করে না. তারা প্রায় হয় না যখন আমি ভাল বোধ.</q></p>
+		<p lang="cs" data-name="Czech"><q>Nemám nenávidět lidi. Cítím se lépe, když nejsou v okolí.</q></p>
+		<p lang="da" data-name="Danish"><q>Jeg hader ikke folk. Jeg føler mig bedre, når de ikke er omkring.</q></p>
+		<p lang="de" data-name="German"><q>Ich hasse Leute. Ich fühle mich einfach besser, wenn sie nicht da sind.</q></p>
+		<p lang="el" data-name="Greek"><q>Δεν μισώ τους ανθρώπους. Νιώθω καλύτερα όταν δεν είναι γύρω.</q></p>
+		<p lang="en-GB" data-name="British English"><q>I don't hate people. I just feel better when they aren't around.</q></p>
+		<p lang="es" data-name="Spanish"><q>Yo no odio a la gente. Me siento mejor cuando no están alrededor.</q></p>
+		<p lang="fa" data-name="Persian" dir="rtl"><q>من مردم نفرت نیست. من فقط احساس بهتر زمانی که آنها در اطراف نیست.</q></p>
+		<p lang="fi" data-name="Finnish"><q>En vihaa ihmisiä. Minusta tuntuu paremmin, kun ne eivät ole noin.</q></p>
+		<p lang="fr" data-name="French"><q>Je ne déteste pas les gens. Je me sens mieux quand ils ne sont pas autour.</q></p>
+		<p lang="he" data-name="Hebrew" dir="rtl"><q>אני לא שונא אנשים. אני פשוט מרגיש טוב יותר כשהם לא בסביבה.</q></p>
+		<p lang="hr" data-name="Croation"><q>Ja ne mrzim ljude. Osjećam se bolje kada se ne okolo.</q></p>
+		<p lang="is" data-name="Icelandic"><q>Ég hata ekki fólk. Mér finnst bara betra þegar þeir eru ekki í kring.</q></p>
+		<p lang="ja" data-name="Japanese"><q>私は人々を嫌いではありません。彼らが周りにいないとき、私はちょうど良い感じ。</q></p>
+		<p lang="km" data-name="Khmer"><q>ខ្ញុំមិនស្អប់ប្រជាជន។ ខ្ញុំគ្រាន់តែមានអារម្មណ៍ល្អប្រសើរជាងមុននៅពេលដែលពួកគេមិនមាននៅជុំវិញ។</q></p>
+		<p lang="ko" data-name="Korean"><q>나는 사람들을 미워하지 않습니다. 그들은 주위에 없을 때 난 그냥 기분이 좋아.</q></p>
+		<p lang="lt" data-name="Lithuanian"><q>Nemanau, nekenčiu žmonių. Aš tiesiog jaučiasi geriau, kai jie yra ne aplink.</q></p>
+		<p lang="nl" data-name="Dutch"><q>Ik heb geen mensen haten. Ik voel me gewoon beter als ze niet in de buurt.	</q></p>
+		<p lang="pl" data-name="Polish"><q>Nie nienawidzę ludzi. Po prostu czuję się lepiej, gdy nie ma w pobliżu.</q></p>
+		<p lang="ro" data-name="Romanian"><q>Eu nu urăsc oamenii. Mă simt mai bine atunci când acestea nu sunt în jur.</q></p>
+		<p lang="ru" data-name="Russian"><q>Я не ненавижу людей. Я просто чувствую себя лучше, когда они не вокруг.</q></p>
+		<p lang="sk" data-name="Slovak"><q>Nemám nenávidieť ľudí. Cítim sa lepšie, keď nie sú v okolí.</q></p>
+		<p lang="sq" data-name="Albanian"><q>Unë nuk i urrej njerëzit. Unë vetëm ndjehen më mirë kur ata nuk janë përreth.</q></p>
+		<p lang="sr" data-name="Serbian"><q>Ја не мрзим људе. Осећам се боље када нису около.</q></p>
+		<p lang="sv" data-name="Swedish"><q>Jag hatar inte folk. Jag känner mig bara bättre när de inte runt.</q></p>
+		<p lang="tr" data-name="Turkish"><q>Ben insanları nefret etmiyorum. Onlar yokken ben sadece daha iyi hissediyorum.</q></p>
+		<p lang="vi" data-name="Vietnamese"><q>Tôi không ghét người. Tôi chỉ cảm thấy tốt hơn khi họ không phải xung quanh.</q></p>
+		<p lang="zh" data-name="Chinese"><q>我不討厭的人。我只是覺得更好，當他們不在身邊。</q></p>
+	</body>
+
+</html>

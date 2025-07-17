@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Font Sizes</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			body {
+				margin: 0;
+			}
+			main {
+				background-color:#fafafa;
+				border:1px solid #eaeaea;
+				border-radius:10px;
+				box-sizing:border-box;
+				margin:1rem;
+				padding:20px;
+				width:auto;
+			}
+			section:not(:last-of-type) {
+				border-bottom:1px solid #eaeaea;
+				margin-bottom:20px;
+				padding-bottom:20px;
+			}
+			header {
+				margin-bottom:10px;
+			}
+			h1 {
+				font-weight:bold;
+				margin: 0;
+			}
+			ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			#rem h1 {
+				font-size:2rem;
+			}
+			#rem li:first-of-type {
+				font-size:1.5rem;
+			}
+			#rem li:nth-of-type(2) {
+				font-size:1.25rem;
+			}
+			#rem li:nth-of-type(3) {
+				font-size:1rem;
+			}
+			#rem li:nth-of-type(4) {
+				font-size:.75rem;
+			}
+			#rem li:nth-of-type(5) {
+				font-size:.5rem;
+			}
+			#rem li:last-of-type {
+				font-size:.25rem;
+			}
+
+			#vw h1 {
+				font-size:5vw;
+			}
+			#vw li:first-of-type {
+				font-size:4vw;
+			}
+			#vw li:nth-of-type(2) {
+				font-size:3vw;
+			}
+			#vw li:nth-of-type(3) {
+				font-size:2.5vw;
+			}
+			#vw li:nth-of-type(4) {
+				font-size:2vw;
+			}
+			#vw li:nth-of-type(5) {
+				font-size:1.5vw;
+			}
+			#vw li:last-of-type {
+				font-size:1vw;
+			}
+
+			#vh h1 {
+				font-size:5vh;
+			}
+			#vh li:first-of-type {
+				font-size:4vh;
+			}
+			#vh li:nth-of-type(2) {
+				font-size:3vh;
+			}
+			#vh li:nth-of-type(3) {
+				font-size:2.5vh;
+			}
+			#vh li:nth-of-type(4) {
+				font-size:2vh;
+			}
+			#vh li:nth-of-type(5) {
+				font-size:1.5vh;
+			}
+			#vh li:last-of-type {
+				font-size:1vh;
+			}
+
+			#vmin h1 {
+				font-size:5vmin;
+			}
+			#vmin li:first-of-type {
+				font-size:4vmin;
+			}
+			#vmin li:nth-of-type(2) {
+				font-size:3vmin;
+			}
+			#vmin li:nth-of-type(3) {
+				font-size:2.5vmin;
+			}
+			#vmin li:nth-of-type(4) {
+				font-size:2vmin;
+			}
+			#vmin li:nth-of-type(5) {
+				font-size:1.5vmin;
+			}
+			#vmin li:last-of-type {
+				font-size:1vmin;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<section id="rem">
+				<header>
+					<h1>(2) rem</h1>
+					<em>Where 1rem = 16px</em>
+				</header>
+				<div>
+					<ul>
+						<li>(1.5rem) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in.</li>
+						<li>(1.25rem) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in.</li>
+						<li>(1rem) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in.</li>
+						<li>(0.75rem) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in.</li>
+						<li>(0.5rem) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in.</li>
+						<li>(0.25rem) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in.</li>
+					</ul>
+				</div>
+			</section>
+			<section id="vw">
+				<header>
+					<h1>(5) vw</h1>
+					<em>1vw = 1% of the viewport width</em>
+				</header>
+				<div>
+					<ul>
+						<li>(4vw) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in.</li>
+						<li>(3vw) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in.</li>
+						<li>(2.5vw) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in.</li>
+						<li>(2vw) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in.</li>
+						<li>(1.5vw) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in.</li>
+						<li>(1vw) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in.</li>
+					</ul>
+				</div>
+			</section>
+			<section id="vh">
+				<header>
+					<h1>(5) vh</h1>
+					<em>1vh = 1% of the viewport height</em>
+				</header>
+				<div>
+					<ul>
+						<li>(4vh) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in.</li>
+						<li>(3vh) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in.</li>
+						<li>(2.5vh) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in.</li>
+						<li>(2vh) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in.</li>
+						<li>(1.5vh) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in.</li>
+						<li>(1vh) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in.</li>
+					</ul>
+				</div>
+			</section>
+			<section id="vmin">
+				<header>
+					<h1>(5) vmin</h1>
+					<em>1vmin = 1% of the viewport minimum, i.e. whichever is smaller of width or height.<br />
+					The flipside is vmax (viewport maximum), i.e. whichever is the larger of width or height.</em>
+				</header>
+				<div>
+					<ul>
+						<li>(4vmin) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in.</li>
+						<li>(3vmin) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in.</li>
+						<li>(2.5vmin) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in.</li>
+						<li>(2vmin) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in.</li>
+						<li>(1.5vmin) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in.</li>
+						<li>(1vmin) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in.</li>
+					</ul>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>

@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title>HTML Fragment: Image</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="./styles.css" rel="stylesheet" />
+		<style>
+			main > div > section {
+				-ms-flex:0 0 25%;
+				-webkit-flex:0 0 25%;
+				flex:0 0 25%;
+				max-width: 240px;
+			}
+			main > div > section:last-child {
+				-ms-flex:0 0 75%;
+				-webkit-flex:0 0 75%;
+				flex:0 0 75%;
+				max-width: 752px;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<header>
+				<h1>Image</h1>
+			</header>
+			<div>
+				<section>
+					<header>
+						<h1>Output</h1>
+					</header>
+					<section>
+						<header>
+							<h1>Informative</h1>
+						</header>
+						<div>
+							<p>
+								<img src="http://lt.morningstar.com/img/4stars.gif" alt="4 Stars" height="17" width="66" />
+							</p>
+							<p>
+								<img src="http://lt.morningstar.com/img/analystrating/analystRating2Large.gif" alt="Neutral" height="22" width="120">
+							</p>
+						</div>
+					</section>
+					<section>
+						<header>
+							<h1>Presentational</h1>
+						</header>
+						<div>
+							<img src="http://www.morningstar.co.uk/static/UploadManager/Image/Fund%20Rating%20Red.GIF" alt="" height="100" width="100" role="presentation" />
+						</div>
+					</section>
+				</section>
+				<section>
+					<header>
+						<h1>Source</h1>
+					</header>
+					<section>
+						<header>
+							<h1>Informative</h1>
+						</header>
+						<pre>
+&lt;img src="http://lt.morningstar.com/img/4stars.gif"
+     alt="4 Stars"
+     height="17"
+     width="66" /&gt;
+
+&lt;img src="http://lt.morningstar.com/img/analystrating/analystRating2Large.gif"
+     alt="Neutral"
+     height="22"
+     width="120"&gt;
+						</pre>
+					</section>
+					<section>
+						<header>
+							<h1>Presentational</h1>
+						</header>
+						<pre>
+&lt;img src="http://www.morningstar.co.uk/static/UploadManager/Image/Fund%20Rating%20Red.GIF"
+     alt=""
+     height="100"
+     width="100"
+     role="presentation" /&gt;
+						</pre>
+					</section>
+				</section>
+			</section>
+			</div>
+		</main>
+	</body>
+</html>

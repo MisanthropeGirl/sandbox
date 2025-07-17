@@ -1,0 +1,710 @@
+﻿<!DOCTYPE html>
+
+<!--[if IEMobile 7 ]> <html dir="ltr" lang="en-GB"class="no-js iem7"> <![endif]-->
+<!--[if lt IE 7 ]> <html dir="ltr" lang="en-GB" class="no-js ie6 oldie"> <![endif]-->
+<!--[if IE 7 ]> <html dir="ltr" lang="en-GB" class="no-js ie7 oldie"> <![endif]-->
+<!--[if IE 8 ]> <html dir="ltr" lang="en-GB" class="no-js ie8 oldie"> <![endif]-->
+<!--[if IE 9 ]> <html dir="ltr" lang="en-GB" class="no-js ie9 oldie"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html dir="ltr" lang="en-GB"><!--<![endif]-->
+	<head>
+		<title>Search Criteria</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="../../common/css/normalize_v3.0.1.css" rel="stylesheet" />
+		<style>
+			body {
+				font-family:Verdana, Helvetica, Arial;
+				margin:10px;
+			}
+
+			.clearfix {
+				clear:both;
+				content:"";
+				display:table;
+			}
+			.sr-only {
+				position:absolute;
+				width:1px;
+				height:1px;
+				border:0;
+				margin:-1px;
+				padding:0;
+				overflow:hidden;
+				clip:rect(0,0,0,0);
+			}
+
+			input, select {
+				box-sizing:border-box;
+				margin-bottom:10px;
+				width:100%;
+			}
+			.msToolBar {
+				background-color:#e1e1e1;
+				border-bottom:1px solid gray;
+				border-top:1px solid #fff;
+				box-sizing:border-box;
+				padding:10px 5px 0;
+				width:100%;
+			}
+			/*
+			.msSearchOptionCheckbox {
+				padding-bottom:4px;
+			}
+			.msSearchOptionCheckbox .msSearchLabel {
+				font-weight:bold;
+				position:relative;
+				top:1px;
+			}
+			.msSearchOptionCheckbox .msSearchCheckbox {
+				margin-left:5px;
+				position:relative;
+				top:3px;
+			}
+			.msSearchOptionTextbox .msSearchTextbox {
+				padding:1px 2px 1px 3px;
+				width:98%;
+			}*/
+
+			@media (min-width:768px){
+				body {
+					font-size:0.6875rem;
+					line-height:1.3125;
+				}
+				input, select {
+					margin-bottom:0;
+				}
+
+				.msSearchCriteriaPanel {
+					display:-ms-flexbox;
+					display:-webkit-flex;
+					display:flex;
+					flex-wrap:wrap;
+					flex-flow:row wrap;
+
+					padding:10px 0 0 10px;
+				}
+				.msSearchOption {
+					box-sizing:border-box;
+					padding:0 10px 10px 0;
+					width:40%;
+				}
+				.msSearchOptionSmall {
+					width:20%;
+				}
+				.msSearchCriteriaPanel div:empty {
+					-ms-flex:auto;
+					-webkit-flex:auto;
+					flex:auto;
+				}
+				.msSearchOptionButton input.msButton {
+					margin:0;
+					position:relative;
+					top:-1px;
+				}
+				.msSearchOptionTextbox .msSearchTextbox {
+					padding:1px 2px 1px 3px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="msToolBar msSearchCriteriaPanel">
+			<div class="msSearchOption msSearchOptionSelect msSearchOptionUniverse">
+				<label class="sr-only msSearchLabel msSearchLabelUniverse" for="ctl00_ContentPlaceHolder1_aFundQuickrankControl_ddlUniverse">Universe</label>
+				<select class="msSearchSelect msSearchSelectUniverse" id="ctl00_ContentPlaceHolder1_aFundQuickrankControl_ddlUniverse" name="ctl00$ContentPlaceHolder1$aFundQuickrankControl$ddlUniverse">
+					<option value="FOAUS$$ALL">Australia Open End Funds</option>
+					<option value="FOAUT$$ALL">Austria Open End Funds</option>
+					<option value="FOBEL$$ALL">Belgium Open End Funds</option>
+					<option value="FOBRA$$ALL">Brazil Open End Funds</option>
+					<option value="FOCAN$$ALL">Canada Open End Funds</option>
+					<option value="FOCHL$$ALL">Chile Open End Funds</option>
+					<option value="FOCHL$$ONS">Chile OE Funds Domiciled</option>
+					<option value="FOCHLP$ALL">Chile Open End Funds (Primary)</option>
+					<option value="FOCHN$$ALL">China Open End Funds</option>
+					<option value="FODNK$$ALL">Denmark Open End Funds</option>
+					<option value="FOFIN$$ALL">Finland Open End Funds</option>
+					<option value="FOFRA$$ALL">France Open End Funds</option>
+					<option value="FODEU$$ALL">Germany Open End Funds</option>
+					<option value="FOHKG$$ALL">Hong Kong Open End Funds</option>
+					<option value="FOIND$$ALL">India Open End Funds</option>
+					<option value="FOIRL$$ALL">Irish Open End Funds</option>
+					<option value="FOITA$$ALL">Italy Open End Funds</option>
+					<option value="FOJPN$$ALL">Japan Open End Funds</option>
+					<option value="FOMEX$$ALL">Mexico Open End Funds</option>
+					<option value="FONLD$$ALL">Netherlands Open End Funds</option>
+					<option value="FONOR$$ALL">Norway Open End Funds</option>
+					<option value="FOPRT$$ALL">Portugal Open End Funds</option>
+					<option value="FOSGP$$ALL">Singapore Open End Funds</option>
+					<option value="FOZAF$$ALL">South Africa Open End Funds</option>
+					<option value="FOESP$$ALL">Spain Open End Funds</option>
+					<option value="FOSWE$$ALL">Sweden Open End Funds</option>
+					<option value="FOCHE$$ALL">Switzerland Open End Funds</option>
+					<option value="FOGBR$$ALL" selected="selected">UK Open End Funds</option>
+					<option value="FOGBR$$OFS">UK Offshore Funds</option>
+					<option value="FOUSA$$ALL">US Open End Funds</option>
+				</select>
+			</div>
+			<div class="msSearchOption msSearchOptionSelect msSearchOptionBrandingName">
+				<label class="sr-only msSearchLabel msSearchLabelBrandingName" for="ctl00_ContentPlaceHolder1_aFundQuickrankControl_ddlBrandingName">Fund Company</label>
+				<select class="msSearchSelect msSearchSelectBrandingName" id="ctl00_ContentPlaceHolder1_aFundQuickrankControl_ddlBrandingName" name="ctl00$ContentPlaceHolder1$aFundQuickrankControl$ddlBrandingName">
+					<option value="" selected="selected">All Companies</option>
+					<option value="">------------------</option>
+					<option value="BN00000ACB">1741 Asset Management AG</option>
+					<option value="BN000007PZ">3 Banken</option>
+					<option value="BN00000GDR">3V Asset Management</option>
+					<option value="BN000007ST">Aberdeen</option>
+					<option value="BN00000GB3">ACCURA</option>
+					<option value="BN00000H8Q">Acolin</option>
+					<option value="BN000007R2">AFM</option>
+					<option value="BN000007UQ">Ahead</option>
+					<option value="BN000007RJ">AIM</option>
+					<option value="BN000007V9">Alceda Fund Management</option>
+					<option value="BN000007VS">Alken</option>
+					<option value="BN000007W3">AllianceBernstein</option>
+					<option value="BN000007W4">Allianz</option>
+					<option value="BN000009TN">Allianz Global Investors</option>
+					<option value="BN000007XL">Ampega</option>
+					<option value="BN00000BTY">Amundi</option>
+					<option value="BN00000GD7">Argonaut Capital</option>
+					<option value="BN000007ZS">Ashmore</option>
+					<option value="BN00000800">Assenagon</option>
+					<option value="BN0000081K">Aviva</option>
+					<option value="BN000007SK">AXA</option>
+					<option value="BN000007SM">AXXION</option>
+					<option value="BN000008A5">Baloise</option>
+					<option value="BN00000852">Bank Austria</option>
+					<option value="BN00000857">Bank Gutmann</option>
+					<option value="BN0000085Y">Bankhaus Schelhammer &amp; Schattera</option>
+					<option value="BN0000085U">BankInvest</option>
+					<option value="BN0000086Z">Banque de Luxembourg</option>
+					<option value="BN00000871">Bantleon Bank</option>
+					<option value="BN00000873">Barclays</option>
+					<option value="BN00000875">Baring</option>
+					<option value="BN00000EU9">Baumann &amp; Partners</option>
+					<option value="BN0000081Z">BAWAG P.S.K.</option>
+					<option value="BN0000087J">Belgrave</option>
+					<option value="BN0000088H">BlackRock</option>
+					<option value="BN0000088P">BlueBay</option>
+					<option value="BN00000835">BNP Paribas</option>
+					<option value="BN00000837">BNY Mellon</option>
+					<option value="BN00000CVQ">BofAML</option>
+					<option value="BN0000089D">Brevan Howard</option>
+					<option value="BN0000089M">Brown Advisory</option>
+					<option value="BN000008AF">CAIAC</option>
+					<option value="BN000008CI">Calamos</option>
+					<option value="BN000008CO">Callander</option>
+					<option value="BN000008KM">Candriam</option>
+					<option value="BN000008D6">Capital Group</option>
+					<option value="BN000008DK">Carmignac</option>
+					<option value="BN00000DEJ">Carne</option>
+					<option value="BN000008DR">Casa4Funds</option>
+					<option value="BN000008ER">Charlemagne Capital</option>
+					<option value="BN000008GJ">Comgest</option>
+					<option value="BN000008HR">Coronation</option>
+					<option value="BN00000E3P">CPR Asset Management</option>
+					<option value="BN000008A8">C-QUADRAT</option>
+					<option value="BN000008IT">Credit Suisse</option>
+					<option value="BN000008IK">Crystal</option>
+					<option value="BN00000C1N">Custom Markets</option>
+					<option value="BN00000CME">Daiwa SB Investments</option>
+					<option value="BN00000AX4">Davis  Advisers</option>
+					<option value="BN00000E38">DB X-Funds</option>
+					<option value="BN000008KC">Deka</option>
+					<option value="BN000008KE">Delta Lloyd</option>
+					<option value="BN000008KH">Deutsche Bank</option>
+					<option value="BN000008KQ">Diapason Commodities Management</option>
+					<option value="BN000008JH">DJE Kapital</option>
+					<option value="BN000008L4">DNB</option>
+					<option value="BN000008JK">DNCA Finance</option>
+					<option value="BN000008LP">Duemme</option>
+					<option value="BN000008JT">DWS</option>
+					<option value="BN000008LX">Dynamic Funds</option>
+					<option value="BN00000AYA">E.I. Sturdza Strategic</option>
+					<option value="BN000008MQ">East Capital</option>
+					<option value="BN00000DC2">Edmond De Rothschild</option>
+					<option value="BN00000E0U">Erste Asset Management GmbH</option>
+					<option value="BN00000E0T">ERSTE Immobilien Kapitalanlag m.b.H.</option>
+					<option value="BN00000C3D">Erste Sparinvest</option>
+					<option value="BN00000CXW">ETHENEA</option>
+					<option value="BN00000C3J">European SICAV Alliance</option>
+					<option value="BN000008PI">Exane</option>
+					<option value="BN000008PN">F&amp;C</option>
+					<option value="BN00000BNY">Falcon Fund</option>
+					<option value="BN00000DEC">Fenja Funds</option>
+					<option value="BN00000C3Y">Ferox Capital Management</option>
+					<option value="BN000008QX">Fidelity</option>
+					<option value="BN000008RM">Financière de l´Echiquier</option>
+					<option value="BN000008SB">First Private Investment</option>
+					<option value="BN000008SD">First State</option>
+					<option value="BN00000C4B">Fisch Fund Services AG</option>
+					<option value="BN00000DI7">Fisher Asset Management</option>
+					<option value="BN00000EUV">Flaskamp Invest</option>
+					<option value="BN00000EQB">Flossbach von Storch</option>
+					<option value="BN000008U8">Frankfurter Service</option>
+					<option value="BN000008U7">Frankfurt-Trust</option>
+					<option value="BN000008U9">Franklin Templeton</option>
+					<option value="BN00000DSO">Fred Alger</option>
+					<option value="BN000008UU">Fullerton</option>
+					<option value="BN00000C4O">FundLogic</option>
+					<option value="BN000008UY">Fund-Market Research &amp; Development</option>
+					<option value="BN000008VD">GAM</option>
+					<option value="BN000008VE">GAMAX</option>
+					<option value="BN00000CNM">GaveKal</option>
+					<option value="BN000008WM">Generali</option>
+					<option value="BN000008VY">GLG Partners</option>
+					<option value="BN00000B2Q">Global Advantage</option>
+					<option value="BN000008XT">Global Fund Selection</option>
+					<option value="BN000008Y2">Goldman Sachs</option>
+					<option value="BN00000BNK">GS&amp;P</option>
+					<option value="BN000008ZW">Hamon</option>
+					<option value="BN00000903">Hansainvest</option>
+					<option value="BN0000090I">Hauck &amp; Aufhäuser</option>
+					<option value="BN0000090P">Henderson</option>
+					<option value="BN00000DFR">Heptagon</option>
+					<option value="BN0000091O">Hottinger</option>
+					<option value="BN000008ZN">HSBC</option>
+					<option value="BN00000923">Hypo-Kapitalanlage</option>
+					<option value="BN0000092M">IFDS</option>
+					<option value="BN0000092N">IFM Independent Fund Management</option>
+					<option value="BN0000092O">IFOS</option>
+					<option value="BN0000093F">Ignis</option>
+					<option value="BN0000093H">Immo Kapitalanlage</option>
+					<option value="BN0000092W">ING</option>
+					<option value="BN0000092Y">INKA</option>
+					<option value="BN00000943">Insight</option>
+					<option value="BN0000094U">Invesco</option>
+					<option value="BN0000094X">Investec</option>
+					<option value="BN00000931">IPConcept</option>
+					<option value="BN00000938">IT Asset Management</option>
+					<option value="BN0000095M">J O Hambro</option>
+					<option value="BN0000085F">J. Safra Sarasin</option>
+					<option value="BN00000G8T">J.Chahine Capital</option>
+					<option value="BN00000B78">Jabre Capital</option>
+					<option value="BN00000961">Janus</option>
+					<option value="BN00000966">Jefferies</option>
+					<option value="BN0000095S">JPMorgan</option>
+					<option value="BN0000096I">Julius Meinl</option>
+					<option value="BN0000096J">Jupiter</option>
+					<option value="BN00000DO6">Kames Capital</option>
+					<option value="BN0000096T">KBC</option>
+					<option value="BN00000C7M">KBM Infond d.o.o.</option>
+					<option value="BN0000096Y">KEPLER-Fonds</option>
+					<option value="BN00000G8Z">Kinetic Partners</option>
+					<option value="BN0000097U">Kleinwort Benson</option>
+					<option value="BN00000C7W">Kredietrust Luxembourg</option>
+					<option value="BN00000CGR">La Française AM</option>
+					<option value="BN0000098Y">Laffitte Capital Management</option>
+					<option value="BN00000994">Landesbank Berlin</option>
+					<option value="BN0000099F">Lazard</option>
+					<option value="BN00000989">LBBW</option>
+					<option value="BN0000099N">Legg Mason</option>
+					<option value="BN0000099S">Lemanik</option>
+					<option value="BN0000098G">LGT</option>
+					<option value="BN000009AE">Liontrust</option>
+					<option value="BN0000098L">LLB</option>
+					<option value="BN000009AK">Lombard Odier</option>
+					<option value="BN0000098N">LRI</option>
+					<option value="BN000009B3">Lupus alpha</option>
+					<option value="BN00000B9U">Luxcellence</option>
+					<option value="BN000009B6">Lyxor</option>
+					<option value="BN000009BB">M&amp;G</option>
+					<option value="BN000009CG">Macquarie</option>
+					<option value="BN000009CK">MainFirst</option>
+					<option value="BN000009CT">Mandarine Gestion</option>
+					<option value="BN00000DEE">Mansard Capital</option>
+					<option value="BN00000D0V">MDO Management</option>
+					<option value="BN000009BO">MEAG</option>
+					<option value="BN000009FK">Merrill Lynch</option>
+					<option value="BN000009HP">Métropole</option>
+					<option value="BN000009FQ">Metzler</option>
+					<option value="BN000009BT">MFS</option>
+					<option value="BN000009G5">Mirae Asset</option>
+					<option value="BN00000H9O">MIV</option>
+					<option value="BN000009BX">MK LUXINVEST</option>
+					<option value="BN00000DFJ">ML Capital</option>
+					<option value="BN000009GJ">Monega</option>
+					<option value="BN000009GO">Montanaro</option>
+					<option value="BN000009H1">Morgan Stanley</option>
+					<option value="BN000009H8">MultiConcept</option>
+					<option value="BN000009HO">Muzinich</option>
+					<option value="BN000009IR">Natixis</option>
+					<option value="BN000009IZ">Neptune</option>
+					<option value="BN000009J1">Nestor Fonds</option>
+					<option value="BN000009J2">Neuberger Berman</option>
+					<option value="BN00000CA9">New Capital Fund</option>
+					<option value="BN000009JT">Nomura</option>
+					<option value="BN000009I3">NORAMCO</option>
+					<option value="BN000009JX">Nordea</option>
+					<option value="BN000009KG">Northern Trust</option>
+					<option value="BN000009LQ">Oddo Asset Management</option>
+					<option value="BN000009LS">Odey Asset Management</option>
+					<option value="BN00000AEX">OkoWorld</option>
+					<option value="BN000009LY">Old Mutual</option>
+					<option value="BN000009N5">Oyster</option>
+					<option value="BN000009OK">Pareto Forvaltning</option>
+					<option value="BN000009PR">Pharus</option>
+					<option value="BN000009Q6">Pictet</option>
+					<option value="BN000009NK">PIMCO</option>
+					<option value="BN00000BTZ">PineBridge</option>
+					<option value="BN000009QE">Pioneer Investments</option>
+					<option value="BN000009NN">PKB</option>
+					<option value="BN000009QO">Polar Capital</option>
+					<option value="BN000009SB">Prosperity Capital Management</option>
+					<option value="BN000009SN">Putnam</option>
+					<option value="BN000009U7">Raiffeisen</option>
+					<option value="BN000009TI">RAM</option>
+					<option value="BN000009TL">RBS</option>
+					<option value="BN000009UV">Renaissance Asset Managers</option>
+					<option value="BN000009VE">Ringturm</option>
+					<option value="BN000009VL">Robeco</option>
+					<option value="BN000009VV">Rothschild</option>
+					<option value="BN000009W4">Russell</option>
+					<option value="BN000009C4">RWC</option>
+					<option value="BN000009XR">Sal. Oppenheim</option>
+					<option value="BN000009XS">Salus Alpha</option>
+					<option value="BN000009YJ">Schoellerbank</option>
+					<option value="BN00000CT6">Schroders</option>
+					<option value="BN000009WI">SEB</option>
+					<option value="BN000009Z5">Security</option>
+					<option value="BN000009ZG">Seilern</option>
+					<option value="BN000008BJ">Semper Constantia Invest</option>
+					<option value="BN000009ZX">Seven Capital</option>
+					<option value="BN00000DTK">Shenkman capital</option>
+					<option value="BN000009WS">SIA</option>
+					<option value="BN00000AGK">Spängler IQAM</option>
+					<option value="BN00000A23">Sparinvest</option>
+					<option value="BN00000BFL">Sparkasse</option>
+					<option value="BN00000CEI">Stanlib</option>
+					<option value="BN00000A2M">StarCapital</option>
+					<option value="BN00000A2O">State Street</option>
+					<option value="BN00000EUQ">Storm</option>
+					<option value="BN00000A3A">Structured Invest</option>
+					<option value="BN00000A3H">Superfund</option>
+					<option value="BN00000E1M">Swiss &amp; Global AM</option>
+					<option value="BN00000A3T">Swiss Life</option>
+					<option value="BN00000A3X">Swisscanto</option>
+					<option value="BN00000A4H">T. Rowe Price</option>
+					<option value="BN00000A61">Thames River</option>
+					<option value="BN00000A6J">Threadneedle</option>
+					<option value="BN00000A6S">Tirolinvest</option>
+					<option value="BN00000A7G">Trendconcept</option>
+					<option value="BN00000BOC">Tt International</option>
+					<option value="BN00000DJZ">UBAM</option>
+					<option value="BN00000A8H">UBP</option>
+					<option value="BN00000A8I">UBS</option>
+					<option value="BN00000A97">Unigestion</option>
+					<option value="BN00000A9C">Union Investment</option>
+					<option value="BN00000A9N">Universal-Investment</option>
+					<option value="BN00000AA1">Valartis</option>
+					<option value="BN00000AAC">ValueInvest</option>
+					<option value="BN00000A9V">VERITAS</option>
+					<option value="BN00000ABH">Volksbank Invest</option>
+					<option value="BN00000AEU">von der Heydt Kersten</option>
+					<option value="BN00000ABK">Vontobel</option>
+					<option value="BN00000A9Z">VPBank</option>
+					<option value="BN00000EAR">VTB</option>
+					<option value="BN00000AC0">Wallberg</option>
+					<option value="BN00000DF6">Walser Privatbank</option>
+					<option value="BN000009BC">Warburg Invest</option>
+					<option value="BN00000ACF">Wellington Management</option>
+					<option value="BN00000ACH">Wells Fargo</option>
+					<option value="BN00000ACP">WestLB Mellon</option>
+					<option value="BN00000ABW">WWK Investment</option>
+					<option value="BN00000AED">Zest</option>
+				</select>
+			</div>
+			<div class="msSearchOption msSearchOptionSmall msSearchOptionSelect msSearchOptionIncOrAcc">
+				<label class="sr-only msSearchLabel msSearchLabelIncOrAcc" id="ctl00_ContentPlaceHolder1_aFundQuickrankControl_lblIncOrAcc" for="ctl00_ContentPlaceHolder1_aFundQuickrankControl_ddlIncOrAcc">Distribution Type</label>
+				<select class="msSearchSelect msSearchSelectIncOrAcc" id="ctl00_ContentPlaceHolder1_aFundQuickrankControl_ddlIncOrAcc" name="ctl00$ContentPlaceHolder1$aFundQuickrankControl$ddlIncOrAcc">
+					<option value="" selected="selected">All Distributions</option>
+					<option value="">----------------------</option>
+					<option value="1|0">Inc</option>
+					<option value="0|1">Acc</option>
+				</select>
+			</div>
+			<div class="msSearchOption msSearchOptionSelect msSearchOptionCategory">
+				<label class="sr-only msSearchLabel msSearchLabelCategory" id="ctl00_ContentPlaceHolder1_aFundQuickrankControl_lblCategory" for="ctl00_ContentPlaceHolder1_aFundQuickrankControl_ddlCategory">Category</label>
+				<select class="msSearchSelect msSearchSelectCategory" id="ctl00_ContentPlaceHolder1_aFundQuickrankControl_ddlCategory" name="ctl00$ContentPlaceHolder1$aFundQuickrankControl$ddlCategory">
+					<option value="" selected="selected">All Morningstar&reg; Categories</option>
+					<option value="">--------------------------------</option>
+					<option value="EUCA000698">Africa &amp; Middle East Equity</option>
+					<option value="EUCA000697">Africa Equity</option>
+					<option value="EUCA000797">Alt - Currency</option>
+					<option value="EUCA000798">Alt - Debt Arbitrage</option>
+					<option value="EUCA000799">Alt - Diversified Arbitrage</option>
+					<option value="EUCA000800">Alt - Event Driven</option>
+					<option value="EUCA000802">Alt - Fund of Funds - Multistrategy</option>
+					<option value="EUCA000803">Alt - Fund of Funds - Other</option>
+					<option value="EUCA000804">Alt - Global Macro</option>
+					<option value="EUCA000805">Alt - Long/Short Debt</option>
+					<option value="EUCA000806">Alt - Long/Short Equity - Emerging Markets</option>
+					<option value="EUCA000807">Alt - Long/Short Equity - Europe</option>
+					<option value="EUCA000808">Alt - Long/Short Equity - Global</option>
+					<option value="EUCA000809">Alt - Long/Short Equity - UK</option>
+					<option value="EUCA000810">Alt - Long/Short Equity - US</option>
+					<option value="EUCA000811">Alt - Market Neutral - Equity</option>
+					<option value="EUCA000812">Alt - Multistrategy</option>
+					<option value="EUCA000813">Alt - Systematic Futures</option>
+					<option value="EUCA000814">Alt - Volatility</option>
+					<option value="EUCA000669">ASEAN Equity</option>
+					<option value="EUCA000559">Asia Allocation</option>
+					<option value="EUCA000570">Asia Bond</option>
+					<option value="EUCA000779">Asia ex Japan Equity</option>
+					<option value="EUCA000883">Asia ex Japan Equity - Currency Hedged</option>
+					<option value="EUCA000877">Asia High Yield Bond</option>
+					<option value="EUCA000884">Asia-Pacific Equity - Currency Hedged</option>
+					<option value="EUCA000501">Asia-Pacific ex-Japan Equity</option>
+					<option value="EUCA000502">Asia-Pacific inc. Japan Equity</option>
+					<option value="EUCA000571">AUD Bond</option>
+					<option value="EUCA000776">AUD Money Market</option>
+					<option value="EUCA000503">Australia &amp; New Zealand Equity</option>
+					<option value="EUCA000630">Austria Equity</option>
+					<option value="EUCA000631">Belgium Equity</option>
+					<option value="EUCA000699">Brazil Equity</option>
+					<option value="EUCA000700">BRIC Equity</option>
+					<option value="EUCA000572">CAD Bond</option>
+					<option value="EUCA000777">CAD Money Market</option>
+					<option value="EUCA000632">Canada Equity</option>
+					<option value="EUCA000615">Capital Protected</option>
+					<option value="EUCA000618">CHF Aggressive Allocation</option>
+					<option value="EUCA000573">CHF Bond</option>
+					<option value="EUCA000747">CHF Bond - Short Term</option>
+					<option value="EUCA000619">CHF Cautious Allocation</option>
+					<option value="EUCA000738">CHF Moderate Allocation</option>
+					<option value="EUCA000575">CHF Money Market</option>
+					<option value="EUCA000504">China Equity</option>
+					<option value="EUCA000784">Commodities - Broad Agriculture</option>
+					<option value="EUCA000785">Commodities - Broad Basket</option>
+					<option value="EUCA000791">Commodities - Precious Metals</option>
+					<option value="EUCA000627">Convertible Bond - Asia/Japan</option>
+					<option value="EUCA000748">Convertible Bond - Europe</option>
+					<option value="EUCA000749">Convertible Bond - Global</option>
+					<option value="EUCA000821">Convertible Bond - Global, CHF Hedged</option>
+					<option value="EUCA000750">Convertible Bond - Global, EUR Hedged</option>
+					<option value="EUCA000822">Convertible Bond - Global, GBP Hedged</option>
+					<option value="EUCA000823">Convertible Bond - Global, USD Hedged</option>
+					<option value="EUCA000751">Convertible Bond - Other</option>
+					<option value="EUCA000752">Convertible Bond - Other Hedged</option>
+					<option value="EUCA000576">DKK Bond</option>
+					<option value="EUCA000753">DKK Bond - Long Term</option>
+					<option value="EUCA000824">EMEA Equity</option>
+					<option value="EUCA000623">Emerging Europe Bond</option>
+					<option value="EUCA000508">Emerging Europe Equity</option>
+					<option value="EUCA000633">Emerging Europe ex-Russia Equity</option>
+					<option value="EUCA000862">EUR Aggressive Allocation</option>
+					<option value="EUCA000563">EUR Aggressive Allocation - Global</option>
+					<option value="EUCA000622">EUR Bond - Long Term</option>
+					<option value="EUCA000863">EUR Cautious Allocation</option>
+					<option value="EUCA000564">EUR Cautious Allocation - Global</option>
+					<option value="EUCA000690">EUR Corporate Bond</option>
+					<option value="EUCA000819">EUR Corporate Bond - Short Term</option>
+					<option value="EUCA000587">EUR Diversified Bond</option>
+					<option value="EUCA000593">EUR Diversified Bond - Short Term</option>
+					<option value="EUCA000864">EUR Flexible Allocation</option>
+					<option value="EUCA000739">EUR Flexible Allocation - Global</option>
+					<option value="EUCA000754">EUR Flexible Bond</option>
+					<option value="EUCA000589">EUR Government Bond</option>
+					<option value="EUCA000837">EUR Government Bond - Short Term</option>
+					<option value="EUCA000590">EUR High Yield Bond</option>
+					<option value="EUCA000625">EUR Inflation-Linked Bond</option>
+					<option value="EUCA000865">EUR Moderate Allocation</option>
+					<option value="EUCA000565">EUR Moderate Allocation - Global</option>
+					<option value="EUCA000591">EUR Money Market</option>
+					<option value="EUCA000830">EUR Money Market - Short Term</option>
+					<option value="EUCA000592">EUR Ultra Short-Term Bond</option>
+					<option value="EUCA000594">Europe Bond</option>
+					<option value="EUCA000885">Europe Equity - Currency Hedged</option>
+					<option value="EUCA000875">Europe Equity Income</option>
+					<option value="EUCA000509">Europe ex-UK Large-Cap Equity</option>
+					<option value="EUCA000510">Europe ex-UK Small/Mid-Cap Equity</option>
+					<option value="EUCA000514">Europe Flex-Cap Equity</option>
+					<option value="EUCA000755">Europe High Yield Bond</option>
+					<option value="EUCA000511">Europe Large-Cap Blend Equity</option>
+					<option value="EUCA000512">Europe Large-Cap Growth Equity</option>
+					<option value="EUCA000513">Europe Large-Cap Value Equity</option>
+					<option value="EUCA000850">Europe Mid-Cap Equity</option>
+					<option value="EUCA000515">Europe Small-Cap Equity</option>
+					<option value="EUCA000517">Eurozone Flex-Cap Equity</option>
+					<option value="EUCA000516">Eurozone Large-Cap Equity</option>
+					<option value="EUCA000851">Eurozone Mid-Cap Equity</option>
+					<option value="EUCA000518">Eurozone Small-Cap Equity</option>
+					<option value="EUCA000888">Fixed Term Bond</option>
+					<option value="EUCA000636">France Large-Cap Equity</option>
+					<option value="EUCA000620">GBP Aggressive Allocation</option>
+					<option value="EUCA000621">GBP Cautious Allocation</option>
+					<option value="EUCA000692">GBP Corporate Bond</option>
+					<option value="EUCA000604">GBP Diversified Bond</option>
+					<option value="EUCA000756">GBP Diversified Bond - Short Term</option>
+					<option value="EUCA000740">GBP Flexible Allocation</option>
+					<option value="EUCA000757">GBP Flexible Bond</option>
+					<option value="EUCA000606">GBP Government Bond</option>
+					<option value="EUCA000607">GBP High Yield Bond</option>
+					<option value="EUCA000758">GBP Inflation-Linked Bond</option>
+					<option value="EUCA000796">GBP Moderate Allocation</option>
+					<option value="EUCA000608">GBP Money Market</option>
+					<option value="EUCA000831">GBP Money Market - Short Term</option>
+					<option value="EUCA000638">Germany Large-Cap Equity</option>
+					<option value="EUCA000639">Germany Small/Mid-Cap Equity</option>
+					<option value="EUCA000759">Global Bond</option>
+					<option value="EUCA000574">Global Bond - CHF Biased</option>
+					<option value="EUCA000760">Global Bond - CHF Hedged</option>
+					<option value="EUCA000588">Global Bond - EUR Biased</option>
+					<option value="EUCA000624">Global Bond - EUR Hedged</option>
+					<option value="EUCA000761">Global Bond - GBP Hedged</option>
+					<option value="EUCA000731">Global Bond - ILS</option>
+					<option value="EUCA000882">Global Bond - NOK Hedged</option>
+					<option value="EUCA000762">Global Bond - Other Hedged</option>
+					<option value="EUCA000581">Global Bond - USD Biased</option>
+					<option value="EUCA000763">Global Bond - USD Hedged</option>
+					<option value="EUCA000889">Global Corporate Bond</option>
+					<option value="EUCA000890">Global Corporate Bond - CHF Hedged</option>
+					<option value="EUCA000891">Global Corporate Bond - EUR Hedged</option>
+					<option value="EUCA000892">Global Corporate Bond - GBP Hedged</option>
+					<option value="EUCA000893">Global Corporate Bond - USD Hedged</option>
+					<option value="EUCA000741">Global Emerging Markets Allocation</option>
+					<option value="EUCA000586">Global Emerging Markets Bond</option>
+					<option value="EUCA000764">Global Emerging Markets Bond - EUR Biased</option>
+					<option value="EUCA000765">Global Emerging Markets Bond - Local Currency</option>
+					<option value="EUCA000878">Global Emerging Markets Corporate Bond</option>
+					<option value="EUCA000879">Global Emerging Markets Corporate Bond - EUR Biased</option>
+					<option value="EUCA000507">Global Emerging Markets Equity</option>
+					<option value="EUCA000886">Global Emerging Markets Equity - Currency Hedged</option>
+					<option value="EUCA000848">Global Equity - Currency Hedged</option>
+					<option value="EUCA000876">Global Equity Income</option>
+					<option value="EUCA000558">Global Flex-Cap Equity</option>
+					<option value="EUCA000845">Global Frontier Markets Equity</option>
+					<option value="EUCA000766">Global High Yield Bond</option>
+					<option value="EUCA000894">Global High Yield Bond - CHF Hedged</option>
+					<option value="EUCA000854">Global High Yield Bond - EUR Hedged</option>
+					<option value="EUCA000855">Global High Yield Bond - GBP Hedged</option>
+					<option value="EUCA000858">Global Inflation-Linked Bond</option>
+					<option value="EUCA000859">Global Inflation-Linked Bond - EUR Hedged</option>
+					<option value="EUCA000860">Global Inflation-Linked Bond - GBP Hedged</option>
+					<option value="EUCA000861">Global Inflation-Linked Bond - USD Hedged</option>
+					<option value="EUCA000555">Global Large-Cap Blend Equity</option>
+					<option value="EUCA000556">Global Large-Cap Growth Equity</option>
+					<option value="EUCA000557">Global Large-Cap Value Equity</option>
+					<option value="EUCA000836">Global Small-Cap Equity</option>
+					<option value="EUCA000500">Greater China Equity</option>
+					<option value="EUCA000611">Guaranteed Funds</option>
+					<option value="EUCA000820">High Yield Bond - Other Hedged</option>
+					<option value="EUCA000768">HKD Bond</option>
+					<option value="EUCA000519">Hong Kong Equity</option>
+					<option value="EUCA000520">India Equity</option>
+					<option value="EUCA000780">Indonesia Equity</option>
+					<option value="EUCA000673">Islamic Equity - Other</option>
+					<option value="EUCA000840">Islamic Global Equity</option>
+					<option value="EUCA000640">Italy Equity</option>
+					<option value="EUCA000887">Japan Equity - Currency Hedged</option>
+					<option value="EUCA000521">Japan Large-Cap Equity</option>
+					<option value="EUCA000522">Japan Small/Mid-Cap Equity</option>
+					<option value="EUCA000595">JPY Bond</option>
+					<option value="EUCA000523">Korea Equity</option>
+					<option value="EUCA000524">Latin America Equity</option>
+					<option value="EUCA000672">Malaysia Equity</option>
+					<option value="EUCA000833">Money Market - Other</option>
+					<option value="EUCA000641">Netherlands Equity</option>
+					<option value="EUCA000596">NOK Bond</option>
+					<option value="EUCA000599">NOK Bond - Short Term</option>
+					<option value="EUCA000525">Nordic Equity</option>
+					<option value="EUCA000531">Norway Equity</option>
+					<option value="EUCA000999">Other</option>
+					<option value="EUCA000743">Other Allocation</option>
+					<option value="EUCA000771">Other Bond</option>
+					<option value="EUCA000634">Other Europe Equity</option>
+					<option value="EUCA000770">Other Inflation-Linked Bond</option>
+					<option value="EUCA000772">PLN Bond</option>
+					<option value="EUCA000793">Property - Direct Europe</option>
+					<option value="EUCA000794">Property - Direct Global</option>
+					<option value="EUCA000687">Property - Indirect Asia</option>
+					<option value="EUCA000688">Property - Indirect Europe</option>
+					<option value="EUCA000847">Property - Indirect Eurozone</option>
+					<option value="EUCA000541">Property - Indirect Global</option>
+					<option value="EUCA000781">Property - Indirect North America</option>
+					<option value="EUCA000825">Property - Indirect Other</option>
+					<option value="EUCA000856">RMB Bond</option>
+					<option value="EUCA000642">Russia Equity</option>
+					<option value="EUCA000827">Sector Equity Agriculture</option>
+					<option value="EUCA000705">Sector Equity Alternative Energy</option>
+					<option value="EUCA000532">Sector Equity Biotechnology</option>
+					<option value="EUCA000533">Sector Equity Communications</option>
+					<option value="EUCA000534">Sector Equity Consumer Goods &amp; Services</option>
+					<option value="EUCA000706">Sector Equity Ecology</option>
+					<option value="EUCA000535">Sector Equity Energy</option>
+					<option value="EUCA000536">Sector Equity Financial Services</option>
+					<option value="EUCA000537">Sector Equity Healthcare</option>
+					<option value="EUCA000538">Sector Equity Industrial Materials</option>
+					<option value="EUCA000707">Sector Equity Infrastructure</option>
+					<option value="EUCA000704">Sector Equity Natural Resources</option>
+					<option value="EUCA000539">Sector Equity Other</option>
+					<option value="EUCA000646">Sector Equity Precious Metals</option>
+					<option value="EUCA000708">Sector Equity Private Equity</option>
+					<option value="EUCA000542">Sector Equity Technology</option>
+					<option value="EUCA000543">Sector Equity Utilities</option>
+					<option value="EUCA000828">Sector Equity Water</option>
+					<option value="EUCA000600">SEK Bond</option>
+					<option value="EUCA000617">SEK Cautious Allocation</option>
+					<option value="EUCA000745">SEK Flexible Allocation</option>
+					<option value="EUCA000602">SEK Money Market</option>
+					<option value="EUCA000676">SGD Money Market</option>
+					<option value="EUCA000544">Singapore Equity</option>
+					<option value="EUCA000643">Spain Equity</option>
+					<option value="EUCA000546">Sweden Small/Mid-Cap Equity</option>
+					<option value="EUCA000548">Switzerland Large-Cap Equity</option>
+					<option value="EUCA000644">Switzerland Small/Mid-Cap Equity</option>
+					<option value="EUCA000670">Taiwan Large-Cap Equity</option>
+					<option value="EUCA000867">Target Date 2011 - 2015</option>
+					<option value="EUCA000868">Target Date 2016 - 2020</option>
+					<option value="EUCA000869">Target Date 2021 - 2025</option>
+					<option value="EUCA000870">Target Date 2026 - 2030</option>
+					<option value="EUCA000871">Target Date 2031 - 2035</option>
+					<option value="EUCA000872">Target Date 2036 - 2040</option>
+					<option value="EUCA000873">Target Date 2041 - 2045</option>
+					<option value="EUCA000874">Target Date 2046+</option>
+					<option value="EUCA000783">Thailand Equity</option>
+					<option value="EUCA000713">TRY Bond</option>
+					<option value="EUCA000703">Turkey Equity</option>
+					<option value="EUCA000846">UK Equity Income</option>
+					<option value="EUCA000553">UK Flex-Cap Equity</option>
+					<option value="EUCA000550">UK Large-Cap Blend Equity</option>
+					<option value="EUCA000551">UK Large-Cap Growth Equity</option>
+					<option value="EUCA000552">UK Large-Cap Value Equity</option>
+					<option value="EUCA000852">UK Mid-Cap Equity</option>
+					<option value="EUCA000554">UK Small-Cap Equity</option>
+					<option value="EUCA000849">US Equity - Currency Hedged</option>
+					<option value="EUCA000529">US Flex-Cap Equity</option>
+					<option value="EUCA000526">US Large-Cap Blend Equity</option>
+					<option value="EUCA000527">US Large-Cap Growth Equity</option>
+					<option value="EUCA000528">US Large-Cap Value Equity</option>
+					<option value="EUCA000853">US Mid-Cap Equity</option>
+					<option value="EUCA000530">US Small-Cap Equity</option>
+					<option value="EUCA000693">USD Aggressive Allocation</option>
+					<option value="EUCA000695">USD Cautious Allocation</option>
+					<option value="EUCA000691">USD Corporate Bond</option>
+					<option value="EUCA000580">USD Diversified Bond</option>
+					<option value="EUCA000585">USD Diversified Bond - Short Term</option>
+					<option value="EUCA000746">USD Flexible Allocation</option>
+					<option value="EUCA000775">USD Flexible Bond</option>
+					<option value="EUCA000582">USD Government Bond</option>
+					<option value="EUCA000583">USD High Yield Bond</option>
+					<option value="EUCA000767">USD Inflation-Linked Bond</option>
+					<option value="EUCA000694">USD Moderate Allocation</option>
+					<option value="EUCA000584">USD Money Market</option>
+					<option value="EUCA000832">USD Money Market - Short Term</option>
+					<option value="EUCA000829">Vietnam Equity</option>
+					<option value="$FOCA$IB$$">World Bond</option>
+					<option value="$FOCA$WS$$">World Stock</option>
+				</select>
+			</div>
+			<div class="msSearchOption msSearchOptionSmall msSearchOptionTextbox msSearchOptionTextSearch">
+				<label class="sr-only msSearchLabel msSearchLabelTextSearch" id="ctl00_ContentPlaceHolder1_aFundQuickrankControl_lblSearchKey" for="ctl00_ContentPlaceHolder1_aFundQuickrankControl_txtSearchKey">Search On Word</label>
+				<input type="text" placeholder="Enter name, ISIN or ticker" class="msSearchTextbox msSearchTextboxTextSearch" title="Enter name,  ISIN or ticker" id="ctl00_ContentPlaceHolder1_aFundQuickrankControl_txtSearchKey" name="ctl00$ContentPlaceHolder1$aFundQuickrankControl$txtSearchKey">
+			</div>
+			<div></div>
+			<div class="search_panel_small search_panel_button msSearchOption msSearchOptionSmall msSearchOptionButton">
+				<input type="submit" class="msButton msButtonSubmit" title="Search" id="ctl00_ContentPlaceHolder1_aFundQuickrankControl_btnSearch" value="Search" name="ctl00$ContentPlaceHolder1$aFundQuickrankControl$btnSearch">
+			</div>
+		</div>
+	</body>
+</html>

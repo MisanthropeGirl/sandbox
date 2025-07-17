@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title>IWT2 Security Report Prototyping</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<link rel="stylesheet" href="../../resources/css/styles.css" />
+	</head>
+
+	<body class="c-layout">
+		<header class="c-layout__header">
+			<div>
+				<h1 class="c-layout__title">IWT2 Security Report Prototyping</h1>
+			</div>
+		</header>
+		<main class="c-layout__body">
+			<section>
+				<header>
+					<h2>Assumptions</h2>
+				</header>
+				<ul>
+					<li>For the purposes of this I am ignoring chrome (title bar, disclaimer etc)</li>
+					<li>There are 4 parts to the report:
+						<ol>
+							<li>Title</li>
+							<li>Navigation</li>
+							<li>Tools</li>
+							<li>Body</li>
+						</ol>
+					</li>
+					<li>Ideally load order: Title, Body, Navigation, Tools</li>
+					<li>(1)&(4) and (2)&(3) can (should?) be grouped together</li>
+				</ul>
+			</section>
+			<section>
+				<header>
+					<h2>Steps</h2>
+				</header>
+				<ol>
+					<li>
+						<a href="./v1/index.htm">HTML for the four distinct parts of the page</a>
+					</li>
+					<li>Basic CSS (<a href="./v2/horizontal.htm">horizontal</a> and <a href="./v2/vertical.htm">vertical</a> navigation layouts)</li>
+					<li>
+						<a href="./v3/index.htm">Flexible navigation</a>
+					</li>
+					<li>Merge flexible navigation with <a href="./v4/horizontal.htm">horizontal</a> and <a href="./v4/vertical.htm">vertical</a> navigation layouts</li>
+					<li><a href="./v5/index.htm">Columns</a>: 1, 2, 3, 4, 5, 6... etc</li>
+					<li>Merge columns with <a href="./v6/horizontal.htm">horizontal</a> and <a href="./v6/vertical.htm">vertical</a> navigation layouts</li>
+					<li>Content from V2 report (overview page). Concentrating on the HTML, including accessibility, this page has basic wireframe and presentational styling only.
+						<ol>
+							<li><a href="./v7/1.htm">h* elements within caption elements</a></li>
+							<li><a href="./v7/2.htm">h* elements within header elements</a></li>
+							<li><a href="./v7/3.htm">Using only h1 elements</a></li>
+						</ol>
+					</li>
+					<li>Adding styling to V7: <a href="./v8/1.htm">8.1</a>, <a href="./v8/2.htm">8.2</a>, <a href="./v8/3.htm">8.3</a></li>
+					<li>Examining <a href="./v9/index.htm">Chart resizing</a> via a number of CSS and JavaScript options</li>
+					<li><a href="./v10/index.htm">Putting content together with menu</a></li>
+					<li><a href="./v11/index.htm">Tabbing</a></li>
+					<li><a href="./v12/index.htm">Full Demo</a></li>
+					<li><a href="./v13/index.htm">Captions or Headers?</a></li>
+					<li><a href="./v14/index.htm">Images</a></li>
+					<li>Nothing to see here</li>
+					<li><a href="./v16/index.htm">LESS?</a></li>
+					<li><a href="./v17/index.htm">Using the M* Font</a></li>
+					<li>Trying out JavaScript loaders
+						<ol>
+							<li><a href="./v18/1/index.htm">require.js</a></li>
+							<li><a href="./v18/2/index.htm">Modernizr</a></li>
+						</ol>
+					</li>
+				</ol>
+			</section>
+			<section>
+				<header>
+					<h2>Notes</h2>
+				</header>
+				<ul>
+					<li>Where CSS for a responsive layout has been added, layout only changes at a width of 800px. This can be seen either by changing the orientation of a tablet or by reducing the width of the browser window.</li>
+					<li>SRRI has (so far) been displayed using CSS to produce a visual scale. This is unusable when you take styling away so for now I'm just showing the number.</li>
+					<li>Glossary links, inline help or any other explanation mechanisms are not included.</li>
+				</ul>
+			</section>
+			<section>
+				<header>
+					<h2>Further Action</h2>
+				</header>
+				<ul>
+					<li>How to represent the SRRI?</li>
+					<ol>
+						<li>Build a 'heatmap' type image using the BP Charts engine with the appropriate labelling and highlighting?</li>
+						<li>Build something using the canvas element and JavaScript (e.g. <a href="http://www.patrick-wied.at/static/heatmapjs/">http://www.patrick-wied.at/static/heatmapjs/</a>) but with potential accessibility issues</li>
+					</ol>
+					<li>What do we want to do about explanation mechanisms? For tables, data-points etc.</li>
+					<li>How do we want the report to layout at various screen sizes (and what screen sizes do we break at)?</li>
+				</ul>
+			</section>
+		</main>
+	</body>
+</html>

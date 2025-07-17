@@ -1,0 +1,80 @@
+﻿body {
+	margin:0.25rem 0.5rem;
+}
+@media (min-width:800px) {
+	body {
+		margin:0.25rem 5rem;
+	}
+}
+
+[aria-hidden='true'] {
+	display:none;
+}
+
+/* comparator list */
+#msReportComparatorsList ul {
+	list-style-type:disc;
+	margin-bottom:12px;
+	padding-left:16px;
+}
+#msReportComparatorsList ul li span {
+	color:#333;
+}
+
+/* navigation tabs */
+[role='tablist'] [aria-selected] {
+	display:block;
+}
+[role='tablist'] [aria-selected='false']:hover {
+	cursor:pointer;
+}
+@media (min-width:800px) {
+	nav [role='tablist'] {
+		display:-ms-flexbox;
+		display:-webkit-flex;
+		display:flex;
+	}
+}
+
+/* tables */
+.ms-table {
+	width:100%;
+}
+.ms-table thead th {
+	font-weight:bold;
+}
+.ms-table tr > * {
+	vertical-align:top;
+}
+#msReportTabPanel1 .ms-section-returns-annual col:not(:first-child) {
+	width:16.2%
+}
+#msReportTabPanel2 .ms-section-returns-annual col:not(:first-child) {
+	width:8.1%
+}
+.ms-section-returns-trailing col:not(:first-child) {
+	width:16%
+}
+.ms-section-key-stats col:not(:first-child) {
+	width:45%;
+}
+.ms-section-asset-allocation-lsn col:not(:first-child),
+.ms-section-sectors col:not(:first-child),
+.ms-section-world-regions col:not(:first-child) {
+	width:25%;
+}
+col.ms-col-sector {
+	width:30%;
+}
+col.ms-col-weight {
+	width:12%;
+}
+.ms-section-asset-allocation-lsn tr > *:not(:first-child),
+.ms-section-sectors tr > *:not(:first-child),
+.ms-section-returns-annual tr > *:not(:first-child),
+.ms-section-returns-quarterly tr > *:not(:first-child),
+.ms-section-returns-trailing tr > *:not(:first-child),
+.ms-section-world-regions tr > *:not(:first-child),
+.ms-col-weight {
+	text-align:right;
+}

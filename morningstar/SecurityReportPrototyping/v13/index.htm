@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title>Security Report</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="./styles.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<main>
+			<header>
+				<h1>Further experimentation regarding how to mark-up table titles</h1>
+				<ol>
+					<li>With a separate &lt;header&lt; element</li>
+					<li>With a &lt;caption&gt; element styled using flexbox</li>
+					<li>With a &lt;caption&gt; element styled using floats</li>
+					<li>As above but with the &lt;h1&gt; element replaced with a &lt;span&gt;</li>
+				</ol>
+			</header>
+			<section>
+				<header>
+					<h1>Trailing Returns % (<abbr title="British Pounds">GBP</abbr>)</h1>
+					<time datetime="2014-01-28">28/01/2014</time>
+				</header>
+				<table>
+					<colgroup>
+						<col />
+						<col span="3" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">
+								<span class="sr-only">Period</span>
+							</th>
+							<th scope="col">Fund</th>
+							<th scope="col">Category</th>
+							<th scope="col">Benchmark</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">
+								<abbr title="Year to Date">YTD</abbr>
+							</th>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<th scope="row">3 Years Annualised</th>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<th scope="row">5 Years Annualised</th>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<th scope="row">10 Years Annualised</th>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			<section>
+				<table>
+					<caption>
+						<h1>Trailing Returns % (<abbr title="British Pounds">GBP</abbr>)</h1>
+						<time datetime="2014-01-28">28/01/2014</time>
+					</caption>
+					<colgroup>
+						<col />
+						<col span="3" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">
+								<span class="sr-only">Period</span>
+							</th>
+							<th scope="col">Fund</th>
+							<th scope="col">Category</th>
+							<th scope="col">Benchmark</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">
+								<abbr title="Year to Date">YTD</abbr>
+							</th>
+							<td>2</td>
+							<td>2</td>
+							<td>2</td>
+						</tr>
+						<tr>
+							<th scope="row">3 Years Annualised</th>
+							<td>2</td>
+							<td>2</td>
+							<td>2</td>
+						</tr>
+						<tr>
+							<th scope="row">5 Years Annualised</th>
+							<td>2</td>
+							<td>2</td>
+							<td>2</td>
+						</tr>
+						<tr>
+							<th scope="row">10 Years Annualised</th>
+							<td>2</td>
+							<td>2</td>
+							<td>2</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			<section>
+				<table>
+					<caption>
+						<h1>Trailing Returns % (<abbr title="British Pounds">GBP</abbr>)</h1>
+						<time datetime="2014-01-28">28/01/2014</time>
+					</caption>
+					<colgroup>
+						<col />
+						<col span="3" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">
+								<span class="sr-only">Period</span>
+							</th>
+							<th scope="col">Fund</th>
+							<th scope="col">Category</th>
+							<th scope="col">Benchmark</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">
+								<abbr title="Year to Date">YTD</abbr>
+							</th>
+							<td>3</td>
+							<td>3</td>
+							<td>3</td>
+						</tr>
+						<tr>
+							<th scope="row">3 Years Annualised</th>
+							<td>3</td>
+							<td>3</td>
+							<td>3</td>
+						</tr>
+						<tr>
+							<th scope="row">5 Years Annualised</th>
+							<td>3</td>
+							<td>3</td>
+							<td>3</td>
+						</tr>
+						<tr>
+							<th scope="row">10 Years Annualised</th>
+							<td>3</td>
+							<td>3</td>
+							<td>3</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			<section>
+				<table>
+					<caption>
+						<span>Trailing Returns % (<abbr title="British Pounds">GBP</abbr>)</span>
+						<time datetime="2014-01-28">28/01/2014</time>
+					</caption>
+					<colgroup>
+						<col />
+						<col span="3" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">
+								<span class="sr-only">Period</span>
+							</th>
+							<th scope="col">Fund</th>
+							<th scope="col">Category</th>
+							<th scope="col">Benchmark</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">
+								<abbr title="Year to Date">YTD</abbr>
+							</th>
+							<td>4</td>
+							<td>4</td>
+							<td>4</td>
+						</tr>
+						<tr>
+							<th scope="row">3 Years Annualised</th>
+							<td>4</td>
+							<td>4</td>
+							<td>4</td>
+						</tr>
+						<tr>
+							<th scope="row">5 Years Annualised</th>
+							<td>4</td>
+							<td>4</td>
+							<td>4</td>
+						</tr>
+						<tr>
+							<th scope="row">10 Years Annualised</th>
+							<td>4</td>
+							<td>4</td>
+							<td>4</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+		</main>
+	</body>
+</html>

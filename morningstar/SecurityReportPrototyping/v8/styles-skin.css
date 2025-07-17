@@ -1,0 +1,33 @@
+﻿/* .ms-report-section {
+	margin:1em;
+}
+
+section header {
+  border-bottom: 1px solid #CCCCCC;
+  border-top: 2px solid #797979;
+  padding: 2px 0 12px;
+}
+h2 {
+  font-size: 1.4em;
+  font-weight: bold;
+  line-height: 1.43;
+}*/
+
+
+table {
+	width:100%;
+}
+.ms-report-table thead th {
+	font-weight:bold;
+}
+.ms-report-table-numeric tr > *:not(:first-child) {
+	text-align:right;
+}
+
+@media (min-width:800px){
+	body {
+		color:#333;
+		font:68.75%/1.3125 Verdana,Helvetica,Arial,sans-serif;
+		margin:0 5rem;
+	}
+}

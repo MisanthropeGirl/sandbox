@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title>HTML Fragment: Abbreviations, Acronyms &amp; Definitions</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="./styles.css" rel="stylesheet" />
+	</head>
+	<body>
+		<main>
+			<header>
+				<h1>Abbreviations, Acronyms &amp; Definitions</h1>
+			</header>
+			<div>
+				<section>
+					<header>
+						<h1>Output</h1>
+					</header>
+					<section>
+						<section>
+							<header>
+								<h1>Example 1</h1>
+							</header>
+							<div>
+								<p>The <dfn id="whatwg"><abbr title="Web Hypertext Application Technology Working Group">WHATWG</abbr></dfn> is a loose unofficial collaboration of Web browser manufacturers and interested parties who wish to develop new technologies designed to allow authors to write and deploy Applications over the World Wide Web.</p>
+								<p>The <a href="#whatwg">WHATWG</a> community does not have much representation from Asia.</p>
+							</div>
+						</section>
+						<section>
+							<header>
+								<h1>Example 2</h1>
+							</header>
+							<div>
+								<p>The <dfn id="whatwg">Web Hypertext Application Technology Working Group</dfn> (<abbr title="Web Hypertext Application Technology Working Group">WHATWG</abbr>) is a loose unofficial collaboration of Web browser manufacturers and interested parties who wish to develop new technologies designed to allow authors to write and deploy Applications over the World Wide Web.</p>
+							</div>
+						</section>
+					</section>
+				</section>
+				<section>
+					<header>
+						<h1>Source</h1>
+					</header>
+					<section>
+						<section>
+							<header>
+								<h1>Example 1</h1>
+							</header>
+							<pre>
+&lt;p&gt;The &lt;dfn id="whatwg"&gt;&lt;abbr title="Web Hypertext Application
+Technology Working Group"&gt;WHATWG&lt;/abbr&gt;&lt;/dfn&gt; is a loose
+unofficial collaboration of Web browser manufacturers and
+interested parties who wish to develop new technologies
+designed to allow authors to write and deploy Applications over
+the World Wide Web.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href="#whatwg"&gt;WHATWG&lt;/a&gt; community does not have
+much representation from Asia.&lt;/p&gt;
+							</pre>
+							</section>
+							<section>
+								<header>
+									<h1>Example 2</h1>
+								</header>
+								<pre>
+&lt;p&gt;The &lt;dfn id="whatwg"&gt;Web Hypertext Application Technology
+Working Group&lt;/dfn&gt; (&lt;abbr title="Web Hypertext Application
+Technology Working Group"&gt;WHATWG&lt;/abbr&gt;) is a loose unofficial
+collaboration of Web browser manufacturers and interested
+parties who wish to develop new technologies designed to allow
+authors to write and deploy Applications over the World Wide
+Web.&lt;/p&gt;
+								</pre>
+							</section>
+						</section>
+					</section>
+				</section>
+			</div>
+		</main>
+	</body>
+</html>

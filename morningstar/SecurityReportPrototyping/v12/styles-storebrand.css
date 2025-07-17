@@ -1,0 +1,180 @@
+@import url("styles-wireframe.css");
+
+body {
+	color:#333;
+	font:75%/1.5 Arial,Verdana,Helvetica,sans-serif;
+	margin:0.25rem 0.5rem;
+}
+a {
+	color:#000;
+	font-weight:bold;
+}
+table {
+	width:100%;
+}
+
+[aria-hidden=true] {
+	display:none;
+}
+
+/* title */
+main > header {
+	margin-bottom:16px;
+}
+main > header h1 {
+	font-size:2.166667rem;
+	line-height:1.1923;
+	margin-bottom:0.6154rem;
+}
+main > header h1 .ms-security-name {
+	font-weight:bold;
+}
+
+
+/* navigation tabs */
+nav [role=tablist] {
+	background-color:#fff;
+}
+nav [role=tablist] [aria-selected] {
+  background:url("http://lt.morningstar.com/GetImage.ashx?FileId=4851") repeat-x left top #DDDDDD;
+  border-color:#eee;
+  border-style:solid;
+  border-width:1px 1px 0;
+  color:#666;
+  font-weight:bold;
+}
+nav [role=tablist] [aria-selected=true] {
+	background-image:url("http://lt.morningstar.com/GetImage.ashx?FileId=4850");
+	background-color:#84aebd;
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color:#84aebd;
+  color:#FFF;
+  font-weight:bold;
+}
+[role=tablist] [aria-selected=false]:hover {
+	cursor:pointer;
+	text-decoration:underline;
+}
+@media (max-width:800px) {
+	nav [role=tablist] [aria-selected] {
+		padding:10px 0.5rem;
+	}
+}
+@media (min-width:800px) {
+	nav [role=tablist] {
+		border-bottom:3px solid #84aebd;
+	}
+	nav [role=tablist] {
+		display:-ms-flexbox;
+		display:-webkit-flex;
+		display:flex;
+		/*border-top:1px solid #ccc;
+		border-bottom:1px solid #999;
+		margin-bottom:12px;*/
+	}
+	 nav [role=tablist] [aria-selected] {
+		padding:3px 12px 2px;
+		padding:7px 8px 6px;
+	}
+	/* nav [role=tablist] [aria-selected=true] {
+		border:1px solid #999;
+		border-bottom-width:0;
+		position:relative;
+		padding-top:6px;
+		top:1px;
+	} */
+	[role=tablist] [aria-selected=false]:hover {
+		text-decoration:underline;
+	}
+}
+
+
+/* body */
+.ms-section {
+	margin-bottom:24px;
+}
+.ms-section > * {
+	padding:5px;
+}
+.ms-section > header,
+.ms-table caption {
+  background-color:#eaf5fb;
+  border-bottom:1px solid #4dace1;
+	color:#000;
+	font-size:0.9167em;
+	padding:8px 5px;
+}
+.ms-section header *,
+.ms-table caption * {
+	font-weight:bold;
+}
+.ms-section .ms-section > header,
+.ms-section .ms-section .ms-table caption {
+  background-color:#fff;
+  border-bottom:none;
+	padding:5px 0;
+}
+.ms-table th {
+	font-weight:bold;
+}
+.ms-table tr > * {
+	line-height:1.55;
+	padding:2px 0 3px;
+	vertical-align:top;
+}
+.ms-report-col-weight {
+	text-align:right;
+}
+#msReportTabPanel1 .ms-section-returns-annual col:not(:first-child) {
+	width:16.2%
+}
+#msReportTabPanel2 .ms-section-returns-annual col:not(:first-child) {
+	width:8.1%
+}
+.ms-section-returns-trailing col:not(:first-child) {
+	width:16%
+}
+.ms-section-key-stats col:not(:first-child) {
+	width:45%
+}
+.ms-section-asset-allocation-lsn col:not(:first-child),
+.ms-section-sectors col:not(:first-child),
+.ms-section-world-regions col:not(:first-child) {
+	width:25%
+}
+.ms-section-asset-allocation-lsn tr > *:not(:first-child),
+.ms-section-sectors tr > *:not(:first-child),
+.ms-section-returns-annual tr > *:not(:first-child),
+.ms-section-returns-quarterly tr > *:not(:first-child),
+.ms-section-returns-trailing tr > *:not(:first-child),
+.ms-section-world-regions tr > *:not(:first-child) {
+	text-align:right;
+}
+col.ms-report-col-sector {
+	width:30%;
+}
+col.ms-report-col-weight {
+	width:12%;
+}
+
+
+@media (min-width:800px) {
+	body {
+		margin:0.25rem 5rem;
+	}
+	nav {
+		margin-bottom:16px;
+	}
+	.ms-flex-container {
+		margin-left:-24px;
+	}
+	.ms-flex-container .ms-section {
+		margin-left:24px;
+	}
+	.ms-section-portfolio-summary {
+		margin-left:0;
+	}
+}

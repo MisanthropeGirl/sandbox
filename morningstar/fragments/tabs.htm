@@ -1,0 +1,277 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title>HTML Fragments: Tabs</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="./styles.css" rel="stylesheet" />
+		<style>
+			[role=tablist]{
+				display:-ms-flexbox;
+				display:-webkit-flex;
+				display:flex;
+				list-style-type:none;
+				margin:0;
+				padding:0;
+			}
+			[role=tablist] {
+				border-bottom:1px solid #ccc;
+			}
+			[role=tablist] li {
+				border:1px solid #ccc;
+				border-width:1px 1px 0 0;
+				padding:5px 10px;
+			}
+			[role=tablist] li:first-child {
+				border-left-width:1px;
+			}
+			[role=tablist] [aria-selected=false]:hover {
+				cursor:pointer;
+			}
+			[role=tablist] [aria-selected=true] {
+				font-weight:bold;
+			}
+			[aria-hidden=true] {
+				display:none;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<header>
+				<h1>Tabs</h1>
+			</header>
+			<div>
+				<section>
+					<header>
+						<h1>Output</h1>
+					</header>
+					<section class="ms-tab-group">
+						<header>
+							<ul role="tablist">
+								<li role="presentation">
+									<a href="#thisTabPanel1" id="thisTab1" tabindex="0" role="tab" aria-controls="thisTabPanel1" aria-selected="true">One</a>
+								</li>
+								<li role="presentation">
+									<a href="#thisTabPanel2" id="thisTab2" tabindex="-1" role="tab" aria-controls="thisTabPanel2" aria-selected="false">Two</a>
+								</li>
+								<li role="presentation">
+									<a href="#thisTabPanel3" id="thisTab3" tabindex="-1" role="tab" aria-controls="thisTabPanel3" aria-selected="false">Three</a>
+								</li>
+							</ul>
+						</header>
+						<section id="thisTabPanel1" tabindex="0" role="tabpanel" aria-hidden="false" aria-labelledby="thisTab1">
+							<header>
+								<h1>One</h1>
+							</header>
+							<div>
+								<p lang="la">Nulla eget ultricies lectus. Donec tempor, justo id feugiat tincidunt, erat tortor malesuada est, id posuere orci diam at lectus. In vulputate, ipsum in iaculis consectetur, lacus orci ultricies nisl, id venenatis urna arcu in ipsum. Etiam ipsum massa, porta sit amet molestie ac, pellentesque et elit. Proin sem risus, suscipit in dignissim non, bibendum in metus. Quisque quis laoreet leo, id eleifend sapien. Phasellus pellentesque libero et sapien pulvinar tristique. Nulla nec dui ut arcu convallis pulvinar. Sed mattis nulla non consectetur tristique. Sed venenatis fringilla pulvinar. Quisque eu quam tincidunt nisi pulvinar eleifend.</p>
+							</div>
+						</section>
+						<section id="thisTabPanel2" tabindex="0" role="tabpanel" aria-hidden="true" aria-labelledby="thisTab2">
+							<header>
+								<h1>Two</h1>
+							</header>
+							<div>
+								<p lang="la">Aenean vestibulum hendrerit congue. Sed vitae risus sed libero auctor interdum. Donec eu turpis et leo elementum varius vitae non sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lobortis orci vel dictum tincidunt. Etiam sed mauris tempus, pellentesque odio vitae, sollicitudin nisi. Donec dictum tempor dolor nec interdum.</p>
+							</div>
+						</section>
+						<section id="thisTabPanel3" tabindex="0" role="tabpanel" aria-hidden="true" aria-labelledby="thisTab3">
+							<header>
+								<h1>Three</h1>
+							</header>
+							<div>
+								<p lang="la">Donec ac dui metus. Fusce vestibulum purus risus, et ultricies dui ultrices vitae. Proin at ipsum felis. Cras quis massa quam. Phasellus porta auctor leo, eu viverra lorem semper sit amet. Donec vulputate sagittis lacus. Mauris felis arcu, ultrices eget tortor et, mollis commodo tellus. Praesent eu pretium mi. Sed nec hendrerit magna. Integer condimentum erat vel nibh consequat, et iaculis nulla placerat. Pellentesque ipsum ipsum, bibendum vel ligula id, bibendum posuere enim. Nam a pretium orci. In in neque vel turpis faucibus faucibus.</p>
+							</div>
+						</section>
+					</section>
+				</section>
+				<section>
+					<header>
+						<h1>Source</h1>
+					</header>
+					<pre>
+&lt;section&gt;
+  &lt;header&gt;
+    &lt;ul role="tablist"&gt;
+      &lt;li role="presentation"&gt;
+        &lt;a href="#thisTabPanel1" id="thisTab1" tabindex="0"
+          role="tab" aria-controls="thisTabPanel1"
+          aria-selected="true"&gt;
+        &lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li role="presentation"&gt;
+        &lt;a href="#thisTabPanel2" id="thisTab2" tabindex="-1"
+          role="tab" aria-controls="thisTabPanel2"
+          aria-selected="false"&gt;
+        &lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li role="presentation"&gt;
+        &lt;a href="#thisTabPanel3" id="thisTab3" tabindex="-1"
+          role="tab" aria-controls="thisTabPanel3"
+          aria-selected="false"&gt;
+        &lt;/a&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/header&gt;
+  &lt;section
+    id="thisTabPanel1" tabindex="0" role="tabpanel"
+    aria-hidden="false" aria-labelledby="thisTab1"&gt;
+    &lt;header&gt;
+      &lt;h1&gt;Tab 1&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;div&gt;
+      &lt;p&gt;Nulla eget ultricies lectus. Donec tempor, justo
+      id feugiat tincidunt, erat tortor malesuada est, id
+      posuere orci diam at lectus. In vulputate, ipsum in
+      iaculis consectetur, lacus orci ultricies nisl, id
+      venenatis urna arcu in ipsum. Etiam ipsum massa, porta
+      sit amet molestie ac, pellentesque et elit. Proin sem
+      risus, suscipit in dignissim non, bibendum in metus.
+      Quisque quis laoreet leo, id eleifend sapien. Phasellus
+      pellentesque libero et sapien pulvinar tristique. Nulla
+      nec dui ut arcu convallis pulvinar. Sed mattis nulla non
+      consectetur tristique. Sed venenatis fringilla pulvinar.
+      Quisque eu quam tincidunt nisi pulvinar eleifend.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+  &lt;section
+      id="thisTabPanel2" tabindex="0" role="tabpanel"
+      aria-hidden="true" aria-labelledby="thisTab2"&gt;
+    &lt;header&gt;
+      &lt;h1&gt;Tab 2&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;div&gt;
+      &lt;p&gt;Aenean vestibulum hendrerit congue. Sed vitae risus
+      sed libero auctor interdum. Donec eu turpis et leo
+      elementum varius vitae non sem. Lorem ipsum dolor sit
+      amet, consectetur adipiscing elit. Vivamus lobortis orci
+      vel dictum tincidunt. Etiam sed mauris tempus,
+      pellentesque odio vitae, sollicitudin nisi. Donec dictum
+      tempor dolor nec interdum.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+  &lt;section
+    id="thisTabPanel3" tabindex="0" role="tabpanel"
+    aria-hidden="true" aria-labelledby="thisTab3"&gt;
+    &lt;header&gt;
+      &lt;h1&gt;Tab 3&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;div&gt;
+      &lt;p&gt;Donec ac dui metus. Fusce vestibulum purus risus,
+      et ultricies dui ultrices vitae. Proin at ipsum felis.
+      Cras quis massa quam. Phasellus porta auctor leo, eu
+      viverra lorem semper sit amet. Donec vulputate sagittis
+      lacus. Mauris felis arcu, ultrices eget tortor et, mollis
+      commodo tellus. Praesent eu pretium mi. Sed nec hendrerit
+      magna. Integer condimentum erat vel nibh consequat, et
+      iaculis nulla placerat. Pellentesque ipsum ipsum,
+      bibendum vel ligula id, bibendum posuere enim. Nam a
+      pretium orci. In in neque vel turpis faucibus faucibus.
+      &lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+&lt;/section&gt;
+					</pre>
+				</section>
+			</div>
+		</main>
+		<script src="../common/js/jquery.js"></script>
+		<script>
+			$(function(){
+				var Tabs = {
+					init: function(config){
+						this.config = config;
+
+						this.bindEvents();
+						this.focusInitialTab();
+					},
+
+					bindEvents: function(){
+						this.config.tabs.on('click', this.captureClick);
+						this.config.tabs.on('keydown', this.captureKeydown);
+					},
+
+					captureClick: function(e){
+						e.preventDefault();
+						Tabs.switchTab($(this).attr('id'));
+					},
+
+					captureKeydown: function(e){
+						var $this = $(this),
+							targetTabId = '';
+
+						switch (e.which){
+							case Keys.ENTER:
+							case Keys.SPACE:
+								targetTabId = $this.attr('id');
+								break;
+							case Keys.ARROWLEFT:
+							case Keys.ARROWUP:
+								targetTabId = $this.parent().prev().children('[role=tab]').attr('id');
+								if (targetTabId === undefined){
+									targetTabId = $this.closest('[role=tablist]').children(':last-child').children('[role=tab]').attr('id');
+								}
+								break;
+							case Keys.ARROWDOWN:
+							case Keys.ARROWRIGHT:
+								targetTabId = $this.parent().next().children('[role=tab]').attr('id');
+								if (targetTabId === undefined){
+									targetTabId = $this.closest('[role=tablist]').children(':first-child').children('[role=tab]').attr('id');
+								}
+								break;
+						}
+						if (targetTabId != '' && targetTabId !== undefined){
+							e.preventDefault();
+							Tabs.switchTab(targetTabId);
+						}
+					},
+
+					focusInitialTab: function(){
+						var initialTab = document.location.hash,
+							targetTabId = '';
+
+						if (initialTab != '' && initialTab !== undefined){
+							targetTabId = $('[aria-controls=' + initialTab.replace('#', '') + ']').attr('id');
+							if (targetTabId != '' && targetTabId !== undefined){
+								Tabs.switchTab(targetTabId);
+							}
+						}
+					},
+
+					switchTab: function(selectedTabId){
+						if (selectedTabId !== undefined){
+							var tabList = $('#' + selectedTabId).closest('[role=tablist]');
+
+							tabList.find('[role=tab]').each(function(){
+								var $this = $(this),
+									thisTabId = $this.attr('id');
+								if (selectedTabId == thisTabId){
+									$this.attr('aria-selected', 'true').attr('tabindex', 0).focus();
+									$('#' + $this.attr('aria-controls')).attr('aria-hidden', 'false');
+								}else{
+									$this.attr('aria-selected', 'false').attr('tabindex', -1);
+									$('#' + $this.attr('aria-controls')).attr('aria-hidden', 'true');
+								}
+							});
+						}
+					}
+				};
+ 
+				var Keys = {
+					ARROWDOWN: 40,
+					ARROWLEFT: 37,
+					ARROWRIGHT: 39,
+					ARROWUP: 38,
+					ENTER: 13,
+					SPACE: 32
+				}
+
+				Tabs.init({
+					tabs: $('[role=tab]')
+				});
+			});
+		</script>
+	</body>
+</html>

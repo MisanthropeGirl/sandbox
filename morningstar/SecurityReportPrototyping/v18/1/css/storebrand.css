@@ -1,0 +1,114 @@
+body {
+	color:#333;
+	font:75%/1.5 Arial,Verdana,Helvetica,sans-serif;
+}
+a {
+	color:#000;
+	font-weight:bold;
+}
+
+/* title */
+main > header {
+	margin-bottom:16px;
+}
+main > header h1 {
+	font-size:2.166667rem;
+	line-height:1.1923;
+	margin-bottom:0.6154rem;
+}
+main > header h1 .ms-security-name {
+	font-weight:bold;
+}
+
+/* navigation tabs */
+nav [role=tablist] {
+	background-color:#fff;
+}
+nav [role=tablist] [aria-selected] {
+  background:url("http://lt.morningstar.com/GetImage.ashx?FileId=4851") repeat-x left top #DDDDDD;
+  border-color:#eee;
+  border-style:solid;
+  border-width:1px 1px 0;
+  color:#666;
+  font-weight:bold;
+}
+nav [role=tablist] [aria-selected=true] {
+	background-image:url("http://lt.morningstar.com/GetImage.ashx?FileId=4850");
+	background-color:#84aebd;
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color:#84aebd;
+  color:#FFF;
+  font-weight:bold;
+}
+[role=tablist] [aria-selected=false]:hover {
+	text-decoration:underline;
+}
+@media (max-width:800px) {
+	nav [role=tablist] [aria-selected] {
+		padding:10px 0.5rem;
+	}
+}
+@media (min-width:800px) {
+	nav [role=tablist] {
+		border-bottom:3px solid #84aebd;
+	}
+	 nav [role=tablist] [aria-selected] {
+		padding:3px 12px 2px;
+		padding:7px 8px 6px;
+	}
+	[role=tablist] [aria-selected=false]:hover {
+		text-decoration:underline;
+	}
+}
+
+/* body */
+.ms-section {
+	margin-bottom:24px;
+}
+.ms-section > * {
+	padding:5px;
+}
+.ms-section > header,
+.ms-table caption {
+  background-color:#eaf5fb;
+  border-bottom:1px solid #4dace1;
+	color:#000;
+	font-size:0.9167em;
+	padding:8px 5px;
+}
+.ms-section header *,
+.ms-table caption * {
+	font-weight:bold;
+}
+.ms-section .ms-section > header,
+.ms-section .ms-section .ms-table caption {
+  background-color:#fff;
+  border-bottom:none;
+	padding:5px 0;
+}
+.ms-table th {
+	font-weight:bold;
+}
+.ms-table tr > * {
+	line-height:1.55;
+	padding:2px 0 3px;
+	vertical-align:top;
+}
+
+@media (min-width:800px) {
+	nav {
+		margin-bottom:16px;
+	}
+	.ms-flex-container {
+		margin-left:-24px;
+	}
+	.ms-flex-container .ms-section {
+		margin-left:24px;
+	}
+	.ms-section-portfolio-summary {
+		margin-left:0;
+	}
+}

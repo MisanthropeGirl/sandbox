@@ -1,0 +1,12 @@
+﻿@media screen and (min-width:800px){
+	nav.horizontalNav ul {
+		display:-ms-flexbox;
+		display:-webkit-flex;
+		display:flex;
+	}
+	nav.horizontalNav li {
+		-ms-flex:1 0 auto;
+		-webkit-flex:1 0 auto;
+		flex:1 0 auto;
+	}
+}

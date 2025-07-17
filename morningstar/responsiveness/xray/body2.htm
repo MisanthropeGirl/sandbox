@@ -1,0 +1,1097 @@
+﻿<!DOCTYPE html>
+
+<!--[if IEMobile 7 ]> <html dir="ltr" lang="en-GB"class="no-js iem7"> <![endif]-->
+<!--[if lt IE 7 ]> <html dir="ltr" lang="en-GB" class="no-js ie6 oldie"> <![endif]-->
+<!--[if IE 7 ]> <html dir="ltr" lang="en-GB" class="no-js ie7 oldie"> <![endif]-->
+<!--[if IE 8 ]> <html dir="ltr" lang="en-GB" class="no-js ie8 oldie"> <![endif]-->
+<!--[if IE 9 ]> <html dir="ltr" lang="en-GB" class="no-js ie9 oldie"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html dir="ltr" lang="en-GB"><!--<![endif]-->
+	<head>
+		<title>X-Ray Body</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="../../common/css/normalize_v3.0.1.css" rel="stylesheet" />
+		<style>
+			body {
+				font-family:Verdana, Helvetica, Arial;
+			}
+
+			h3 {
+				border-bottom:1px solid #ccc;
+				border-top:2px solid #797979;
+				font-size:1.4em;
+				font-weight:bold;
+				line-height:1.43;
+				margin-bottom:5px;
+				padding:2px 0 12px;
+
+				display:-ms-flexbox;
+				display:-webkit-flex;
+				display:flex;
+				-ms-flex-wrap:wrap;
+				-webkit-flex-wrap:wrap;
+				flex-wrap:wrap;
+				-ms-flex-pack:space-between;
+				-webkit-justify-content:space-between;
+				justify-content:space-between;
+			}
+			h3 .viewLink {
+				font-size:71.4%;
+				font-weight:normal;
+				line-height:2.25;
+			}
+
+			img.assetAllocationIcon {
+				background-image:url("//lt.morningstar.com/img/icons/iconList.gif");
+				background-position:50% 50%;
+				background-repeat:no-repeat;
+				height:8px;
+				margin-right:4px;
+				width:8px;
+			}
+			div > img {
+				height:auto;
+				width:100%;
+			}
+
+			table {
+				width:100%;
+			}
+			col.data {
+				width:16%;
+			}
+			col.data.colBenchmark {
+				width:26%;
+			}
+			td, th {
+				border-bottom:1px solid #d6d6d6;
+				font-weight:normal;
+				overflow:visible;
+				padding:2px 0 3px;
+				text-align:left;
+				vertical-align:top;
+			}
+			thead th {
+				font-weight:bold;
+			}
+			table.right tr *:first-child {
+				text-align:left;
+			}
+			table.right td, table.right th {
+				text-align:right;
+			}
+
+			.box {
+				margin-bottom:24px;
+			}
+
+			@media (min-width:768px) {
+				body {
+					font-size:0.6875rem;
+					line-height:1.3125;
+				}
+
+				.clearfix {
+					display:-ms-flexbox;
+					display:-webkit-flex;
+					display:flex;
+					-ms-flex-wrap:wrap;
+					-webkit-flex-wrap:wrap;
+					flex-wrap:wrap;
+					-ms-flex-pack:space-between;
+					-webkit-justify-content:space-between;
+					justify-content:space-between;
+				}
+				.clearfix h3 {
+					width:100%;
+				}
+				.clearfix .halfWidth {
+					width:49%;
+				}
+			}
+
+			@media (max-width:479px) {
+				div {
+					display:block;
+				}
+				/* Force table to not be like tables anymore */
+				table, thead, tbody, th, td, tr {
+					display:block;
+				}
+				/* Hide table headers (but not display:none;, for accessibility) */
+				thead {
+					position:absolute;
+					top:-9999px;
+					left:-9999px;
+				}
+				tr {
+					border:1px solid #ccc;
+				}
+				td {
+					/* Behave  like a "row" */
+					border:none;
+					border-bottom:1px solid #ccc;
+					position:relative;
+					padding:5px 10px 5px 50%;
+				}
+				th {
+					font-weight:bold;
+					padding-left:10px;
+				}
+				table.right td, table.right th {
+					text-align:left;
+				}
+				td::before {
+					/* Now like a table header */
+					position:absolute;
+					/* Top/left values mimic padding */
+					top:5px;
+					left:10px;
+					width:45%;
+					padding-right:10px;
+					white-space:nowrap;
+				}
+				/* Label the data */
+				.assetAllocationLongShortTable td:nth-of-type(1)::before {
+					content:'Long';
+				}
+				.assetAllocationLongShortTable td:nth-of-type(2)::before {
+					content:'Short';
+				}
+				.assetAllocationLongShortTable td:nth-of-type(3)::before {
+					content:'Net';
+				}
+				.assetAllocationLongShortTable td:nth-of-type(4)::before,
+				.fixedIncomeStatsTable td:nth-of-type(2)::before,
+				.fixedIncomeSectorsTable td:nth-of-type(2)::before,
+				.stockStatsTable td:nth-of-type(2)::before,
+				.stockSectorsTable td:nth-of-type(2)::before,
+				.worldRegionsTable td:nth-of-type(2)::before {
+					content:'Benchmark';
+				}
+				.stockSectorsTable td:nth-of-type(1)::before,
+				.worldRegionsTable td:nth-of-type(1)::before {
+					content:'Stock';
+				}
+				.fixedIncomeSectorsTable td:nth-of-type(1)::before {
+					content:'Fixed Income';
+				}
+				.feesTable td:nth-of-type(1)::before,
+				.fixedIncomeStatsTable td:nth-of-type(1)::before,
+				.stockStatsTable td:nth-of-type(1)::before {
+					content:'Portfolio';
+				}
+				.holdings td:nth-of-type(1)::before,
+				.underlyingHoldings td:nth-of-type(1)::before {
+					content:'Name';
+				}
+				.holdings td:nth-of-type(2)::before,
+				.underlyingHoldings td:nth-of-type(2)::before {
+					content:'Type';
+				}
+				.holdings td:nth-of-type(3)::before {
+					content:'Holding Portfolio Date';
+				}
+				.holdings td:nth-of-type(4)::before {
+					content:'Ongoing Charge %';
+				}
+				.holdings td:nth-of-type(5)::before {
+					content:'Weight %';
+				}
+				.underlyingHoldings td:nth-of-type(3)::before {
+					content:'Sector';
+				}
+				.underlyingHoldings td:nth-of-type(4)::before {
+					content:'Country';
+				}
+				.underlyingHoldings td:nth-of-type(5)::before {
+					content:'Assets %';
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<p>Yes, I know that images don't resize well. See my previous <a href="../../SecurityReportPrototyping/v9">experimentation with this issue</a> for more information.</p>
+		<div class="clearfix">
+			<h3>
+				Asset Allocation %
+				<a href="?view=2&amp;URLKey=3y3wd9echv&amp;LanguageId=en-GB&amp;PortfolioType=2&amp;SecurityTokenList=F000002A0G%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR05TOB%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR04C82%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR04CDI%5d2%5d0%5dFOAUT%24%24ALL%7cF00000NBOF%5d2%5d0%5dFOAUT%24%24ALL&amp;values=20.00%7c20.00%7c20.00%7c20.00%7c20.00&amp;CurrencyId=EUR&amp;from=editholding" onclick="return changeView(2);" class="viewLink">Holding Details</a>
+			</h3>
+			<div class="container halfWidth first">
+			<!-- start of AssetAllocationLongShortBarChart -->
+				<div class="box barChart barChartAssetAllocation" id="AssetAllocationLongShortBarChart1">
+					<img src="http://bpcharts.morningstar.com/chart?&amp;cht=lsn&amp;chs=290x129&amp;chof=p&amp;chfts=11&amp;chd=t:67.6,0|1.62,0|4.59,-0.1|6.68,-0.4|0,0&amp;chco=27477B|E38130|B0BC3C|9BB4D1|B0BC3C&amp;chbh=r,8&amp;chf=bg,s,FFFFFF|c,s,FFFFFF&amp;chgx=y,1,4,666666&amp;chft=Verdana" alt="Chart" />
+				</div>
+				<!-- end of AssetAllocationLongShortBarChart -->
+			</div>
+			<div class="container halfWidth">
+				<!-- start of AssetAllocationLongShortTable -->
+				<div class="box assetAllocationLongShortTable" id="AssetAllocationLongShortTable1">
+					<table class="right">
+						<colgroup>
+							<col class="colDataPoint">
+							<col class="data colLong">
+							<col class="data colShort">
+							<col class="data colNet">
+							<col class="data colBenchmark">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" id="msXRayAalst1Dp" class="colDataPoint"></th>
+								<th id="msXRayAalst1L" class="Long" scope="col">Long</th>
+								<th id="msXRayAalst1P" class="Short" scope="col">Short</th>
+								<th id="msXRayAalst1N" class="Net" scope="col">Net</th>
+								<th id="msXRayAalst1BA" class="Benchmark" scope="col">Benchmark</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row" headers="msXRayAalst1Dp">
+									<img style="background-color:#27477B" alt="" src="//lt.morningstar.com/img/clear.gif" class="assetAllocationIcon" />Stocks
+								</th>
+								<td headers="msXRayAalst1L" class="Long">67.60</td>
+								<td headers="msXRayAalst1P" class="Short">0.00</td>
+								<td headers="msXRayAalst1N" class="Net">67.60</td>
+								<td headers="msXRayAalst1BA" class="Benchmark">93.34</td>
+							</tr>
+							<tr class="alternate">
+								<th scope="row" headers="msXRayAalst1Dp">
+									<img style="background-color:#E38130" alt="" src="//lt.morningstar.com/img/clear.gif" class="assetAllocationIcon" />Bonds
+								</th>
+								<td headers="msXRayAalst1L" class="Long">1.62</td>
+								<td headers="msXRayAalst1P" class="Short">0.00</td>
+								<td headers="msXRayAalst1N" class="Net">1.62</td>
+								<td headers="msXRayAalst1BA" class="Benchmark">0.35</td>
+							</tr>
+							<tr>
+								<th scope="row" headers="msXRayAalst1Dp">
+									<img style="background-color:#B0BC3C" alt="" src="//lt.morningstar.com/img/clear.gif" class="assetAllocationIcon" />Cash
+								</th>
+								<td headers="msXRayAalst1L" class="Long">4.59</td>
+								<td headers="msXRayAalst1P" class="Short">0.10</td>
+								<td headers="msXRayAalst1N" class="Net">4.50</td>
+								<td headers="msXRayAalst1BA" class="Benchmark">3.41</td>
+							</tr>
+							<tr class="alternate">
+								<th scope="row" headers="msXRayAalst1Dp">
+									<img style="background-color:#9BB4D1" alt="" src="//lt.morningstar.com/img/clear.gif" class="assetAllocationIcon" />Other
+								</th>
+								<td headers="msXRayAalst1L" class="Long">6.68</td>
+								<td headers="msXRayAalst1P" class="Short">0.40</td>
+								<td headers="msXRayAalst1N" class="Net">6.28</td>
+								<td headers="msXRayAalst1BA" class="Benchmark">2.90</td>
+							</tr>
+							<tr>
+								<th scope="row" headers="msXRayAalst1Dp">
+									<img style="background-color:#B0BC3C" alt="" src="//lt.morningstar.com/img/clear.gif" class="assetAllocationIcon" />Not classified
+								</th>
+								<td headers="msXRayAalst1L" class="Long">0.00</td>
+								<td headers="msXRayAalst1P" class="Short">0.00</td>
+								<td headers="msXRayAalst1N" class="Net">20.00</td>
+								<td headers="msXRayAalst1BA" class="Benchmark">0.00</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- end of AssetAllocationLongShortTable -->
+			</div>
+		</div>
+		<div class="clearfix">
+			<h3>
+				World Regions %
+				<a href="?view=6&amp;URLKey=3y3wd9echv&amp;LanguageId=en-GB&amp;PortfolioType=2&amp;SecurityTokenList=F000002A0G%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR05TOB%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR04C82%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR04CDI%5d2%5d0%5dFOAUT%24%24ALL%7cF00000NBOF%5d2%5d0%5dFOAUT%24%24ALL&amp;values=20.00%7c20.00%7c20.00%7c20.00%7c20.00&amp;CurrencyId=EUR&amp;from=editholding" onclick="return changeView(6);" class="viewLink">Holding Details</a>
+			</h3>
+			<div class="container halfWidth first">
+				<!-- start of WorldRegionsMap -->
+				<div class="box worldRegionsMap" id="WorldRegionsMap1">
+					<img src="http://bpcharts.morningstar.com/chart?&amp;cht=rb&amp;chs=372x226&amp;chd=t:4.92,0,9.53,82.25,0,0.02,0.73,0.34,0.19,0,0&amp;chrc=europe&amp;chcor=,24,FAD8C3|25,49,F4B287|50,74,EF854b|75,,E96D10&amp;chof=p&amp;chf=bg,s,FFFFFF&amp;chft=Verdana&amp;chfts=11&amp;chxt=x,t" alt="Chart" />
+				</div>
+				<!-- end of WorldRegionsMap -->
+			</div>
+			<div class="container halfWidth">
+				<!-- start of WorldRegionsEuropeTable-->
+				<div class="box worldRegionsTable worldRegionsTableEurope" id="WorldRegionsEuropeTable1">
+					<table class="right">
+						<colgroup>
+							<col class="colDataPoint" />
+							<col class="data colPortfolio" />
+							<col class="data colBenchmark" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" id="msXRayWrget1Dp" class="colDataPoint"></th>
+								<th id="msXRayWrget1PA" class="Portfolio" scope="col">Stock</th>
+								<th id="msXRayWrget1BA" class="Benchmark" scope="col">Benchmark</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="superRegion">
+								<th scope="row" headers="msXRayWrget1Dp">Greater Europe</th>
+								<td headers="msXRayWrget1PA" class="Portfolio">91.80</td>
+								<td headers="msXRayWrget1BA" class="Benchmark">36.99</td>
+							</tr>
+							<tr class="alternate">
+								<th scope="row" headers="msXRayWrget1Dp">United Kingdom</th>
+								<td headers="msXRayWrget1PA" class="Portfolio">9.53</td>
+								<td headers="msXRayWrget1BA" class="Benchmark">14.09</td>
+							</tr>
+							<tr>
+								<th scope="row" headers="msXRayWrget1Dp">Western Europe - Euro</th>
+								<td headers="msXRayWrget1PA" class="Portfolio">38.28</td>
+								<td headers="msXRayWrget1BA" class="Benchmark">14.15</td>
+							</tr>
+							<tr class="alternate">
+								<th scope="row" headers="msXRayWrget1Dp">Western Europe - Non Euro</th>
+								<td headers="msXRayWrget1PA" class="Portfolio">43.97</td>
+								<td headers="msXRayWrget1BA" class="Benchmark">7.92</td>
+							</tr>
+							<tr>
+								<th scope="row" headers="msXRayWrget1Dp">Emerging Europe</th>
+								<td headers="msXRayWrget1PA" class="Portfolio">0.00</td>
+								<td headers="msXRayWrget1BA" class="Benchmark">0.26</td>
+							</tr>
+							<tr class="alternate">
+								<th scope="row" headers="msXRayWrget1Dp">Africa</th>
+								<td headers="msXRayWrget1PA" class="Portfolio">0.00</td>
+								<td headers="msXRayWrget1BA" class="Benchmark">0.27</td>
+							</tr>
+							<tr>
+								<th scope="row" headers="msXRayWrget1Dp">Middle East</th>
+								<td headers="msXRayWrget1PA" class="Portfolio">0.02</td>
+								<td headers="msXRayWrget1BA" class="Benchmark">0.29</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- end of WorldRegionsEuropeTable-->
+				<!-- start of WorldRegionsAmericasTable-->
+				<div class="box worldRegionsTable worldRegionsTableAmericas" id="WorldRegionsAmericasTable1">
+					<table class="right">
+						<colgroup>
+							<col class="colDataPoint" />
+							<col class="data colPortfolio" />
+							<col class="data colBenchmark" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" id="msXRayWrat1Dp" class="colDataPoint">
+								</th>
+								<th id="msXRayWrat1PA" class="Portfolio" scope="col">Stock</th>
+								<th id="msXRayWrat1BA" class="Benchmark" scope="col">Benchmark</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="superRegion">
+								<th scope="row" headers="msXRayWrat1Dp">Americas</th>
+								<td headers="msXRayWrat1PA" class="Portfolio">4.92</td>
+								<td headers="msXRayWrat1BA" class="Benchmark">48.17</td>
+							</tr>
+							<tr class="alternate">
+								<th scope="row" headers="msXRayWrat1Dp">United States</th>
+								<td headers="msXRayWrat1PA" class="Portfolio">4.50</td>
+								<td headers="msXRayWrat1BA" class="Benchmark">44.93</td>
+							</tr>
+							<tr>
+								<th scope="row" headers="msXRayWrat1Dp">Canada</th>
+								<td headers="msXRayWrat1PA" class="Portfolio">0.41</td>
+								<td headers="msXRayWrat1BA" class="Benchmark">2.34</td>
+							</tr>
+							<tr class="alternate">
+								<th scope="row" headers="msXRayWrat1Dp">Central &amp; Latin America</th>
+								<td headers="msXRayWrat1PA" class="Portfolio">0.00</td>
+								<td headers="msXRayWrat1BA" class="Benchmark">0.91</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- end of WorldRegionsAmericasTable-->
+				<!-- start of WorldRegionsAsiaTable-->
+				<div class="box worldRegionsTable worldRegionsTableAsia" id="WorldRegionsAsiaTable1">
+					<table class="right">
+						<colgroup>
+							<col class="colDataPoint" />
+							<col class="data colPortfolio" />
+							<col class="data colBenchmark" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" id="msXRayWrgat1Dp" class="colDataPoint">
+								</th>
+								<th id="msXRayWrgat1PA" class="Portfolio" scope="col">Stock</th>
+								<th id="msXRayWrgat1BA" class="Benchmark" scope="col">Benchmark</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="superRegion">
+								<th scope="row" headers="msXRayWrgat1Dp">Greater Asia</th>
+								<td headers="msXRayWrgat1PA" class="Portfolio">1.26</td>
+								<td headers="msXRayWrgat1BA" class="Benchmark">13.56</td>
+							</tr>
+							<tr class="alternate">
+								<th scope="row" headers="msXRayWrgat1Dp">Japan</th>
+								<td headers="msXRayWrgat1PA" class="Portfolio">0.73</td>
+								<td headers="msXRayWrgat1BA" class="Benchmark">6.77</td>
+							</tr>
+							<tr>
+								<th scope="row" headers="msXRayWrgat1Dp">Australasia</th>
+								<td headers="msXRayWrgat1PA" class="Portfolio">0.34</td>
+								<td headers="msXRayWrgat1BA" class="Benchmark">1.71</td>
+							</tr>
+							<tr class="alternate">
+								<th scope="row" headers="msXRayWrgat1Dp">Emerging 4 Tigers</th>
+								<td headers="msXRayWrgat1PA" class="Portfolio">0.19</td>
+								<td headers="msXRayWrgat1BA" class="Benchmark">3.24</td>
+							</tr>
+							<tr>
+								<th scope="row" headers="msXRayWrgat1Dp">Emerging Asia - Ex 4 Tigers</th>
+								<td headers="msXRayWrgat1PA" class="Portfolio">0.00</td>
+								<td headers="msXRayWrgat1BA" class="Benchmark">1.85</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- end of WorldRegionsAsiaTable-->
+				<!-- start of WorldRegionsUnclassifiedTable-->
+				<div class="box worldRegionsTable worldRegionsTableUnclassified" id="WorldRegionsUnclassifiedTable1">
+					<table class="right">
+						<colgroup>
+							<col class="colDataPoint" />
+							<col class="data colPortfolio" />
+							<col class="data colBenchmark" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" id="msXRayWrut1Dp" class="colDataPoint">
+								</th>
+								<th id="msXRayWrut1PA" class="Portfolio" scope="col">Stock</th>
+								<th id="msXRayWrut1BA" class="Benchmark" scope="col">Benchmark</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="superRegion">
+								<th scope="row" headers="msXRayWrut1Dp">Not Classified</th>
+								<td headers="msXRayWrut1PA" class="Portfolio">2.02</td>
+								<td headers="msXRayWrut1BA" class="Benchmark">1.27</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- end of WorldRegionsUnclassifiedTable-->
+			</div>
+		</div>
+		<div class="clearfix">
+			<div class="container halfWidth first">
+				<h3>
+					Stock Sectors %
+					<a href="?view=4&amp;URLKey=3y3wd9echv&amp;LanguageId=en-GB&amp;PortfolioType=2&amp;SecurityTokenList=F000002A0G%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR05TOB%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR04C82%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR04CDI%5d2%5d0%5dFOAUT%24%24ALL%7cF00000NBOF%5d2%5d0%5dFOAUT%24%24ALL&amp;values=20.00%7c20.00%7c20.00%7c20.00%7c20.00&amp;CurrencyId=EUR&amp;from=editholding" onclick="return changeView(4);" class="viewLink">Holding Details</a>
+				</h3>
+				<!-- start of StockSectorsCyclicalTable-->
+				<div class="box stockSectorsTable stockSectorsTableCyclical" id="StockSectorsCyclicalTable1">
+					<table class="right">
+						<colgroup>
+							<col class="colDataPoint" />
+							<col class="data colPortfolio" />
+							<col class="data colBenchmark" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" id="msXRaySsct1Dp" class="colDataPoint">
+								</th>
+								<th id="msXRaySsct1PA" class="Portfolio" scope="col">Stock</th>
+								<th id="msXRaySsct1BA" class="Benchmark" scope="col">Benchmark</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="superSector">
+								<th scope="row" headers="msXRaySsct1Dp" class="sectorWeighting stockSector101To104">Cyclical</th>
+								<td headers="msXRaySsct1PA" class="Portfolio">45.68</td>
+								<td headers="msXRaySsct1BA" class="Benchmark">36.87</td>
+							</tr>
+							<tr>
+								<th scope="row" headers="msXRaySsct1Dp" class="sectorWeighting stockSector101">Basic Materials</th>
+								<td headers="msXRaySsct1PA" class="Portfolio">18.18</td>
+								<td headers="msXRaySsct1BA" class="Benchmark">5.89</td>
+							</tr>
+							<tr>
+								<th scope="row" headers="msXRaySsct1Dp" class="sectorWeighting stockSector102">Consumer Cyclical</th>
+								<td headers="msXRaySsct1PA" class="Portfolio">6.13</td>
+								<td headers="msXRaySsct1BA" class="Benchmark">12.05</td>
+							</tr>
+							<tr>
+								<th scope="row" headers="msXRaySsct1Dp" class="sectorWeighting stockSector103">Financial Services</th>
+								<td headers="msXRaySsct1PA" class="Portfolio">10.22</td>
+								<td headers="msXRaySsct1BA" class="Benchmark">17.35</td>
+							</tr>
+							<tr>
+								<th scope="row" headers="msXRaySsct1Dp" class="sectorWeighting stockSector104">Real Estate</th>
+								<td headers="msXRaySsct1PA" class="Portfolio">11.16</td>
+								<td headers="msXRaySsct1BA" class="Benchmark">1.58</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- end of StockSectorsCyclicalTable-->
+				<!-- start of StockSectorsSensitiveTable-->
+				<div class="box stockSectorsTable stockSectorsTableSensitive" id="StockSectorsSensitiveTable1">
+					<table class="right">
+						<colgroup>
+							<col class="colDataPoint" />
+							<col class="data colPortfolio" />
+							<col class="data colBenchmark" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" id="msXRaySsst1Dp" class="colDataPoint">
+								</th>
+								<th id="msXRaySsst1PA" class="Portfolio" scope="col">Stock</th>
+								<th id="msXRaySsst1BA" class="Benchmark" scope="col">Benchmark</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="superSector">
+								<th scope="row" headers="msXRaySsst1Dp" class="sectorWeighting stockSector308To311">Sensitive</th>
+								<td headers="msXRaySsst1PA" class="Portfolio">34.04</td>
+								<td headers="msXRaySsst1BA" class="Benchmark">36.83</td>
+							</tr>
+							<tr>
+								<th scope="row" headers="msXRaySsst1Dp" class="sectorWeighting stockSector308">Communication Services</th>
+								<td headers="msXRaySsst1PA" class="Portfolio">1.11</td>
+								<td headers="msXRaySsst1BA" class="Benchmark">4.10</td>
+							</tr>
+							<tr>
+								<th scope="row" headers="msXRaySsst1Dp" class="sectorWeighting stockSector309">Energy</th>
+								<td headers="msXRaySsst1PA" class="Portfolio">5.21</td>
+								<td headers="msXRaySsst1BA" class="Benchmark">8.49</td>
+							</tr>
+							<tr>
+								<th scope="row" headers="msXRaySsst1Dp" class="sectorWeighting stockSector310">Industrials</th>
+								<td headers="msXRaySsst1PA" class="Portfolio">17.45</td>
+								<td headers="msXRaySsst1BA" class="Benchmark">11.86</td>
+							</tr>
+							<tr>
+								<th scope="row" headers="msXRaySsst1Dp" class="sectorWeighting stockSector311">Technology</th>
+								<td headers="msXRaySsst1PA" class="Portfolio">10.27</td>
+								<td headers="msXRaySsst1BA" class="Benchmark">12.38</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- end of StockSectorsSensitiveTable-->
+				<!-- start of StockSectorsDefensiveTable-->
+				<div class="box stockSectorsTable stockSectorsTableDefensive" id="StockSectorsDefensiveTable1">
+					<table class="right">
+						<colgroup>
+							<col class="colDataPoint" />
+							<col class="data colPortfolio" />
+							<col class="data colBenchmark" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" id="msXRaySsdt1Dp" class="colDataPoint">
+								</th>
+								<th id="msXRaySsdt1PA" class="Portfolio" scope="col">Stock</th>
+								<th id="msXRaySsdt1BA" class="Benchmark" scope="col">Benchmark</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="superSector">
+								<th scope="row" headers="msXRaySsdt1Dp" class="sectorWeighting stockSector205To207">Defensive</th>
+								<td headers="msXRaySsdt1PA" class="Portfolio">17.81</td>
+								<td headers="msXRaySsdt1BA" class="Benchmark">24.94</td>
+							</tr>
+							<tr>
+								<th scope="row" headers="msXRaySsdt1Dp" class="sectorWeighting stockSector205">Consumer Defensive</th>
+								<td headers="msXRaySsdt1PA" class="Portfolio">7.97</td>
+								<td headers="msXRaySsdt1BA" class="Benchmark">10.44</td>
+							</tr>
+							<tr>
+								<th scope="row" headers="msXRaySsdt1Dp" class="sectorWeighting stockSector206">Healthcare</th>
+								<td headers="msXRaySsdt1PA" class="Portfolio">8.20</td>
+								<td headers="msXRaySsdt1BA" class="Benchmark">12.20</td>
+							</tr>
+							<tr>
+								<th scope="row" headers="msXRaySsdt1Dp" class="sectorWeighting stockSector207">Utilities</th>
+								<td headers="msXRaySsdt1PA" class="Portfolio">1.64</td>
+								<td headers="msXRaySsdt1BA" class="Benchmark">2.29</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- end of StockSectorsDefensiveTable-->
+				<!-- start of StockSectorsUnclassifiedTable-->
+				<div class="box stockSectorsTable stockSectorsTableUnclassified" id="StockSectorsUnclassifiedTable1">
+					<table class="right">
+						<colgroup>
+							<col class="colDataPoint" />
+							<col class="data colPortfolio" />
+							<col class="data colBenchmark" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" id="msXRaySsut1Dp" class="colDataPoint">
+								</th>
+								<th id="msXRaySsut1PA" class="Portfolio" scope="col">Stock</th>
+								<th id="msXRaySsut1BA" class="Benchmark" scope="col">Benchmark</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="superSector">
+								<th scope="row" headers="msXRaySsut1Dp" class="sectorWeighting stockSector99">Not Classified</th>
+								<td headers="msXRaySsut1PA" class="Portfolio">2.47</td>
+								<td headers="msXRaySsut1BA" class="Benchmark">1.37</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- end of StockSectorsUnclassifiedTable-->
+			</div>
+			<div class="container halfWidth">
+				<h3>
+					Fixed Income Sectors %
+					<a href="?view=9&amp;URLKey=3y3wd9echv&amp;LanguageId=en-GB&amp;PortfolioType=2&amp;SecurityTokenList=F000002A0G%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR05TOB%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR04C82%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR04CDI%5d2%5d0%5dFOAUT%24%24ALL%7cF00000NBOF%5d2%5d0%5dFOAUT%24%24ALL&amp;values=20.00%7c20.00%7c20.00%7c20.00%7c20.00&amp;CurrencyId=EUR&amp;from=editholding" onclick="return changeView(9);" class="viewLink">Holding Details</a>
+				</h3>
+				<!-- start of FixedIncomeSectorsTable-->
+				<div class="box fixedIncomeSectorsTable" id="FixedIncomeSectorsTable1">
+					<table class="right">
+						<colgroup>
+							<col class="colDataPoint" />
+							<col class="data colPortfolio" />
+							<col class="data colBenchmark" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" id="msXRayFist1Dp" class="colDataPoint">
+								</th>
+								<th id="msXRayFist1PA" class="Portfolio" scope="col">Fixed Income</th>
+								<th id="msXRayFist1BA" class="Benchmark" scope="col">Benchmark</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="superSector">
+								<th scope="row" headers="msXRayFist1Dp" class="sectorWeighting bondSector10">Government</th>
+								<td headers="msXRayFist1PA" class="Portfolio">10.44</td>
+								<td headers="msXRayFist1BA" class="Benchmark">6.11</td>
+							</tr>
+							<tr class="sector">
+								<th scope="row" headers="msXRayFist1Dp" class="sectorWeighting bondSector101010">Treasury</th>
+								<td headers="msXRayFist1PA" class="Portfolio">1.16</td>
+								<td headers="msXRayFist1BA" class="Benchmark">5.10</td>
+							</tr>
+							<tr class="sector">
+								<th scope="row" headers="msXRayFist1Dp" class="sectorWeighting bondSector101020">Inflation-Protected</th>
+								<td headers="msXRayFist1PA" class="Portfolio">8.17</td>
+								<td headers="msXRayFist1BA" class="Benchmark">1.04</td>
+							</tr>
+							<tr class="sector">
+								<th scope="row" headers="msXRayFist1Dp" class="sectorWeighting bondSector102010">Agency/Quasi Agency</th>
+								<td headers="msXRayFist1PA" class="Portfolio">0.03</td>
+								<td headers="msXRayFist1BA" class="Benchmark">0.00</td>
+							</tr>
+							<tr class="sector">
+								<th scope="row" headers="msXRayFist1Dp" class="sectorWeighting bondSector1020">Government Related</th>
+								<td headers="msXRayFist1PA" class="Portfolio">1.11</td>
+								<td headers="msXRayFist1BA" class="Benchmark">-0.02</td>
+							</tr>
+							<tr class="superSector">
+								<th scope="row" headers="msXRayFist1Dp" class="sectorWeighting bondSector30">Corporate</th>
+								<td headers="msXRayFist1PA" class="Portfolio">9.40</td>
+								<td headers="msXRayFist1BA" class="Benchmark">9.92</td>
+							</tr>
+							<tr class="sector">
+								<th scope="row" headers="msXRayFist1Dp" class="sectorWeighting bondSector3030">Corporate Bond</th>
+								<td headers="msXRayFist1PA" class="Portfolio">9.40</td>
+								<td headers="msXRayFist1BA" class="Benchmark">1.26</td>
+							</tr>
+							<tr class="sector">
+								<th scope="row" headers="msXRayFist1Dp" class="sectorWeighting bondSector3010">Bank Loan</th>
+								<td headers="msXRayFist1PA" class="Portfolio">0.00</td>
+								<td headers="msXRayFist1BA" class="Benchmark">0.00</td>
+							</tr>
+							<tr class="sector">
+								<th scope="row" headers="msXRayFist1Dp" class="sectorWeighting bondSector3020">Convertible</th>
+								<td headers="msXRayFist1PA" class="Portfolio">0.00</td>
+								<td headers="msXRayFist1BA" class="Benchmark">0.01</td>
+							</tr>
+							<tr class="sector">
+								<th scope="row" headers="msXRayFist1Dp" class="sectorWeighting bondSector3040">Preferred</th>
+								<td headers="msXRayFist1PA" class="Portfolio">0.00</td>
+								<td headers="msXRayFist1BA" class="Benchmark">8.64</td>
+							</tr>
+							<tr class="superSector">
+								<th scope="row" headers="msXRayFist1Dp" class="sectorWeighting bondSector40">Securitized</th>
+								<td headers="msXRayFist1PA" class="Portfolio">0.00</td>
+								<td headers="msXRayFist1BA" class="Benchmark">0.01</td>
+							</tr>
+							<tr class="sector">
+								<th scope="row" headers="msXRayFist1Dp" class="sectorWeighting bondSector4010">Agency Mortgage Backed</th>
+								<td headers="msXRayFist1PA" class="Portfolio">0.00</td>
+								<td headers="msXRayFist1BA" class="Benchmark">0.00</td>
+							</tr>
+							<tr class="sector">
+								<th scope="row" headers="msXRayFist1Dp" class="sectorWeighting bondSector4020">Non-Agency Residential Mortgage Backed</th>
+								<td headers="msXRayFist1PA" class="Portfolio">0.00</td>
+								<td headers="msXRayFist1BA" class="Benchmark">0.00</td>
+							</tr>
+							<tr class="sector">
+								<th scope="row" headers="msXRayFist1Dp" class="sectorWeighting bondSector4030">Commercial Mortgage Backed</th>
+								<td headers="msXRayFist1PA" class="Portfolio">0.00</td>
+								<td headers="msXRayFist1BA" class="Benchmark">0.00</td>
+							</tr>
+							<tr class="sector">
+								<th scope="row" headers="msXRayFist1Dp" class="sectorWeighting bondSector4050">Asset Backed</th>
+								<td headers="msXRayFist1PA" class="Portfolio">0.00</td>
+								<td headers="msXRayFist1BA" class="Benchmark">0.00</td>
+							</tr>
+							<tr class="sector">
+								<th scope="row" headers="msXRayFist1Dp" class="sectorWeighting bondSector4040">Covered Bond</th>
+								<td headers="msXRayFist1PA" class="Portfolio">0.00</td>
+								<td headers="msXRayFist1BA" class="Benchmark">0.00</td>
+							</tr>
+							<tr class="superSector">
+								<th scope="row" headers="msXRayFist1Dp" class="sectorWeighting bondSector20">Municipal</th>
+								<td headers="msXRayFist1PA" class="Portfolio">0.00</td>
+								<td headers="msXRayFist1BA" class="Benchmark">0.99</td>
+							</tr>
+							<tr class="superSector">
+								<th scope="row" headers="msXRayFist1Dp" class="sectorWeighting bondSector50">Cash &amp; Equivalents</th>
+								<td headers="msXRayFist1PA" class="Portfolio">73.20</td>
+								<td headers="msXRayFist1BA" class="Benchmark">73.51</td>
+							</tr>
+							<tr class="superSector">
+								<th scope="row" headers="msXRayFist1Dp" class="sectorWeighting bondSector60">Derivative</th>
+								<td headers="msXRayFist1PA" class="Portfolio">0.00</td>
+								<td headers="msXRayFist1BA" class="Benchmark">7.37</td>
+							</tr>
+							<tr class="superSector">
+								<th scope="row" headers="msXRayFist1Dp" class="sectorWeighting bondSector99">Not Classified</th>
+								<td headers="msXRayFist1PA" class="Portfolio">6.96</td>
+								<td headers="msXRayFist1BA" class="Benchmark">2.09</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- end of FixedIncomeSectorsTable-->
+			</div>
+		</div>
+		<div class="clearfix">
+			<div class="container halfWidth first">
+				<h3>
+					Stock Style
+					<a href="?view=3&amp;URLKey=3y3wd9echv&amp;LanguageId=en-GB&amp;PortfolioType=2&amp;SecurityTokenList=F000002A0G%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR05TOB%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR04C82%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR04CDI%5d2%5d0%5dFOAUT%24%24ALL%7cF00000NBOF%5d2%5d0%5dFOAUT%24%24ALL&amp;values=20.00%7c20.00%7c20.00%7c20.00%7c20.00&amp;CurrencyId=EUR&amp;from=editholding" onclick="return changeView(3);" class="viewLink">Holding Details</a>
+				</h3>
+				<!-- start of StockStylebox -->
+				<div class="box barometerChart barometerChartStock" id="StockStylebox1">
+					<img src="http://bpcharts.morningstar.com/chart?&amp;chvs=1&amp;cht=esbm&amp;chs=170x220&amp;chof=p&amp;chd=t:8.66,13.56,15.39,8.52,12.19,5.16,5.95,16.64,7.86,6.06&amp;chfts=11&amp;chft=Verdana&amp;chf=bg,s,FFFFFF&amp;chcor=0,10,C9CFDB|10,25,949FB7|25,50,5E6E93|50,,293F6F&amp;chmg=0,15,0,0&amp;chxl=0:|Value|Blend|Growth|1:|Style|2:|Large|Mid|Small|3:|Size" alt="Stylebox" />
+				</div>
+				<!-- start of StockStylebox -->
+			</div>
+			<div class="container halfWidth">
+				<h3>
+					Fixed Income Style
+					<a href="?view=8&amp;URLKey=3y3wd9echv&amp;LanguageId=en-GB&amp;PortfolioType=2&amp;SecurityTokenList=F000002A0G%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR05TOB%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR04C82%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR04CDI%5d2%5d0%5dFOAUT%24%24ALL%7cF00000NBOF%5d2%5d0%5dFOAUT%24%24ALL&amp;values=20.00%7c20.00%7c20.00%7c20.00%7c20.00&amp;CurrencyId=EUR&amp;from=editholding" onclick="return changeView(8);" class="viewLink">Holding Details</a>
+				</h3>
+				<!-- start of FixedIncomeStylebox -->
+				<div class="box barometerChart barometerChartFixedIncome" id="FixedIncomeStylebox1">
+					<img src="http://bpcharts.morningstar.com/chart?&amp;chvs=1&amp;cht=fsbm&amp;chs=170x220&amp;chof=p&amp;chd=t:0,0,0,0,0,0,0,0,0,100&amp;chfts=11&amp;chft=Verdana&amp;chf=bg,s,FFFFFF&amp;chcor=0,10,FAD8C3|10,25,F4B287|25,50,EF8C4B|50,,E96610&amp;chmg=0,15,0,0&amp;chxl=0:|Value|Blend|Growth|1:|Style|2:|Large|Mid|Small|3:|Size" alt="Stylebox" />
+					<!-- start of FixedIncomeStylebox1-->
+
+					<div class="box percentagePortfolioAnalysed FixedIncomeStylebox">
+						<strong>Percentage of portfolio analyzed:</strong>
+						<span class="floatRight"> 20.00</span>
+					</div>
+
+					<!-- end of FixedIncomeStylebox1-->
+				</div>
+				<!-- end of FixedIncomeStylebox -->
+			</div>
+		</div>
+		<div class="clearfix">
+			<div class="container halfWidth first">
+				<h3>
+					Stock Stats
+					<a href="?view=5&amp;URLKey=3y3wd9echv&amp;LanguageId=en-GB&amp;PortfolioType=2&amp;SecurityTokenList=F000002A0G%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR05TOB%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR04C82%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR04CDI%5d2%5d0%5dFOAUT%24%24ALL%7cF00000NBOF%5d2%5d0%5dFOAUT%24%24ALL&amp;values=20.00%7c20.00%7c20.00%7c20.00%7c20.00&amp;CurrencyId=EUR&amp;from=editholding" onclick="return changeView(5);" class="viewLink">Holding Details</a>
+				</h3>
+				<!-- start of StockStatsTable-->
+				<div class="box stockStatsTable" id="StockStatsTable1">
+					<table class="right">
+						<colgroup>
+							<col class="colDataPoint" />
+							<col class="data colPortfolio" />
+							<col class="data colBenchmark" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" id="msXRaySst1Dp" class="colDataPoint">
+								</th>
+								<th id="msXRaySst1PA" class="Portfolio" scope="col">Portfolio</th>
+								<th id="msXRaySst1BA" class="Benchmark" scope="col">Benchmark</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row" headers="msXRaySst1Dp">Price/Earnings Ratio</th>
+								<td headers="msXRaySst1PA" class="Portfolio">15.83</td>
+								<td headers="msXRaySst1BA" class="Benchmark">15.84</td>
+							</tr>
+							<tr class="alternate">
+								<th scope="row" headers="msXRaySst1Dp">Price/Cashflow Ratio</th>
+								<td headers="msXRaySst1PA" class="Portfolio">6.36</td>
+								<td headers="msXRaySst1BA" class="Benchmark">7.63</td>
+							</tr>
+							<tr>
+								<th scope="row" headers="msXRaySst1Dp">Price/Book Ratio</th>
+								<td headers="msXRaySst1PA" class="Portfolio">1.48</td>
+								<td headers="msXRaySst1BA" class="Benchmark">2.04</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- end of StockStatsTable-->
+			</div>
+			<div class="container halfWidth">
+				<h3>
+					Fixed Income Stats
+					<a href="?view=10&amp;URLKey=3y3wd9echv&amp;LanguageId=en-GB&amp;PortfolioType=2&amp;SecurityTokenList=F000002A0G%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR05TOB%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR04C82%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR04CDI%5d2%5d0%5dFOAUT%24%24ALL%7cF00000NBOF%5d2%5d0%5dFOAUT%24%24ALL&amp;values=20.00%7c20.00%7c20.00%7c20.00%7c20.00&amp;CurrencyId=EUR&amp;from=editholding" onclick="return changeView(10);" class="viewLink">Holding Details</a>
+				</h3>
+				<!-- start of FixedIncomeStatsTable-->
+				<div class="box fixedIncomeStatsTable" id="FixedIncomeStatsTable1">
+					<table class="right">
+						<colgroup>
+							<col class="colDataPoint" />
+							<col class="data colPortfolio" />
+							<col class="data colBenchmark" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" id="msXRayFivt1Dp" class="colDataPoint">
+								</th>
+								<th id="msXRayFivt1PA" class="Portfolio" scope="col">Portfolio</th>
+								<th id="msXRayFivt1BA" class="Benchmark" scope="col">Benchmark</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row" headers="msXRayFivt1Dp">Effective Maturity (Y)</th>
+								<td headers="msXRayFivt1PA" class="Portfolio">-</td>
+								<td headers="msXRayFivt1BA" class="Benchmark">4.41</td>
+							</tr>
+							<tr class="alternate">
+								<th scope="row" headers="msXRayFivt1Dp">Effective Duration</th>
+								<td headers="msXRayFivt1PA" class="Portfolio">-</td>
+								<td headers="msXRayFivt1BA" class="Benchmark">-0.22</td>
+							</tr>
+							<tr>
+								<th scope="row" headers="msXRayFivt1Dp">Average Credit Quality</th>
+								<td headers="msXRayFivt1PA" class="Portfolio">-</td>
+								<td headers="msXRayFivt1BA" class="Benchmark">-</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- end of FixedIncomeStatsTable-->
+			</div>
+		</div>
+		<div>
+			<h3>
+				Fees %
+				<a href="?view=11&amp;URLKey=3y3wd9echv&amp;LanguageId=en-GB&amp;PortfolioType=2&amp;SecurityTokenList=F000002A0G%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR05TOB%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR04C82%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR04CDI%5d2%5d0%5dFOAUT%24%24ALL%7cF00000NBOF%5d2%5d0%5dFOAUT%24%24ALL&amp;values=20.00%7c20.00%7c20.00%7c20.00%7c20.00&amp;CurrencyId=EUR&amp;from=editholding" onclick="return changeView(11);" class="viewLink">Holding Details</a>
+			</h3>
+			<!-- start of FeesTable-->
+			<div class="box feesTable" id="FeesTable1">
+				<table class="right">
+					<colgroup>
+						<col class="colDataPoint" />
+						<col class="data colPortfolio" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col" id="msXRayft1Dp" class="colDataPoint">
+							</th>
+							<th id="msXRayft1P" class="Portfolio" scope="col">Portfolio</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row" headers="msXRayft1Dp">Management Fee %</th>
+							<td headers="msXRayft1P" class="Portfolio">1.13</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- end of FeesTable-->
+		</div>
+		<div>
+			<h3>Top 10 Holdings</h3>
+			<!-- start of Holdings-->
+			<div class="box holdings" id="Holdings172">
+				<table class="orderedDataTable">
+					<colgroup>
+						<col class="colSecurityName" />
+						<col class="colSecurityType" />
+						<col class="colHoldingDate" />
+						<col class="colOngoingCharge" />
+						<col class="colWeight" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th id="msXRayH11721" class="colSecurityName number">Name</th>
+							<th id="msXRayH11722" class="colSecurityType label">Type</th>
+							<th id="msXRayH11723" class="colHoldingDate date">Holding Portfolio Date</th>
+							<th id="msXRayH11724" class="colOngoingCharge number">Ongoing Charge %</th>
+							<th id="msXRayH11725" class="colWeight number">Weight %</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="" id="rowHoldings1721">
+							<td headers="msXRayH11721" class="colSecurityName">
+								<a href="/LicensedToolsSite/3y3wd9echv/@REPORT/default.aspx?SecurityToken=F000002A0G]2]0]FOLUX$$BAS&amp;externalid=F000002A0G&amp;LanguageId=en-GB&amp;CurrencyId=EUR&amp;LastPage=X-Ray">1741 (Lux) Eq Act Idx All Ctry Wld Base</a>
+							</td>
+							<td headers="msXRayH11722" class="colSecurityType">Fund</td>
+							<td headers="msXRayH11723" class="colHoldingDate">30 Sep 2013</td>
+							<td headers="msXRayH11724" class="colOngoingCharge">1.81</td>
+							<td headers="msXRayH11725" class="colWeight">20.00</td>
+						</tr>
+						<tr class="" id="rowHoldings1722">
+							<td headers="msXRayH11721" class="colSecurityName">
+								<a href="/LicensedToolsSite/3y3wd9echv/@REPORT/default.aspx?SecurityToken=F0GBR05TOB]2]0]FODEU$$BAS&amp;externalid=F0GBR05TOB&amp;LanguageId=en-GB&amp;CurrencyId=EUR&amp;LastPage=X-Ray">3 Banken Absolute Return-Mix A</a>
+							</td>
+							<td headers="msXRayH11722" class="colSecurityType">Fund</td>
+							<td headers="msXRayH11723" class="colHoldingDate">31 Mar 2014</td>
+							<td headers="msXRayH11724" class="colOngoingCharge">1.63</td>
+							<td headers="msXRayH11725" class="colWeight">20.00</td>
+						</tr>
+						<tr class="" id="rowHoldings1723">
+							<td headers="msXRayH11721" class="colSecurityName">
+								<a href="/LicensedToolsSite/3y3wd9echv/@REPORT/default.aspx?SecurityToken=F0GBR04C82]2]0]FOLUX$$BAS&amp;externalid=F0GBR04C82&amp;LanguageId=en-GB&amp;CurrencyId=EUR&amp;LastPage=X-Ray">3V Invest Swiss Small &amp; Mid Cap</a>
+							</td>
+							<td headers="msXRayH11722" class="colSecurityType">Fund</td>
+							<td headers="msXRayH11723" class="colHoldingDate">30 Jun 2014</td>
+							<td headers="msXRayH11724" class="colOngoingCharge">2.10</td>
+							<td headers="msXRayH11725" class="colWeight">20.00</td>
+						</tr>
+						<tr class="" id="rowHoldings1724">
+							<td headers="msXRayH11721" class="colSecurityName">
+								<a href="/LicensedToolsSite/3y3wd9echv/@REPORT/default.aspx?SecurityToken=F0GBR04CDI]2]0]FODEU$$BAS&amp;externalid=F0GBR04CDI&amp;LanguageId=en-GB&amp;CurrencyId=EUR&amp;LastPage=X-Ray">4Q-European Value Fonds Universal</a>
+							</td>
+							<td headers="msXRayH11722" class="colSecurityType">Fund</td>
+							<td headers="msXRayH11723" class="colHoldingDate">31 Mar 2014</td>
+							<td headers="msXRayH11724" class="colOngoingCharge">2.06</td>
+							<td headers="msXRayH11725" class="colWeight">20.00</td>
+						</tr>
+						<tr class="" id="rowHoldings1725">
+							<td headers="msXRayH11721" class="colSecurityName">
+								<a href="/LicensedToolsSite/3y3wd9echv/@REPORT/default.aspx?SecurityToken=F00000NBOF]2]0]FOIRL$$BAS&amp;externalid=F00000NBOF&amp;LanguageId=en-GB&amp;CurrencyId=EUR&amp;LastPage=X-Ray">a generix Balanced UCITS Sub-Fund A USD</a>
+							</td>
+							<td headers="msXRayH11722" class="colSecurityType">Fund</td>
+							<td headers="msXRayH11723" class="colHoldingDate">-</td>
+							<td headers="msXRayH11724" class="colOngoingCharge">1.63</td>
+							<td headers="msXRayH11725" class="colWeight">20.00</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- end of Holdings-->
+		</div>
+		<div>
+			<h3>
+				Top 10 Underlying Holdings
+				<a href="?view=7&amp;URLKey=3y3wd9echv&amp;LanguageId=en-GB&amp;PortfolioType=2&amp;SecurityTokenList=F000002A0G%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR05TOB%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR04C82%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR04CDI%5d2%5d0%5dFOAUT%24%24ALL%7cF00000NBOF%5d2%5d0%5dFOAUT%24%24ALL&amp;values=20.00%7c20.00%7c20.00%7c20.00%7c20.00&amp;CurrencyId=EUR&amp;from=editholding" onclick="return changeView(7);" class="viewLink">Holding Details</a>
+			</h3>
+			<!-- start of UnderlyingHoldings-->
+			<div class="box underlyingHoldings" id="UnderlyingHoldings">
+				<table>
+					<colgroup>
+						<col class="colSecurityName" />
+						<col class="colSecurityType" />
+						<col class="colSecuritySector" />
+						<col class="colSecurityCountry" />
+						<col class="colWeight" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th id="msXRayUh11" class="colSecurityName string">Name</th>
+							<th id="msXRayUh12" class="colSecurityType label">Type</th>
+							<th id="msXRayUh13" class="colSecuritySector string">Sector</th>
+							<th id="msXRayUh14" class="colSecurityCountry label">Country</th>
+							<th id="msXRayUh15" class="colWeight number">Assets %</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td headers="msXRayUh11" class="colSecurityName string">db x-trackers MSCI World TRN Index 1C</td>
+							<td headers="msXRayUh12" class="colSecurityType label">Mutual Fund - ETF</td>
+							<td class="sectorWeighting stockSector" headers="msXRayUh13">Not Classified</td>
+							<td headers="msXRayUh14" class="colSecurityCountry label">Luxembourg</td>
+							<td headers="msXRayUh15" class="colWeight number">3.97</td>
+						</tr>
+						<tr>
+							<td headers="msXRayUh11" class="colSecurityName string">EasyETF S&amp;P GSCI&trade; Capped Commodity 35/20</td>
+							<td headers="msXRayUh12" class="colSecurityType label">Mutual Fund - ETF</td>
+							<td class="sectorWeighting stockSector" headers="msXRayUh13">Not Classified</td>
+							<td headers="msXRayUh14" class="colSecurityCountry label">Luxembourg</td>
+							<td headers="msXRayUh15" class="colWeight number">3.84</td>
+						</tr>
+						<tr>
+							<td headers="msXRayUh11" class="colSecurityName string">Lyxor ETF MSCI World D-EUR A/I</td>
+							<td headers="msXRayUh12" class="colSecurityType label">Mutual Fund - ETF</td>
+							<td class="sectorWeighting stockSector" headers="msXRayUh13">Not Classified</td>
+							<td headers="msXRayUh14" class="colSecurityCountry label">France</td>
+							<td headers="msXRayUh15" class="colWeight number">1.90</td>
+						</tr>
+						<tr>
+							<td headers="msXRayUh11" class="colSecurityName string">Cham Paper Group Holding AG</td>
+							<td headers="msXRayUh12" class="colSecurityType label">Stock</td>
+							<td class="sectorWeighting stockSector101" headers="msXRayUh13">Basic Materials</td>
+							<td headers="msXRayUh14" class="colSecurityCountry label">Switzerland</td>
+							<td headers="msXRayUh15" class="colWeight number">1.69</td>
+						</tr>
+						<tr>
+							<td headers="msXRayUh11" class="colSecurityName string">Syngenta AG</td>
+							<td headers="msXRayUh12" class="colSecurityType label">Stock</td>
+							<td class="sectorWeighting stockSector101" headers="msXRayUh13">Basic Materials</td>
+							<td headers="msXRayUh14" class="colSecurityCountry label">Switzerland</td>
+							<td headers="msXRayUh15" class="colWeight number">1.49</td>
+						</tr>
+						<tr>
+							<td headers="msXRayUh11" class="colSecurityName string">MCH Group AG</td>
+							<td headers="msXRayUh12" class="colSecurityType label">Stock</td>
+							<td class="sectorWeighting stockSector102" headers="msXRayUh13">Consumer Cyclical</td>
+							<td headers="msXRayUh14" class="colSecurityCountry label">Switzerland</td>
+							<td headers="msXRayUh15" class="colWeight number">1.41</td>
+						</tr>
+						<tr>
+							<td headers="msXRayUh11" class="colSecurityName string">Conzzeta Holding</td>
+							<td headers="msXRayUh12" class="colSecurityType label">Stock</td>
+							<td class="sectorWeighting stockSector310" headers="msXRayUh13">Industrials</td>
+							<td headers="msXRayUh14" class="colSecurityCountry label">Switzerland</td>
+							<td headers="msXRayUh15" class="colWeight number">1.38</td>
+						</tr>
+						<tr>
+							<td headers="msXRayUh11" class="colSecurityName string">Royal Boskalis Westminster NV</td>
+							<td headers="msXRayUh12" class="colSecurityType label">Stock</td>
+							<td class="sectorWeighting stockSector310" headers="msXRayUh13">Industrials</td>
+							<td headers="msXRayUh14" class="colSecurityCountry label">Netherlands</td>
+							<td headers="msXRayUh15" class="colWeight number">1.36</td>
+						</tr>
+						<tr>
+							<td headers="msXRayUh11" class="colSecurityName string">Aurubis AG</td>
+							<td headers="msXRayUh12" class="colSecurityType label">Stock</td>
+							<td class="sectorWeighting stockSector101" headers="msXRayUh13">Basic Materials</td>
+							<td headers="msXRayUh14" class="colSecurityCountry label">Germany</td>
+							<td headers="msXRayUh15" class="colWeight number">1.26</td>
+						</tr>
+						<tr>
+							<td headers="msXRayUh11" class="colSecurityName string">Bilfinger Berger Ag</td>
+							<td headers="msXRayUh12" class="colSecurityType label">Stock</td>
+							<td class="sectorWeighting stockSector" headers="msXRayUh13">Not Classified</td>
+							<td headers="msXRayUh14" class="colSecurityCountry label">
+							</td>
+							<td headers="msXRayUh15" class="colWeight number">1.24</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- end of UnderlyingHoldings-->
+		</div>
+	</body>
+</html>

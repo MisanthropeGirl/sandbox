@@ -1,0 +1,33 @@
+﻿.flexContainer {
+	display:-ms-flexbox;
+	display:-webkit-flex;
+	display:flex;
+}
+.flexItem {
+	-ms-flex:1;
+	-webkit-flex:1;
+	flex:1;
+}
+.flexItemDefinedWidth {
+	-ms-flex:none;
+	-webkit-flex:none;
+	flex:none;
+}
+.item1Of2 {
+	width:50%;
+}
+.item1Of3 {
+	width:33.33333%
+}
+.item1Of4 {
+	width:25%;
+}
+.item1Of5 {
+	width:20%;
+}
+.item2Of5 {
+	width:40%;
+}
+.item1Of6 {
+	width:16.6666%
+}

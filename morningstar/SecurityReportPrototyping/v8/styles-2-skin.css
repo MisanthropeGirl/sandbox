@@ -1,0 +1,94 @@
+﻿body {
+	color:#333;
+	font:75%/1.3125 Verdana,Helvetica,Arial,sans-serif;
+}
+
+.ms-section {
+	margin-bottom:24px;
+}
+.ms-section > section:not([class]),
+.ms-section > div:not([class]) {
+  border-bottom:1px solid #CCCCCC;
+  margin-top:5px;
+  padding-bottom:5px;
+}
+.ms-section > section:last-child,
+.ms-section > div:last-child {
+	border-bottom:0;
+}
+
+#msReportPortfolioProfile > header,
+.ms-section header {
+  border-bottom: 1px solid #CCCCCC;
+  border-top:2px solid #797979;
+  padding:2px 0 12px;
+}
+.ms-section section header {
+	border:0;
+  padding:10px 0 4px;;
+}
+h2 {
+  font-size:1.4em;
+  font-weight:bold;
+  line-height:1.43;
+}
+h3 {
+	font-weight:bold;
+}
+
+table {
+	width:100%;
+}
+.ms-table thead th {
+	font-weight:bold;
+}
+.ms-table tr {
+	border-bottom:1px solid #ccc;
+}
+.ms-table tr > * {
+	line-height:1.55;
+	padding:2px 0 3px;
+	vertical-align:top;
+}
+.ms-table-numeric tr > *:not(:first-child),
+.ms-report-col-weight {
+	text-align:right;
+}
+#msAnnualReturns col:not(:first-child) {
+	width:16.2%
+}
+#msTrailingReturns col:not(:first-child) {
+	width:16%
+}
+#msKeyStats col:not(:first-child) {
+	width:45%
+}
+#msAssetAllocationLongShort col:not(:first-child),
+#msTopSections col:not(:first-child),
+#msTopRegions col:not(:first-child) {
+	width:25%
+}
+col.ms-report-col-sector {
+	width:30%;
+}
+col.ms-report-col-weight {
+	width:12%;
+}
+
+a {
+	text-decoration:none;
+}
+
+@media (min-width:800px){
+	body {
+		font:68.75%/1.3125 Verdana,Helvetica,Arial,sans-serif;
+		margin:0 5rem;
+	}
+	#msReportPortfolioProfile > header,
+	.ms-section {
+		margin-left:24px;
+	}
+	#msReportPortfolioProfile {
+		margin-left:0;
+	}
+}

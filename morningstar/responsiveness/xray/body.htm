@@ -1,0 +1,248 @@
+﻿<!DOCTYPE html>
+
+<!--[if IEMobile 7 ]> <html dir="ltr" lang="en-GB"class="no-js iem7"> <![endif]-->
+<!--[if lt IE 7 ]> <html dir="ltr" lang="en-GB" class="no-js ie6 oldie"> <![endif]-->
+<!--[if IE 7 ]> <html dir="ltr" lang="en-GB" class="no-js ie7 oldie"> <![endif]-->
+<!--[if IE 8 ]> <html dir="ltr" lang="en-GB" class="no-js ie8 oldie"> <![endif]-->
+<!--[if IE 9 ]> <html dir="ltr" lang="en-GB" class="no-js ie9 oldie"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html dir="ltr" lang="en-GB"><!--<![endif]-->
+	<head>
+		<title>X-Ray Body</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="../../common/css/normalize_v3.0.1.css" rel="stylesheet" />
+		<style>
+			body {
+				font-family:Verdana, Helvetica, Arial;
+			}
+
+			h3 {
+				border-bottom:1px solid #ccc;
+				border-top:2px solid #797979;
+				font-size:1.4em;
+				font-weight:bold;
+				line-height:1.43;
+				margin-bottom:5px;
+				padding:2px 0 12px;
+
+				display:-ms-flexbox;
+				display:-webkit-flex;
+				display:flex;
+				-ms-flex-wrap:wrap;
+				-webkit-flex-wrap:wrap;
+				flex-wrap:wrap;
+				-ms-flex-pack:space-between;
+				-webkit-justify-content:space-between;
+				justify-content:space-between;
+			}
+			h3 .viewLink {
+				font-size:71.4%;
+				font-weight:normal;
+				line-height:2.25;
+			}
+
+			img.assetAllocationIcon {
+				background-image:url("//lt.morningstar.com/img/icons/iconList.gif");
+				background-position:50% 50%;
+				background-repeat:no-repeat;
+				height:8px;
+				margin-right:4px;
+				width:8px;
+			}
+			div > img {
+				height:auto;
+				width:100%;
+			}
+
+			table {
+				width:100%;
+			}
+			col.data {
+				width:16%;
+			}
+			col.data.colBenchmark {
+				width:26%;
+			}
+			td, th {
+				border-bottom:1px solid #d6d6d6;
+				overflow:visible;
+				padding:2px 0 3px;
+				vertical-align:top;
+			}
+			thead th {
+				font-weight:bold;
+			}
+			table.right tr *:first-child {
+				text-align:left;
+			}
+			table.right td, table.right th {
+				text-align:right;
+			}
+
+			.box {
+				margin-bottom:24px;
+			}
+
+			@media (min-width:768px) {
+				body {
+					font-size:0.6875rem;
+					line-height:1.3125;
+				}
+
+				.clearfix {
+					display:-ms-flexbox;
+					display:-webkit-flex;
+					display:flex;
+					-ms-flex-wrap:wrap;
+					-webkit-flex-wrap:wrap;
+					flex-wrap:wrap;
+					-ms-flex-pack:space-between;
+					-webkit-justify-content:space-between;
+					justify-content:space-between;
+				}
+				.clearfix h3 {
+					width:100%;
+				}
+				.clearfix .halfWidth {
+					width:49%;
+				}
+			}
+
+			@media (max-width:479px) {
+				div {
+					display:block;
+				}
+				/* Force table to not be like tables anymore */
+				table, thead, tbody, th, td, tr {
+					display:block;
+				}
+				/* Hide table headers (but not display:none;, for accessibility) */
+				thead {
+					position:absolute;
+					top:-9999px;
+					left:-9999px;
+				}
+				tr {
+					border:1px solid #ccc;
+				}
+				td {
+					/* Behave  like a "row" */
+					border:none;
+					border-bottom:1px solid #ccc;
+					position:relative;
+					padding:5px 10px 5px 50%;
+				}
+				td::before {
+					/* Now like a table header */
+					position:absolute;
+					/* Top/left values mimic padding */
+					top:5px;
+					left:10px;
+					width:45%;
+					padding-right:10px;
+					white-space:nowrap;
+				}
+				/* Label the data */
+				td:nth-of-type(1)::before {
+					content:'Long';
+				}
+				td:nth-of-type(2)::before {
+					content:'Short';
+				}
+				td:nth-of-type(3)::before {
+					content:'Net';
+				}
+				td:nth-of-type(4)::before {
+					content:'Benchmark';
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<p>Yes, I know that the image doesn't resize well. See my previous <a href="../../SecurityReportPrototyping/v9">experimentation with this issue</a> for more information.</p>
+		<div class="clearfix">
+			<h3>
+				Asset Allocation %
+				<a href="?view=2&amp;URLKey=3y3wd9echv&amp;LanguageId=en-GB&amp;PortfolioType=2&amp;SecurityTokenList=F000002A0G%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR05TOB%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR04C82%5d2%5d0%5dFOAUT%24%24ALL%7cF0GBR04CDI%5d2%5d0%5dFOAUT%24%24ALL%7cF00000NBOF%5d2%5d0%5dFOAUT%24%24ALL&amp;values=20.00%7c20.00%7c20.00%7c20.00%7c20.00&amp;CurrencyId=EUR&amp;from=editholding" onclick="return changeView(2);" class="viewLink">Holding Details</a>
+			</h3>
+			<div class="container halfWidth first">
+			<!-- start of AssetAllocationLongShortBarChart -->
+				<div class="box barChart barChartAssetAllocation" id="AssetAllocationLongShortBarChart1">
+					<img src="http://bpcharts.morningstar.com/chart?&amp;cht=lsn&amp;chs=290x129&amp;chof=p&amp;chfts=11&amp;chd=t:67.6,0|1.62,0|4.59,-0.1|6.68,-0.4|0,0&amp;chco=27477B|E38130|B0BC3C|9BB4D1|B0BC3C&amp;chbh=r,8&amp;chf=bg,s,FFFFFF|c,s,FFFFFF&amp;chgx=y,1,4,666666&amp;chft=Verdana" alt="Chart" />
+				</div>
+				<!-- end of AssetAllocationLongShortBarChart -->
+			</div>
+			<div class="container halfWidth">
+				<!-- start of AssetAllocationLongShortTable -->
+				<div class="box assetAllocationLongShortTable" id="AssetAllocationLongShortTable1">
+					<table class="right">
+						<colgroup>
+							<col class="colDataPoint">
+							<col class="data colLong">
+							<col class="data colShort">
+							<col class="data colNet">
+							<col class="data colBenchmark">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" id="msXRayAalst1Dp" class="colDataPoint"></th>
+								<th id="msXRayAalst1L" class="Long" scope="col">Long</th>
+								<th id="msXRayAalst1P" class="Short" scope="col">Short</th>
+								<th id="msXRayAalst1N" class="Net" scope="col">Net</th>
+								<th id="msXRayAalst1BA" class="Benchmark" scope="col">Benchmark</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row" headers="msXRayAalst1Dp">
+									<img style="background-color:#27477B" alt="" src="//lt.morningstar.com/img/clear.gif" class="assetAllocationIcon" />Stocks
+								</th>
+								<td headers="msXRayAalst1L" class="Long">67.60</td>
+								<td headers="msXRayAalst1P" class="Short">0.00</td>
+								<td headers="msXRayAalst1N" class="Net">67.60</td>
+								<td headers="msXRayAalst1BA" class="Benchmark">93.34</td>
+							</tr>
+							<tr class="alternate">
+								<th scope="row" headers="msXRayAalst1Dp">
+									<img style="background-color:#E38130" alt="" src="//lt.morningstar.com/img/clear.gif" class="assetAllocationIcon" />Bonds
+								</th>
+								<td headers="msXRayAalst1L" class="Long">1.62</td>
+								<td headers="msXRayAalst1P" class="Short">0.00</td>
+								<td headers="msXRayAalst1N" class="Net">1.62</td>
+								<td headers="msXRayAalst1BA" class="Benchmark">0.35</td>
+							</tr>
+							<tr>
+								<th scope="row" headers="msXRayAalst1Dp">
+									<img style="background-color:#B0BC3C" alt="" src="//lt.morningstar.com/img/clear.gif" class="assetAllocationIcon" />Cash
+								</th>
+								<td headers="msXRayAalst1L" class="Long">4.59</td>
+								<td headers="msXRayAalst1P" class="Short">0.10</td>
+								<td headers="msXRayAalst1N" class="Net">4.50</td>
+								<td headers="msXRayAalst1BA" class="Benchmark">3.41</td>
+							</tr>
+							<tr class="alternate">
+								<th scope="row" headers="msXRayAalst1Dp">
+									<img style="background-color:#9BB4D1" alt="" src="//lt.morningstar.com/img/clear.gif" class="assetAllocationIcon" />Other
+								</th>
+								<td headers="msXRayAalst1L" class="Long">6.68</td>
+								<td headers="msXRayAalst1P" class="Short">0.40</td>
+								<td headers="msXRayAalst1N" class="Net">6.28</td>
+								<td headers="msXRayAalst1BA" class="Benchmark">2.90</td>
+							</tr>
+							<tr>
+								<th scope="row" headers="msXRayAalst1Dp">
+									<img style="background-color:#B0BC3C" alt="" src="//lt.morningstar.com/img/clear.gif" class="assetAllocationIcon" />Not classified
+								</th>
+								<td headers="msXRayAalst1L" class="Long">0.00</td>
+								<td headers="msXRayAalst1P" class="Short">0.00</td>
+								<td headers="msXRayAalst1N" class="Net">20.00</td>
+								<td headers="msXRayAalst1BA" class="Benchmark">0.00</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- end of AssetAllocationLongShortTable -->
+			</div>
+		</div>
+	</body>
+</html>

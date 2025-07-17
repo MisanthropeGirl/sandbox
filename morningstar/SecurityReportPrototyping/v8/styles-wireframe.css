@@ -1,0 +1,29 @@
+﻿section header {
+	display:-ms-flexbox;
+	display:-webkit-flex;
+	display:flex;
+	-ms-flex-pack:space-between;
+	-webkit-justify-content:space-between;
+	justify-content:space-between;
+}
+
+@media (min-width:800px){
+	.ms-flex-container {
+		display:-ms-flexbox;
+		display:-webkit-flex;
+		display:flex;
+	}
+	.ms-flex-item {
+		-ms-flex:1;
+		-webkit-flex:1;
+		flex:1;
+	}
+	.ms-flex-defined-width {
+		-ms-flex:none;
+		-webkit-flex:none;
+		flex:none;
+	}
+	.ms-defined-width-1-of-3 {
+		width:33.33333%
+	}
+}

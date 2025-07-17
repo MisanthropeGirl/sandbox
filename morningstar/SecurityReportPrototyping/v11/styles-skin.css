@@ -1,0 +1,256 @@
+﻿body {
+	color:#333;
+	font:75%/1.3125 Verdana,Helvetica,Arial,sans-serif;
+	margin:0.25rem 0.5rem;
+}
+a {
+	text-decoration:none;
+}
+*:not(.selected) a:hover:not(.selected) {
+	text-decoration:underline;
+}
+
+a.icon {
+	background-repeat:no-repeat;
+}
+a.icon-left {
+	background-position:left center;
+  padding-left:18px;
+}
+a.icon-right {
+	background-position:right center;
+  padding-right:18px !important;
+}
+a.glossary {
+  background-image:url("http://lt.morningstar.com/img/icons/question_mark.gif");
+}
+a.pdf {
+  background-image:url("http://lt.morningstar.com/img/icons/pdf_small.gif");
+}
+a.print {
+  background-image:url("http://lt.morningstar.com/img/icons/print.gif");
+  cursor:pointer;
+}
+table {
+	width:100%;
+}
+
+.hidden {
+	display:none;
+}
+
+/* navigation */
+nav ul  {
+	background-color:#eee;
+}
+nav ul li.selected {
+	background-color:#fff;
+}
+/*nav ul li:hover:not(.selected) a {
+	text-decoration:underline;
+}*/
+nav ul li a {
+	display:block;
+}
+@media (max-width:800px) {
+	nav ul li {
+		border:1px solid #999;
+		border-bottom-width:0;
+		text-decoration:none;
+	}
+	nav ul li:first-child.selected {
+		border-top-width:0;
+	}
+	nav ul li:last-child:not(.selected) {
+		border-bottom-width:1px;
+	}
+	nav ul li.selected {
+		border-left-width:0;
+		border-right-width:0;
+	}
+	nav ul li:hover:not(.selected) {
+		background-color:#fff;
+	}
+	nav ul li a {
+		padding:10px 0.5rem;
+	}
+}
+@media (min-width:800px) {
+	nav {
+		margin-left:24px;
+	}
+	nav ul {
+		display:-ms-flexbox;
+		display:-webkit-flex;
+		display:flex;
+		border-top:1px solid #ccc;
+		border-bottom:1px solid #999;
+		margin-bottom:12px;
+		padding:3px 5px 0;
+	}
+	nav ul li.selected {
+		border:1px solid #999;
+		border-bottom-width:0;
+		position:relative;
+		top:1px;
+	}
+	nav ul li a {
+		padding:7px 8px 6px;
+	}
+	nav ul li.selected a {
+		padding-top:6px;
+	}
+}
+
+/* tools */
+#msReportTools ul li a {
+	display:block;
+}
+@media (max-width:800px) {
+	#msReportTools ul li {
+		border:1px solid #999;
+		border-top-width:0;
+		padding:0 0.5rem;
+	}
+	#msReportTools ul li a {
+		padding:10px 18px 10px 0;
+		background-position:right center;
+	}
+
+}
+@media (min-width:800px) {
+	#msReportTools {
+		margin-left:24px;
+	}
+	#msReportTools ul {
+		display:-ms-flexbox;
+		display:-webkit-flex;
+		display:flex;
+		border-top:1px solid #ccc;
+	}
+	#msReportTools ul li a {
+		background-position:left center;
+		padding:3px 10px 3px 18px;
+	}
+}
+
+/* title */
+/* main > header {
+	display:-ms-flexbox;
+	display:-webkit-flex;
+	display:flex;
+	flex-flow:wrap;
+	-ms-flex-pack:space-between;
+	-webkit-justify-content:space-between;
+	justify-content:space-between;
+}
+main > header > * {
+	flex:auto;
+} */
+main > header h1 {
+	font-size:2em;
+	line-height:2;
+	margin-bottom:24px;
+}
+main > header h1 .security-name {
+	font-weight:bold;
+}
+/* main > header section {
+	flex:none;
+	width:100%;
+} */
+#msReportComparatorsList ul {
+	list-style-type:disc;
+	margin-bottom:12px;
+	padding-left:16px;
+}
+#msReportComparatorsList ul li span {
+	color:#333;
+}
+
+/* body */
+.ms-section {
+	margin-bottom:24px;
+}
+.ms-section > section:not([class]),
+.ms-section > div:not([class]) {
+  border-bottom:1px solid #CCCCCC;
+  margin-top:5px;
+  padding-bottom:5px;
+}
+.ms-section > section:last-child,
+.ms-section > div:last-child {
+	border-bottom:0;
+}
+
+#msReportPortfolioProfile > header,
+.ms-section header {
+  border-bottom: 1px solid #CCCCCC;
+  border-top:2px solid #797979;
+  padding:2px 0 12px;
+}
+.ms-section header h1 {
+  font-size:1.4em;
+  font-weight:bold;
+  line-height:1.43;
+}
+.ms-section section header {
+	border:0;
+  padding:10px 0 4px;;
+}
+.ms-section section header h1 {
+	font-size:1em;
+	font-weight:bold;
+  line-height:1.3125;
+}
+
+.ms-table thead th {
+	font-weight:bold;
+}
+.ms-table tr {
+	border-bottom:1px solid #ccc;
+}
+.ms-table tr > * {
+	line-height:1.55;
+	padding:2px 0 3px;
+	vertical-align:top;
+}
+.ms-table-numeric tr > *:not(:first-child),
+.ms-report-col-weight {
+	text-align:right;
+}
+#msAnnualReturns col:not(:first-child) {
+	width:16.2%
+}
+#msTrailingReturns col:not(:first-child) {
+	width:16%
+}
+#msKeyStats col:not(:first-child) {
+	width:45%
+}
+#msAssetAllocationLongShort col:not(:first-child),
+#msTopSections col:not(:first-child),
+#msTopRegions col:not(:first-child) {
+	width:25%
+}
+col.ms-report-col-sector {
+	width:30%;
+}
+col.ms-report-col-weight {
+	width:12%;
+}
+
+@media (min-width:800px) {
+	body {
+		font:68.75%/1.3125 Verdana,Helvetica,Arial,sans-serif;
+		margin:0.25rem 5rem;
+	}
+	main > header,
+	#msReportPortfolioProfile > header,
+	.ms-section {
+		margin-left:24px;
+	}
+	#msReportPortfolioProfile {
+		margin-left:0;
+	}
+}

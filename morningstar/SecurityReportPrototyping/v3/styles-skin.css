@@ -1,0 +1,24 @@
+﻿nav a {
+  background-color:rgba(255, 0, 0, 0.5);
+	color:#fff;
+  display:block;
+	padding:10px 0 10px 10px;
+	text-decoration:none;
+}
+nav a:hover {
+	background-color:rgba(0, 255, 0, 0.4);
+	color:#666;
+	-webkit-transition:height 0.5s ease-out;
+	transition:height 0.5s ease-out;
+}
+nav a.selected {
+	background-color:rgba(0, 255, 0, 0.4);
+	color:#666;
+}
+
+@media screen and (min-width:800px){
+	nav.horizontalNav a {
+		padding-left:0;
+		text-align:center;
+	}
+}

@@ -1,0 +1,35 @@
+﻿#msReport {
+	display:-ms-flexbox;
+	display:-webkit-flex;
+	display:flex;
+	-ms-flex-direction:column;
+	-webkit-flex-direction:column;
+	flex-direction:column;
+}
+
+@media (min-width:800px){
+	#msReport {
+		display:-ms-flexbox;
+		display:-webkit-flex;
+		display:flex;
+		-ms-flex-direction:row;
+		-webkit-flex-direction:row;
+		flex-direction:row;
+	}
+	#msReport div:first-child {
+		-ms-flex:1;
+		-webkit-flex:1;
+		flex:1;
+	}
+	#msReport div:nth-child(2) {
+		-ms-flex-order:-1;
+		-webkit-order:-1;
+		order:-1;
+		-ms-flex:0 0 160px;
+		-webkit-flex:0 0 160px;
+		flex:0 0 160px;
+	}
+}
+
+@media (min-width:1024px){
+}

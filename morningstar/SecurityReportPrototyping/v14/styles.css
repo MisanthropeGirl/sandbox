@@ -1,0 +1,71 @@
+﻿@import url("styles-reset.css");
+
+@-ms-viewport{
+	width:device-width;
+}
+@font-face {
+	font-family:'Morningstar Symbols Regular';
+	src:url('MorningstarSymbols_0.ttf');
+	src: url('MorningstarSymbols_0.eot?#iefix') format('embedded-opentype'), url('MorningstarSymbols_0.ttf') format('truetype');
+}
+@font-face {
+  font-family:'Glyphicons Halflings';
+  src:url('glyphicons-halflings-regular.ttf');
+	src: url('glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('glyphicons-halflings-regular.ttf') format('truetype');
+}
+
+body {
+	color:#333;
+	font:75%/1.3125 Verdana,Helvetica,Arial,sans-serif;
+	margin:1rem 5rem;
+}
+
+main > header {
+	margin-bottom:50px;
+}
+main > header h1 {
+	margin-bottom:20px;
+}
+
+section {
+	margin-bottom:50px;
+}
+section header {
+  border-bottom: 1px solid #CCCCCC;
+  border-top:2px solid #797979;
+  padding:2px 0 12px;
+	margin-bottom:5px;
+}
+header h1 {
+  font-size:1.4em;
+  font-weight:bold;
+  line-height:1.43;
+}
+
+section:nth-of-type(2) span {
+	font-family:'Morningstar Symbols Regular';
+	font-size:1rem;
+}
+
+footer {
+  border-top: 1px solid #CCCCCC;
+	margin-top:5px;
+}
+
+.glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.glyphicon-star:before {
+  content: "\e006";
+}
+.glyphicon-star-empty:before {
+  content: "\e007";
+}

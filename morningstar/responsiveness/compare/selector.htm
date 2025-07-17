@@ -1,0 +1,318 @@
+﻿<!DOCTYPE html>
+
+<!--[if IEMobile 7 ]> <html dir="ltr" lang="en-GB"class="no-js iem7"> <![endif]-->
+<!--[if lt IE 7 ]> <html dir="ltr" lang="en-GB" class="no-js ie6 oldie"> <![endif]-->
+<!--[if IE 7 ]> <html dir="ltr" lang="en-GB" class="no-js ie7 oldie"> <![endif]-->
+<!--[if IE 8 ]> <html dir="ltr" lang="en-GB" class="no-js ie8 oldie"> <![endif]-->
+<!--[if IE 9 ]> <html dir="ltr" lang="en-GB" class="no-js ie9 oldie"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html dir="ltr" lang="en-GB"><!--<![endif]-->
+	<head>
+		<title>Compare Selector</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="../../common/css/normalize_v3.0.1.css" rel="stylesheet" />
+		<style>
+			* {
+				box-sizing:border-box;
+			}
+			body {
+				font-family:Verdana, Helvetica, Arial;
+			}
+
+			#fundSelector {
+				display:-ms-flexbox;
+				display:-webkit-flex;;
+				display:flex;
+				-ms-flex-direction:column;
+				-webkit-flex-direction:column;
+				flex-direction:column;
+			}
+			#fundSelector .dataColumn {
+				display:-ms-flexbox;
+				display:-webkit-flex;
+				display:flex;
+				-ms-flex-direction:column;
+				-webkit-flex-direction:column;
+				flex-direction:column;
+
+				padding:1rem;
+			}
+			#fundSelector .dataColumn select {
+				margin-bottom:10px;
+			}
+			#fundSelector .dataColumn textarea {
+				height:1.7em;
+				margin-bottom:2px;
+			}
+			#fundSelector .dataColumn .iconContainer {
+				display:-ms-flexbox;
+				display:-webkit-flex;
+				display:flex;
+				-ms-flex-pack:flex-end;
+				-webkit-justify-content:flex-end;
+				justify-content:flex-end;
+			}
+			#fundSelector .titleColumn {
+				padding:1rem;
+			}
+			#fundSelector .titleColumn h3 {
+				margin-top:0;
+			}
+
+			img.msLookupIcon {
+				background-image:url("http://lt.morningstar.com/img/icons/securityLookup.gif");
+				background-repeat:no-repeat;
+				height:15px;
+				top:0;
+				width:18px;
+			}
+
+			@media (min-width:768px) {
+				body {
+					font-size:0.6875rem;
+					line-height:1.3125;
+				}
+
+				#fundSelector {
+					-ms-flex-direction:row;
+					-webkit-flex-direction:row;
+					flex-direction:row;
+				}
+				#fundSelector .dataColumn {
+					-ms-flex:1;
+					-webkit-flex:1;
+					flex:1;
+					padding:10px 0;
+					min-width:16%;
+				}
+				#fundSelector .dataColumn select {
+					width:98%;
+				}
+				#fundSelector .dataColumn textarea {
+					height:auto;
+					width:98%;
+				}
+				#fundSelector .titleColumn {
+					-ms-flex:1;
+					-webkit-flex:1;
+					flex:1;
+					min-width:20%;
+					padding:10px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="msBox clearfix noPrint" id="fundSelector">
+			<div class="titleColumn">
+				<h3>Choose Funds</h3>
+				<p class="instructions">Select a Universe and type the name of a fund in the fields on the right or press the lookup button.</p>
+			</div>
+			<div class="dataColumn" id="fundSelector1">
+				<select size="1" name="universeId1" id="universeId1">
+					<option selected="selected" value="FOAUT$$ALL">Austria OE</option>
+					<option value="FOBEL$$ALL">Belgian OE</option>
+					<option value="FOCHN$$ALL">China OE</option>
+					<option value="FODNK$$ALL">Denmark OE</option>
+					<option value="FOFIN$$ALL">Finland OE</option>
+					<option value="FOFRA$$ALL">France OE</option>
+					<option value="FODEU$$ALL">Germany OE</option>
+					<option value="FOHKG$$ALL">Hong Kong OE</option>
+					<option value="FOIND$$ALL">India OE</option>
+					<option value="FOIRL$$ALL">Irish OE</option>
+					<option value="FOITA$$ALL">Italy OE</option>
+					<option value="FOJPN$$ALL">Japan OE</option>
+					<option value="FOMEX$$ALL">Mexico OE</option>
+					<option value="FONLD$$ALL">Netherlands OE</option>
+					<option value="FONOR$$ALL">Norway OE</option>
+					<option value="FOPRT$$ALL">Portugal OE</option>
+					<option value="FOSGP$$ALL">Singapore OE</option>
+					<option value="FOZAF$$ALL">South Africa OE</option>
+					<option value="FOESP$$ALL">Spain OE</option>
+					<option value="FOSWE$$ALL">Sweden OE</option>
+					<option value="FOCHE$$ALL">Switzerland OE</option>
+					<option value="FOGBR$$ALL">UK OE</option>
+					<option value="CEEXG$XLON">CEEXG$XLON</option>
+					<option value="ETEXG$XHKG">Hong Kong Stock Exchange</option>
+					<option value="SAGBR$$MTH">UK L&amp;P</option>
+					<option value="FOAUS$$ALL">FOAUS$$ALL</option>
+					<option value="FOCAN$$ALL">FOCAN$$ALL</option>
+					<option value="FOUSA$$ALL">FOUSA$$ALL</option>
+				</select>
+				<input type="hidden" value="" name="fundId1" id="fundId1">
+				<textarea onblur="defaultInputText(this, 'blur', 'Select a universe and enter name or ISIN');" onfocus="defaultInputText(this, 'focus', 'Select a universe and enter name or ISIN');" rows="4" cols="18" name="fundName1" id="fundName1" autocomplete="off" class="ac_input">Select a universe and enter name or ISIN</textarea>
+				<script type="text/javascript">initAutoComplete(1)</script>
+				<div class="iconContainer clearfix">
+					<script type="text/javascript">showSecurityLookupV2(1);</script>
+					<div class="lookupIconContainer">
+						<img alt="Lookup" class="pointer msLookupIcon" id="imgSearch1" src="http://lt.morningstar.com/img/clear.gif">
+					</div>
+				</div>
+			</div>
+			<div class="dataColumn" id="fundSelector2">
+				<select size="1" name="universeId2" id="universeId2">
+					<option selected="selected" value="FOAUT$$ALL">Austria OE</option>
+					<option value="FOBEL$$ALL">Belgian OE</option>
+					<option value="FOCHN$$ALL">China OE</option>
+					<option value="FODNK$$ALL">Denmark OE</option>
+					<option value="FOFIN$$ALL">Finland OE</option>
+					<option value="FOFRA$$ALL">France OE</option>
+					<option value="FODEU$$ALL">Germany OE</option>
+					<option value="FOHKG$$ALL">Hong Kong OE</option>
+					<option value="FOIND$$ALL">India OE</option>
+					<option value="FOIRL$$ALL">Irish OE</option>
+					<option value="FOITA$$ALL">Italy OE</option>
+					<option value="FOJPN$$ALL">Japan OE</option>
+					<option value="FOMEX$$ALL">Mexico OE</option>
+					<option value="FONLD$$ALL">Netherlands OE</option>
+					<option value="FONOR$$ALL">Norway OE</option>
+					<option value="FOPRT$$ALL">Portugal OE</option>
+					<option value="FOSGP$$ALL">Singapore OE</option>
+					<option value="FOZAF$$ALL">South Africa OE</option>
+					<option value="FOESP$$ALL">Spain OE</option>
+					<option value="FOSWE$$ALL">Sweden OE</option>
+					<option value="FOCHE$$ALL">Switzerland OE</option>
+					<option value="FOGBR$$ALL">UK OE</option>
+					<option value="CEEXG$XLON">CEEXG$XLON</option>
+					<option value="ETEXG$XHKG">Hong Kong Stock Exchange</option>
+					<option value="SAGBR$$MTH">UK L&amp;P</option>
+					<option value="FOAUS$$ALL">FOAUS$$ALL</option>
+					<option value="FOCAN$$ALL">FOCAN$$ALL</option>
+					<option value="FOUSA$$ALL">FOUSA$$ALL</option>
+				</select>
+				<input type="hidden" value="" name="fundId2" id="fundId2">
+				<textarea onblur="defaultInputText(this, 'blur', 'Select a universe and enter name or ISIN');" onfocus="defaultInputText(this, 'focus', 'Select a universe and enter name or ISIN');" rows="4" cols="18" name="fundName2" id="fundName2" autocomplete="off" class="ac_input">Select a universe and enter name or ISIN</textarea>
+				<script type="text/javascript">initAutoComplete(2)</script>
+				<div class="iconContainer clearfix">
+					<script type="text/javascript">showSecurityLookupV2(2);</script>
+					<div class="lookupIconContainer">
+						<img alt="Lookup" class="pointer msLookupIcon" id="imgSearch2" src="http://lt.morningstar.com//img/clear.gif">
+					</div>
+				</div>
+			</div>
+			<div class="dataColumn" id="fundSelector3">
+				<select size="1" name="universeId3" id="universeId3">
+					<option selected="selected" value="FOAUT$$ALL">Austria OE</option>
+					<option value="FOBEL$$ALL">Belgian OE</option>
+					<option value="FOCHN$$ALL">China OE</option>
+					<option value="FODNK$$ALL">Denmark OE</option>
+					<option value="FOFIN$$ALL">Finland OE</option>
+					<option value="FOFRA$$ALL">France OE</option>
+					<option value="FODEU$$ALL">Germany OE</option>
+					<option value="FOHKG$$ALL">Hong Kong OE</option>
+					<option value="FOIND$$ALL">India OE</option>
+					<option value="FOIRL$$ALL">Irish OE</option>
+					<option value="FOITA$$ALL">Italy OE</option>
+					<option value="FOJPN$$ALL">Japan OE</option>
+					<option value="FOMEX$$ALL">Mexico OE</option>
+					<option value="FONLD$$ALL">Netherlands OE</option>
+					<option value="FONOR$$ALL">Norway OE</option>
+					<option value="FOPRT$$ALL">Portugal OE</option>
+					<option value="FOSGP$$ALL">Singapore OE</option>
+					<option value="FOZAF$$ALL">South Africa OE</option>
+					<option value="FOESP$$ALL">Spain OE</option>
+					<option value="FOSWE$$ALL">Sweden OE</option>
+					<option value="FOCHE$$ALL">Switzerland OE</option>
+					<option value="FOGBR$$ALL">UK OE</option>
+					<option value="CEEXG$XLON">CEEXG$XLON</option>
+					<option value="ETEXG$XHKG">Hong Kong Stock Exchange</option>
+					<option value="SAGBR$$MTH">UK L&amp;P</option>
+					<option value="FOAUS$$ALL">FOAUS$$ALL</option>
+					<option value="FOCAN$$ALL">FOCAN$$ALL</option>
+					<option value="FOUSA$$ALL">FOUSA$$ALL</option>
+				</select>
+				<input type="hidden" value="" name="fundId3" id="fundId3">
+				<textarea onblur="defaultInputText(this, 'blur', 'Select a universe and enter name or ISIN');" onfocus="defaultInputText(this, 'focus', 'Select a universe and enter name or ISIN');" rows="4" cols="18" name="fundName3" id="fundName3" autocomplete="off" class="ac_input">Select a universe and enter name or ISIN</textarea>
+				<script type="text/javascript">initAutoComplete(3)</script>
+				<div class="iconContainer clearfix">
+					<script type="text/javascript">showSecurityLookupV2(3);</script>
+					<div class="lookupIconContainer">
+						<img alt="Lookup" class="pointer msLookupIcon" id="imgSearch3" src="http://lt.morningstar.com//img/clear.gif">
+					</div>
+				</div>
+			</div>
+			<div class="dataColumn" id="fundSelector4">
+				<select size="1" name="universeId4" id="universeId4">
+					<option selected="selected" value="FOAUT$$ALL">Austria OE</option>
+					<option value="FOBEL$$ALL">Belgian OE</option>
+					<option value="FOCHN$$ALL">China OE</option>
+					<option value="FODNK$$ALL">Denmark OE</option>
+					<option value="FOFIN$$ALL">Finland OE</option>
+					<option value="FOFRA$$ALL">France OE</option>
+					<option value="FODEU$$ALL">Germany OE</option>
+					<option value="FOHKG$$ALL">Hong Kong OE</option>
+					<option value="FOIND$$ALL">India OE</option>
+					<option value="FOIRL$$ALL">Irish OE</option>
+					<option value="FOITA$$ALL">Italy OE</option>
+					<option value="FOJPN$$ALL">Japan OE</option>
+					<option value="FOMEX$$ALL">Mexico OE</option>
+					<option value="FONLD$$ALL">Netherlands OE</option>
+					<option value="FONOR$$ALL">Norway OE</option>
+					<option value="FOPRT$$ALL">Portugal OE</option>
+					<option value="FOSGP$$ALL">Singapore OE</option>
+					<option value="FOZAF$$ALL">South Africa OE</option>
+					<option value="FOESP$$ALL">Spain OE</option>
+					<option value="FOSWE$$ALL">Sweden OE</option>
+					<option value="FOCHE$$ALL">Switzerland OE</option>
+					<option value="FOGBR$$ALL">UK OE</option>
+					<option value="CEEXG$XLON">CEEXG$XLON</option>
+					<option value="ETEXG$XHKG">Hong Kong Stock Exchange</option>
+					<option value="SAGBR$$MTH">UK L&amp;P</option>
+					<option value="FOAUS$$ALL">FOAUS$$ALL</option>
+					<option value="FOCAN$$ALL">FOCAN$$ALL</option>
+					<option value="FOUSA$$ALL">FOUSA$$ALL</option>
+				</select>
+				<input type="hidden" value="" name="fundId4" id="fundId4">
+				<textarea onblur="defaultInputText(this, 'blur', 'Select a universe and enter name or ISIN');" onfocus="defaultInputText(this, 'focus', 'Select a universe and enter name or ISIN');" rows="4" cols="18" name="fundName4" id="fundName4" autocomplete="off" class="ac_input">Select a universe and enter name or ISIN</textarea>
+				<script type="text/javascript">initAutoComplete(4)</script>
+				<div class="iconContainer clearfix">
+					<script type="text/javascript">showSecurityLookupV2(4);</script>
+					<div class="lookupIconContainer">
+						<img alt="Lookup" class="pointer msLookupIcon" id="imgSearch4" src="http://lt.morningstar.com//img/clear.gif">
+					</div>
+				</div>
+			</div>
+			<div class="dataColumn" id="fundSelector5">
+				<select size="1" name="universeId5" id="universeId5">
+					<option selected="selected" value="FOAUT$$ALL">Austria OE</option>
+					<option value="FOBEL$$ALL">Belgian OE</option>
+					<option value="FOCHN$$ALL">China OE</option>
+					<option value="FODNK$$ALL">Denmark OE</option>
+					<option value="FOFIN$$ALL">Finland OE</option>
+					<option value="FOFRA$$ALL">France OE</option>
+					<option value="FODEU$$ALL">Germany OE</option>
+					<option value="FOHKG$$ALL">Hong Kong OE</option>
+					<option value="FOIND$$ALL">India OE</option>
+					<option value="FOIRL$$ALL">Irish OE</option>
+					<option value="FOITA$$ALL">Italy OE</option>
+					<option value="FOJPN$$ALL">Japan OE</option>
+					<option value="FOMEX$$ALL">Mexico OE</option>
+					<option value="FONLD$$ALL">Netherlands OE</option>
+					<option value="FONOR$$ALL">Norway OE</option>
+					<option value="FOPRT$$ALL">Portugal OE</option>
+					<option value="FOSGP$$ALL">Singapore OE</option>
+					<option value="FOZAF$$ALL">South Africa OE</option>
+					<option value="FOESP$$ALL">Spain OE</option>
+					<option value="FOSWE$$ALL">Sweden OE</option>
+					<option value="FOCHE$$ALL">Switzerland OE</option>
+					<option value="FOGBR$$ALL">UK OE</option>
+					<option value="CEEXG$XLON">CEEXG$XLON</option>
+					<option value="ETEXG$XHKG">Hong Kong Stock Exchange</option>
+					<option value="SAGBR$$MTH">UK L&amp;P</option>
+					<option value="FOAUS$$ALL">FOAUS$$ALL</option>
+					<option value="FOCAN$$ALL">FOCAN$$ALL</option>
+					<option value="FOUSA$$ALL">FOUSA$$ALL</option>
+				</select>
+				<input type="hidden" value="" name="fundId5" id="fundId5">
+				<textarea onblur="defaultInputText(this, 'blur', 'Select a universe and enter name or ISIN');" onfocus="defaultInputText(this, 'focus', 'Select a universe and enter name or ISIN');" rows="4" cols="18" name="fundName5" id="fundName5" autocomplete="off" class="ac_input">Select a universe and enter name or ISIN</textarea>
+				<script type="text/javascript">initAutoComplete(5)</script>
+				<div class="iconContainer clearfix">
+					<script type="text/javascript">showSecurityLookupV2(5);</script>
+					<div class="lookupIconContainer">
+						<img alt="Lookup" class="pointer msLookupIcon" id="imgSearch5" src="http://lt.morningstar.com//img/clear.gif">
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

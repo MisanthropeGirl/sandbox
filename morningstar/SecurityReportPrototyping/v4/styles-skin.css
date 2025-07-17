@@ -1,0 +1,39 @@
+﻿header > *:first-child,
+nav > *:first-child,
+section > *:first-child {
+	padding:10px;
+}
+header > *:first-child,
+#msReportBody > *:first-child {
+	background-color:beige;
+	border-radius:10px;
+	margin:10px 10px 0;
+}
+
+ul a {
+  background-color:rgba(255, 0, 0, 0.5);
+	color:#fff;
+  display:block;
+	padding:10px 0 10px 10px;
+	text-decoration:none;
+}
+ul a:hover {
+	background-color:rgba(0, 255, 0, 0.4);
+	color:#666;
+	-webkit-transition:height 0.5s ease-out;
+	transition:height 0.5s ease-out;
+}
+ul a.selected {
+	background-color:rgba(0, 255, 0, 0.4);
+	color:#666;
+}
+
+@media screen and (min-width:800px){
+	nav.horizontalNav a {
+		padding-left:0;
+		text-align:center;
+	}
+	#msReportTools a {
+		padding-right:10px;
+	}
+}

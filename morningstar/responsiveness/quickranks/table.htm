@@ -1,0 +1,491 @@
+﻿<!DOCTYPE html>
+
+<!--[if IEMobile 7 ]> <html dir="ltr" lang="en-GB"class="no-js iem7"> <![endif]-->
+<!--[if lt IE 7 ]> <html dir="ltr" lang="en-GB" class="no-js ie6 oldie"> <![endif]-->
+<!--[if IE 7 ]> <html dir="ltr" lang="en-GB" class="no-js ie7 oldie"> <![endif]-->
+<!--[if IE 8 ]> <html dir="ltr" lang="en-GB" class="no-js ie8 oldie"> <![endif]-->
+<!--[if IE 9 ]> <html dir="ltr" lang="en-GB" class="no-js ie9 oldie"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html dir="ltr" lang="en-GB"><!--<![endif]-->
+	<head>
+		<title>Table</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="../../common/css/normalize_v3.0.1.css" rel="stylesheet" />
+		<style>
+			body {
+				font-family:Verdana, Helvetica, Arial;
+				margin:10px;
+			}
+
+			table {
+				width:100%;
+			}
+			caption, th {
+				text-align: left;
+			}
+			td, th {
+				line-height: 1.55;
+				overflow: hidden;
+			}
+
+			.clearfix {
+				clear:both;
+				content:"";
+				display:table;
+			}
+			.sr-only {
+				position:absolute;
+				width:1px;
+				height:1px;
+				border:0;
+				margin:-1px;
+				padding:0;
+				overflow:hidden;
+				clip:rect(0,0,0,0);
+			}
+			.gridView {
+				table-layout:fixed;
+			}
+			.gridView thead, .gridHeader {
+				background-color:#fff;
+			}
+			.gridHeaderUnderline th {
+				border-bottom:1px solid #919191;
+			}
+			.gridView thead *, .gridHeader * {
+				color:#828282;
+				font-weight:normal;
+			}
+			.gridView thead th, .gridHeader th {
+				padding:5px 0 5px 5px;
+				vertical-align:top;
+				word-wrap:break-word;
+			}
+
+			.gridItem a {
+				text-decoration:none;
+			}
+			.gridItem td {
+				line-height:20px;
+				padding:2px 0 2px 5px;
+				vertical-align:top;
+			}
+			.gridItem td.shrink,
+			.gridItem td.Shrink {
+				-moz-binding:url("/xml/ellipsis.xml#ellipsis");
+				overflow:hidden;
+				text-overflow:ellipsis;
+				white-space:nowrap;
+			}
+			.gridItem td.shrink a, .gridItem td.Shrink a {
+				-moz-binding:url("/xml/ellipsis.xml#ellipsis");
+			}
+
+			.gridAlternateItem {
+				background-color:#e6f0fa;
+			}
+
+			.gridCheckbox {
+				padding-left:3px !important;
+				padding-right:3px !important;
+				text-align:center;
+			}
+			.gridPDFButton {
+				padding-left:3px !important;
+				padding-right:3px !important;
+				text-align:center;
+			}
+			
+			td.gridStarRating, td.gridStarRatingHighlight {
+				line-height:1;
+				vertical-align:middle;
+			}
+			td.gridPDFButton a {
+				background-image: url("//lt.morningstar.com/img/pdf_small.gif");
+				background-repeat:no-repeat;
+				cursor:pointer;
+				display:block;
+				height:100%;
+				width:100%;
+			}
+
+			th.gridCategoryName {
+				width:20%;
+			}
+			th.gridCheckbox {
+				width:16px;
+			}
+			th.gridClientFund {
+				width:1%;
+			}
+			th.gridClosePrice {
+				width:22%;
+			}
+			th.gridClosePriceCurrency {
+				width:11%;
+			}
+			th.gridPDFButton {
+				width:19px;
+			}
+			th.gridStarRating {
+				width:11%;
+			}
+			th.gridTER {
+				width:9%;
+			}
+			th.gridYTD {
+				width:8%;
+			}
+
+			@media (max-width:767px) {
+				.tabSnapshot tr > *:nth-child(1),
+				.tabSnapshot tr > *:nth-child(2),
+				.tabSnapshot tr > *:nth-child(3),
+				.tabSnapshot tr > *:nth-child(5)
+				{
+					display:none;
+				}
+			}
+			@media (max-width:640px) {
+				th.gridClosePrice {
+					width:12%;
+				}
+				th.gridClosePriceCurrency {
+					width:6%;
+				}
+				th.gridStarRating {
+					width:16%;
+				}
+				th.gridTER {
+					width:12%;
+				}
+				th.gridYTD {
+					width:10%;
+				}
+			}
+			@media (max-width:600px) {
+				th.gridClosePrice {
+					width:14%;
+				}
+				th.gridClosePriceCurrency {
+					width:7%;
+				}
+				th.gridStarRating {
+					width:17%;
+				}
+				th.gridTER {
+					width:12%;
+				}
+				th.gridYTD {
+					width:10%;
+				}
+			}
+			@media (max-width:533px) {
+				.tabSnapshot tr > *:nth-child(6)
+				{
+					display:none;
+				}
+				th.gridClosePrice {
+					width:15%;
+				}
+				th.gridClosePriceCurrency {
+					width:7%;
+				}
+				th.gridTER {
+					width:14%;
+				}
+				th.gridYTD {
+					width:12%;
+				}
+			}
+			@media (max-width:480px) {
+				th.gridClosePrice {
+					width:17%;
+				}
+				th.gridClosePriceCurrency {
+					width:8%;
+				}
+				th.gridTER {
+					width:16%;
+				}
+				th.gridYTD {
+					width:13%;
+				}
+			}
+			@media (max-width:400px) {
+				.tabSnapshot tr > *:nth-child(8)
+				{
+					display:none;
+				}
+				th.gridClosePrice {
+					width:21%;
+				}
+				th.gridClosePriceCurrency {
+					width:10%;
+				}
+				th.gridYTD {
+					width:15%;
+				}
+			}
+			@media (max-width:360px) {
+				.tabSnapshot tr > *:nth-child(7)
+				{
+					display:none;
+				}
+				th.gridClosePrice {
+					width:22%;
+				}
+				th.gridClosePriceCurrency {
+					width:11%;
+				}
+			}
+			@media (max-width:320px) {
+				.tabSnapshot tr > *:nth-child(9),
+				.tabSnapshot tr > *:nth-child(10)
+				{
+					display:none;
+				}
+			}
+
+			@media (min-width:768px) {
+				body {
+					font-size:0.6875rem;
+					line-height:1.3125;
+				}
+				th.gridClosePrice {
+					width:9%;
+				}
+				th.gridClosePriceCurrency {
+					width:5%;
+				}
+			}
+		</style>
+	</head>
+	<body>
+
+		<table class="gridView tabSnapshot">
+			<tbody>
+				<tr class="gridHeader gridHeaderUnderline">
+					<th scope="col" class="gridCheckbox">&nbsp;</th>
+					<th scope="col" id="colClientFund" class="gridHeaderText gridClientFund">
+						<a href="#"></a>
+					</th>
+					<th scope="col" id="col_Id" class="gridHeaderText gridPDFButton gridHeadernoBackground">
+						<a href="_Id')"></a>
+					</th>
+					<th scope="col" id="colLegalName" class="gridHeaderText gridFundName Shrink">
+						<a href="#">Name</a>
+						<a href="#" class="gridArrow gridArrowASC"><img style="border-width:0px;" alt="" src="//lt.morningstar.com/img/clear.gif"></a>
+					</th>
+					<th scope="col" id="colCategoryName" class="gridHeaderText gridCategoryName">
+						<a href="#">Morningstar&reg; Category</a>
+						<a href="#" class="gridArrow gridArrowUnsorted"><img style="border-width:0px;" alt="" src="//lt.morningstar.com/img/clear.gif"></a>
+					</th>
+					<th scope="col" id="colStarRatingM255" class="gridHeaderText gridStarRating">
+						<a href="#">Morningstar<br>Rating&trade;</a>
+						<a href="#" class="gridArrow gridArrowUnsorted"><img style="border-width:0px;" alt="" src="//lt.morningstar.com/img/clear.gif"></a>
+					</th>
+					<th scope="col" id="colReturnM0" class="gridHeaderNumeric gridYTD" title="YTD Return">
+						<a href="#">YTD<br>Return<br>%</a>
+						<a href="#" class="gridArrow gridArrowUnsorted"><img style="border-width:0px;" alt="" src="//lt.morningstar.com/img/clear.gif"></a>
+					</th>
+					<th scope="col" id="colExpenseRatio" class="gridHeaderNumeric gridTER">
+						<a href="#">Total<br>Expense<br>Ratio%</a>
+						<a href="#" class="gridArrow gridArrowUnsorted"><img style="border-width:0px;" alt="" src="//lt.morningstar.com/img/clear.gif"></a>
+					</th>
+					<th scope="col" id="colClosePrice" class="gridHeaderNumeric gridClosePrice" title="Close Price">Last<br>Close</th>
+					<th scope="col" id="colPriceCurrencyId" class="gridHeaderText gridClosePriceCurrency" title="Price Currency">
+						<a href="#"></a>
+					</th>
+				</tr>
+				<tr id="rowF0GBR06KY1" class="gridItem gridItemFirst">
+					<td class="gridCheckbox">
+						<input type="checkbox" name="ctl00$ContentPlaceHolder1$aFundQuickrankControl$gridResult$ctl02$chkFund" id="ctl00_ContentPlaceHolder1_aFundQuickrankControl_gridResult_ctl02_chkFund">
+					</td>
+					<td class="gridClientFund msDataIsNotClientFund">&nbsp;</td>
+					<td class="msDataText gridPDFButton">
+						<a target="_blank" href="#">&nbsp;</a>
+					</td>
+					<td class="msDataText gridFundName Shrink">
+						<a target="_self" href="#">1611_CG Portfolio Fund plc A</a>
+					</td>
+					<td class="msDataText gridCategoryName Shrink" title="Other Inflation-Linked Bond">Other Inflation-Linked Bond</td>
+					<td class="msDataText gridStarRating">
+						<span>Not Rated</span>
+					</td>
+					<td class="msDataNumeric gridYTD">
+						<span class="ReturnPositive">1.66</span>
+					</td>
+					<td class="msDataNumeric gridTER">-</td>
+					<td class="msDataNumeric gridClosePrice" title="18/07/2014">166.43</td>
+					<td class="msDataText gridClosePriceCurrency">
+						<span>GBP</span>
+					</td>
+				</tr>
+				<tr id="rowF00000SJQF" class="gridItem gridAlternateItem">
+					<td class="gridCheckbox">
+						<input type="checkbox" name="ctl00$ContentPlaceHolder1$aFundQuickrankControl$gridResult$ctl03$chkFund" id="ctl00_ContentPlaceHolder1_aFundQuickrankControl_gridResult_ctl03_chkFund">
+					</td>
+					<td class="gridClientFund msDataIsNotClientFund">&nbsp;</td>
+					<td class="msDataText gridPDFButton">
+						<a target="_blank" href="#">&nbsp;</a></td>
+					<td class="msDataText gridFundName Shrink"><a target="_self" href="#" title="2CG European Capital Growth Fund I EUR Inc">2CG European Capital Growth Fund I EUR Inc</a></td>
+					<td class="msDataText gridCategoryName Shrink" title="Europe ex-UK Large-Cap Equity">Europe ex-UK Large-Cap Equity</td>
+					<td class="msDataText gridStarRating"><img style="border-width:0px;" alt="" src="//lt.morningstar.com/img/5stars.gif"></td>
+					<td class="msDataNumeric gridYTD">
+						<span class="ReturnNegative">-1.19</span>
+					</td>
+					<td class="msDataNumeric gridTER">1.41</td>
+					<td class="msDataNumeric gridClosePrice" title="23/07/2014">1.99</td>
+					<td class="msDataText gridClosePriceCurrency ">
+						<span>EUR</span>
+					</td>
+				</tr>
+				<tr id="rowF00000SJQH" class="gridItem">
+					<td class="gridCheckbox">
+						<input type="checkbox" name="ctl00$ContentPlaceHolder1$aFundQuickrankControl$gridResult$ctl04$chkFund" id="ctl00_ContentPlaceHolder1_aFundQuickrankControl_gridResult_ctl04_chkFund">
+					</td>
+					<td class="gridClientFund msDataIsNotClientFund">&nbsp;</td>
+					<td class="msDataText gridPDFButton">
+						<a target="_blank" href="#">&nbsp;</a>
+					</td>
+					<td class="msDataText gridFundName Shrink">
+						<a target="_self" href="#" title="2CG European Capital Growth Fund I GBP Inc">2CG European Capital Growth Fund I GBP Inc</a>
+					</td>
+					<td class="msDataText gridCategoryName Shrink" title="Europe ex-UK Large-Cap Equity">Europe ex-UK Large-Cap Equity</td>
+					<td class="msDataText gridStarRating"><span>Not Rated</span></td>
+					<td class="msDataNumeric gridYTD"><span class="ReturnNegative">-1.25</span></td>
+					<td class="msDataNumeric gridTER">1.43</td>
+					<td class="msDataNumeric gridClosePrice" title="23/07/2014">1.29</td>
+					<td class="msDataText gridClosePriceCurrency "><span>GBP</span></td>
+				</tr>
+				<tr id="rowF00000SJQE" class="gridItem gridAlternateItem">
+					<td class="gridCheckbox">
+						<input type="checkbox" name="ctl00$ContentPlaceHolder1$aFundQuickrankControl$gridResult$ctl05$chkFund" id="ctl00_ContentPlaceHolder1_aFundQuickrankControl_gridResult_ctl05_chkFund">
+					</td>
+					<td class="gridClientFund msDataIsNotClientFund">&nbsp;</td>
+					<td class="msDataText gridPDFButton">
+						<a target="_blank" href="#">&nbsp;</a>
+					</td>
+					<td class="msDataText gridFundName Shrink">
+						<a target="_self" href="#" title="2CG European Capital Growth Fund R EUR Inc">2CG European Capital Growth Fund R EUR Inc</a>
+					</td>
+					<td class="msDataText gridCategoryName Shrink" title="Europe ex-UK Large-Cap Equity">Europe ex-UK Large-Cap Equity</td>
+					<td class="msDataText gridStarRating"><img style="border-width:0px;" alt="" src="//lt.morningstar.com/img/4stars.gif"></td>
+					<td class="msDataNumeric gridYTD"><span class="ReturnNegative">-1.46</span></td>
+					<td class="msDataNumeric gridTER">1.92</td>
+					<td class="msDataNumeric gridClosePrice" title="23/07/2014">1.94</td>
+					<td class="msDataText gridClosePriceCurrency "><span>EUR</span></td>
+				</tr>
+				<tr id="rowF00000SJQG" class="gridItem">
+					<td class="gridCheckbox">
+						<input type="checkbox" name="ctl00$ContentPlaceHolder1$aFundQuickrankControl$gridResult$ctl06$chkFund" id="ctl00_ContentPlaceHolder1_aFundQuickrankControl_gridResult_ctl06_chkFund">
+					</td>
+					<td class="gridClientFund msDataIsNotClientFund">&nbsp;</td>
+					<td class="msDataText gridPDFButton">
+						<a target="_blank" href="#">&nbsp;</a>
+					</td>
+					<td class="msDataText gridFundName Shrink">
+						<a target="_self" href="#" title="2CG European Capital Growth Fund R GBP Inc">2CG European Capital Growth Fund R GBP Inc</a>
+					</td>
+					<td class="msDataText gridCategoryName Shrink" title="Europe ex-UK Large-Cap Equity">Europe ex-UK Large-Cap Equity</td>
+					<td class="msDataText gridStarRating"><span>Not Rated</span></td>
+					<td class="msDataNumeric gridYTD"><span class="ReturnZero">-</span></td>
+					<td class="msDataNumeric gridTER">-</td>
+					<td class="msDataNumeric gridClosePrice" title="23/07/2014">122.17</td>
+					<td class="msDataText gridClosePriceCurrency "><span>GBP</span></td>
+				</tr>
+				<tr id="rowF00000SJQJ" class="gridItem gridAlternateItem">
+					<td class="gridCheckbox">
+						<input type="checkbox" name="ctl00$ContentPlaceHolder1$aFundQuickrankControl$gridResult$ctl07$chkFund" id="ctl00_ContentPlaceHolder1_aFundQuickrankControl_gridResult_ctl07_chkFund">
+					</td>
+					<td class="gridClientFund msDataIsNotClientFund">&nbsp;</td>
+					<td class="msDataText gridPDFButton">
+						<a target="_blank" href="#">&nbsp;</a>
+					</td>
+					<td class="msDataText gridFundName Shrink">
+						<a target="_self" href="#" title="2CG European Income Fund A GBP Inc">2CG European Income Fund A GBP Inc</a>
+					</td>
+					<td class="msDataText gridCategoryName Shrink" title="Europe ex-UK Large-Cap Equity">Europe ex-UK Large-Cap Equity</td>
+					<td class="msDataText gridStarRating"><img style="border-width:0px;" alt="" src="//lt.morningstar.com/img/3stars.gif"></td>
+					<td class="msDataNumeric gridYTD"><span class="ReturnPositive">1.44</span></td>
+					<td class="msDataNumeric gridTER">1.57</td>
+					<td class="msDataNumeric gridClosePrice" title="23/07/2014">1.36</td>
+					<td class="msDataText gridClosePriceCurrency "><span>GBP</span></td>
+				</tr>
+				<tr id="rowF00000SJQK" class="gridItem">
+					<td class="gridCheckbox">
+						<input type="checkbox" name="ctl00$ContentPlaceHolder1$aFundQuickrankControl$gridResult$ctl08$chkFund" id="ctl00_ContentPlaceHolder1_aFundQuickrankControl_gridResult_ctl08_chkFund">
+					</td>
+					<td class="gridClientFund msDataIsNotClientFund">&nbsp;</td>
+					<td class="msDataText gridPDFButton">
+						<a target="_blank" href="#">&nbsp;</a>
+					</td>
+					<td class="msDataText gridFundName Shrink">
+						<a target="_self" href="#" title="2CG European Income Fund B GBP Inc">2CG European Income Fund B GBP Inc</a>
+					</td>
+					<td class="msDataText gridCategoryName Shrink" title="Europe ex-UK Large-Cap Equity">Europe ex-UK Large-Cap Equity</td>
+					<td class="msDataText gridStarRating"><img style="border-width:0px;" alt="" src="//lt.morningstar.com/img/3stars.gif"></td>
+					<td class="msDataNumeric gridYTD"><span class="ReturnPositive">1.61</span></td>
+					<td class="msDataNumeric gridTER">1.30</td>
+					<td class="msDataNumeric gridClosePrice" title="23/07/2014">1.38</td>
+					<td class="msDataText gridClosePriceCurrency "><span>GBP</span></td>
+				</tr>
+				<tr id="rowF00000SJQI" class="gridItem gridAlternateItem">
+					<td class="gridCheckbox">
+						<input type="checkbox" name="ctl00$ContentPlaceHolder1$aFundQuickrankControl$gridResult$ctl09$chkFund" id="ctl00_ContentPlaceHolder1_aFundQuickrankControl_gridResult_ctl09_chkFund">
+					</td>
+					<td class="gridClientFund msDataIsNotClientFund">&nbsp;</td>
+					<td class="msDataText gridPDFButton">
+						<a target="_blank" href="#">&nbsp;</a>
+					</td>
+					<td class="msDataText gridFundName Shrink">
+						<a target="_self" href="#" title="2CG European Income Fund R GBP Inc">2CG European Income Fund R GBP Inc</a>
+					</td>
+					<td class="msDataText gridCategoryName Shrink" title="Europe ex-UK Large-Cap Equity">Europe ex-UK Large-Cap Equity</td>
+					<td class="msDataText gridStarRating"><img style="border-width:0px;" alt="" src="//lt.morningstar.com/img/3stars.gif"></td>
+					<td class="msDataNumeric gridYTD"><span class="ReturnPositive">1.17</span></td>
+					<td class="msDataNumeric gridTER">2.05</td>
+					<td class="msDataNumeric gridClosePrice" title="23/07/2014">1.31</td>
+					<td class="msDataText gridClosePriceCurrency "><span>GBP</span></td>
+				</tr>
+				<tr id="rowF00000THZO" class="gridItem">
+					<td class="gridCheckbox">
+						<input type="checkbox" name="ctl00$ContentPlaceHolder1$aFundQuickrankControl$gridResult$ctl10$chkFund" id="ctl00_ContentPlaceHolder1_aFundQuickrankControl_gridResult_ctl10_chkFund">
+					</td>
+					<td class="gridClientFund msDataIsNotClientFund">&nbsp;</td>
+					<td class="msDataText gridPDFButton">
+						<a target="_blank" href="#">&nbsp;</a>
+					</td>
+					<td class="msDataText gridFundName Shrink">
+						<a target="_self" href="#" title="2CG Senhouse Southeast Asian Focus Fund Class I USD Acc">2CG Senhouse Southeast Asian Focus Fund Class I USD Acc</a>
+					</td>
+					<td class="msDataText gridCategoryName Shrink" title="ASEAN Equity">ASEAN Equity</td>
+					<td class="msDataText gridStarRating"><img style="border-width:0px;" alt="" src="//lt.morningstar.com/img/5stars.gif"></td>
+					<td class="msDataNumeric gridYTD"><span class="ReturnZero">-</span></td>
+					<td class="msDataNumeric gridTER">-</td>
+					<td class="msDataNumeric gridClosePrice" title="23/07/2014">1,440.11</td>
+					<td class="msDataText gridClosePriceCurrency "><span>USD</span></td>
+				</tr>
+				<tr id="rowF00000THZP" class="gridItem gridAlternateItem gridItemLast">
+					<td class="gridCheckbox">
+						<input type="checkbox" name="ctl00$ContentPlaceHolder1$aFundQuickrankControl$gridResult$ctl11$chkFund" id="ctl00_ContentPlaceHolder1_aFundQuickrankControl_gridResult_ctl11_chkFund">
+					</td>
+					<td class="gridClientFund msDataIsNotClientFund">&nbsp;</td>
+					<td class="msDataText gridPDFButton">
+						<a target="_blank" href="#">&nbsp;</a>
+					</td>
+					<td class="msDataText gridFundName Shrink">
+						<a target="_self" href="#" title="2CG Senhouse Southeast Asian Focus Fund Class R USD Acc">2CG Senhouse Southeast Asian Focus Fund Class R USD Acc</a>
+					</td>
+					<td class="msDataText gridCategoryName Shrink" title="ASEAN Equity">ASEAN Equity</td>
+					<td class="msDataText gridStarRating"><img style="border-width:0px;" alt="" src="//lt.morningstar.com/img/5stars.gif"></td>
+					<td class="msDataNumeric gridYTD"><span class="ReturnZero">-</span></td>
+					<td class="msDataNumeric gridTER">-</td>
+					<td class="msDataNumeric gridClosePrice" title="23/07/2014">1,418.10</td>
+					<td class="msDataText gridClosePriceCurrency "><span>USD</span></td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>

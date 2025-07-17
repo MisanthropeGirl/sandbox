@@ -1,0 +1,19 @@
+﻿header > *:first-child,
+nav > *:first-child,
+section > *:first-child {
+	background-color:beige;
+	border-radius:10px;
+	margin:10px 10px 0;
+	padding:10px;
+}
+
+nav ul li {
+	background-color:rgba(255, 0, 0, 0.5);
+	border-radius:10px;
+	padding:10px;
+}
+#msReportTools ul li {
+	background-color:rgba(0, 255, 0, 0.4);
+	border-radius:10px;
+	padding:10px;
+}
