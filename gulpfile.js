@@ -31,7 +31,7 @@ const paths = {
 
 // Clean resources folder
 export function clean() {
-  return deleteAsync(["resources/**", "!resources"]);
+  return deleteAsync(["resources/**", "!resources", "!resources/images"]);
 }
 
 // Compile and minify SCSS files
