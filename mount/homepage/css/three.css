@@ -1,0 +1,184 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  line-height: 1.5;
+}
+
+body {
+  margin: 0;
+  font-family: Helvetica, Verdana, Arial, sans-serif;
+  font-size: 0.875rem;
+  background-color: #fff;
+}
+
+main {
+  margin: 0 0.5rem 3rem;
+}
+
+nav {
+  border-top: 1px solid #853c3b;
+}
+
+  nav ul {
+    display: flex;
+    justify-content: center;
+    max-width: 30rem;
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  nav ul li {
+    flex: 0 0 25%;
+  }
+
+  nav ul li a {
+    display: block;
+    line-height: 4;
+    text-align: center;
+    text-decoration: none;
+  }
+  nav ul li a:hover,
+  nav ul li a:active {
+    background-color: #853c3b;
+    color: #fff;
+  }
+
+footer {
+  padding: 1.5em 0;
+  border-top: 1px solid #853c3b;
+  font-size: 0.75rem;
+}
+
+a {
+  color: #853c3b;
+}
+
+p {
+  margin: 0 0 1.5rem;
+}
+
+p a {
+  font-weight: bold;
+}
+
+.c-branding {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+  max-height: 25rem;
+}
+
+  .c-branding__logo {
+    width: 9rem;
+  }
+  .c-branding__name {
+    margin: 0;
+    line-height: 2;
+  }
+
+
+
+.u-centre {
+  text-align: center;
+}
+
+.u-sr-only {
+  position: absolute;
+  top: -9999rem;
+  left: -9999rem;
+}
+
+
+@media (min-width: 30rem) {
+  .c-branding {
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 30rem;
+    height: 18rem;
+    margin: 0 auto;
+  }
+
+    /*.c-branding__logo {
+      width: 30%;
+    }*/
+}
+
+@media (min-width: 30rem) {
+  main {
+    margin: 0 1rem 3rem;
+  }
+
+  p {
+    max-width: 30rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 40rem) {
+  body {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    /*grid-template-rows: repeat(4, 25rem);*/
+    align-items: center;
+    margin: 0 0 3rem;
+  }
+
+  .c-intro-text {
+    max-width: 23rem;
+    padding: 1.5rem 0;
+    line-height: 1.75;
+  }
+
+  .c-intro-text:nth-of-type(odd) {
+    margin-left: auto;
+    padding-right: 2rem;
+    padding-left: 1rem;
+  }
+
+  .c-intro-text:nth-of-type(even) {
+    padding-right: 1rem;
+    padding-left: 2rem;
+  }
+
+  .c-intro-img {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .c-intro-img:nth-of-type(1) {
+    background-image: url(../img/father-and-son.jpg);
+    background-position: center top;
+  }
+
+  .c-intro-img:nth-of-type(2) {
+    background-image: url(../img/home-ground.jpg);
+    background-position: center center;
+  }
+
+  .c-intro-img:nth-of-type(3) {
+    background-image: url(../img/fielding-practice.jpg);
+    background-position: left center;
+  }
+
+  .c-intro-img:nth-of-type(4) {
+    background-image: url(../img/tour-team.jpg);
+    background-position: center top;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
