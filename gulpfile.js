@@ -1,6 +1,7 @@
 import { src, dest, watch, series, parallel } from "gulp";
 import gulpSass from "gulp-sass";
 import * as dartSass from "sass";
+import noop from 'gulp-noop';
 import sourcemaps from "gulp-sourcemaps";
 import postcss from 'gulp-postcss';
 import terser from "gulp-terser";
@@ -12,6 +13,9 @@ import { deleteAsync } from "del";
 
 const sass = gulpSass(dartSass);
 const browserSync = browserSyncLib.create();
+
+// development or production
+const isProd = (process.env.NODE_ENV || 'development').trim().toLowerCase() === 'production';
 
 // Paths
 const paths = {
@@ -37,12 +41,12 @@ export function clean() {
 // Compile and minify SCSS files
 export function styles() {
   return src(paths.styles.src)
-    .pipe(sourcemaps.init())
+    .pipe(!isProd ? sourcemaps.init() : noop())
     .pipe(sass().on("error", sass.logError))
     .pipe(postcss([autoprefixer(), cssnano()]))
-    .pipe(sourcemaps.write("."))
+    .pipe(!isProd ? sourcemaps.write() : noop())
     .pipe(dest(paths.styles.dest))
-    .pipe(browserSync.stream());
+    .pipe(!isProd ? browserSync.stream() : noop());
 }
 
 // Minify HTML files
@@ -50,7 +54,7 @@ export function html() {
   return src(paths.html.src)
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(dest(paths.html.dest))
-    .pipe(browserSync.stream());
+    .pipe(!isProd ? browserSync.stream() : noop());
 }
 
 // Minify JS files
@@ -58,7 +62,7 @@ export function scripts() {
   return src(paths.scripts.src)
     .pipe(terser())
     .pipe(dest(paths.scripts.dest))
-    .pipe(browserSync.stream());
+    .pipe(!isProd ? browserSync.stream() : noop());
 }
 
 // Dev Server
