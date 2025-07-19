@@ -1,7 +1,9 @@
 import { src, dest, watch, series, parallel } from "gulp";
-import gulpSass from "gulp-sass";
 import * as dartSass from "sass";
+import gulpSass from "gulp-sass";
+import sassLint from "gulp-sass-lint";
 import noop from 'gulp-noop';
+import size from 'gulp-size';
 import sourcemaps from "gulp-sourcemaps";
 import postcss from 'gulp-postcss';
 import terser from "gulp-terser";
@@ -38,6 +40,14 @@ export function clean() {
   return deleteAsync(["resources/**", "!resources", "!resources/images"]);
 }
 
+// lint SCSS files
+export function stylesLint() {
+  return src(paths.styles.src)
+    .pipe(sassLint())
+    .pipe(sassLint.format())
+    .pipe(sassLint.failOnError()); // Use this to fail the task on lint errors
+};
+
 // Compile and minify SCSS files
 export function styles() {
   return src(paths.styles.src)
@@ -45,9 +55,10 @@ export function styles() {
     .pipe(sass().on("error", sass.logError))
     .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(!isProd ? sourcemaps.write() : noop())
+    .pipe(size({ showFiles:true }))
     .pipe(dest(paths.styles.dest))
     .pipe(!isProd ? browserSync.stream() : noop());
-}
+};
 
 // Minify HTML files
 export function html() {
@@ -74,16 +85,15 @@ export function serve() {
   });
 
   // watch(paths.html.src, html);
-  watch(paths.styles.src, styles);
+  watch(paths.styles.src, series(stylesLint, styles));
   // watch(paths.scripts.src, scripts);
 }
 
 // Build task
-// Add this to your build task
 export const build = series(
   clean,
-  styles
-  // parallel(html, styles, scripts)
+  series(stylesLint, styles)
+  // parallel(html, series(stylesLint, styles), scripts)
 );
 
 // Default task
